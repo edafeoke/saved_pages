@@ -1,0 +1,3318 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)https://alx-intranet.hbtn.io/projects/289 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="google" content="notranslate">
+
+    <title>Project: 0x02. AirBnB clone - MySQL | ALX Africa Intranet</title>
+
+      <link rel="stylesheet" href="./Project_ 0x02. AirBnB clone - MySQL _ ALX Africa Intranet_files/xgz4ilr.css">
+      <link rel="stylesheet" media="all" href="./Project_ 0x02. AirBnB clone - MySQL _ ALX Africa Intranet_files/application_alx-e9a9f6067767cf1f7069ddaff05aa7c04c84c501e682038913b690cbbfe81efe.css">
+      <script async="" src="https://www.google-analytics.com/analytics.js"></script><script src="https://www.gstatic.com/charts/loader.js"></script>
+      <script src="./Project_ 0x02. AirBnB clone - MySQL _ ALX Africa Intranet_files/application-ea8a7b02638da1b925c9eccbb85717c57acef911098315acf7f34f4891c30389.js.download"></script>
+      <link rel="shortcut icon" type="image/x-icon" href="https://alx-intranet.hbtn.io/favicon_alx.ico">
+      <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="O6ndiXkpuZVH5hzo7D+JxjL/kCRbQs/kl0xHAnzO6Vb6J80MfC8DzNbWPFHrX7cTHTTkOoRydVEjyDNyjDHvsw==">
+
+      <link rel="apple-touch-icon" href="https://alx-intranet.hbtn.io/apple-touch-icon_alx.png">
+
+      <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+      <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+
+      <!-- Store user timezone -->
+      <script>
+        Cookies.set('timezone', (new Date()).getTimezoneOffset() / -60.0);
+      </script>
+
+      <!-- intro.js for interactive onboarding -->
+
+      <!-- React -->
+      <script src="./Project_ 0x02. AirBnB clone - MySQL _ ALX Africa Intranet_files/application-e12ce743dc640ecb7ca6.js.download"></script>
+      <link rel="stylesheet" media="screen" href="./Project_ 0x02. AirBnB clone - MySQL _ ALX Africa Intranet_files/application-f61adf9f.css">
+
+  </head>
+
+  <body class="
+    signed_in
+    env_production
+    
+    " translate="no" data-theme-suffix="_alx" data-checker-special-theme="">
+
+      <input type="hidden" id="hbtn-slack-url" value="https://alx-students.slack.com">
+      <nav class="navbar navbar-default navbar-fixed-top topbar visible-xs">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-mobile" aria-expanded="false">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+
+    <a class="navbar-brand" href="https://alx-intranet.hbtn.io/">
+      <div class="logo"></div>
+</a>  </div>
+
+  <div class="collapse navbar-collapse navigation" id="navbar-mobile">
+    <ul class="nav navbar-nav">
+      
+
+
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Planning"><a href="https://alx-intranet.hbtn.io/dashboards/my_planning"><div class="icon "><i aria-hidden="true" class="fa fa-calendar "></i></div><div class="visible-xs">Planning</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-current-projects-item" title="" data-original-title="Projects"><a href="https://alx-intranet.hbtn.io/projects/current"><div class="icon "><i aria-hidden="true" class="fa fa-code-fork "></i></div><div class="visible-xs">Projects</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="My reports"><a href="https://alx-intranet.hbtn.io/users/my_reports"><div class="icon "><i aria-hidden="true" class="fa fa-sticky-note-o "></i></div><div class="visible-xs">My reports</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="QA Reviews"><a href="https://alx-intranet.hbtn.io/dashboards/corrections_i_can_make"><div class="icon "><i aria-hidden="true" class="fa fa-check "></i></div><div class="visible-xs">QA Reviews</div></a></li>
+    
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Evaluation quizzes"><a href="https://alx-intranet.hbtn.io/dashboards/my_current_evaluation_quizzes"><div class="icon "><i aria-hidden="true" class="fa fa-question "></i></div><div class="visible-xs">Evaluation quizzes</div></a></li>
+
+    <hr title="My resources">
+
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Curriculums"><a href="https://alx-intranet.hbtn.io/dashboards/my_curriculums"><div class="icon "><i aria-hidden="true" class="fa fa-graduation-cap "></i></div><div class="visible-xs">Curriculums</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-concepts-item" title="" data-original-title="Concepts"><a href="https://alx-intranet.hbtn.io/concepts"><div class="icon "><i aria-hidden="true" class="fa fa-file-text "></i></div><div class="visible-xs">Concepts</div></a></li>
+    
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-dashboards-video-rooms" title="" data-original-title="Conference rooms"><a href="https://alx-intranet.hbtn.io/dashboards/video_rooms"><div class="icon "><i aria-hidden="true" class="fa fa-comments "></i></div><div class="visible-xs">Conference rooms</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Servers"><a href="https://alx-intranet.hbtn.io/servers"><div class="icon "><i aria-hidden="true" class="fa fa-server "></i></div><div class="visible-xs">Servers</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-dashboards-my-containers" title="" data-original-title="Sandboxes"><a href="https://alx-intranet.hbtn.io/user_containers/current"><div class="icon "><i aria-hidden="true" class="fa fa-terminal "></i></div><div class="visible-xs">Sandboxes</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Tools"><a href="https://alx-intranet.hbtn.io/dashboards/my_tools"><div class="icon "><i aria-hidden="true" class="fa fa-wrench "></i></div><div class="visible-xs">Tools</div></a></li>
+    
+
+      <hr title="My campus">
+
+      
+      <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Peers"><a href="https://alx-intranet.hbtn.io/dashboards/my_peers"><div class="icon "><i aria-hidden="true" class="fa fa-users "></i></div><div class="visible-xs">Peers</div></a></li>
+      <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Captain&#39;s Logs"><a href="https://alx-intranet.hbtn.io/dashboards/my_captain_log"><div class="icon "><i aria-hidden="true" class="fa fa-book "></i></div><div class="visible-xs">Captain's Logs</div></a></li>
+      
+      
+
+
+<hr class="visible-xs">
+
+<li>
+    <div data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Slack">
+      <a target="_blank" href="https://alx-students.slack.com/">
+        <div class="image slack">
+          <div class="inner"></div>
+        </div>
+        <div class="visible-xs">Slack</div>
+</a>    </div>
+
+  <div data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="My Profile">
+    <a href="https://alx-intranet.hbtn.io/users/my_profile">
+        <div class="image ">
+          <div class="inner" style="background-image: url(&#39;https://s3.amazonaws.com/alx-intranet.hbtn.io/users/photos/000/000/850/thumb/IMG_20190729_142005.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20211221%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20211221T161328Z&amp;X-Amz-Expires=600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=23e8e81c312ec5148569d6737c58f079df96bdc6528b6d1fc855b630d5efcb63&#39;)"></div>
+        </div>
+
+      <div class="visible-xs">My Profile</div>
+</a>  </div>
+</li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      <div class="hidden-xs navigation sidebar">
+  <a class="logo-container" href="https://alx-intranet.hbtn.io/">
+    <div class="logo"></div>
+</a>
+  <ul>
+    
+
+
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Planning"><a href="https://alx-intranet.hbtn.io/dashboards/my_planning"><div class="icon "><i aria-hidden="true" class="fa fa-calendar "></i></div><div class="visible-xs">Planning</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-current-projects-item" title="" data-original-title="Projects"><a href="https://alx-intranet.hbtn.io/projects/current"><div class="icon "><i aria-hidden="true" class="fa fa-code-fork "></i></div><div class="visible-xs">Projects</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="My reports"><a href="https://alx-intranet.hbtn.io/users/my_reports"><div class="icon "><i aria-hidden="true" class="fa fa-sticky-note-o "></i></div><div class="visible-xs">My reports</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="QA Reviews"><a href="https://alx-intranet.hbtn.io/dashboards/corrections_i_can_make"><div class="icon "><i aria-hidden="true" class="fa fa-check "></i></div><div class="visible-xs">QA Reviews</div></a></li>
+    
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Evaluation quizzes"><a href="https://alx-intranet.hbtn.io/dashboards/my_current_evaluation_quizzes"><div class="icon "><i aria-hidden="true" class="fa fa-question "></i></div><div class="visible-xs">Evaluation quizzes</div></a></li>
+
+    <hr title="My resources">
+
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Curriculums"><a href="https://alx-intranet.hbtn.io/dashboards/my_curriculums"><div class="icon "><i aria-hidden="true" class="fa fa-graduation-cap "></i></div><div class="visible-xs">Curriculums</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-concepts-item" title="" data-original-title="Concepts"><a href="https://alx-intranet.hbtn.io/concepts"><div class="icon "><i aria-hidden="true" class="fa fa-file-text "></i></div><div class="visible-xs">Concepts</div></a></li>
+    
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-dashboards-video-rooms" title="" data-original-title="Conference rooms"><a href="https://alx-intranet.hbtn.io/dashboards/video_rooms"><div class="icon "><i aria-hidden="true" class="fa fa-comments "></i></div><div class="visible-xs">Conference rooms</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Servers"><a href="https://alx-intranet.hbtn.io/servers"><div class="icon "><i aria-hidden="true" class="fa fa-server "></i></div><div class="visible-xs">Servers</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-dashboards-my-containers" title="" data-original-title="Sandboxes"><a href="https://alx-intranet.hbtn.io/user_containers/current"><div class="icon "><i aria-hidden="true" class="fa fa-terminal "></i></div><div class="visible-xs">Sandboxes</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Tools"><a href="https://alx-intranet.hbtn.io/dashboards/my_tools"><div class="icon "><i aria-hidden="true" class="fa fa-wrench "></i></div><div class="visible-xs">Tools</div></a></li>
+    
+
+      <hr title="My campus">
+
+      
+      <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Peers"><a href="https://alx-intranet.hbtn.io/dashboards/my_peers"><div class="icon "><i aria-hidden="true" class="fa fa-users "></i></div><div class="visible-xs">Peers</div></a></li>
+      <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Captain&#39;s Logs"><a href="https://alx-intranet.hbtn.io/dashboards/my_captain_log"><div class="icon "><i aria-hidden="true" class="fa fa-book "></i></div><div class="visible-xs">Captain's Logs</div></a></li>
+      
+      
+
+
+<hr class="visible-xs">
+
+<li>
+    <div data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Slack">
+      <a target="_blank" href="https://alx-students.slack.com/">
+        <div class="image slack">
+          <div class="inner"></div>
+        </div>
+        <div class="visible-xs">Slack</div>
+</a>    </div>
+
+  <div data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="My Profile">
+    <a href="https://alx-intranet.hbtn.io/users/my_profile">
+        <div class="image ">
+          <div class="inner" style="background-image: url(&#39;https://s3.amazonaws.com/alx-intranet.hbtn.io/users/photos/000/000/850/thumb/IMG_20190729_142005.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20211221%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20211221T161328Z&amp;X-Amz-Expires=600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=23e8e81c312ec5148569d6737c58f079df96bdc6528b6d1fc855b630d5efcb63&#39;)"></div>
+        </div>
+
+      <div class="visible-xs">My Profile</div>
+</a>  </div>
+</li>
+
+
+  </ul>
+</div>
+
+
+    <main>
+      <div id="layout-bars">
+        
+
+        
+
+        
+
+        
+      </div>
+
+      <article class="">
+        
+<div class="project row">
+  <div class="col-xs-12 col-md-10 col-lg-8 contains-images">
+
+      <h1 class="gap">0x02. AirBnB clone - MySQL</h1>
+
+  <div data-react-class="tags/Tags" data-react-props="{&quot;tags&quot;:[]}" data-react-cache-id="tags/Tags-0"></div>
+
+  <ul class="list-group metadata" id="project-metadata">
+
+    <li class="list-group-item">
+      <i aria-hidden="true" class="fa fa-user  fa-fw"></i>
+      By Guillaume
+    </li>
+
+    <li class="list-group-item">
+      <i aria-hidden="true" class="fa fa-cogs  fa-fw"></i>
+      Weight: 2
+    </li>
+
+
+    <li class="list-group-item">
+      <i aria-hidden="true" class="fa fa-users  fa-fw"></i>
+      Project to be done in teams of 2 people
+        (your team: Edafe Great Oke, Yohannes Getu
+    </li>
+
+      <li class="list-group-item">
+        <i aria-hidden="true" class="fa fa-calendar  fa-fw"></i>
+            Ongoing project - started 12-17-2021, must end by 12-23-2021 (in 1 day)
+          - you're done with <span id="student_task_done_percentage">0</span>% of tasks.
+      </li>
+
+      <li class="list-group-item">
+        <i aria-hidden="true" class="fa fa-check  fa-fw"></i>
+        Checker was released at 12-19-2021 08:24 AM
+      </li>
+
+
+      <li class="list-group-item">
+        <i aria-hidden="true" class="fa fa-check-square  fa-fw"></i>
+        QA review fully automated.
+      </li>
+
+</ul>
+
+
+
+
+    <div id="project_id" style="display: none" data-project-id="289"></div>
+
+
+
+
+      
+
+      
+
+      <div class="well clean" id="project-description">
+  <h2>Background Context</h2>
+
+<p>Environment variables will be your best friend for this project!</p>
+
+<ul>
+<li><code>HBNB_ENV</code>: running environment. It can be “dev” or “test” for the moment (“production” soon!)</li>
+<li><code>HBNB_MYSQL_USER</code>: the username of your MySQL</li>
+<li><code>HBNB_MYSQL_PWD</code>: the password of your MySQL</li>
+<li><code>HBNB_MYSQL_HOST</code>: the hostname of your MySQL</li>
+<li><code>HBNB_MYSQL_DB</code>: the database name of your MySQL</li>
+<li><code>HBNB_TYPE_STORAGE</code>: the type of storage used. It can be “file” (using <code>FileStorage</code>) or <code>db</code> (using <code>DBStorage</code>)</li>
+</ul>
+
+<h2>Resources</h2>
+
+<p><strong>Read or watch</strong>:</p>
+
+<ul>
+<li><a href="https://alx-intranet.hbtn.io/rltoken/OG2OW5Pbjs-ds3ZHT0ow4g" title="cmd module" target="_blank">cmd module</a> </li>
+<li><strong>packages</strong> concept page</li>
+<li><a href="https://alx-intranet.hbtn.io/rltoken/g0tzN6ea1hWCj5OF99HB9w" title="unittest module" target="_blank">unittest module</a> </li>
+<li><a href="https://alx-intranet.hbtn.io/rltoken/F6YRBSrkkkTTMVc66iaMgA" title="args/kwargs" target="_blank">args/kwargs</a> </li>
+<li><a href="https://alx-intranet.hbtn.io/rltoken/GYWCmxokUZKAr-T93iQPcQ" title="SQLAlchemy tutorial" target="_blank">SQLAlchemy tutorial</a> </li>
+<li><a href="https://alx-intranet.hbtn.io/rltoken/m4ogDCoKVm3Us0FybYh1tA" title="How To Create a New User and Grant Permissions in MySQL" target="_blank">How To Create a New User and Grant Permissions in MySQL</a> </li>
+<li><a href="https://alx-intranet.hbtn.io/rltoken/FJCSaX1TCf0HAOzhsH_eWA" title="Python3 and environment variables" target="_blank">Python3 and environment variables</a> </li>
+<li><a href="https://alx-intranet.hbtn.io/rltoken/bWxESLJVYGNonjOYg8fOVg" title="SQLAlchemy" target="_blank">SQLAlchemy</a> </li>
+<li><a href="https://alx-intranet.hbtn.io/rltoken/n6ePnCDwnbQMbxGgeoe1VA" title="MySQL 8.0 SQL Statement Syntax" target="_blank">MySQL 8.0 SQL Statement Syntax</a> </li>
+<li><a href="https://alx-intranet.hbtn.io/rltoken/yh38CH5YtrJEwzYUhFGynA" title="AirBnB clone - ORM" target="_blank">AirBnB clone - ORM</a> </li>
+</ul>
+
+<h2>Learning Objectives</h2>
+
+<p>At the end of this project, you are expected to be able to <a href="https://alx-intranet.hbtn.io/rltoken/3nWKduPHOPRUFGNEtT-SMw" title="explain to anyone" target="_blank">explain to anyone</a>, <strong>without the help of Google</strong>:</p>
+
+<h3>General</h3>
+
+<ul>
+<li>What is Unit testing and how to implement it in a large project</li>
+<li>What is <code>*args</code> and how to use it</li>
+<li>What is <code>**kwargs</code> and how to use it</li>
+<li>How to handle named arguments in a function</li>
+<li>How to create a MySQL database</li>
+<li>How to create a MySQL user and grant it privileges</li>
+<li>What ORM means</li>
+<li>How to map a Python Class to a MySQL table</li>
+<li>How to handle 2 different storage engines with the same codebase</li>
+<li>How to use environment variables</li>
+</ul>
+
+<h2>Requirements</h2>
+
+<h3>Python Scripts</h3>
+
+<ul>
+<li>Allowed editors: <code>vi</code>, <code>vim</code>, <code>emacs</code></li>
+<li>All your files will be interpreted/compiled on Ubuntu 20.04 LTS using python3 (version 3.8.5)</li>
+<li>All your files should end with a new line</li>
+<li>The first line of all your files should be exactly <code>#!/usr/bin/python3</code></li>
+<li>A <code>README.md</code> file, at the root of the folder of the project, is mandatory</li>
+<li>Your code should use the pycodestyle (version 2.7.*)</li>
+<li>All your files must be executable</li>
+<li>The length of your files will be tested using <code>wc</code></li>
+<li>All your modules should have documentation (<code>python3 -c 'print(__import__("my_module").__doc__)'</code>)</li>
+<li>All your classes should have documentation (<code>python3 -c 'print(__import__("my_module").MyClass.__doc__)'</code>)</li>
+<li>All your functions (inside and outside a class) should have documentation (<code>python3 -c 'print(__import__("my_module").my_function.__doc__)'</code> and <code>python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)'</code>)</li>
+<li>A documentation is not a simple word, it’s a real sentence explaining what’s the purpose of the module, class or method (the length of it will be verified)</li>
+</ul>
+
+<h3>Python Unit Tests</h3>
+
+<ul>
+<li>Allowed editors: <code>vi</code>, <code>vim</code>, <code>emacs</code></li>
+<li>All your files should end with a new line</li>
+<li>All your test files should be inside a folder <code>tests</code></li>
+<li>You have to use the <a href="https://alx-intranet.hbtn.io/rltoken/g0tzN6ea1hWCj5OF99HB9w" title="unittest module" target="_blank">unittest module</a> </li>
+<li>All your test files should be python files (extension: <code>.py</code>)</li>
+<li>All your test files and folders should start by <code>test_</code></li>
+<li>Your file organization in the tests folder should be the same as your project: ex: for <code>models/base_model.py</code>, unit tests must be in: <code>tests/test_models/test_base_model.py</code></li>
+<li>All your tests should be executed by using this command: <code>python3 -m unittest discover tests</code></li>
+<li>You can also test file by file by using this command: <code>python3 -m unittest tests/test_models/test_base_model.py</code></li>
+<li>All your modules should have documentation (<code>python3 -c 'print(__import__("my_module").__doc__)'</code>)</li>
+<li>All your classes should have documentation (<code>python3 -c 'print(__import__("my_module").MyClass.__doc__)'</code>)</li>
+<li>All your functions (inside and outside a class) should have documentation (<code>python3 -c 'print(__import__("my_module").my_function.__doc__)'</code> and <code>python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)'</code>)</li>
+<li>We strongly encourage you to work together on test cases, so that you don’t miss any edge cases</li>
+</ul>
+
+<h3>SQL Scripts</h3>
+
+<ul>
+<li>Allowed editors: <code>vi</code>, <code>vim</code>, <code>emacs</code></li>
+<li>All your files will be executed on Ubuntu 20.04 LTS using <code>MySQL 8.0</code></li>
+<li>Your files will be executed with <code>SQLAlchemy</code> version <code>1.4.x</code></li>
+<li>All your files should end with a new line</li>
+<li>All your SQL queries should have a comment just before (i.e. syntax above)</li>
+<li>All your files should start by a comment describing the task</li>
+<li>All SQL keywords should be in uppercase (<code>SELECT</code>, <code>WHERE</code>…)</li>
+<li>A <code>README.md</code> file, at the root of the folder of the project, is mandatory</li>
+<li>The length of your files will be tested using <code>wc</code></li>
+</ul>
+
+<h3>GitHub</h3>
+
+<p><strong>There should be one project repository per group. If you clone/fork/whatever a partner’s project repository with the same name before the second deadline, you risk a 0% score.</strong></p>
+
+<h2>More Info</h2>
+
+<p><img src="https://s3.amazonaws.com/intranet-projects-files/concepts/74/hbnb_step2.png" alt="" style=""></p>
+
+<iframe width="560" height="315" src="./Project_ 0x02. AirBnB clone - MySQL _ ALX Africa Intranet_files/fb2zxES7ROU.html" frameborder="0" allowfullscreen=""></iframe>
+
+<h3>Comments for your SQL file:</h3>
+
+<pre><code>$ cat my_script.sql
+-- first 3 students in the Batch ID=3
+-- because Batch 3 is the best!
+SELECT id, name FROM students WHERE batch_id = 3 ORDER BY created_at DESC LIMIT 3;
+$
+</code></pre>
+
+</div>
+
+
+      
+
+      
+
+        
+          <h2 class="gap">Tasks</h2>
+
+    <div data-role="task1606" data-position="1" id="task-num-0">
+      <div class="panel panel-default task-card " id="task-1606">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      0. Fork me if you can!
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+
+    <!-- Task Body -->
+    <p>In the industry, you will work on an existing codebase 90% of the time. Your first thoughts upon looking at it might include:</p>
+
+<ul>
+<li>“Who did this code?”</li>
+<li>“How it works?”</li>
+<li>“Where are unittests?”</li>
+<li>“Where is this?”</li>
+<li>“Why did they do that like this?”</li>
+<li>“I don’t understand anything.”</li>
+<li>“… I will refactor everything…”</li>
+</ul>
+
+<p>But the worst thing you could possibly do is to  <strong>redo everything</strong>. Please don’t do that!
+<strong>Note: the existing codebase might be perfect, or it might have errors. Don’t always trust the existing codebase!</strong></p>
+
+<p>For this project you will fork this <a href="https://github.com/justinmajetich/AirBnB_clone.git" title="codebase" target="_blank">codebase</a>:</p>
+
+<ul>
+<li>update the repository name to <code>AirBnB_clone_v2</code></li>
+<li>update the <code>README.md</code> with your information <strong>but don’t delete the initial authors</strong></li>
+</ul>
+
+<p>If you are the owner of this repository, please create a new repository named <code>AirBnB_clone_v2</code> with the same content of <code>AirBnB_clone</code></p>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+      <div class="list-group-item">
+        <p><strong>Repo:</strong></p>
+        <ul>
+          <li>GitHub repository: <code>AirBnB_clone_v2</code></li>
+        </ul>
+      </div>
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+
+    <div class="panel-footer">
+      
+<div>
+    <button class="student_task_done btn btn-default btn-sm no" data-task-id="1606">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1606" data-project-id="289" data-toggle="modal" data-target="#task-1606-users-done-modal">
+      Help
+    </button>
+    <div class="modal fade users-done-modal" id="task-1606-users-done-modal" data-task-id="1606" data-project-id="289">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "0. Fork me if you can!"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+      <button class="btn btn-default btn-sm" data-task-id="1606" data-toggle="modal" data-target="#task-test-correction-1606-correction-modal" id="task-num-0-check-code-btn">
+        Check your code
+      </button>
+      <div class="modal fade task_correction_modal student_modal" id="task-test-correction-1606-correction-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Correction of "0. Fork me if you can!"</h4>
+            </div>
+            <div class="modal-body">
+                <div class="actions">
+                    <center>
+                        <div class="alert alert-info hidden"></div>
+
+                        <button name="button" type="submit" class="btn btn-primary correction_request_test_send" data-task-id="1606">Start a new test</button>
+                        <button class="btn btn-default close-modal hidden" data-dismiss="modal" type="button">Close</button>
+
+                        <div class="spinner" style="display: none;">
+                            <div class="bounce1"></div>
+                            <div class="bounce2"></div>
+                            <div class="bounce3"></div>
+                        </div>
+                        <div class="error"></div>
+                        <div class="info"></div>
+
+
+                    </center>
+                </div>
+                <div class="result"></div>
+
+                <div class="help">
+    <button data-task-id="1606">
+        <i aria-hidden="true" class="fa fa-info-circle "></i>
+    </button>
+    <div class="help-container" data-task-id="1606">
+        <div class="check-line">
+            <div class="check-inline requirement success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Requirement success
+            </div>
+            <div class="check-inline requirement fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Requirement fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline code success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Code success
+            </div>
+            <div class="check-inline code fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Code fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline efficiency success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Efficiency success
+            </div>
+            <div class="check-inline efficiency fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Efficiency fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline answer success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Text answer success
+            </div>
+            <div class="check-inline answer fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Text answer fail
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+
+
+    <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#container-specs-modal"><i aria-hidden="true" class="fa fa-terminal "></i><span>Get a sandbox</span></button>
+
+</div>
+
+    </div>
+
+
+</div>
+
+    </div>
+    <div data-role="task2409" data-position="2" id="task-num-1">
+      <div class="panel panel-default task-card " id="task-2409">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      1. Bug free!
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+
+    <!-- Task Body -->
+    <p>Do you remember the <code>unittest</code> module?</p>
+
+<p>This codebase contains many test cases. Some are missing, but the ones included cover the basic functionality of the program.</p>
+
+<pre><code>guillaume@ubuntu:~/AirBnB_v2$ python3 -m unittest discover tests 2&gt;&amp;1 /dev/null | tail -n 1
+OK
+guillaume@ubuntu:~/AirBnB_v2$ 
+</code></pre>
+
+<p>All your unittests <strong>must</strong> pass without any errors at anytime in this project, <strong>with each storage engine!</strong>. Same for PEP8!</p>
+
+<pre><code>guillaume@ubuntu:~/AirBnB_v2$ HBNB_ENV=test HBNB_MYSQL_USER=hbnb_test HBNB_MYSQL_PWD=hbnb_test_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_test_db HBNB_TYPE_STORAGE=db python3 -m unittest discover tests 2&gt;&amp;1 /dev/null | tail -n 1
+OK
+guillaume@ubuntu:~/AirBnB_v2$ 
+</code></pre>
+
+<p>Some tests won’t be relevant for some type of storage, please skip them by using the <code>skipIf</code> feature of <a href="https://alx-intranet.hbtn.io/rltoken/Gx_1dJOPPeAyeM6NaXDmjg" title="the Unittest module - 26.3.6. Skipping tests and expected failures" target="_blank">the Unittest module - 26.3.6. Skipping tests and expected failures</a>. Of course, the number of tests must be higher than the current number of tests, so if you decide to skip a test, you should write a new test!</p>
+
+<h3>How to test with MySQL?</h3>
+
+<p>First, you create a specific database for it (next tasks). After, you have to remember what the purpose of an unittest?</p>
+
+<p><strong>“Assert a current state (objects/data/database), do an action, and validate this action changed (or not) the state of your objects/data/database”</strong></p>
+
+<p>For example, “you want to validate that the <code>create State name="California"</code> command in the console will add a new record in your table <code>states</code> in your database”, here steps for your unittest:</p>
+
+<ul>
+<li>get the number of current records in the table <code>states</code> (my using a <code>MySQLdb</code> for example - but not SQLAlchemy (remember, you want to test if it works, so it’s better to isolate from the system))</li>
+<li>execute the console command</li>
+<li>get (again) the number of current records in the table <code>states</code> (same method, with <code>MySQLdb</code>)</li>
+<li>if the difference is <code>+1</code> =&gt; test passed</li>
+</ul>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+      <div class="list-group-item">
+        <p><strong>Repo:</strong></p>
+        <ul>
+          <li>GitHub repository: <code>AirBnB_clone_v2</code></li>
+        </ul>
+      </div>
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+
+    <div class="panel-footer">
+      
+<div>
+    <button class="student_task_done btn btn-default btn-sm no" data-task-id="2409">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-sm" data-task-id="2409" data-project-id="289" data-toggle="modal" data-target="#task-2409-users-done-modal">
+      Help
+    </button>
+    <div class="modal fade users-done-modal" id="task-2409-users-done-modal" data-task-id="2409" data-project-id="289">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "1. Bug free!"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+      <button class="btn btn-default btn-sm" data-task-id="2409" data-toggle="modal" data-target="#task-test-correction-2409-correction-modal" id="task-num-1-check-code-btn">
+        Check your code
+      </button>
+      <div class="modal fade task_correction_modal student_modal" id="task-test-correction-2409-correction-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Correction of "1. Bug free!"</h4>
+            </div>
+            <div class="modal-body">
+                <div class="actions">
+                    <center>
+                        <div class="alert alert-info hidden"></div>
+
+                        <button name="button" type="submit" class="btn btn-primary correction_request_test_send" data-task-id="2409">Start a new test</button>
+                        <button class="btn btn-default close-modal hidden" data-dismiss="modal" type="button">Close</button>
+
+                        <div class="spinner" style="display: none;">
+                            <div class="bounce1"></div>
+                            <div class="bounce2"></div>
+                            <div class="bounce3"></div>
+                        </div>
+                        <div class="error"></div>
+                        <div class="info"></div>
+
+
+                    </center>
+                </div>
+                <div class="result"></div>
+
+                <div class="help">
+    <button data-task-id="2409">
+        <i aria-hidden="true" class="fa fa-info-circle "></i>
+    </button>
+    <div class="help-container" data-task-id="2409">
+        <div class="check-line">
+            <div class="check-inline requirement success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Requirement success
+            </div>
+            <div class="check-inline requirement fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Requirement fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline code success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Code success
+            </div>
+            <div class="check-inline code fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Code fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline efficiency success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Efficiency success
+            </div>
+            <div class="check-inline efficiency fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Efficiency fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline answer success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Text answer success
+            </div>
+            <div class="check-inline answer fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Text answer fail
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+
+
+    
+
+</div>
+
+    </div>
+
+
+</div>
+
+    </div>
+    <div data-role="task1608" data-position="3" id="task-num-2">
+      <div class="panel panel-default task-card " id="task-1608">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      2. Console improvements
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+
+    <!-- Task Body -->
+    <p>Update the <code>def do_create(self, arg):</code> function of your command interpreter (<code>console.py</code>) to allow for object creation with given parameters:</p>
+
+<ul>
+<li>Command syntax: <code>create &lt;Class name&gt; &lt;param 1&gt; &lt;param 2&gt; &lt;param 3&gt;...</code></li>
+<li>Param syntax: <code>&lt;key name&gt;=&lt;value&gt;</code></li>
+<li>Value syntax:
+
+<ul>
+<li>String: <code>"&lt;value&gt;"</code> =&gt; starts with a double quote
+
+<ul>
+<li>any double quote inside the value must be escaped with a backslash <code>\</code></li>
+<li>all underscores <code>_</code> must be replace by spaces <code></code>. Example: You want to set the string <code>My little house</code> to the attribute <code>name</code>, your command line must be <code>name="My_little_house"</code></li>
+</ul></li>
+<li>Float: <code>&lt;unit&gt;.&lt;decimal&gt;</code> =&gt; contains a dot <code>.</code></li>
+<li>Integer: <code>&lt;number&gt;</code> =&gt; default case</li>
+</ul></li>
+<li>If any parameter doesn’t fit with these requirements or can’t be recognized correctly by your program, it must be skipped</li>
+</ul>
+
+<p><strong>Don’t forget to add tests for this new feature!</strong></p>
+
+<p>Also, this new feature will be tested here only with <code>FileStorage</code> engine.</p>
+
+<pre><code>guillaume@ubuntu:~/AirBnB_v2$ cat test_params_create
+create State name="California"
+create State name="Arizona"
+all State
+
+create Place city_id="0001" user_id="0001" name="My_little_house" number_rooms=4 number_bathrooms=2 max_guest=10 price_by_night=300 latitude=37.773972 longitude=-122.431297
+all Place
+guillaume@ubuntu:~/AirBnB_v2$ cat test_params_create | ./console.py 
+(hbnb) d80e0344-63eb-434a-b1e0-07783522124e
+(hbnb) 092c9e5d-6cc0-4eec-aab9-3c1d79cfc2d7
+(hbnb) [[State] (d80e0344-63eb-434a-b1e0-07783522124e) {'id': 'd80e0344-63eb-434a-b1e0-07783522124e', 'created_at': datetime.datetime(2017, 11, 10, 4, 41, 7, 842160), 'updated_at': datetime.datetime(2017, 11, 10, 4, 41, 7, 842235), 'name': 'California'}, [State] (092c9e5d-6cc0-4eec-aab9-3c1d79cfc2d7) {'id': '092c9e5d-6cc0-4eec-aab9-3c1d79cfc2d7', 'created_at': datetime.datetime(2017, 11, 10, 4, 41, 7, 842779), 'updated_at': datetime.datetime(2017, 11, 10, 4, 41, 7, 842792), 'name': 'Arizona'}]
+(hbnb) (hbnb) 76b65327-9e94-4632-b688-aaa22ab8a124
+(hbnb) [[Place] (76b65327-9e94-4632-b688-aaa22ab8a124) {'number_bathrooms': 2, 'longitude': -122.431297, 'city_id': '0001', 'user_id': '0001', 'latitude': 37.773972, 'price_by_night': 300, 'name': 'My little house', 'id': '76b65327-9e94-4632-b688-aaa22ab8a124', 'max_guest': 10, 'number_rooms': 4, 'updated_at': datetime.datetime(2017, 11, 10, 4, 41, 7, 843774), 'created_at': datetime.datetime(2017, 11, 10, 4, 41, 7, 843747)}]
+(hbnb)
+guillaume@ubuntu:~/AirBnB_v2$
+</code></pre>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+      <div class="list-group-item">
+        <p><strong>Repo:</strong></p>
+        <ul>
+          <li>GitHub repository: <code>AirBnB_clone_v2</code></li>
+            <li>File: <code>console.py, models/, tests/</code></li>
+        </ul>
+      </div>
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+
+    <div class="panel-footer">
+      
+<div>
+    <button class="student_task_done btn btn-default btn-sm no" data-task-id="1608">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1608" data-project-id="289" data-toggle="modal" data-target="#task-1608-users-done-modal">
+      Help
+    </button>
+    <div class="modal fade users-done-modal" id="task-1608-users-done-modal" data-task-id="1608" data-project-id="289">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "2. Console improvements"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+      <button class="btn btn-default btn-sm" data-task-id="1608" data-toggle="modal" data-target="#task-test-correction-1608-correction-modal" id="task-num-2-check-code-btn">
+        Check your code
+      </button>
+      <div class="modal fade task_correction_modal student_modal" id="task-test-correction-1608-correction-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Correction of "2. Console improvements"</h4>
+            </div>
+            <div class="modal-body">
+                <div class="actions">
+                    <center>
+                        <div class="alert alert-info hidden"></div>
+
+                        <button name="button" type="submit" class="btn btn-primary correction_request_test_send" data-task-id="1608">Start a new test</button>
+                        <button class="btn btn-default close-modal hidden" data-dismiss="modal" type="button">Close</button>
+
+                        <div class="spinner" style="display: none;">
+                            <div class="bounce1"></div>
+                            <div class="bounce2"></div>
+                            <div class="bounce3"></div>
+                        </div>
+                        <div class="error"></div>
+                        <div class="info"></div>
+
+
+                    </center>
+                </div>
+                <div class="result"></div>
+
+                <div class="help">
+    <button data-task-id="1608">
+        <i aria-hidden="true" class="fa fa-info-circle "></i>
+    </button>
+    <div class="help-container" data-task-id="1608">
+        <div class="check-line">
+            <div class="check-inline requirement success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Requirement success
+            </div>
+            <div class="check-inline requirement fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Requirement fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline code success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Code success
+            </div>
+            <div class="check-inline code fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Code fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline efficiency success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Efficiency success
+            </div>
+            <div class="check-inline efficiency fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Efficiency fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline answer success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Text answer success
+            </div>
+            <div class="check-inline answer fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Text answer fail
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+
+
+    <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#container-specs-modal"><i aria-hidden="true" class="fa fa-terminal "></i><span>Get a sandbox</span></button>
+
+</div>
+
+    </div>
+
+
+</div>
+
+    </div>
+    <div data-role="task1609" data-position="4" id="task-num-3">
+      <div class="panel panel-default task-card " id="task-1609">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      3. MySQL setup development
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+
+    <!-- Task Body -->
+    <p>Write a script that prepares a MySQL server for the project:</p>
+
+<ul>
+<li>A database <code>hbnb_dev_db</code></li>
+<li>A new user <code>hbnb_dev</code> (in <code>localhost</code>)</li>
+<li>The password  of <code>hbnb_dev</code> should be set to <code>hbnb_dev_pwd</code></li>
+<li><code>hbnb_dev</code> should have all privileges on the database <code>hbnb_dev_db</code> (and <strong>only this database</strong>)</li>
+<li><code>hbnb_dev</code> should have <code>SELECT</code> privilege on the database <code>performance_schema</code> (and <strong>only this database</strong>)</li>
+<li>If the database <code>hbnb_dev_db</code> or the user <code>hbnb_dev</code> already exists, your script should not fail</li>
+</ul>
+
+<pre><code>guillaume@ubuntu:~/AirBnB_v2$ cat setup_mysql_dev.sql | mysql -hlocalhost -uroot -p
+Enter password: 
+guillaume@ubuntu:~/AirBnB_v2$ echo "SHOW DATABASES;" | mysql -uhbnb_dev -p | grep hbnb_dev_db
+Enter password: 
+hbnb_dev_db
+guillaume@ubuntu:~/AirBnB_v2$ echo "SHOW GRANTS FOR 'hbnb_dev'@'localhost';" | mysql -uroot -p
+Enter password: 
+Grants for hbnb_dev@localhost
+GRANT USAGE ON *.* TO 'hbnb_dev'@'localhost'
+GRANT SELECT ON `performance_schema`.* TO 'hbnb_dev'@'localhost'
+GRANT ALL PRIVILEGES ON `hbnb_dev_db`.* TO 'hbnb_dev'@'localhost'
+guillaume@ubuntu:~/AirBnB_v2$ 
+</code></pre>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+      <div class="list-group-item">
+        <p><strong>Repo:</strong></p>
+        <ul>
+          <li>GitHub repository: <code>AirBnB_clone_v2</code></li>
+            <li>File: <code>setup_mysql_dev.sql</code></li>
+        </ul>
+      </div>
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+
+    <div class="panel-footer">
+      
+<div>
+    <button class="student_task_done btn btn-default btn-sm no" data-task-id="1609">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1609" data-project-id="289" data-toggle="modal" data-target="#task-1609-users-done-modal">
+      Help
+    </button>
+    <div class="modal fade users-done-modal" id="task-1609-users-done-modal" data-task-id="1609" data-project-id="289">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "3. MySQL setup development"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+      <button class="btn btn-default btn-sm" data-task-id="1609" data-toggle="modal" data-target="#task-test-correction-1609-correction-modal" id="task-num-3-check-code-btn">
+        Check your code
+      </button>
+      <div class="modal fade task_correction_modal student_modal" id="task-test-correction-1609-correction-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Correction of "3. MySQL setup development"</h4>
+            </div>
+            <div class="modal-body">
+                <div class="actions">
+                    <center>
+                        <div class="alert alert-info hidden"></div>
+
+                        <button name="button" type="submit" class="btn btn-primary correction_request_test_send" data-task-id="1609">Start a new test</button>
+                        <button class="btn btn-default close-modal hidden" data-dismiss="modal" type="button">Close</button>
+
+                        <div class="spinner" style="display: none;">
+                            <div class="bounce1"></div>
+                            <div class="bounce2"></div>
+                            <div class="bounce3"></div>
+                        </div>
+                        <div class="error"></div>
+                        <div class="info"></div>
+
+
+                    </center>
+                </div>
+                <div class="result"></div>
+
+                <div class="help">
+    <button data-task-id="1609">
+        <i aria-hidden="true" class="fa fa-info-circle "></i>
+    </button>
+    <div class="help-container" data-task-id="1609">
+        <div class="check-line">
+            <div class="check-inline requirement success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Requirement success
+            </div>
+            <div class="check-inline requirement fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Requirement fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline code success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Code success
+            </div>
+            <div class="check-inline code fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Code fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline efficiency success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Efficiency success
+            </div>
+            <div class="check-inline efficiency fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Efficiency fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline answer success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Text answer success
+            </div>
+            <div class="check-inline answer fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Text answer fail
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+
+
+    <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#container-specs-modal"><i aria-hidden="true" class="fa fa-terminal "></i><span>Get a sandbox</span></button>
+
+</div>
+
+    </div>
+
+
+</div>
+
+    </div>
+    <div data-role="task1615" data-position="5" id="task-num-4">
+      <div class="panel panel-default task-card " id="task-1615">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      4. MySQL setup test
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+
+    <!-- Task Body -->
+    <p>Write a script that prepares a MySQL server for the project:</p>
+
+<ul>
+<li>A database <code>hbnb_test_db</code></li>
+<li>A new user <code>hbnb_test</code> (in <code>localhost</code>)</li>
+<li>The password  of <code>hbnb_test</code> should be set to <code>hbnb_test_pwd</code></li>
+<li><code>hbnb_test</code> should have all privileges on the database <code>hbnb_test_db</code> (and <strong>only this database</strong>)</li>
+<li><code>hbnb_test</code> should have <code>SELECT</code> privilege on the database <code>performance_schema</code> (and <strong>only this database</strong>)</li>
+<li>If the database <code>hbnb_test_db</code> or the user <code>hbnb_test</code> already exists, your script should not fail</li>
+</ul>
+
+<pre><code>guillaume@ubuntu:~/AirBnB_v2$ cat setup_mysql_test.sql | mysql -hlocalhost -uroot -p
+Enter password: 
+guillaume@ubuntu:~/AirBnB_v2$ echo "SHOW DATABASES;" | mysql -uhbnb_test -p | grep hbnb_test_db
+Enter password: 
+hbnb_test_db
+guillaume@ubuntu:~/AirBnB_v2$ echo "SHOW GRANTS FOR 'hbnb_test'@'localhost';" | mysql -uroot -p
+Enter password: 
+Grants for hbnb_test@localhost
+GRANT USAGE ON *.* TO 'hbnb_test'@'localhost'
+GRANT SELECT ON `performance_schema`.* TO 'hbnb_test'@'localhost'
+GRANT ALL PRIVILEGES ON `hbnb_test_db`.* TO 'hbnb_test'@'localhost'
+guillaume@ubuntu:~/AirBnB_v2$ 
+</code></pre>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+      <div class="list-group-item">
+        <p><strong>Repo:</strong></p>
+        <ul>
+          <li>GitHub repository: <code>AirBnB_clone_v2</code></li>
+            <li>File: <code>setup_mysql_test.sql</code></li>
+        </ul>
+      </div>
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+
+    <div class="panel-footer">
+      
+<div>
+    <button class="student_task_done btn btn-default btn-sm no" data-task-id="1615">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1615" data-project-id="289" data-toggle="modal" data-target="#task-1615-users-done-modal">
+      Help
+    </button>
+    <div class="modal fade users-done-modal" id="task-1615-users-done-modal" data-task-id="1615" data-project-id="289">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "4. MySQL setup test"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+      <button class="btn btn-default btn-sm" data-task-id="1615" data-toggle="modal" data-target="#task-test-correction-1615-correction-modal" id="task-num-4-check-code-btn">
+        Check your code
+      </button>
+      <div class="modal fade task_correction_modal student_modal" id="task-test-correction-1615-correction-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Correction of "4. MySQL setup test"</h4>
+            </div>
+            <div class="modal-body">
+                <div class="actions">
+                    <center>
+                        <div class="alert alert-info hidden"></div>
+
+                        <button name="button" type="submit" class="btn btn-primary correction_request_test_send" data-task-id="1615">Start a new test</button>
+                        <button class="btn btn-default close-modal hidden" data-dismiss="modal" type="button">Close</button>
+
+                        <div class="spinner" style="display: none;">
+                            <div class="bounce1"></div>
+                            <div class="bounce2"></div>
+                            <div class="bounce3"></div>
+                        </div>
+                        <div class="error"></div>
+                        <div class="info"></div>
+
+
+                    </center>
+                </div>
+                <div class="result"></div>
+
+                <div class="help">
+    <button data-task-id="1615">
+        <i aria-hidden="true" class="fa fa-info-circle "></i>
+    </button>
+    <div class="help-container" data-task-id="1615">
+        <div class="check-line">
+            <div class="check-inline requirement success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Requirement success
+            </div>
+            <div class="check-inline requirement fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Requirement fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline code success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Code success
+            </div>
+            <div class="check-inline code fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Code fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline efficiency success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Efficiency success
+            </div>
+            <div class="check-inline efficiency fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Efficiency fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline answer success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Text answer success
+            </div>
+            <div class="check-inline answer fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Text answer fail
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+
+
+    <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#container-specs-modal"><i aria-hidden="true" class="fa fa-terminal "></i><span>Get a sandbox</span></button>
+
+</div>
+
+    </div>
+
+
+</div>
+
+    </div>
+    <div data-role="task1610" data-position="6" id="task-num-5">
+      <div class="panel panel-default task-card " id="task-1610">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      5. Delete object
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+
+    <!-- Task Body -->
+    <p>Update <code>FileStorage</code>: (<code>models/engine/file_storage.py</code>)</p>
+
+<ul>
+<li>Add a new public instance method: <code>def delete(self, obj=None):</code> to delete <code>obj</code> from <code>__objects</code> if it’s inside - if <code>obj</code> is equal to <code>None</code>, the method should not do anything</li>
+<li>Update the prototype of <code>def all(self)</code> to <code>def all(self, cls=None)</code> - that returns the list of objects of one type of class. Example below with <code>State</code> - it’s an optional filtering</li>
+</ul>
+
+<pre><code>guillaume@ubuntu:~/AirBnB_v2$ cat main_delete.py
+#!/usr/bin/python3
+""" Test delete feature
+"""
+from models.engine.file_storage import FileStorage
+from models.state import State
+
+fs = FileStorage()
+
+# All States
+all_states = fs.all(State)
+print("All States: {}".format(len(all_states.keys())))
+for state_key in all_states.keys():
+    print(all_states[state_key])
+
+# Create a new State
+new_state = State()
+new_state.name = "California"
+fs.new(new_state)
+fs.save()
+print("New State: {}".format(new_state))
+
+# All States
+all_states = fs.all(State)
+print("All States: {}".format(len(all_states.keys())))
+for state_key in all_states.keys():
+    print(all_states[state_key])
+
+# Create another State
+another_state = State()
+another_state.name = "Nevada"
+fs.new(another_state)
+fs.save()
+print("Another State: {}".format(another_state))
+
+# All States
+all_states = fs.all(State)
+print("All States: {}".format(len(all_states.keys())))
+for state_key in all_states.keys():
+    print(all_states[state_key])        
+
+# Delete the new State
+fs.delete(new_state)
+
+# All States
+all_states = fs.all(State)
+print("All States: {}".format(len(all_states.keys())))
+for state_key in all_states.keys():
+    print(all_states[state_key])
+
+guillaume@ubuntu:~/AirBnB_v2$ ./main_delete.py
+All States: 0
+New State: [State] (b0026fc6-116f-4d1a-a9cb-6bb9b299f1ce) {'name': 'California', 'created_at': datetime.datetime(2017, 11, 10, 1, 13, 32, 561137), 'id': 'b0026fc6-116f-4d1a-a9cb-6bb9b299f1ce'}
+All States: 1
+[State] (b0026fc6-116f-4d1a-a9cb-6bb9b299f1ce) {'name': 'California', 'created_at': datetime.datetime(2017, 11, 10, 1, 13, 32, 561137), 'id': 'b0026fc6-116f-4d1a-a9cb-6bb9b299f1ce'}
+Another State: [State] (37705d25-8903-4318-9303-6d6d336a22c1) {'name': 'Nevada', 'created_at': datetime.datetime(2017, 11, 10, 1, 13, 34, 619133), 'id': '37705d25-8903-4318-9303-6d6d336a22c1'}
+All States: 2
+[State] (b0026fc6-116f-4d1a-a9cb-6bb9b299f1ce) {'name': 'California', 'created_at': datetime.datetime(2017, 11, 10, 1, 13, 32, 561137), 'id': 'b0026fc6-116f-4d1a-a9cb-6bb9b299f1ce'}
+[State] (37705d25-8903-4318-9303-6d6d336a22c1) {'name': 'Nevada', 'created_at': datetime.datetime(2017, 11, 10, 1, 13, 34, 619133), 'id': '37705d25-8903-4318-9303-6d6d336a22c1'}
+All States: 1
+[State] (37705d25-8903-4318-9303-6d6d336a22c1) {'name': 'Nevada', 'created_at': datetime.datetime(2017, 11, 10, 1, 13, 34, 619133), 'id': '37705d25-8903-4318-9303-6d6d336a22c1'}
+guillaume@ubuntu:~/AirBnB_v2$ 
+</code></pre>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+      <div class="list-group-item">
+        <p><strong>Repo:</strong></p>
+        <ul>
+          <li>GitHub repository: <code>AirBnB_clone_v2</code></li>
+            <li>File: <code>models/engine/file_storage.py</code></li>
+        </ul>
+      </div>
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+
+    <div class="panel-footer">
+      
+<div>
+    <button class="student_task_done btn btn-default btn-sm no" data-task-id="1610">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1610" data-project-id="289" data-toggle="modal" data-target="#task-1610-users-done-modal">
+      Help
+    </button>
+    <div class="modal fade users-done-modal" id="task-1610-users-done-modal" data-task-id="1610" data-project-id="289">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "5. Delete object"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+      <button class="btn btn-default btn-sm" data-task-id="1610" data-toggle="modal" data-target="#task-test-correction-1610-correction-modal" id="task-num-5-check-code-btn">
+        Check your code
+      </button>
+      <div class="modal fade task_correction_modal student_modal" id="task-test-correction-1610-correction-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Correction of "5. Delete object"</h4>
+            </div>
+            <div class="modal-body">
+                <div class="actions">
+                    <center>
+                        <div class="alert alert-info hidden"></div>
+
+                        <button name="button" type="submit" class="btn btn-primary correction_request_test_send" data-task-id="1610">Start a new test</button>
+                        <button class="btn btn-default close-modal hidden" data-dismiss="modal" type="button">Close</button>
+
+                        <div class="spinner" style="display: none;">
+                            <div class="bounce1"></div>
+                            <div class="bounce2"></div>
+                            <div class="bounce3"></div>
+                        </div>
+                        <div class="error"></div>
+                        <div class="info"></div>
+
+
+                    </center>
+                </div>
+                <div class="result"></div>
+
+                <div class="help">
+    <button data-task-id="1610">
+        <i aria-hidden="true" class="fa fa-info-circle "></i>
+    </button>
+    <div class="help-container" data-task-id="1610">
+        <div class="check-line">
+            <div class="check-inline requirement success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Requirement success
+            </div>
+            <div class="check-inline requirement fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Requirement fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline code success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Code success
+            </div>
+            <div class="check-inline code fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Code fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline efficiency success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Efficiency success
+            </div>
+            <div class="check-inline efficiency fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Efficiency fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline answer success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Text answer success
+            </div>
+            <div class="check-inline answer fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Text answer fail
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+
+
+    <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#container-specs-modal"><i aria-hidden="true" class="fa fa-terminal "></i><span>Get a sandbox</span></button>
+
+</div>
+
+    </div>
+
+
+</div>
+
+    </div>
+    <div data-role="task2649" data-position="8" id="task-num-6">
+      <div class="panel panel-default task-card " id="task-2649">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      6. DBStorage - States and Cities
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+
+    <!-- Task Body -->
+    <p>SQLAlchemy will be your best friend!</p>
+
+<p>It’s time to change your storage engine and use <code>SQLAlchemy</code></p>
+
+<p><img src="https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/daaef631636b40e0a279a8f240703e065f9d3481.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20211221%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20211221T161328Z&amp;X-Amz-Expires=86400&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=87ce4077302a9c83e46cd38c2322ce7dbabf056348b624f9f6ecae5e09884fd2" alt="" style=""></p>
+
+<p>In the following steps, you will make multiple changes:</p>
+
+<ul>
+<li>the biggest one is the transition between <code>FileStorage</code> and <code>DBStorage</code>: In the industry, you will never find a system who can work with both in the same time - but you will find a lot of services who can manage multiple storage systems. (for example, logs service: in memory, in disk, in database, in ElasticSearch etc…) - The main concept behind is the <strong>abstraction</strong>: Make your code running without knowing how it’s stored.</li>
+<li>add attributes for SQLAlchemy: they will be class attributes, like previously, with a “weird” value. Don’t worry, these values are for description and mapping to the database. If you change one of these values, or add/remove one attribute of the a model, you will have to delete the database and recreate it in SQL. (Yes it’s not optimal, but for development purposes, it’s ok. In production, we will add “migration mechanism” - for the moment, don’t spend time on it.)</li>
+</ul>
+
+<p>Please follow all these steps:</p>
+
+<p>Update <code>BaseModel</code>: (<code>models/base_model.py</code>)</p>
+
+<ul>
+<li>Create <code>Base = declarative_base()</code> before the class definition of <code>BaseModel</code></li>
+<li><strong>Note! BaseModel does /not/ inherit from Base. All other classes will inherit from BaseModel to get common values (id, <code>created_at</code>, <code>updated_at</code>), where inheriting from Base will actually cause SQLAlchemy to attempt to map it to a table.</strong></li>
+<li>Add or replace in the class <code>BaseModel</code>:
+
+<ul>
+<li>class attribute <code>id</code>
+
+<ul>
+<li>represents a column containing a unique string (60 characters)</li>
+<li>can’t be null</li>
+<li>primary key</li>
+</ul></li>
+<li>class attribute <code>created_at</code>
+
+<ul>
+<li>represents a column containing a datetime</li>
+<li>can’t be null</li>
+<li>default value is the current datetime (use <code>datetime.utcnow()</code>)</li>
+</ul></li>
+<li>class attribute <code>updated_at</code>
+
+<ul>
+<li>represents a column containing a datetime</li>
+<li>can’t be null</li>
+<li>default value is the current datetime (use <code>datetime.utcnow()</code>)</li>
+</ul></li>
+</ul></li>
+<li>Move the <code>models.storage.new(self)</code> from <code>def __init__(self, *args, **kwargs):</code> to <code>def save(self):</code> and call it just before <code>models.storage.save()</code></li>
+<li>In <code>def __init__(self, *args, **kwargs):</code>, manage <code>kwargs</code> to create instance attribute from this dictionary. Ex: <code>kwargs={ 'name': "California" }</code> =&gt; <code>self.name = "California"</code> if it’s not already the case</li>
+<li>Update the <code>to_dict()</code> method of the class <code>BaseModel</code>:
+
+<ul>
+<li>remove the key <code>_sa_instance_state</code> from the dictionary returned by this method <strong>only if this key exists</strong></li>
+</ul></li>
+<li>Add a new public instance method: <code>def delete(self):</code> to delete the current instance from the storage (<code>models.storage</code>) by calling the method <code>delete</code> </li>
+</ul>
+
+<p>Update <code>City</code>: (<code>models/city.py</code>)</p>
+
+<ul>
+<li><code>City</code> inherits from <code>BaseModel</code> and <code>Base</code> (respect the order)</li>
+<li>Add or replace in the class <code>City</code>:
+
+<ul>
+<li>class attribute <code>__tablename__</code> -
+
+<ul>
+<li>represents the table name, <code>cities</code></li>
+</ul></li>
+<li>class attribute <code>name</code>
+
+<ul>
+<li>represents a column containing a string (128 characters)</li>
+<li>can’t be null</li>
+</ul></li>
+<li>class attribute <code>state_id</code>
+
+<ul>
+<li>represents a column containing a string (60 characters)</li>
+<li>can’t be null</li>
+<li>is a foreign key to <code>states.id</code></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p>Update <code>State</code>: (<code>models/state.py</code>)</p>
+
+<ul>
+<li><code>State</code> inherits from <code>BaseModel</code> and <code>Base</code> (respect the order)</li>
+<li>Add or replace in the class <code>State</code>:
+
+<ul>
+<li>class attribute <code>__tablename__</code>
+
+<ul>
+<li>represents the table name, <code>states</code></li>
+</ul></li>
+<li>class attribute <code>name</code>
+
+<ul>
+<li>represents a column containing a string (128 characters)</li>
+<li>can’t be null</li>
+</ul></li>
+<li>for <code>DBStorage</code>: class attribute <code>cities</code> must represent a relationship with the class <code>City</code>. If the <code>State</code> object is deleted, all linked <code>City</code> objects must be automatically deleted. Also, the reference from a <code>City</code> object to his <code>State</code> should be named <code>state</code></li>
+<li>for <code>FileStorage</code>: getter attribute <code>cities</code> that returns the list of <code>City</code> instances with <code>state_id</code> equals to the current <code>State.id</code> =&gt; It will be the <code>FileStorage</code> relationship between <code>State</code> and <code>City</code></li>
+</ul></li>
+</ul>
+
+<p>New engine <code>DBStorage</code>: (<code>models/engine/db_storage.py</code>)</p>
+
+<ul>
+<li>Private class attributes:
+
+<ul>
+<li><code>__engine</code>: set to <code>None</code></li>
+<li><code>__session</code>: set to <code>None</code></li>
+</ul></li>
+<li>Public instance methods:
+
+<ul>
+<li><code>__init__(self):</code>
+
+<ul>
+<li>create the engine (<code>self.__engine</code>)</li>
+<li>the engine must be linked to the MySQL database and user created before (<code>hbnb_dev</code> and <code>hbnb_dev_db</code>):
+
+<ul>
+<li>dialect: <code>mysql</code></li>
+<li>driver: <code>mysqldb</code></li>
+</ul></li>
+<li>all of the following values must be retrieved via environment variables:
+
+<ul>
+<li>MySQL user: <code>HBNB_MYSQL_USER</code></li>
+<li>MySQL password: <code>HBNB_MYSQL_PWD</code></li>
+<li>MySQL host: <code>HBNB_MYSQL_HOST</code> (here = <code>localhost</code>)</li>
+<li>MySQL database: <code>HBNB_MYSQL_DB</code></li>
+</ul></li>
+<li>don’t forget the option <code>pool_pre_ping=True</code> when you call <code>create_engine</code></li>
+<li>drop all tables if the environment variable <code>HBNB_ENV</code> is equal to <code>test</code></li>
+</ul></li>
+<li><code>all(self, cls=None)</code>:
+
+<ul>
+<li>query on the current database session (<code>self.__session</code>) all objects depending of the class name (argument <code>cls</code>)</li>
+<li>if <code>cls=None</code>, query all types of objects (<code>User</code>, <code>State</code>, <code>City</code>, <code>Amenity</code>, <code>Place</code> and <code>Review</code>)</li>
+<li>this method must return a dictionary: (like <code>FileStorage</code>)
+
+<ul>
+<li>key = <code>&lt;class-name&gt;.&lt;object-id&gt;</code></li>
+<li>value = object</li>
+</ul></li>
+</ul></li>
+<li><code>new(self, obj)</code>: add the object to the current database session (<code>self.__session</code>)</li>
+<li><code>save(self)</code>: commit all changes of the current database session (<code>self.__session</code>)</li>
+<li><code>delete(self, obj=None)</code>: delete from the current database session <code>obj</code> if not <code>None</code></li>
+<li><code>reload(self)</code>:
+
+<ul>
+<li>create all tables in the database (feature of SQLAlchemy) (WARNING: all classes who inherit from <code>Base</code> must be imported before calling <code>Base.metadata.create_all(engine)</code>)</li>
+<li>create the current database session (<code>self.__session</code>) from the engine (<code>self.__engine</code>) by using a <a href="https://alx-intranet.hbtn.io/rltoken/FhKkGICnmM0DN4TrlfJw3g" title="sessionmaker" target="_blank">sessionmaker</a> - the option <code>expire_on_commit</code> must be set to <code>False</code> ; and <a href="https://alx-intranet.hbtn.io/rltoken/kSil6Cs0L7bWTXNJTrk9yw" title="scoped_session" target="_blank">scoped_session</a> - to make sure your Session is thread-safe</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p>Update <code>__init__.py</code>: (<code>models/__init__.py</code>)</p>
+
+<ul>
+<li>Add a conditional depending of the value of the environment variable <code>HBNB_TYPE_STORAGE</code>:
+
+<ul>
+<li>If equal to <code>db</code>:
+
+<ul>
+<li>Import <code>DBStorage</code> class in this file</li>
+<li>Create an instance of <code>DBStorage</code> and store it in the variable <code>storage</code> (the line <code>storage.reload()</code> should be executed after this instantiation)</li>
+</ul></li>
+<li>Else:
+
+<ul>
+<li>Import <code>FileStorage</code> class in this file</li>
+<li>Create an instance of <code>FileStorage</code> and store it in the variable <code>storage</code> (the line <code>storage.reload()</code> should be executed after this instantiation)</li>
+</ul></li>
+</ul></li>
+<li>This “switch” will allow you to change storage type directly by using an environment variable (example below)</li>
+</ul>
+
+<p>State creation:</p>
+
+<pre><code>guillaume@ubuntu:~/AirBnB_v2$ echo 'create State name="California"' | HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db ./console.py 
+(hbnb) 95a5abab-aa65-4861-9bc6-1da4a36069aa
+(hbnb)
+guillaume@ubuntu:~/AirBnB_v2$ 
+guillaume@ubuntu:~/AirBnB_v2$ echo 'all State' | HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db ./console.py 
+(hbnb) [[State] (95a5abab-aa65-4861-9bc6-1da4a36069aa) {'name': 'California', 'id': '95a5abab-aa65-4861-9bc6-1da4a36069aa', 'updated_at': datetime.datetime(2017, 11, 10, 0, 49, 54), 'created_at': datetime.datetime(2017, 11, 10, 0, 49, 54)}]
+(hbnb)
+guillaume@ubuntu:~/AirBnB_v2$ 
+guillaume@ubuntu:~/AirBnB_v2$ echo 'SELECT * FROM states\G' | mysql -uhbnb_dev -p hbnb_dev_db
+Enter password: 
+*************************** 1. row ***************************
+        id: 95a5abab-aa65-4861-9bc6-1da4a36069aa
+created_at: 2017-11-10 00:49:54
+updated_at: 2017-11-10 00:49:54
+      name: California
+guillaume@ubuntu:~/AirBnB_v2$ 
+</code></pre>
+
+<p>City creation:</p>
+
+<pre><code>guillaume@ubuntu:~/AirBnB_v2$ echo 'create City state_id="95a5abab-aa65-4861-9bc6-1da4a36069aa" name="San_Francisco"' | HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db ./console.py
+(hbnb) 4b457e66-c7c8-4f63-910f-fd91c3b7140b
+(hbnb)
+guillaume@ubuntu:~/AirBnB_v2$ 
+guillaume@ubuntu:~/AirBnB_v2$ echo 'all City' | HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db ./console.py 
+(hbnb) [[City] (4b457e66-c7c8-4f63-910f-fd91c3b7140b) {'id': '4b457e66-c7c8-4f63-910f-fd91c3b7140b', 'updated_at': datetime.datetime(2017, 11, 10, 0, 52, 53), 'state_id': '95a5abab-aa65-4861-9bc6-1da4a36069aa', 'name': 'San Francisco', 'created_at': datetime.datetime(2017, 11, 10, 0, 52, 53)]
+(hbnb)
+guillaume@ubuntu:~/AirBnB_v2$ 
+</code></pre>
+
+<pre><code>guillaume@ubuntu:~/AirBnB_v2$ echo 'create City state_id="95a5abab-aa65-4861-9bc6-1da4a36069aa" name="San_Jose"' | HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db ./console.py
+(hbnb) a7db3cdc-30e0-4d80-ad8c-679fe45343ba
+(hbnb)
+guillaume@ubuntu:~/AirBnB_v2$ 
+guillaume@ubuntu:~/AirBnB_v2$ echo 'SELECT * FROM cities\G' | mysql -uhbnb_dev -p hbnb_dev_db
+Enter password: 
+*************************** 1. row ***************************
+        id: 4b457e66-c7c8-4f63-910f-fd91c3b7140b
+created_at: 2017-11-10 00:52:53
+updated_at: 2017-11-10 00:52:53
+      name: San Francisco
+  state_id: 95a5abab-aa65-4861-9bc6-1da4a36069aa
+*************************** 2. row ***************************
+        id: a7db3cdc-30e0-4d80-ad8c-679fe45343ba
+created_at: 2017-11-10 00:53:19
+updated_at: 2017-11-10 00:53:19
+      name: San Jose
+  state_id: 95a5abab-aa65-4861-9bc6-1da4a36069aa
+guillaume@ubuntu:~/AirBnB_v2$ 
+</code></pre>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+      <div class="list-group-item">
+        <p><strong>Repo:</strong></p>
+        <ul>
+          <li>GitHub repository: <code>AirBnB_clone_v2</code></li>
+            <li>File: <code>models/base_model.py, models/city.py, models/state.py, models/engine/db_storage.py, models/__init__.py</code></li>
+        </ul>
+      </div>
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+
+    <div class="panel-footer">
+      
+<div>
+    <button class="student_task_done btn btn-default btn-sm no" data-task-id="2649">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-sm" data-task-id="2649" data-project-id="289" data-toggle="modal" data-target="#task-2649-users-done-modal">
+      Help
+    </button>
+    <div class="modal fade users-done-modal" id="task-2649-users-done-modal" data-task-id="2649" data-project-id="289">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "6. DBStorage - States and Cities"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+      <button class="btn btn-default btn-sm" data-task-id="2649" data-toggle="modal" data-target="#task-test-correction-2649-correction-modal" id="task-num-6-check-code-btn">
+        Check your code
+      </button>
+      <div class="modal fade task_correction_modal student_modal" id="task-test-correction-2649-correction-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Correction of "6. DBStorage - States and Cities"</h4>
+            </div>
+            <div class="modal-body">
+                <div class="actions">
+                    <center>
+                        <div class="alert alert-info hidden"></div>
+
+                        <button name="button" type="submit" class="btn btn-primary correction_request_test_send" data-task-id="2649">Start a new test</button>
+                        <button class="btn btn-default close-modal hidden" data-dismiss="modal" type="button">Close</button>
+
+                        <div class="spinner" style="display: none;">
+                            <div class="bounce1"></div>
+                            <div class="bounce2"></div>
+                            <div class="bounce3"></div>
+                        </div>
+                        <div class="error"></div>
+                        <div class="info"></div>
+
+
+                    </center>
+                </div>
+                <div class="result"></div>
+
+                <div class="help">
+    <button data-task-id="2649">
+        <i aria-hidden="true" class="fa fa-info-circle "></i>
+    </button>
+    <div class="help-container" data-task-id="2649">
+        <div class="check-line">
+            <div class="check-inline requirement success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Requirement success
+            </div>
+            <div class="check-inline requirement fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Requirement fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline code success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Code success
+            </div>
+            <div class="check-inline code fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Code fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline efficiency success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Efficiency success
+            </div>
+            <div class="check-inline efficiency fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Efficiency fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline answer success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Text answer success
+            </div>
+            <div class="check-inline answer fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Text answer fail
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+
+
+    
+
+</div>
+
+    </div>
+
+
+</div>
+
+    </div>
+    <div data-role="task2650" data-position="9" id="task-num-7">
+      <div class="panel panel-default task-card " id="task-2650">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      7. DBStorage - User
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+
+    <!-- Task Body -->
+    <p>Update <code>User</code>: (<code>models/user.py</code>)</p>
+
+<ul>
+<li><code>User</code> inherits from <code>BaseModel</code> and <code>Base</code> (respect the order)</li>
+<li>Add or replace in the class <code>User</code>:
+
+<ul>
+<li>class attribute <code>__tablename__</code>
+
+<ul>
+<li>represents the table name, <code>users</code></li>
+</ul></li>
+<li>class attribute <code>email</code>
+
+<ul>
+<li>represents a column containing a string (128 characters) </li>
+<li>can’t be null</li>
+</ul></li>
+<li>class attribute <code>password</code>
+
+<ul>
+<li>represents a column containing a string (128 characters) </li>
+<li>can’t be null</li>
+</ul></li>
+<li>class attribute <code>first_name</code>
+
+<ul>
+<li>represents a column containing a string (128 characters) </li>
+<li>can be null</li>
+</ul></li>
+<li>class attribute <code>last_name</code>
+
+<ul>
+<li>represents a column containing a string (128 characters) </li>
+<li>can be null</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<pre><code>guillaume@ubuntu:~/AirBnB_v2$ echo 'create User email="gui@hbtn.io" password="guipwd" first_name="Guillaume" last_name="Snow"' | HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db ./console.py 
+(hbnb) 4f3f4b42-a4c3-4c20-a492-efff10d00c0b
+(hbnb) 
+guillaume@ubuntu:~/AirBnB_v2$
+guillaume@ubuntu:~/AirBnB_v2$ echo 'all User' | HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db ./console.py 
+(hbnb) [[User] (4f3f4b42-a4c3-4c20-a492-efff10d00c0b) {'updated_at': datetime.datetime(2017, 11, 10, 1, 17, 26), 'id': '4f3f4b42-a4c3-4c20-a492-efff10d00c0b', 'last_name': 'Snow', 'first_name': 'Guillaume', 'email': 'gui@hbtn.io', 'created_at': datetime.datetime(2017, 11, 10, 1, 17, 26), 'password': 'f4ce007d8e84e0910fbdd7a06fa1692d'}]
+(hbnb) 
+guillaume@ubuntu:~/AirBnB_v2$
+guillaume@ubuntu:~/AirBnB_v2$ echo 'SELECT * FROM users\G' | mysql -uhbnb_dev -p hbnb_dev_db
+Enter password: 
+*************************** 1. row ***************************
+        id: 4f3f4b42-a4c3-4c20-a492-efff10d00c0b
+created_at: 2017-11-10 01:17:26
+updated_at: 2017-11-10 01:17:26
+     email: gui@hbtn.io
+  password: guipwd
+first_name: Guillaume
+ last_name: Snow
+guillaume@ubuntu:~/AirBnB_v2$
+</code></pre>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+      <div class="list-group-item">
+        <p><strong>Repo:</strong></p>
+        <ul>
+          <li>GitHub repository: <code>AirBnB_clone_v2</code></li>
+            <li>File: <code>models/user.py</code></li>
+        </ul>
+      </div>
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+
+    <div class="panel-footer">
+      
+<div>
+    <button class="student_task_done btn btn-default btn-sm no" data-task-id="2650">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-sm" data-task-id="2650" data-project-id="289" data-toggle="modal" data-target="#task-2650-users-done-modal">
+      Help
+    </button>
+    <div class="modal fade users-done-modal" id="task-2650-users-done-modal" data-task-id="2650" data-project-id="289">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "7. DBStorage - User"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+      <button class="btn btn-default btn-sm" data-task-id="2650" data-toggle="modal" data-target="#task-test-correction-2650-correction-modal" id="task-num-7-check-code-btn">
+        Check your code
+      </button>
+      <div class="modal fade task_correction_modal student_modal" id="task-test-correction-2650-correction-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Correction of "7. DBStorage - User"</h4>
+            </div>
+            <div class="modal-body">
+                <div class="actions">
+                    <center>
+                        <div class="alert alert-info hidden"></div>
+
+                        <button name="button" type="submit" class="btn btn-primary correction_request_test_send" data-task-id="2650">Start a new test</button>
+                        <button class="btn btn-default close-modal hidden" data-dismiss="modal" type="button">Close</button>
+
+                        <div class="spinner" style="display: none;">
+                            <div class="bounce1"></div>
+                            <div class="bounce2"></div>
+                            <div class="bounce3"></div>
+                        </div>
+                        <div class="error"></div>
+                        <div class="info"></div>
+
+
+                    </center>
+                </div>
+                <div class="result"></div>
+
+                <div class="help">
+    <button data-task-id="2650">
+        <i aria-hidden="true" class="fa fa-info-circle "></i>
+    </button>
+    <div class="help-container" data-task-id="2650">
+        <div class="check-line">
+            <div class="check-inline requirement success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Requirement success
+            </div>
+            <div class="check-inline requirement fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Requirement fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline code success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Code success
+            </div>
+            <div class="check-inline code fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Code fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline efficiency success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Efficiency success
+            </div>
+            <div class="check-inline efficiency fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Efficiency fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline answer success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Text answer success
+            </div>
+            <div class="check-inline answer fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Text answer fail
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+
+
+    
+
+</div>
+
+    </div>
+
+
+</div>
+
+    </div>
+    <div data-role="task2651" data-position="10" id="task-num-8">
+      <div class="panel panel-default task-card " id="task-2651">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      8. DBStorage - Place
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+
+    <!-- Task Body -->
+    <p>Update <code>Place</code>: (<code>models/place.py</code>)</p>
+
+<ul>
+<li><code>Place</code> inherits from <code>BaseModel</code> and <code>Base</code> (respect the order)</li>
+<li>Add or replace in the class <code>Place</code>:
+
+<ul>
+<li>class attribute <code>__tablename__</code> 
+
+<ul>
+<li>represents the table name, <code>places</code></li>
+</ul></li>
+<li>class attribute <code>city_id</code>
+
+<ul>
+<li>represents a column containing a string (60 characters)</li>
+<li>can’t be null </li>
+<li>is a foreign key to <code>cities.id</code></li>
+</ul></li>
+<li>class attribute <code>user_id</code>
+
+<ul>
+<li>represents a column containing a string (60 characters)</li>
+<li>can’t be null</li>
+<li>is a foreign key to <code>users.id</code></li>
+</ul></li>
+<li>class attribute <code>name</code>
+
+<ul>
+<li>represents a column containing a string (128 characters) </li>
+<li>can’t be null</li>
+</ul></li>
+<li>class attribute <code>description</code>
+
+<ul>
+<li>represents a column containing a string (1024 characters) </li>
+<li>can be null</li>
+</ul></li>
+<li>class attribute <code>number_rooms</code>
+
+<ul>
+<li>represents a column containing an integer</li>
+<li>can’t be null </li>
+<li>default value: <code>0</code></li>
+</ul></li>
+<li>class attribute <code>number_bathrooms</code>
+
+<ul>
+<li>represents a column containing an integer</li>
+<li>can’t be null </li>
+<li>default value: <code>0</code></li>
+</ul></li>
+<li>class attribute <code>max_guest</code>
+
+<ul>
+<li>represents a column containing an integer</li>
+<li>can’t be null</li>
+<li>default value: <code>0</code></li>
+</ul></li>
+<li>class attribute <code>price_by_night</code>
+
+<ul>
+<li>represents a column containing an integer</li>
+<li>can’t be null</li>
+<li>default value: <code>0</code></li>
+</ul></li>
+<li>class attribute <code>latitude</code>
+
+<ul>
+<li>represents a column containing a float </li>
+<li>can be null</li>
+</ul></li>
+<li>class attribute <code>longitude</code>
+
+<ul>
+<li>represents a column containing a float</li>
+<li>can be null</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p>Update <code>User</code>: (<code>models/user.py</code>)</p>
+
+<ul>
+<li>Add or replace in the class <code>User</code>:
+
+<ul>
+<li>class attribute <code>places</code> must represent a relationship with the class <code>Place</code>. If the <code>User</code> object is deleted, all linked <code>Place</code> objects must be automatically deleted. Also, the reference from a <code>Place</code> object to his <code>User</code> should be named <code>user</code></li>
+</ul></li>
+</ul>
+
+<p>Update <code>City</code>: (<code>models/city.py</code>)</p>
+
+<ul>
+<li>Add or replace in the class <code>City</code>:
+
+<ul>
+<li>class attribute <code>places</code> must represent a relationship with the class <code>Place</code>. If the <code>City</code> object is deleted, all linked <code>Place</code> objects must be automatically deleted. Also, the reference from a <code>Place</code> object to his <code>City</code> should be named <code>cities</code></li>
+</ul></li>
+</ul>
+
+<pre><code>guillaume@ubuntu:~/AirBnB_v2$ echo 'create Place city_id="4b457e66-c7c8-4f63-910f-fd91c3b7140b" user_id="4f3f4b42-a4c3-4c20-a492-efff10d00c0b" name="Lovely_place" number_rooms=3 number_bathrooms=1 max_guest=6 price_by_night=120 latitude=37.773972 longitude=-122.431297' | HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db ./console.py 
+(hbnb) ed72aa02-3286-4891-acbc-9d9fc80a1103
+(hbnb) 
+guillaume@ubuntu:~/AirBnB_v2$ 
+guillaume@ubuntu:~/AirBnB_v2$ echo 'all Place' | HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db ./console.py 
+(hbnb) [[Place] (ed72aa02-3286-4891-acbc-9d9fc80a1103) {'latitude': 37.774, 'city_id': '4b457e66-c7c8-4f63-910f-fd91c3b7140b', 'price_by_night': 120, 'id': 'ed72aa02-3286-4891-acbc-9d9fc80a1103', 'user_id': '4f3f4b42-a4c3-4c20-a492-efff10d00c0b', 'max_guest': 6, 'created_at': datetime.datetime(2017, 11, 10, 1, 22, 30), 'description': None, 'number_rooms': 3, 'longitude': -122.431, 'number_bathrooms': 1, 'name': '"Lovely place', 'updated_at': datetime.datetime(2017, 11, 10, 1, 22, 30)}]
+(hbnb) 
+guillaume@ubuntu:~/AirBnB_v2$ 
+guillaume@ubuntu:~/AirBnB_v2$ echo 'SELECT * FROM places\G' | mysql -uhbnb_dev -p hbnb_dev_db
+Enter password: 
+*************************** 1. row ***************************
+              id: ed72aa02-3286-4891-acbc-9d9fc80a1103
+      created_at: 2017-11-10 01:22:30
+      updated_at: 2017-11-10 01:22:30
+         city_id: 4b457e66-c7c8-4f63-910f-fd91c3b7140b
+         user_id: 4f3f4b42-a4c3-4c20-a492-efff10d00c0b
+            name: "Lovely place"
+     description: NULL
+    number_rooms: 3
+number_bathrooms: 1
+       max_guest: 6
+  price_by_night: 120
+        latitude: 37.774
+       longitude: -122.431
+guillaume@ubuntu:~/AirBnB_v2$ 
+</code></pre>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+      <div class="list-group-item">
+        <p><strong>Repo:</strong></p>
+        <ul>
+          <li>GitHub repository: <code>AirBnB_clone_v2</code></li>
+            <li>File: <code>models/place.py, models/user.py, models/city.py</code></li>
+        </ul>
+      </div>
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+
+    <div class="panel-footer">
+      
+<div>
+    <button class="student_task_done btn btn-default btn-sm no" data-task-id="2651">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-sm" data-task-id="2651" data-project-id="289" data-toggle="modal" data-target="#task-2651-users-done-modal">
+      Help
+    </button>
+    <div class="modal fade users-done-modal" id="task-2651-users-done-modal" data-task-id="2651" data-project-id="289">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "8. DBStorage - Place"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+      <button class="btn btn-default btn-sm" data-task-id="2651" data-toggle="modal" data-target="#task-test-correction-2651-correction-modal" id="task-num-8-check-code-btn">
+        Check your code
+      </button>
+      <div class="modal fade task_correction_modal student_modal" id="task-test-correction-2651-correction-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Correction of "8. DBStorage - Place"</h4>
+            </div>
+            <div class="modal-body">
+                <div class="actions">
+                    <center>
+                        <div class="alert alert-info hidden"></div>
+
+                        <button name="button" type="submit" class="btn btn-primary correction_request_test_send" data-task-id="2651">Start a new test</button>
+                        <button class="btn btn-default close-modal hidden" data-dismiss="modal" type="button">Close</button>
+
+                        <div class="spinner" style="display: none;">
+                            <div class="bounce1"></div>
+                            <div class="bounce2"></div>
+                            <div class="bounce3"></div>
+                        </div>
+                        <div class="error"></div>
+                        <div class="info"></div>
+
+
+                    </center>
+                </div>
+                <div class="result"></div>
+
+                <div class="help">
+    <button data-task-id="2651">
+        <i aria-hidden="true" class="fa fa-info-circle "></i>
+    </button>
+    <div class="help-container" data-task-id="2651">
+        <div class="check-line">
+            <div class="check-inline requirement success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Requirement success
+            </div>
+            <div class="check-inline requirement fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Requirement fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline code success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Code success
+            </div>
+            <div class="check-inline code fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Code fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline efficiency success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Efficiency success
+            </div>
+            <div class="check-inline efficiency fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Efficiency fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline answer success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Text answer success
+            </div>
+            <div class="check-inline answer fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Text answer fail
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+
+
+    
+
+</div>
+
+    </div>
+
+
+</div>
+
+    </div>
+    <div data-role="task2652" data-position="11" id="task-num-9">
+      <div class="panel panel-default task-card " id="task-2652">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      9. DBStorage - Review
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+
+    <!-- Task Body -->
+    <p>Update <code>Review</code>: (<code>models/review.py</code>)</p>
+
+<ul>
+<li><code>Review</code> inherits from <code>BaseModel</code> and <code>Base</code> (respect the order)</li>
+<li>Add or replace in the class <code>Review</code>:
+
+<ul>
+<li>class attribute <code>__tablename__</code>
+
+<ul>
+<li>represents the table name,  <code>reviews</code></li>
+</ul></li>
+<li>class attribute <code>text</code>
+
+<ul>
+<li>represents a column containing a string (1024 characters)</li>
+<li>can’t be null</li>
+</ul></li>
+<li>class attribute <code>place_id</code>
+
+<ul>
+<li>represents a column containing a string (60 characters)</li>
+<li>can’t be null</li>
+<li>is a foreign key to <code>places.id</code></li>
+</ul></li>
+<li>class attribute <code>user_id</code>
+
+<ul>
+<li>represents a column containing a string (60 characters)</li>
+<li>can’t be null</li>
+<li>is a foreign key to <code>users.id</code></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p>Update <code>User</code>: (<code>models/user.py</code>)</p>
+
+<ul>
+<li>Add or replace in the class <code>User</code>:
+
+<ul>
+<li>class attribute <code>reviews</code> must represent a relationship with the class <code>Review</code>. If the <code>User</code> object is deleted, all linked <code>Review</code> objects must be automatically deleted. Also, the reference from a <code>Review</code> object to his <code>User</code> should be named <code>user</code></li>
+</ul></li>
+</ul>
+
+<p>Update <code>Place</code>: (<code>models/place.py</code>)</p>
+
+<ul>
+<li>for <code>DBStorage</code>: class attribute <code>reviews</code> must represent a relationship with the class <code>Review</code>. If the <code>Place</code> object is deleted, all linked <code>Review</code> objects must be automatically deleted. Also, the reference from a <code>Review</code> object to his <code>Place</code> should be named <code>place</code></li>
+<li>for <code>FileStorage</code>: getter attribute <code>reviews</code> that returns the list of <code>Review</code> instances with <code>place_id</code> equals to the current <code>Place.id</code> =&gt; It will be the <code>FileStorage</code> relationship between <code>Place</code> and <code>Review</code></li>
+</ul>
+
+<pre><code>guillaume@ubuntu:~/AirBnB_v2$ 
+guillaume@ubuntu:~/AirBnB_v2$ echo 'create User email="bob@hbtn.io" password="bobpwd" first_name="Bob" last_name="Dylan"' | HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db ./console.py 
+(hbnb) d93638d9-8233-4124-8f4e-17786592908b
+(hbnb) 
+guillaume@ubuntu:~/AirBnB_v2$ 
+guillaume@ubuntu:~/AirBnB_v2$ echo 'create Review place_id="ed72aa02-3286-4891-acbc-9d9fc80a1103" user_id="d93638d9-8233-4124-8f4e-17786592908b" text="Amazing_place,_huge_kitchen"' | HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db ./console.py 
+(hbnb) a2d163d3-1982-48ab-a06b-9dc71e68a791
+(hbnb) 
+guillaume@ubuntu:~/AirBnB_v2$ 
+guillaume@ubuntu:~/AirBnB_v2$ echo 'all Review' | HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db ./console.py 
+(hbnb) [[Review] (f2616ff2-f723-4d67-85dc-f050a38e0f2f) {'text': 'Amazing place, huge kitchen', 'place_id': 'ed72aa02-3286-4891-acbc-9d9fc80a1103', 'id': 'f2616ff2-f723-4d67-85dc-f050a38e0f2f', 'updated_at': datetime.datetime(2017, 11, 10, 4, 6, 25), 'created_at': datetime.datetime(2017, 11, 10, 4, 6, 25), 'user_id': 'd93638d9-8233-4124-8f4e-17786592908b'}]
+(hbnb) 
+guillaume@ubuntu:~/AirBnB_v2$ 
+guillaume@ubuntu:~/AirBnB_v2$ echo 'SELECT * FROM reviews\G' | mysql -uhbnb_dev -p hbnb_dev_db
+Enter password: 
+*************************** 1. row ***************************
+        id: f2616ff2-f723-4d67-85dc-f050a38e0f2f
+created_at: 2017-11-10 04:06:25
+updated_at: 2017-11-10 04:06:25
+      text: Amazing place, huge kitchen
+  place_id: ed72aa02-3286-4891-acbc-9d9fc80a1103
+   user_id: d93638d9-8233-4124-8f4e-17786592908b
+guillaume@ubuntu:~/AirBnB_v2$ 
+</code></pre>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+      <div class="list-group-item">
+        <p><strong>Repo:</strong></p>
+        <ul>
+          <li>GitHub repository: <code>AirBnB_clone_v2</code></li>
+            <li>File: <code>models/review.py, models/user.py, models/place.py</code></li>
+        </ul>
+      </div>
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+
+    <div class="panel-footer">
+      
+<div>
+    <button class="student_task_done btn btn-default btn-sm no" data-task-id="2652">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-sm" data-task-id="2652" data-project-id="289" data-toggle="modal" data-target="#task-2652-users-done-modal">
+      Help
+    </button>
+    <div class="modal fade users-done-modal" id="task-2652-users-done-modal" data-task-id="2652" data-project-id="289">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "9. DBStorage - Review"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+      <button class="btn btn-default btn-sm" data-task-id="2652" data-toggle="modal" data-target="#task-test-correction-2652-correction-modal" id="task-num-9-check-code-btn">
+        Check your code
+      </button>
+      <div class="modal fade task_correction_modal student_modal" id="task-test-correction-2652-correction-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Correction of "9. DBStorage - Review"</h4>
+            </div>
+            <div class="modal-body">
+                <div class="actions">
+                    <center>
+                        <div class="alert alert-info hidden"></div>
+
+                        <button name="button" type="submit" class="btn btn-primary correction_request_test_send" data-task-id="2652">Start a new test</button>
+                        <button class="btn btn-default close-modal hidden" data-dismiss="modal" type="button">Close</button>
+
+                        <div class="spinner" style="display: none;">
+                            <div class="bounce1"></div>
+                            <div class="bounce2"></div>
+                            <div class="bounce3"></div>
+                        </div>
+                        <div class="error"></div>
+                        <div class="info"></div>
+
+
+                    </center>
+                </div>
+                <div class="result"></div>
+
+                <div class="help">
+    <button data-task-id="2652">
+        <i aria-hidden="true" class="fa fa-info-circle "></i>
+    </button>
+    <div class="help-container" data-task-id="2652">
+        <div class="check-line">
+            <div class="check-inline requirement success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Requirement success
+            </div>
+            <div class="check-inline requirement fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Requirement fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline code success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Code success
+            </div>
+            <div class="check-inline code fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Code fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline efficiency success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Efficiency success
+            </div>
+            <div class="check-inline efficiency fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Efficiency fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline answer success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Text answer success
+            </div>
+            <div class="check-inline answer fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Text answer fail
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+
+
+    
+
+</div>
+
+    </div>
+
+
+</div>
+
+    </div>
+    <div data-role="task2653" data-position="12" id="task-num-10">
+      <div class="panel panel-default task-card " id="task-2653">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      10. DBStorage - Amenity... and BOOM!
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+
+    <!-- Task Body -->
+    <p>Update <code>Amenity</code>: (<code>models/amenity.py</code>)</p>
+
+<ul>
+<li><code>Amenity</code> inherits from <code>BaseModel</code> and <code>Base</code> (respect the order)</li>
+<li>Add or replace in the class <code>Amenity</code>:
+
+<ul>
+<li>class attribute <code>__tablename__</code>
+
+<ul>
+<li>represents the table name, <code>amenities</code></li>
+</ul></li>
+<li>class attribute <code>name</code>
+
+<ul>
+<li>represents a column containing a string (128 characters)</li>
+<li>can’t be null</li>
+</ul></li>
+<li>class attribute <code>place_amenities</code> must represent a relationship <a href="https://alx-intranet.hbtn.io/rltoken/LiU5umFamh-YbwWkgd8kNw" title="Many-To-Many" target="_blank">Many-To-Many</a> between the class <code>Place</code> and <code>Amenity</code>. Please see below more detail: <code>place_amenity</code> in the <code>Place</code> update</li>
+</ul></li>
+</ul>
+
+<p>Update <code>Place</code>: (<code>models/place.py</code>)</p>
+
+<ul>
+<li>Add an instance of <a href="https://alx-intranet.hbtn.io/rltoken/Pngd-iHVu-kUMyq5VaC9PQ" title="SQLAlchemy Table" target="_blank">SQLAlchemy Table</a> called <code>place_amenity</code> for creating the relationship <a href="https://alx-intranet.hbtn.io/rltoken/LiU5umFamh-YbwWkgd8kNw" title="Many-To-Many" target="_blank">Many-To-Many</a> between <code>Place</code> and <code>Amenity</code>:
+
+<ul>
+<li>table name <code>place_amenity</code></li>
+<li><code>metadata = Base.metadata</code></li>
+<li>2 columns:
+
+<ul>
+<li><code>place_id</code>, a string of 60 characters foreign key of <code>places.id</code>, primary key in the table and never null</li>
+<li><code>amenity_id</code>, a string of 60 characters foreign key of <code>amenities.id</code>, primary key in the table and never null</li>
+</ul></li>
+</ul></li>
+<li>Update <code>Place</code> class:
+
+<ul>
+<li>for <code>DBStorage</code>: class attribute <code>amenities</code> must represent a relationship with the class <code>Amenity</code> but also as <code>secondary</code> to <code>place_amenity</code> with option <code>viewonly=False</code> (<code>place_amenity</code> has been define previously)</li>
+<li>for <code>FileStorage</code>: 
+
+<ul>
+<li>Getter attribute <code>amenities</code> that returns the list of <code>Amenity</code> instances based on the attribute <code>amenity_ids</code> that contains all <code>Amenity.id</code> linked to the <code>Place</code></li>
+<li>Setter attribute <code>amenities</code> that handles <code>append</code> method for adding an <code>Amenity.id</code> to the attribute <code>amenity_ids</code>. This method should accept only <code>Amenity</code> object, otherwise, do nothing.</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h3>What’s a <code>Many-to-Many</code> relationship?</h3>
+
+<p>In our system, we don’t want to duplicate amenities (for example, having 10000 time the amenity <code>Wifi</code>), so they will be unique. But, at least 2 places can have the same amenity (like <code>Wifi</code> for example). 
+We are in the case of:</p>
+
+<ul>
+<li>an amenity can be linked to multiple places</li>
+<li>a place can have multiple amenities</li>
+</ul>
+
+<p>= <code>Many-To-Many</code></p>
+
+<p>To make this link working, we will create a third table called <code>place_amenity</code> that will create these links.</p>
+
+<p>And you are good, you have a new engine!</p>
+
+<pre><code>guillaume@ubuntu:~/AirBnB_v2$ cat main_place_amenities.py 
+#!/usr/bin/python3
+""" Test link Many-To-Many Place &lt;&gt; Amenity
+"""
+from models import *
+
+# creation of a State
+state = State(name="California")
+state.save()
+
+# creation of a City
+city = City(state_id=state.id, name="San Francisco")
+city.save()
+
+# creation of a User
+user = User(email="john@snow.com", password="johnpwd")
+user.save()
+
+# creation of 2 Places
+place_1 = Place(user_id=user.id, city_id=city.id, name="House 1")
+place_1.save()
+place_2 = Place(user_id=user.id, city_id=city.id, name="House 2")
+place_2.save()
+
+# creation of 3 various Amenity
+amenity_1 = Amenity(name="Wifi")
+amenity_1.save()
+amenity_2 = Amenity(name="Cable")
+amenity_2.save()
+amenity_3 = Amenity(name="Oven")
+amenity_3.save()
+
+# link place_1 with 2 amenities
+place_1.amenities.append(amenity_1)
+place_1.amenities.append(amenity_2)
+
+# link place_2 with 3 amenities
+place_2.amenities.append(amenity_1)
+place_2.amenities.append(amenity_2)
+place_2.amenities.append(amenity_3)
+
+storage.save()
+
+print("OK")
+
+guillaume@ubuntu:~/AirBnB_v2$ 
+guillaume@ubuntu:~/AirBnB_v2$ HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db ./main_place_amenities.py
+OK
+guillaume@ubuntu:~/AirBnB_v2$ 
+guillaume@ubuntu:~/AirBnB_v2$ echo 'SELECT * FROM amenities\G' | mysql -uhbnb_dev -p hbnb_dev_db
+Enter password: 
+*************************** 1. row ***************************
+        id: 47321eb8-152a-46df-969a-440aa67a6d59
+created_at: 2017-11-10 04:22:02
+updated_at: 2017-11-10 04:22:02
+      name: Cable
+*************************** 2. row ***************************
+        id: 4a307e7f-68f9-438f-81c0-8325898dda2a
+created_at: 2017-11-10 04:22:02
+updated_at: 2017-11-10 04:22:02
+      name: Oven
+*************************** 3. row ***************************
+        id: b80aec52-d0c9-420a-8471-3254572954b6
+created_at: 2017-11-10 04:22:02
+updated_at: 2017-11-10 04:22:02
+      name: Wifi
+guillaume@ubuntu:~/AirBnB_v2$ 
+guillaume@ubuntu:~/AirBnB_v2$ echo 'SELECT * FROM places\G' | mysql -uhbnb_dev -p hbnb_dev_db
+Enter password: 
+*************************** 1. row ***************************
+              id: 497e3867-d6e9-4401-9c7c-9687c18d2ac7
+      created_at: 2017-11-10 04:22:02
+      updated_at: 2017-11-10 04:22:02
+         city_id: 9d60df6e-31f7-430c-8162-69e89f4a17aa
+         user_id: 9b37bd51-6aef-485f-bf10-c7ab83fea2e9
+            name: House 1
+     description: NULL
+    number_rooms: 0
+number_bathrooms: 0
+       max_guest: 0
+  price_by_night: 0
+        latitude: NULL
+       longitude: NULL
+*************************** 2. row ***************************
+              id: db549ae1-4500-4d0c-9b50-4b4978ed229e
+      created_at: 2017-11-10 04:22:02
+      updated_at: 2017-11-10 04:22:02
+         city_id: 9d60df6e-31f7-430c-8162-69e89f4a17aa
+         user_id: 9b37bd51-6aef-485f-bf10-c7ab83fea2e9
+            name: House 2
+     description: NULL
+    number_rooms: 0
+number_bathrooms: 0
+       max_guest: 0
+  price_by_night: 0
+        latitude: NULL
+       longitude: NULL
+guillaume@ubuntu:~/AirBnB_v2$ 
+guillaume@ubuntu:~/AirBnB_v2$ echo 'SELECT * FROM place_amenity\G' | mysql -uhbnb_dev -p hbnb_dev_db
+Enter password: 
+*************************** 1. row ***************************
+  place_id: 497e3867-d6e9-4401-9c7c-9687c18d2ac7
+amenity_id: 47321eb8-152a-46df-969a-440aa67a6d59
+*************************** 2. row ***************************
+  place_id: db549ae1-4500-4d0c-9b50-4b4978ed229e
+amenity_id: 47321eb8-152a-46df-969a-440aa67a6d59
+*************************** 3. row ***************************
+  place_id: db549ae1-4500-4d0c-9b50-4b4978ed229e
+amenity_id: 4a307e7f-68f9-438f-81c0-8325898dda2a
+*************************** 4. row ***************************
+  place_id: 497e3867-d6e9-4401-9c7c-9687c18d2ac7
+amenity_id: b80aec52-d0c9-420a-8471-3254572954b6
+*************************** 5. row ***************************
+  place_id: db549ae1-4500-4d0c-9b50-4b4978ed229e
+amenity_id: b80aec52-d0c9-420a-8471-3254572954b6
+guillaume@ubuntu:~/AirBnB_v2$ 
+</code></pre>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+      <div class="list-group-item">
+        <p><strong>Repo:</strong></p>
+        <ul>
+          <li>GitHub repository: <code>AirBnB_clone_v2</code></li>
+            <li>File: <code>models/amenity.py, models/place.py</code></li>
+        </ul>
+      </div>
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+
+    <div class="panel-footer">
+      
+<div>
+    <button class="student_task_done btn btn-default btn-sm no" data-task-id="2653">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-sm" data-task-id="2653" data-project-id="289" data-toggle="modal" data-target="#task-2653-users-done-modal">
+      Help
+    </button>
+    <div class="modal fade users-done-modal" id="task-2653-users-done-modal" data-task-id="2653" data-project-id="289">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "10. DBStorage - Amenity... and BOOM!"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+      <button class="btn btn-default btn-sm" data-task-id="2653" data-toggle="modal" data-target="#task-test-correction-2653-correction-modal" id="task-num-10-check-code-btn">
+        Check your code
+      </button>
+      <div class="modal fade task_correction_modal student_modal" id="task-test-correction-2653-correction-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Correction of "10. DBStorage - Amenity... and BOOM!"</h4>
+            </div>
+            <div class="modal-body">
+                <div class="actions">
+                    <center>
+                        <div class="alert alert-info hidden"></div>
+
+                        <button name="button" type="submit" class="btn btn-primary correction_request_test_send" data-task-id="2653">Start a new test</button>
+                        <button class="btn btn-default close-modal hidden" data-dismiss="modal" type="button">Close</button>
+
+                        <div class="spinner" style="display: none;">
+                            <div class="bounce1"></div>
+                            <div class="bounce2"></div>
+                            <div class="bounce3"></div>
+                        </div>
+                        <div class="error"></div>
+                        <div class="info"></div>
+
+
+                    </center>
+                </div>
+                <div class="result"></div>
+
+                <div class="help">
+    <button data-task-id="2653">
+        <i aria-hidden="true" class="fa fa-info-circle "></i>
+    </button>
+    <div class="help-container" data-task-id="2653">
+        <div class="check-line">
+            <div class="check-inline requirement success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Requirement success
+            </div>
+            <div class="check-inline requirement fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Requirement fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline code success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Code success
+            </div>
+            <div class="check-inline code fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Code fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline efficiency success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Efficiency success
+            </div>
+            <div class="check-inline efficiency fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Efficiency fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline answer success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Text answer success
+            </div>
+            <div class="check-inline answer fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Text answer fail
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+
+
+    
+
+</div>
+
+    </div>
+
+
+</div>
+
+    </div>
+
+
+
+
+          <div class="modal fade" id="container-specs-modal"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button><h4 class="modal-title">Recommended Sandbox</h4></div><div class="modal-body"><div data-react-class="user_containers/ContainerSpecs" data-react-props="{&quot;containerModelName&quot;:&quot;Sandbox&quot;,&quot;containerSpecs&quot;:[{&quot;description&quot;:&quot;\u003cp\u003eUbuntu 14.04 with all tools needed and Python 3.4\u003c/p\u003e\n&quot;,&quot;id&quot;:5,&quot;name&quot;:&quot;Ubuntu 14.04 - Python 3.4&quot;}],&quot;containersLimit&quot;:3,&quot;csrfToken&quot;:&quot;2NBm8VXAwauPPXbdR+FbVvnhGGaVv7NRIFHlip0Wb5IZXnZ0UMZ78h4NVmRAgWWD1ipseEqPCeSU1ZH6belpdw==&quot;,&quot;startURI&quot;:&quot;/user_containers/start.json&quot;}" data-react-cache-id="user_containers/ContainerSpecs-0"><div><div class="d-flex gap-4 sandboxes-filters"><a class="btn btn-outline-primary"><i aria-hidden="true" class="fa fa-filter"></i><span>Running only</span></a><div class="align-items-center d-flex" style="position: relative; width: 100%;"><input class="form-control" placeholder="Search for an image ..." type="search" value=""></div></div><div class="mt-3"><h3>1 image<small class="ml-2">(0/3 Sandboxes spawned)</small></h3></div><div class="mt-3"><div class="panel panel-default"><div class="panel-body"><div class="align-items-center d-flex flex-wrap justify-content-between"><div><h3 class="mt-0"><i aria-hidden="true" class="fa fa-terminal text-danger"></i><span class="ml-2">Ubuntu 14.04 - Python 3.4</span></h3><div class="mt-2 text-muted"><p>Ubuntu 14.04 with all tools needed and Python 3.4</p>
+</div></div><div class="d-flex flex-wrap gap-5"><a class="btn btn-success"><i aria-hidden="true" class="fa fa-play"></i><span>Run</span></a></div></div></div></div></div></div></div></div></div></div></div>
+
+
+  </div>
+</div>
+
+      </article>
+
+      <div class="copyright">Copyright © 2021 Holberton Inc, All rights reserved.</div>
+    </main>
+
+      <button class="btn btn-primary" id="search-button" data-search-active="false" data-toggle="modal" data-target="#search-modal">
+  <i aria-hidden="true" class="fa fa-search "></i>
+  <i aria-hidden="true" class="fa fa-window-minimize "></i>
+</button>
+
+      <div class="modal fade" id="search-modal" tabindex="-1" role="dialog" aria-labelledby="search-modal-label">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div id="search-bar-container">
+    <input id="search-bar" type="text" name="hbtn-search-bar" placeholder="✨Start search by typing in this field✨">
+</div>
+
+            </div>
+            <div class="modal-body">
+                <div id="modal-spinner" class="spinner gap">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+                <div id="search-results-container">
+</div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+      <div class="modal fade" id="markdownGuideModal" tabindex="-1" role="dialog" aria-labelledby="markdownGuideModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <h4 class="modal-title">Markdown Guide</h4>
+        </div>
+        <div class="modal-body">
+            <h4>Emphasis</h4>
+<pre>**<strong>bold</strong>**
+*<em>italics</em>*
+~~<strike>strikethrough</strike>~~</pre>
+<h4>Headers</h4>
+<pre># Big header
+## Medium header
+### Small header
+#### Tiny header</pre>
+<h4>Lists</h4>
+<pre>* Generic list item
+* Generic list item
+* Generic list item
+
+1. Numbered list item
+2. Numbered list item
+3. Numbered list item</pre>
+<h4>Links</h4>
+<pre>[Text to display](http://www.example.com)</pre>
+<h4>Quotes</h4>
+<pre>&gt; This is a quote.
+&gt; It can span multiple lines!</pre>
+<h4>Images</h4>
+<p>CSS style available: <code>width, height, opacity</code></p>
+<pre>![](http://www.example.com/image.jpg)
+![](http://www.example.com/image.jpg | width: 200px)
+![](http://www.example.com/image.jpg | height: 124px | width: 80px | opacity: 0.6)
+</pre>
+<h4>Tables</h4>
+<pre>| Column 1 | Column 2 | Column 3 |
+| -------- | -------- | -------- |
+| John     | Doe      | Male     |
+| Mary     | Smith    | Female   |
+
+<em>Or without aligning the columns...</em>
+
+| Column 1 | Column 2 | Column 3 |
+| -------- | -------- | -------- |
+| John | Doe | Male |
+| Mary | Smith | Female |
+</pre>
+<h4>Displaying code</h4>
+<pre>`var example = "hello!";`
+
+<em>Or spanning multiple lines...</em>
+
+```
+var example = "hello!";
+alert(example);
+```</pre>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create',
+            'UA-67152800-9',
+            'auto', {
+              userId: '850'
+            }
+          );
+
+        ga('send', 'pageview');
+
+        $(document).ready(function() {
+          ga(function(tracker) {
+            var clientId = tracker.get('clientId');
+            $('.ga-client-id').val(clientId);
+          });
+        });
+      </script>
+
+
+
+
+      
+
+
+  
+
+</body></html>

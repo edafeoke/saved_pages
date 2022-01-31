@@ -1,0 +1,2812 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)https://alx-intranet.hbtn.io/projects/268 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="google" content="notranslate">
+
+    <title>Project: 0x01. AirBnB clone - Web static | ALX Africa Intranet</title>
+
+      <link rel="stylesheet" href="./Project_ 0x01. AirBnB clone - Web static _ ALX Africa Intranet_files/xgz4ilr.css">
+      <link rel="stylesheet" media="all" href="./Project_ 0x01. AirBnB clone - Web static _ ALX Africa Intranet_files/application_alx-f56785f0fa9bdfb7628f322e1fd13d76122694b2557285466441e35c1a25d0ed.css">
+      <script async="" src="./Project_ 0x01. AirBnB clone - Web static _ ALX Africa Intranet_files/analytics.js.download"></script><script src="./Project_ 0x01. AirBnB clone - Web static _ ALX Africa Intranet_files/loader.js.download"></script>
+      <script src="./Project_ 0x01. AirBnB clone - Web static _ ALX Africa Intranet_files/application-b442955773800ac9424f4c462c322354458c86e4596e9df2225ab4e3fc202a47.js.download"></script>
+      <link rel="shortcut icon" type="image/x-icon" href="https://alx-intranet.hbtn.io/favicon_alx.ico">
+      <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="v+Klxh1QN28XMVePr2nTk++GZ2pgOwNL05yDkaJgwcv5fJzhWGw+1EWjXJ9U1W2RSgtolxM27RjlZZ5GdzopNQ==">
+
+      <link rel="apple-touch-icon" href="https://alx-intranet.hbtn.io/apple-touch-icon_alx.png">
+
+      <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+      <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+
+      <!-- Store user timezone -->
+      <script>
+        Cookies.set('timezone', (new Date()).getTimezoneOffset() / -60.0);
+      </script>
+
+      <!-- intro.js for interactive onboarding -->
+
+      <!-- React -->
+      <script src="./Project_ 0x01. AirBnB clone - Web static _ ALX Africa Intranet_files/application-9c00556798d278af41a6.js.download"></script>
+      <link rel="stylesheet" media="screen" href="./Project_ 0x01. AirBnB clone - Web static _ ALX Africa Intranet_files/application-6a50d1fd.css">
+
+  </head>
+
+  <body class="
+    signed_in
+    env_production
+    
+    " translate="no" data-theme-suffix="_alx" data-checker-special-theme="">
+
+      <input type="hidden" id="hbtn-slack-url" value="https://alx-students.slack.com">
+      <nav class="navbar navbar-default navbar-fixed-top topbar visible-xs">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-mobile" aria-expanded="false">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+
+    <a class="navbar-brand" href="https://alx-intranet.hbtn.io/">
+      <div class="logo"></div>
+</a>  </div>
+
+  <div class="collapse navbar-collapse navigation" id="navbar-mobile">
+    <ul class="nav navbar-nav">
+      
+
+
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Planning"><a href="https://alx-intranet.hbtn.io/dashboards/my_planning"><div class="icon "><i aria-hidden="true" class="fa fa-calendar "></i></div><div class="visible-xs">Planning</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-current-projects-item" title="" data-original-title="Projects"><a href="https://alx-intranet.hbtn.io/projects/current"><div class="icon "><i aria-hidden="true" class="fa fa-code-fork "></i></div><div class="visible-xs">Projects</div></a></li>
+    
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="QA Reviews"><a href="https://alx-intranet.hbtn.io/dashboards/corrections_i_can_make"><div class="icon "><i aria-hidden="true" class="fa fa-check "></i></div><div class="visible-xs">QA Reviews</div></a></li>
+    
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Evaluation quizzes"><a href="https://alx-intranet.hbtn.io/dashboards/my_current_evaluation_quizzes"><div class="icon "><i aria-hidden="true" class="fa fa-question "></i></div><div class="visible-xs">Evaluation quizzes</div></a></li>
+
+    <hr title="My resources">
+
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Curriculums"><a href="https://alx-intranet.hbtn.io/dashboards/my_curriculums"><div class="icon "><i aria-hidden="true" class="fa fa-graduation-cap "></i></div><div class="visible-xs">Curriculums</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-concepts-item" title="" data-original-title="Concepts"><a href="https://alx-intranet.hbtn.io/concepts"><div class="icon "><i aria-hidden="true" class="fa fa-file-text "></i></div><div class="visible-xs">Concepts</div></a></li>
+    
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-dashboards-video-rooms" title="" data-original-title="Conference rooms"><a href="https://alx-intranet.hbtn.io/dashboards/video_rooms"><div class="icon "><i aria-hidden="true" class="fa fa-comments "></i></div><div class="visible-xs">Conference rooms</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Servers"><a href="https://alx-intranet.hbtn.io/servers"><div class="icon "><i aria-hidden="true" class="fa fa-server "></i></div><div class="visible-xs">Servers</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-dashboards-my-containers" title="" data-original-title="Sandboxes"><a href="https://alx-intranet.hbtn.io/user_containers/current"><div class="icon "><i aria-hidden="true" class="fa fa-terminal "></i></div><div class="visible-xs">Sandboxes</div></a></li>
+    
+    
+
+      <hr title="My campus">
+
+      
+      <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Peers"><a href="https://alx-intranet.hbtn.io/dashboards/my_peers"><div class="icon "><i aria-hidden="true" class="fa fa-users "></i></div><div class="visible-xs">Peers</div></a></li>
+      <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Captain&#39;s Logs"><a href="https://alx-intranet.hbtn.io/dashboards/my_captain_log"><div class="icon "><i aria-hidden="true" class="fa fa-book "></i></div><div class="visible-xs">Captain's Logs</div></a></li>
+      
+      <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Speakers of the Day"><a href="https://alx-intranet.hbtn.io/dashboards/my_speakers_of_the_day"><div class="icon "><i aria-hidden="true" class="fa fa-microphone "></i></div><div class="visible-xs">Speakers of the Day</div></a></li>
+
+
+<hr class="visible-xs">
+
+<li>
+    <div data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Slack">
+      <a target="_blank" href="https://alx-students.slack.com/">
+        <div class="image slack">
+          <div class="inner"></div>
+        </div>
+        <div class="visible-xs">Slack</div>
+</a>    </div>
+
+  <div data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="My Profile">
+    <a href="https://alx-intranet.hbtn.io/users/my_profile">
+        <div class="image ">
+          <div class="inner" style="background-image: url(&#39;https://s3.amazonaws.com/alx-intranet.hbtn.io/users/photos/000/000/850/thumb/IMG_20190729_142005.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20211118%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20211118T205004Z&amp;X-Amz-Expires=600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=376c33b3c79ad301c48bb38237d2586af501100f6adce474e286af3c354082d9&#39;)"></div>
+        </div>
+
+      <div class="visible-xs">My Profile</div>
+</a>  </div>
+</li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      <div class="hidden-xs navigation sidebar">
+  <a class="logo-container" href="https://alx-intranet.hbtn.io/">
+    <div class="logo"></div>
+</a>
+  <ul>
+    
+
+
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Planning"><a href="https://alx-intranet.hbtn.io/dashboards/my_planning"><div class="icon "><i aria-hidden="true" class="fa fa-calendar "></i></div><div class="visible-xs">Planning</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-current-projects-item" title="" data-original-title="Projects"><a href="https://alx-intranet.hbtn.io/projects/current"><div class="icon "><i aria-hidden="true" class="fa fa-code-fork "></i></div><div class="visible-xs">Projects</div></a></li>
+    
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="QA Reviews"><a href="https://alx-intranet.hbtn.io/dashboards/corrections_i_can_make"><div class="icon "><i aria-hidden="true" class="fa fa-check "></i></div><div class="visible-xs">QA Reviews</div></a></li>
+    
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Evaluation quizzes"><a href="https://alx-intranet.hbtn.io/dashboards/my_current_evaluation_quizzes"><div class="icon "><i aria-hidden="true" class="fa fa-question "></i></div><div class="visible-xs">Evaluation quizzes</div></a></li>
+
+    <hr title="My resources">
+
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Curriculums"><a href="https://alx-intranet.hbtn.io/dashboards/my_curriculums"><div class="icon "><i aria-hidden="true" class="fa fa-graduation-cap "></i></div><div class="visible-xs">Curriculums</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-concepts-item" title="" data-original-title="Concepts"><a href="https://alx-intranet.hbtn.io/concepts"><div class="icon "><i aria-hidden="true" class="fa fa-file-text "></i></div><div class="visible-xs">Concepts</div></a></li>
+    
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-dashboards-video-rooms" title="" data-original-title="Conference rooms"><a href="https://alx-intranet.hbtn.io/dashboards/video_rooms"><div class="icon "><i aria-hidden="true" class="fa fa-comments "></i></div><div class="visible-xs">Conference rooms</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Servers"><a href="https://alx-intranet.hbtn.io/servers"><div class="icon "><i aria-hidden="true" class="fa fa-server "></i></div><div class="visible-xs">Servers</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-dashboards-my-containers" title="" data-original-title="Sandboxes"><a href="https://alx-intranet.hbtn.io/user_containers/current"><div class="icon "><i aria-hidden="true" class="fa fa-terminal "></i></div><div class="visible-xs">Sandboxes</div></a></li>
+    
+    
+
+      <hr title="My campus">
+
+      
+      <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Peers"><a href="https://alx-intranet.hbtn.io/dashboards/my_peers"><div class="icon "><i aria-hidden="true" class="fa fa-users "></i></div><div class="visible-xs">Peers</div></a></li>
+      <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Captain&#39;s Logs"><a href="https://alx-intranet.hbtn.io/dashboards/my_captain_log"><div class="icon "><i aria-hidden="true" class="fa fa-book "></i></div><div class="visible-xs">Captain's Logs</div></a></li>
+      
+      <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Speakers of the Day"><a href="https://alx-intranet.hbtn.io/dashboards/my_speakers_of_the_day"><div class="icon "><i aria-hidden="true" class="fa fa-microphone "></i></div><div class="visible-xs">Speakers of the Day</div></a></li>
+
+
+<hr class="visible-xs">
+
+<li>
+    <div data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Slack">
+      <a target="_blank" href="https://alx-students.slack.com/">
+        <div class="image slack">
+          <div class="inner"></div>
+        </div>
+        <div class="visible-xs">Slack</div>
+</a>    </div>
+
+  <div data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="My Profile">
+    <a href="https://alx-intranet.hbtn.io/users/my_profile">
+        <div class="image ">
+          <div class="inner" style="background-image: url(&#39;https://s3.amazonaws.com/alx-intranet.hbtn.io/users/photos/000/000/850/thumb/IMG_20190729_142005.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20211118%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20211118T205004Z&amp;X-Amz-Expires=600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=376c33b3c79ad301c48bb38237d2586af501100f6adce474e286af3c354082d9&#39;)"></div>
+        </div>
+
+      <div class="visible-xs">My Profile</div>
+</a>  </div>
+</li>
+
+
+  </ul>
+</div>
+
+
+    <main>
+      <div id="layout-bars">
+        
+
+        
+
+        
+
+        
+      </div>
+
+      <article class="">
+        
+<div class="project row">
+  <div class="col-xs-12 col-md-10 col-lg-8 contains-images">
+
+      <h1 class="gap">0x01. AirBnB clone - Web static</h1>
+
+  <div data-react-class="tags/Tags" data-react-props="{&quot;tags&quot;:[]}" data-react-cache-id="tags/Tags-0"></div>
+
+  <ul class="list-group metadata" id="project-metadata">
+
+    <li class="list-group-item">
+      <i aria-hidden="true" class="fa fa-user  fa-fw"></i>
+      By Guillaume
+    </li>
+
+
+
+
+      <li class="list-group-item">
+        <i aria-hidden="true" class="fa fa-calendar  fa-fw"></i>
+            Ongoing project - started 11-18-2021, must end by 11-23-2021 (in 4 days)
+          - you're done with <span id="student_task_done_percentage">0</span>% of tasks.
+      </li>
+
+
+      <li class="list-group-item">
+        <i aria-hidden="true" class="fa fa-check-square  fa-fw"></i>
+          <strong>Manual QA review must be done</strong>
+          (request it when you are done with the project)
+      </li>
+
+
+</ul>
+
+
+
+
+    <div id="project_id" style="display: none" data-project-id="268"></div>
+
+
+
+
+      
+
+        <h2>Concepts</h2>
+
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <p>
+        <em>For this project, students are expected to look at these concepts:</em>
+      </p>
+
+      <ul>
+          <li>
+            <a href="https://alx-intranet.hbtn.io/concepts/2">HTML/CSS</a>
+          </li>
+          <li>
+            <a href="https://alx-intranet.hbtn.io/concepts/4">The trinity of front-end quality</a>
+          </li>
+      </ul>
+    </div>
+  </div>
+
+
+      <div class="well clean" id="project-description">
+  <p><img src="./Project_ 0x01. AirBnB clone - Web static _ ALX Africa Intranet_files/135ef103cf7ed150c9760aadc66844113dfc3d35.gif" alt="" style=""></p>
+
+<h2>Background Context</h2>
+
+<h3>Web static, what?</h3>
+
+<p>Now that you have a command interpreter for managing your AirBnB objects, it’s time to make them alive!</p>
+
+<p>Before developing a big and complex web application, we will build the front end step-by-step. </p>
+
+<p>The first step is to “design” / “sketch” / “prototype” each element:</p>
+
+<ul>
+<li>Create simple HTML static pages</li>
+<li>Style guide</li>
+<li>Fake contents</li>
+<li>No Javascript</li>
+<li>No data loaded from anything</li>
+</ul>
+
+<p>During this project, you will learn how to manipulate HTML and CSS languages. HTML is the structure of your page, it should be the first thing to write. CSS is the styling of your page, the design. I really encourage you to fix your HTML part before starting the styling. Indeed, without any structure, you can’t apply any design.</p>
+
+<p>Before starting, please fork or clone the repository <code>AirBnB_clone</code> from your partner if you were not the owner of the previous project.</p>
+
+<h2>Resources</h2>
+
+<p><strong>Read or watch</strong>:</p>
+
+<ul>
+<li><a href="https://alx-intranet.hbtn.io/rltoken/T9KyiA6_Tm3Ny6oTn08S-A" title="Learn to Code HTML &amp; CSS" target="_blank">Learn to Code HTML &amp; CSS</a> (<em>until “Creating Lists” included</em>)</li>
+<li><a href="https://alx-intranet.hbtn.io/rltoken/HkgQmfnjk0XL6irytomQJA" title="Inline Styles in HTML" target="_blank">Inline Styles in HTML</a> </li>
+<li><a href="https://alx-intranet.hbtn.io/rltoken/z_OTPFCjmhXJJi7KJqBCbQ" title="Specifics on CSS Specificity" target="_blank">Specifics on CSS Specificity</a> </li>
+<li><a href="https://alx-intranet.hbtn.io/rltoken/7iqk-el4ZVnKeyLoON8Rqg" title="CSS SpeciFishity" target="_blank">CSS SpeciFishity</a> </li>
+<li><a href="https://alx-intranet.hbtn.io/rltoken/okP4V3RxFXHkEcQo19AnuQ" title="Introduction to HTML" target="_blank">Introduction to HTML</a> </li>
+<li><a href="https://alx-intranet.hbtn.io/rltoken/Ir8Ka59FO6Z_vJQ-gkSG_w" title="CSS" target="_blank">CSS</a> </li>
+<li><a href="https://alx-intranet.hbtn.io/rltoken/BpSXtcWOGH0UT4XLCoQyJg" title="MDN" target="_blank">MDN</a> </li>
+<li><a href="https://alx-intranet.hbtn.io/rltoken/Tlje4XYwyZbUfHkQWGi1WQ" title="center boxes" target="_blank">center boxes</a> </li>
+</ul>
+
+<h2>Learning Objectives</h2>
+
+<p>At the end of this project, you are expected to be able to <a href="https://alx-intranet.hbtn.io/rltoken/Zb9sTIct2xdhDCDLGF-RyQ" title="explain to anyone" target="_blank">explain to anyone</a>, <strong>without the help of Google</strong>:</p>
+
+<h3>General</h3>
+
+<ul>
+<li>What is HTML</li>
+<li>How to create an HTML page</li>
+<li>What is a markup language</li>
+<li>What is the DOM</li>
+<li>What is an element / tag</li>
+<li>What is an attribute</li>
+<li>How does the browser load a webpage</li>
+<li>What is CSS</li>
+<li>How to add style to an element</li>
+<li>What is a class</li>
+<li>What is a selector</li>
+<li>How to compute CSS Specificity Value</li>
+<li>What are Box properties in CSS</li>
+</ul>
+
+<h2>Requirements</h2>
+
+<h3>General</h3>
+
+<ul>
+<li>Allowed editors: <code>vi</code>, <code>vim</code>, <code>emacs</code></li>
+<li>All your files should end with a new line</li>
+<li>A <code>README.md</code> file, at the root of the folder of the project, is mandatory</li>
+<li>Your code should be W3C compliant and validate with <a href="https://alx-intranet.hbtn.io/rltoken/NzQ96QXtBTCMRDicPORzbA" title="W3C-Validator" target="_blank">W3C-Validator</a></li>
+<li>All your CSS files should be in <code>styles</code> folder</li>
+<li>All your images should be in <code>images</code> folder</li>
+<li>You are not allowed to use <code>!important</code> and <code>id</code> (<code>#...</code> in the CSS file)</li>
+<li>You are not allowed to use tags <code>img</code>, <code>embed</code> and <code>iframe</code></li>
+<li>You are not allowed to use Javascript</li>
+<li>Current screenshots have been done on <code>Chrome 56</code> or more. </li>
+<li>No cross browsers </li>
+<li>You have to follow all requirements but some <code>margin</code>/<code>padding</code> are missing - you should try to fit as much as you can to screenshots</li>
+</ul>
+
+<h2>More Info</h2>
+
+<p><img src="./Project_ 0x01. AirBnB clone - Web static _ ALX Africa Intranet_files/hbnb_step1.png" alt="" style=""></p>
+
+</div>
+
+
+      
+
+        <h2 class="gap" id="project-quiz-questions-title">
+    Quiz questions
+  </h2>
+
+  <div class="panel panel-default">
+    <div class="panel-body">
+        <p id="quiz_questions_collapse_toggle">Show</p>
+
+      <section class="quiz_questions_show_container" style="display: none;">
+          <div class="quiz_question_item_container" data-role="quiz_question31" data-position="1">
+            <div class=" clearfix" id="quiz_question-31">
+
+    <h4 class="quiz_question">Question #0</h4>
+
+    <!-- Quiz question Body -->
+    <p>Is the following HTML markup valid? </p>
+
+<pre><code>&lt;html&gt;&lt;/html&gt;
+</code></pre>
+
+<p>(elements are correctly tagged, we don’t care about <code>!Doctype</code> here)</p>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="31">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1498428312841" id="quiz-answer-1498428312841" data-quiz-question-id="31" data-quiz-answer-id="1498428312841" disabled="disabled" checked="checked">
+  <label for="quiz-answer-1498428312841">
+    <p>Yes</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1498428315954" id="quiz-answer-1498428315954" data-quiz-question-id="31" data-quiz-answer-id="1498428315954" disabled="disabled">
+  <label for="quiz-answer-1498428315954">
+    <p>No</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question32" data-position="2">
+            <div class=" clearfix" id="quiz_question-32">
+
+    <h4 class="quiz_question">Question #1</h4>
+
+    <!-- Quiz question Body -->
+    <p>Is the following HTML markup valid? </p>
+
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>(elements are correctly tagged, we don’t care about <code>!Doctype</code> here)</p>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="32">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1498428347112" id="quiz-answer-1498428347112" data-quiz-question-id="32" data-quiz-answer-id="1498428347112" disabled="disabled" checked="checked">
+  <label for="quiz-answer-1498428347112">
+    <p>Yes</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1498428351469" id="quiz-answer-1498428351469" data-quiz-question-id="32" data-quiz-answer-id="1498428351469" disabled="disabled">
+  <label for="quiz-answer-1498428351469">
+    <p>No</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question33" data-position="3">
+            <div class=" clearfix" id="quiz_question-33">
+
+    <h4 class="quiz_question">Question #2</h4>
+
+    <!-- Quiz question Body -->
+    <p>Is the following HTML markup valid? </p>
+
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>(elements are correctly tagged, we don’t care about <code>!Doctype</code> here)</p>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="33">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1498428356250" id="quiz-answer-1498428356250" data-quiz-question-id="33" data-quiz-answer-id="1498428356250" disabled="disabled">
+  <label for="quiz-answer-1498428356250">
+    <p>Yes</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1498428358731" id="quiz-answer-1498428358731" data-quiz-question-id="33" data-quiz-answer-id="1498428358731" disabled="disabled" checked="checked">
+  <label for="quiz-answer-1498428358731">
+    <p>No</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+        <div class="alert alert-info">
+            <h4>Tips:</h4>
+            <p>Each HTML tag must be closed</p>
+
+        </div>
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question34" data-position="4">
+            <div class=" clearfix" id="quiz_question-34">
+
+    <h4 class="quiz_question">Question #3</h4>
+
+    <!-- Quiz question Body -->
+    <p>Is the following HTML markup valid? </p>
+
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;img src="logo.png" /&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>(elements are correctly tagged, we don’t care about <code>!Doctype</code> here)</p>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="34">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1498428369178" id="quiz-answer-1498428369178" data-quiz-question-id="34" data-quiz-answer-id="1498428369178" disabled="disabled" checked="checked">
+  <label for="quiz-answer-1498428369178">
+    <p>Yes</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1498428371784" id="quiz-answer-1498428371784" data-quiz-question-id="34" data-quiz-answer-id="1498428371784" disabled="disabled">
+  <label for="quiz-answer-1498428371784">
+    <p>No</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+        <div class="alert alert-info">
+            <h4>Tips:</h4>
+            <p><code>&lt;img /&gt;</code> is an empty element</p>
+
+        </div>
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question35" data-position="5">
+            <div class=" clearfix" id="quiz_question-35">
+
+    <h4 class="quiz_question">Question #4</h4>
+
+    <!-- Quiz question Body -->
+    <p>Is the following HTML markup valid? </p>
+
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Best &lt;b&gt;School&lt;/h1&gt;&lt;/b&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>(elements are correctly tagged, we don’t care about <code>!Doctype</code> here)</p>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="35">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1498428414533" id="quiz-answer-1498428414533" data-quiz-question-id="35" data-quiz-answer-id="1498428414533" disabled="disabled">
+  <label for="quiz-answer-1498428414533">
+    <p>Yes</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1498428417084" id="quiz-answer-1498428417084" data-quiz-question-id="35" data-quiz-answer-id="1498428417084" disabled="disabled" checked="checked">
+  <label for="quiz-answer-1498428417084">
+    <p>No</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+        <div class="alert alert-info">
+            <h4>Tips:</h4>
+            <p>“Always close something before opening a new thing”</p>
+
+        </div>
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question36" data-position="6">
+            <div class=" clearfix" id="quiz_question-36">
+
+    <h4 class="quiz_question">Question #5</h4>
+
+    <!-- Quiz question Body -->
+    <p>Is the following HTML markup valid? </p>
+
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;
+            &lt;a href="www.google.com'&gt;Google&lt;/a&gt;
+        &lt;/h1&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>(elements are correctly tagged, we don’t care about <code>!Doctype</code> here)</p>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="36">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1498428430673" id="quiz-answer-1498428430673" data-quiz-question-id="36" data-quiz-answer-id="1498428430673" disabled="disabled">
+  <label for="quiz-answer-1498428430673">
+    <p>Yes</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1498428433674" id="quiz-answer-1498428433674" data-quiz-question-id="36" data-quiz-answer-id="1498428433674" disabled="disabled" checked="checked">
+  <label for="quiz-answer-1498428433674">
+    <p>No</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+        <div class="alert alert-info">
+            <h4>Tips:</h4>
+            <p>Number of quotes is important!</p>
+
+        </div>
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question37" data-position="7">
+            <div class=" clearfix" id="quiz_question-37">
+
+    <h4 class="quiz_question">Question #6</h4>
+
+    <!-- Quiz question Body -->
+    <p>Is the following HTML markup valid? </p>
+
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;
+            &lt;a href="www.google.com"&gt;Go to &lt;b&gt;Google&lt;/b&gt;
+        &lt;/h1&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>(elements are correctly tagged, we don’t care about <code>!Doctype</code> here)</p>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="37">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1498428473043" id="quiz-answer-1498428473043" data-quiz-question-id="37" data-quiz-answer-id="1498428473043" disabled="disabled">
+  <label for="quiz-answer-1498428473043">
+    <p>Yes</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1498428475605" id="quiz-answer-1498428475605" data-quiz-question-id="37" data-quiz-answer-id="1498428475605" disabled="disabled" checked="checked">
+  <label for="quiz-answer-1498428475605">
+    <p>No</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question38" data-position="8">
+            <div class=" clearfix" id="quiz_question-38">
+
+    <h4 class="quiz_question">Question #7</h4>
+
+    <!-- Quiz question Body -->
+    <p>Is following CSS syntax valid? </p>
+
+<pre><code>body {
+    color: #FF0000;
+}
+</code></pre>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="38">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1498428516054" id="quiz-answer-1498428516054" data-quiz-question-id="38" data-quiz-answer-id="1498428516054" disabled="disabled" checked="checked">
+  <label for="quiz-answer-1498428516054">
+    <p>Yes</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1498428519167" id="quiz-answer-1498428519167" data-quiz-question-id="38" data-quiz-answer-id="1498428519167" disabled="disabled">
+  <label for="quiz-answer-1498428519167">
+    <p>No</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question39" data-position="9">
+            <div class=" clearfix" id="quiz_question-39">
+
+    <h4 class="quiz_question">Question #8</h4>
+
+    <!-- Quiz question Body -->
+    <p>Is following CSS syntax valid? </p>
+
+<pre><code>body {
+    color: #FF0000;
+}
+
+* {
+    font-size: 14px;
+}
+</code></pre>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="39">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1498428533982" id="quiz-answer-1498428533982" data-quiz-question-id="39" data-quiz-answer-id="1498428533982" disabled="disabled" checked="checked">
+  <label for="quiz-answer-1498428533982">
+    <p>Yes</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1498428536096" id="quiz-answer-1498428536096" data-quiz-question-id="39" data-quiz-answer-id="1498428536096" disabled="disabled">
+  <label for="quiz-answer-1498428536096">
+    <p>No</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+        <div class="alert alert-info">
+            <h4>Tips:</h4>
+            <p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors" title="Universal selectors" target="_blank">Universal selectors</a></p>
+
+        </div>
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question40" data-position="10">
+            <div class=" clearfix" id="quiz_question-40">
+
+    <h4 class="quiz_question">Question #9</h4>
+
+    <!-- Quiz question Body -->
+    <p>Is following CSS syntax valid? </p>
+
+<pre><code>body {
+    color: #FF0000;
+}
+
+* {
+    font-size: 14px;
+    font-weight: 400
+    text-align: center;
+}
+</code></pre>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="40">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1498428558720" id="quiz-answer-1498428558720" data-quiz-question-id="40" data-quiz-answer-id="1498428558720" disabled="disabled">
+  <label for="quiz-answer-1498428558720">
+    <p>Yes</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1498428561558" id="quiz-answer-1498428561558" data-quiz-question-id="40" data-quiz-answer-id="1498428561558" disabled="disabled" checked="checked">
+  <label for="quiz-answer-1498428561558">
+    <p>No</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+        <div class="alert alert-info">
+            <h4>Tips:</h4>
+            <p>Betty for CSS!</p>
+
+        </div>
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question41" data-position="11">
+            <div class=" clearfix" id="quiz_question-41">
+
+    <h4 class="quiz_question">Question #10</h4>
+
+    <!-- Quiz question Body -->
+    <p>Is following CSS syntax valid? </p>
+
+<pre><code>body {
+    color: #FF0000;
+}
+
+* {
+    font-size: 14px;
+    text-align: center;
+
+    h1 {
+        margin: 30px;
+    }
+}
+</code></pre>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="41">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1498428597816" id="quiz-answer-1498428597816" data-quiz-question-id="41" data-quiz-answer-id="1498428597816" disabled="disabled">
+  <label for="quiz-answer-1498428597816">
+    <p>Yes</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1498428599942" id="quiz-answer-1498428599942" data-quiz-question-id="41" data-quiz-answer-id="1498428599942" disabled="disabled" checked="checked">
+  <label for="quiz-answer-1498428599942">
+    <p>No</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+        <div class="alert alert-info">
+            <h4>Tips:</h4>
+            <p>CSS vs SCSS</p>
+
+        </div>
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question42" data-position="12">
+            <div class=" clearfix" id="quiz_question-42">
+
+    <h4 class="quiz_question">Question #11</h4>
+
+    <!-- Quiz question Body -->
+    <p>Is following CSS syntax valid? </p>
+
+<pre><code>body {
+    color: #FF0000;
+}
+
+* {
+    font-size: 14px;
+    text-align: center;
+    margin: 30px 12px 4px;
+}
+</code></pre>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="42">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1498428611931" id="quiz-answer-1498428611931" data-quiz-question-id="42" data-quiz-answer-id="1498428611931" disabled="disabled" checked="checked">
+  <label for="quiz-answer-1498428611931">
+    <p>Yes</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1498428614042" id="quiz-answer-1498428614042" data-quiz-question-id="42" data-quiz-answer-id="1498428614042" disabled="disabled">
+  <label for="quiz-answer-1498428614042">
+    <p>No</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+        <div class="alert alert-info">
+            <h4>Tips:</h4>
+            <p><code>margin</code> and <code>padding</code> support 4 different syntaxes: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/margin" title="margin" target="_blank">margin</a></p>
+
+        </div>
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question43" data-position="13">
+            <div class=" clearfix" id="quiz_question-43">
+
+    <h4 class="quiz_question">Question #12</h4>
+
+    <!-- Quiz question Body -->
+    <p>Is following CSS syntax valid? </p>
+
+<pre><code>body {
+    color: #FF0000;
+}
+
+h1.title {
+    font-size: 16px;
+}
+</code></pre>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="43">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1498428632345" id="quiz-answer-1498428632345" data-quiz-question-id="43" data-quiz-answer-id="1498428632345" disabled="disabled" checked="checked">
+  <label for="quiz-answer-1498428632345">
+    <p>Yes</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1498428634694" id="quiz-answer-1498428634694" data-quiz-question-id="43" data-quiz-answer-id="1498428634694" disabled="disabled">
+  <label for="quiz-answer-1498428634694">
+    <p>No</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question44" data-position="14">
+            <div class=" clearfix" id="quiz_question-44">
+
+    <h4 class="quiz_question">Question #13</h4>
+
+    <!-- Quiz question Body -->
+    <p>Is following CSS syntax valid? </p>
+
+<pre><code>body {
+    color: #FF0000;
+}
+
+div.filters h2 {
+    font-size: 16px;
+}
+</code></pre>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="44">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1498428652809" id="quiz-answer-1498428652809" data-quiz-question-id="44" data-quiz-answer-id="1498428652809" disabled="disabled" checked="checked">
+  <label for="quiz-answer-1498428652809">
+    <p>Yes</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1498428655408" id="quiz-answer-1498428655408" data-quiz-question-id="44" data-quiz-answer-id="1498428655408" disabled="disabled">
+  <label for="quiz-answer-1498428655408">
+    <p>No</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question45" data-position="15">
+            <div class=" clearfix" id="quiz_question-45">
+
+    <h4 class="quiz_question">Question #14</h4>
+
+    <!-- Quiz question Body -->
+    <p>Is following CSS syntax valid? </p>
+
+<pre><code>body {
+    color: #FF0000;
+}
+
+div.filters p.title h2 span.text.big {
+    font-size: 20px;
+}
+</code></pre>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="45">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1498428670623" id="quiz-answer-1498428670623" data-quiz-question-id="45" data-quiz-answer-id="1498428670623" disabled="disabled" checked="checked">
+  <label for="quiz-answer-1498428670623">
+    <p>Yes</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1498428672890" id="quiz-answer-1498428672890" data-quiz-question-id="45" data-quiz-answer-id="1498428672890" disabled="disabled">
+  <label for="quiz-answer-1498428672890">
+    <p>No</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question46" data-position="16">
+            <div class=" clearfix" id="quiz_question-46">
+
+    <h4 class="quiz_question">Question #15</h4>
+
+    <!-- Quiz question Body -->
+    <p>Is following CSS syntax valid? </p>
+
+<pre><code>body {
+    color: #FF0000;
+}
+
+h3,
+div.full_text,
+div.small_text h4,
+div.filters p.title {
+    font-size: 20px;
+}
+</code></pre>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="46">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1498428687370" id="quiz-answer-1498428687370" data-quiz-question-id="46" data-quiz-answer-id="1498428687370" disabled="disabled" checked="checked">
+  <label for="quiz-answer-1498428687370">
+    <p>Yes</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1498428689966" id="quiz-answer-1498428689966" data-quiz-question-id="46" data-quiz-answer-id="1498428689966" disabled="disabled">
+  <label for="quiz-answer-1498428689966">
+    <p>No</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question47" data-position="17">
+            <div class=" clearfix" id="quiz_question-47">
+
+    <h4 class="quiz_question">Question #16</h4>
+
+    <!-- Quiz question Body -->
+    <p>Is following CSS syntax valid? </p>
+
+<pre><code>body {
+    color: #FF0000;
+}
+
+h3,
+div.full_text
+div.small_text h4
+div.filters p.title {
+    font-size: 20px;
+}
+</code></pre>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="47">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1498428707557" id="quiz-answer-1498428707557" data-quiz-question-id="47" data-quiz-answer-id="1498428707557" disabled="disabled" checked="checked">
+  <label for="quiz-answer-1498428707557">
+    <p>Yes</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1498428710191" id="quiz-answer-1498428710191" data-quiz-question-id="47" data-quiz-answer-id="1498428710191" disabled="disabled">
+  <label for="quiz-answer-1498428710191">
+    <p>No</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+        <div class="alert alert-info">
+            <h4>Tips:</h4>
+            <p><code>,</code> separates multiple selector, without it’s specific selector</p>
+
+        </div>
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question48" data-position="18">
+            <div class=" clearfix" id="quiz_question-48">
+
+    <h4 class="quiz_question">Question #17</h4>
+
+    <!-- Quiz question Body -->
+    <p>In the following code, is the text <code>Best School</code> red?</p>
+
+<p><em>css:</em></p>
+
+<pre><code>h1 {
+    color: red;
+}
+</code></pre>
+
+<p><em>html:</em></p>
+
+<pre><code>&lt;h1&gt;Best School&lt;/h1&gt;
+</code></pre>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="48">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1498428733792" id="quiz-answer-1498428733792" data-quiz-question-id="48" data-quiz-answer-id="1498428733792" disabled="disabled" checked="checked">
+  <label for="quiz-answer-1498428733792">
+    <p>Yes</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1498428736956" id="quiz-answer-1498428736956" data-quiz-question-id="48" data-quiz-answer-id="1498428736956" disabled="disabled">
+  <label for="quiz-answer-1498428736956">
+    <p>No</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question49" data-position="19">
+            <div class=" clearfix" id="quiz_question-49">
+
+    <h4 class="quiz_question">Question #18</h4>
+
+    <!-- Quiz question Body -->
+    <p>In the following code, is the text <code>Best School</code> red?</p>
+
+<p><em>css:</em></p>
+
+<pre><code>h2 {
+    color: red;
+}
+</code></pre>
+
+<p><em>html:</em></p>
+
+<pre><code>&lt;h1&gt;Best School&lt;/h1&gt;
+</code></pre>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="49">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1498428752047" id="quiz-answer-1498428752047" data-quiz-question-id="49" data-quiz-answer-id="1498428752047" disabled="disabled">
+  <label for="quiz-answer-1498428752047">
+    <p>Yes</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1498428754503" id="quiz-answer-1498428754503" data-quiz-question-id="49" data-quiz-answer-id="1498428754503" disabled="disabled" checked="checked">
+  <label for="quiz-answer-1498428754503">
+    <p>No</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question51" data-position="20">
+            <div class=" clearfix" id="quiz_question-51">
+
+    <h4 class="quiz_question">Question #19</h4>
+
+    <!-- Quiz question Body -->
+    <p>In the following code, is the text <code>Best School</code> red?</p>
+
+<p><em>css:</em></p>
+
+<pre><code>h1.title {
+    color: red;
+}
+</code></pre>
+
+<p><em>html:</em></p>
+
+<pre><code>&lt;h1&gt;Best School&lt;/h1&gt;
+</code></pre>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="51">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1498428795134" id="quiz-answer-1498428795134" data-quiz-question-id="51" data-quiz-answer-id="1498428795134" disabled="disabled">
+  <label for="quiz-answer-1498428795134">
+    <p>Yes</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1498428797349" id="quiz-answer-1498428797349" data-quiz-question-id="51" data-quiz-answer-id="1498428797349" disabled="disabled" checked="checked">
+  <label for="quiz-answer-1498428797349">
+    <p>No</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question52" data-position="21">
+            <div class=" clearfix" id="quiz_question-52">
+
+    <h4 class="quiz_question">Question #20</h4>
+
+    <!-- Quiz question Body -->
+    <p>In the following code, is the text <code>Best School</code> red?</p>
+
+<p><em>css:</em></p>
+
+<pre><code>h1 div.title {
+    color: red;
+}
+</code></pre>
+
+<p><em>html:</em></p>
+
+<pre><code>&lt;h1&gt;Best School&lt;/h1&gt;
+</code></pre>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="52">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1498428809477" id="quiz-answer-1498428809477" data-quiz-question-id="52" data-quiz-answer-id="1498428809477" disabled="disabled">
+  <label for="quiz-answer-1498428809477">
+    <p>Yes</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1498428812102" id="quiz-answer-1498428812102" data-quiz-question-id="52" data-quiz-answer-id="1498428812102" disabled="disabled" checked="checked">
+  <label for="quiz-answer-1498428812102">
+    <p>No</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question53" data-position="22">
+            <div class=" clearfix" id="quiz_question-53">
+
+    <h4 class="quiz_question">Question #21</h4>
+
+    <!-- Quiz question Body -->
+    <p>In the following code, is the text <code>Best School</code> red?</p>
+
+<p><em>css:</em></p>
+
+<pre><code>h3 span.text,
+h1,
+div.title {
+    color: red;
+}
+</code></pre>
+
+<p><em>html:</em></p>
+
+<pre><code>&lt;h1&gt;Best School&lt;/h1&gt;
+</code></pre>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="53">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1498428825138" id="quiz-answer-1498428825138" data-quiz-question-id="53" data-quiz-answer-id="1498428825138" disabled="disabled" checked="checked">
+  <label for="quiz-answer-1498428825138">
+    <p>Yes</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1498428827945" id="quiz-answer-1498428827945" data-quiz-question-id="53" data-quiz-answer-id="1498428827945" disabled="disabled">
+  <label for="quiz-answer-1498428827945">
+    <p>No</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question54" data-position="23">
+            <div class=" clearfix" id="quiz_question-54">
+
+    <h4 class="quiz_question">Question #22</h4>
+
+    <!-- Quiz question Body -->
+    <p>In the following code, is the text <code>Best School</code> red?</p>
+
+<p><em>css:</em></p>
+
+<pre><code>h1 {
+    color: green;
+}
+
+span.my_title {
+    color: red;
+}
+</code></pre>
+
+<p><em>html:</em></p>
+
+<pre><code>&lt;h1&gt;
+    &lt;span class="my_title"&gt;Best School&lt;/span&gt;
+&lt;/h1&gt;
+</code></pre>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="54">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1498428846641" id="quiz-answer-1498428846641" data-quiz-question-id="54" data-quiz-answer-id="1498428846641" disabled="disabled" checked="checked">
+  <label for="quiz-answer-1498428846641">
+    <p>Yes</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1498428849664" id="quiz-answer-1498428849664" data-quiz-question-id="54" data-quiz-answer-id="1498428849664" disabled="disabled">
+  <label for="quiz-answer-1498428849664">
+    <p>No</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+        <div class="alert alert-info">
+            <h4>Tips:</h4>
+            <p><a href="http://www.standardista.com/wp-content/uploads/2012/01/specificity3.pdf" title="CSS selector math" target="_blank">CSS selector math</a></p>
+
+        </div>
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question55" data-position="24">
+            <div class=" clearfix" id="quiz_question-55">
+
+    <h4 class="quiz_question">Question #23</h4>
+
+    <!-- Quiz question Body -->
+    <p>In the following code, is the text <code>Best School</code> red?</p>
+
+<p><em>css:</em></p>
+
+<pre><code>h1 .my_title {
+    color: green;
+}
+
+.my_title {
+    color: red;
+}
+</code></pre>
+
+<p><em>html:</em></p>
+
+<pre><code>&lt;h1&gt;
+    &lt;span class="my_title"&gt;Best School&lt;/span&gt;
+&lt;/h1&gt;
+</code></pre>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="55">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1498428866550" id="quiz-answer-1498428866550" data-quiz-question-id="55" data-quiz-answer-id="1498428866550" disabled="disabled">
+  <label for="quiz-answer-1498428866550">
+    <p>Yes</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1498428869428" id="quiz-answer-1498428869428" data-quiz-question-id="55" data-quiz-answer-id="1498428869428" disabled="disabled" checked="checked">
+  <label for="quiz-answer-1498428869428">
+    <p>No</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+        <div class="alert alert-info">
+            <h4>Tips:</h4>
+            <p><a href="http://www.standardista.com/wp-content/uploads/2012/01/specificity3.pdf" title="CSS selector math" target="_blank">CSS selector math</a></p>
+
+        </div>
+
+</div>
+
+          </div>
+
+      </section>
+    </div>
+  </div>
+
+
+        
+          <h2 class="gap">Tasks</h2>
+
+    <div data-role="task1408" data-position="77" id="task-num-0">
+      <div class="panel panel-default task-card " id="task-1408">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      0. Inline styling
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+
+    <!-- Task Body -->
+    <p>Write an HTML page that displays a header and a footer.</p>
+
+<p>Layout:</p>
+
+<ul>
+<li>Body:
+
+<ul>
+<li>no margin</li>
+<li>no padding</li>
+</ul></li>
+<li>Header:
+
+<ul>
+<li>color #FF0000 (red)</li>
+<li>height: 70px</li>
+<li>width: 100%</li>
+</ul></li>
+<li>Footer:
+
+<ul>
+<li>color #00FF00 (green)</li>
+<li>height: 60px</li>
+<li>width: 100%</li>
+<li>text <code>Best School</code> center vertically and horizontally</li>
+<li>always at the bottom at the page</li>
+</ul></li>
+</ul>
+
+<p>Requirements:</p>
+
+<ul>
+<li>You must use the <code>header</code> and <code>footer</code> tags</li>
+<li>You are not allowed to import any files</li>
+<li>You are not allowed to use the <code>style</code> tag in the <code>head</code> tag</li>
+<li>Use inline styling for all your tags</li>
+</ul>
+
+<p><img src="./Project_ 0x01. AirBnB clone - Web static _ ALX Africa Intranet_files/939d6b9448e63776610d05d2226aa8985209ee4d.png" alt="" style=""></p>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+      <div class="list-group-item">
+        <p><strong>Repo:</strong></p>
+        <ul>
+          <li>GitHub repository: <code>AirBnB_clone</code></li>
+            <li>Directory: <code>web_static</code></li>
+            <li>File: <code>0-index.html</code></li>
+        </ul>
+      </div>
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+
+    <div class="panel-footer">
+      
+<div>
+    <button class="student_task_done btn btn-default no" data-task-id="1408">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-default" data-task-id="1408" data-project-id="268" data-toggle="modal" data-target="#task-1408-users-done-modal">
+      Help
+    </button>
+    <div class="modal fade users-done-modal" id="task-1408-users-done-modal" data-task-id="1408" data-project-id="268">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "0. Inline styling"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+    </div>
+
+
+</div>
+
+    </div>
+    <div data-role="task1409" data-position="78" id="task-num-1">
+      <div class="panel panel-default task-card " id="task-1409">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      1. Head styling
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+
+    <!-- Task Body -->
+    <p>Write an HTML page that displays a header and a footer by using the <code>style</code> tag in the <code>head</code> tag (same as <code>0-index.html</code>)</p>
+
+<p>Requirements:</p>
+
+<ul>
+<li>You must use the <code>header</code> and <code>footer</code> tags</li>
+<li>You are not allowed to import any files</li>
+<li>No inline styling</li>
+<li>You must use the <code>style</code> tag in the <code>head</code> tag</li>
+</ul>
+
+<p>The layout must be exactly the same as <code>0-index.html</code></p>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+      <div class="list-group-item">
+        <p><strong>Repo:</strong></p>
+        <ul>
+          <li>GitHub repository: <code>AirBnB_clone</code></li>
+            <li>Directory: <code>web_static</code></li>
+            <li>File: <code>1-index.html</code></li>
+        </ul>
+      </div>
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+
+    <div class="panel-footer">
+      
+<div>
+    <button class="student_task_done btn btn-default no" data-task-id="1409">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-default" data-task-id="1409" data-project-id="268" data-toggle="modal" data-target="#task-1409-users-done-modal">
+      Help
+    </button>
+    <div class="modal fade users-done-modal" id="task-1409-users-done-modal" data-task-id="1409" data-project-id="268">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "1. Head styling"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+    </div>
+
+
+</div>
+
+    </div>
+    <div data-role="task1410" data-position="79" id="task-num-2">
+      <div class="panel panel-default task-card " id="task-1410">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      2. CSS files
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+
+    <!-- Task Body -->
+    <p>Write an HTML page that displays a header and a footer by using CSS files (same as <code>1-index.html</code>)</p>
+
+<p>Requirements:</p>
+
+<ul>
+<li>You must use the <code>header</code> and <code>footer</code> tags</li>
+<li>No inline styling</li>
+<li>You must have 3 CSS files:
+
+<ul>
+<li><code>styles/2-common.css</code>: for global style (i.e. the <code>body</code> style)</li>
+<li><code>styles/2-header.css</code>: for header style</li>
+<li><code>styles/2-footer.css</code>: for footer style</li>
+</ul></li>
+</ul>
+
+<p>The layout must be exactly the same as <code>1-index.html</code></p>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+      <div class="list-group-item">
+        <p><strong>Repo:</strong></p>
+        <ul>
+          <li>GitHub repository: <code>AirBnB_clone</code></li>
+            <li>Directory: <code>web_static</code></li>
+            <li>File: <code>2-index.html, styles/2-common.css, styles/2-header.css, styles/2-footer.css</code></li>
+        </ul>
+      </div>
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+
+    <div class="panel-footer">
+      
+<div>
+    <button class="student_task_done btn btn-default no" data-task-id="1410">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-default" data-task-id="1410" data-project-id="268" data-toggle="modal" data-target="#task-1410-users-done-modal">
+      Help
+    </button>
+    <div class="modal fade users-done-modal" id="task-1410-users-done-modal" data-task-id="1410" data-project-id="268">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "2. CSS files"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+    </div>
+
+
+</div>
+
+    </div>
+    <div data-role="task1411" data-position="80" id="task-num-3">
+      <div class="panel panel-default task-card " id="task-1411">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      3. Zoning done!
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+
+    <!-- Task Body -->
+    <p>Write an HTML page that displays a header and footer by using CSS files (same as <code>2-index.html</code>)</p>
+
+<p>Layout:</p>
+
+<ul>
+<li>Common:
+
+<ul>
+<li>no margin</li>
+<li>no padding</li>
+<li>font color: #484848</li>
+<li>font size: 14px</li>
+<li>font family: <code>Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;</code></li>
+<li><a href="https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/268/icon.png" title="icon" target="_blank">icon</a> in the browser tab</li>
+</ul></li>
+<li>Header:
+
+<ul>
+<li>color: white</li>
+<li>height: 70px</li>
+<li>width: 100%</li>
+<li>border bottom 1px #CCCCCC</li>
+<li><a href="https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/268/logo.png" title="logo" target="_blank">logo</a> align on left and center vertically (20px space at the left)</li>
+</ul></li>
+<li>Footer:
+
+<ul>
+<li>color white</li>
+<li>height: 60px</li>
+<li>width: 100%</li>
+<li>border top 1px #CCCCCC</li>
+<li>text <code>Best School</code> center vertically and horizontally</li>
+<li>always at the bottom at the page</li>
+</ul></li>
+</ul>
+
+<p>Requirements:</p>
+
+<ul>
+<li>No inline style</li>
+<li>You are not allowed to use the <code>img</code> tag</li>
+<li>You are not allowed to use the <code>style</code> tag in the <code>head</code> tag</li>
+<li>All images must be stored in the <code>images</code> folder</li>
+<li>You must have 3 CSS files:
+
+<ul>
+<li><code>styles/3-common.css</code>: for the global style (i.e <code>body</code> style)</li>
+<li><code>styles/3-header.css</code>: for the header style</li>
+<li><code>styles/3-footer.css</code>: for the footer style</li>
+</ul></li>
+</ul>
+
+<p><img src="./Project_ 0x01. AirBnB clone - Web static _ ALX Africa Intranet_files/101096090ff2b87a86083d61789d597774400d5d.png" alt="" style=""></p>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+      <div class="list-group-item">
+        <p><strong>Repo:</strong></p>
+        <ul>
+          <li>GitHub repository: <code>AirBnB_clone</code></li>
+            <li>Directory: <code>web_static</code></li>
+            <li>File: <code>3-index.html, styles/3-common.css, styles/3-header.css, styles/3-footer.css, images/</code></li>
+        </ul>
+      </div>
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+
+    <div class="panel-footer">
+      
+<div>
+    <button class="student_task_done btn btn-default no" data-task-id="1411">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-default" data-task-id="1411" data-project-id="268" data-toggle="modal" data-target="#task-1411-users-done-modal">
+      Help
+    </button>
+    <div class="modal fade users-done-modal" id="task-1411-users-done-modal" data-task-id="1411" data-project-id="268">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "3. Zoning done!"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+    </div>
+
+
+</div>
+
+    </div>
+    <div data-role="task1412" data-position="81" id="task-num-4">
+      <div class="panel panel-default task-card " id="task-1412">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      4. Search!
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+
+    <!-- Task Body -->
+    <p>Write an HTML page that displays a header, footer and a filters box with a search button.</p>
+
+<p>Layout: (based on <code>3-index.html</code>)</p>
+
+<ul>
+<li>Container:
+
+<ul>
+<li>between <code>header</code> and <code>footer</code> tags, add a <code>div</code>:
+
+<ul>
+<li>classname: <code>container</code></li>
+<li>max width 1000px</li>
+<li>margin top and bottom 30px - it should be 30px under the bottom of the <code>header</code> (screenshot)</li>
+<li>center horizontally</li>
+</ul></li>
+</ul></li>
+<li>Filter section: 
+
+<ul>
+<li>tag <code>section</code></li>
+<li>classname <code>filters</code></li>
+<li>inside the <code>.container</code></li>
+<li>color white</li>
+<li>height: 70px</li>
+<li>width: 100% of the container</li>
+<li>border 1px #DDDDDD with radius 4px</li>
+</ul></li>
+<li>Button search:
+
+<ul>
+<li>tag <code>button</code></li>
+<li>text <code>Search</code></li>
+<li>font size: 18px</li>
+<li>inside the section filters</li>
+<li>background color #FF5A5F</li>
+<li>text color #FFFFFF</li>
+<li>height: 48px</li>
+<li>width: 20% of the section filters</li>
+<li>no borders</li>
+<li>border radius: 4px</li>
+<li>center vertically and at 30px of the right border</li>
+<li>change opacity to 90% when the mouse is on the button</li>
+</ul></li>
+</ul>
+
+<p>Requirements:</p>
+
+<ul>
+<li>You must use: <code>header</code>, <code>footer</code>, <code>section</code>, <code>button</code> tags</li>
+<li>No inline style</li>
+<li>You are not allowed to use the <code>img</code> tag</li>
+<li>You are not allowed to use the <code>style</code> tag in the <code>head</code> tag</li>
+<li>All images must be stored in the <code>images</code> folder</li>
+<li>You must have 4 CSS files:
+
+<ul>
+<li><code>styles/4-common.css</code>: for the global style (<code>body</code> and <code>.container</code> styles)</li>
+<li><code>styles/3-header.css</code>: for the header style</li>
+<li><code>styles/3-footer.css</code>: for the footer style</li>
+<li><code>styles/4-filters.css</code>: for the filters style</li>
+</ul></li>
+<li><code>4-index.html</code> <strong>won’t be W3C valid</strong>, don’t worry, it’s temporary</li>
+</ul>
+
+<p><img src="./Project_ 0x01. AirBnB clone - Web static _ ALX Africa Intranet_files/0fc91d5d4d62955575dc65a93d9823cf4dc72133.png" alt="" style=""></p>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+      <div class="list-group-item">
+        <p><strong>Repo:</strong></p>
+        <ul>
+          <li>GitHub repository: <code>AirBnB_clone</code></li>
+            <li>Directory: <code>web_static</code></li>
+            <li>File: <code>4-index.html, styles/4-common.css, styles/3-header.css, styles/3-footer.css, styles/4-filters.css, images/</code></li>
+        </ul>
+      </div>
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+
+    <div class="panel-footer">
+      
+<div>
+    <button class="student_task_done btn btn-default no" data-task-id="1412">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-default" data-task-id="1412" data-project-id="268" data-toggle="modal" data-target="#task-1412-users-done-modal">
+      Help
+    </button>
+    <div class="modal fade users-done-modal" id="task-1412-users-done-modal" data-task-id="1412" data-project-id="268">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "4. Search!"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+    </div>
+
+
+</div>
+
+    </div>
+    <div data-role="task1413" data-position="82" id="task-num-5">
+      <div class="panel panel-default task-card " id="task-1413">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      5. More filters
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+
+    <!-- Task Body -->
+    <p>Write an HTML page that displays a header, footer and a filters box.</p>
+
+<p>Layout: (based on <code>4-index.html</code>)</p>
+
+<ul>
+<li>Locations and Amenities filters:
+
+<ul>
+<li>tag: <code>div</code></li>
+<li>classname: <code>locations</code> for location tag and <code>amenities</code> for the other</li>
+<li>inside the section filters (same level as the <code>button</code> Search)</li>
+<li>height: 100% of the section filters</li>
+<li>width: 25% of the section filters</li>
+<li>border right #DDDDDD 1px only for the first left filter</li>
+<li>contains a title:
+
+<ul>
+<li>tag: <code>h3</code></li>
+<li>font weight: 600<br></li>
+<li>text <code>States</code> or <code>Amenities</code></li>
+</ul></li>
+<li>contains a subtitle:
+
+<ul>
+<li>tag: <code>h4</code></li>
+<li>font weight: 400<br></li>
+<li>font size: 14px</li>
+<li>text with fake contents</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p>Requirements:</p>
+
+<ul>
+<li>You must use: <code>header</code>, <code>footer</code>, <code>section</code>, <code>button</code>, <code>h3</code>, <code>h4</code> tags</li>
+<li>No inline style</li>
+<li>You are not allowed to use the <code>img</code> tag</li>
+<li>You are not allowed to use the <code>style</code> tag in the <code>head</code> tag</li>
+<li>All images must be stored in the <code>images</code> folder</li>
+<li>You must have 4 CSS files:
+
+<ul>
+<li><code>styles/4-common.css</code>: for the global style (<code>body</code> and <code>.container</code> styles)</li>
+<li><code>styles/3-header.css</code>: for the header style</li>
+<li><code>styles/3-footer.css</code>: for the footer style</li>
+<li><code>styles/5-filters.css</code>: for the filters style</li>
+</ul></li>
+</ul>
+
+<p><img src="./Project_ 0x01. AirBnB clone - Web static _ ALX Africa Intranet_files/63600f1cf5fad5711e6ebba03421fe980d498ec5.png" alt="" style=""></p>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+      <div class="list-group-item">
+        <p><strong>Repo:</strong></p>
+        <ul>
+          <li>GitHub repository: <code>AirBnB_clone</code></li>
+            <li>Directory: <code>web_static</code></li>
+            <li>File: <code>5-index.html, styles/4-common.css, styles/3-header.css, styles/3-footer.css, styles/5-filters.css, images/</code></li>
+        </ul>
+      </div>
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+
+    <div class="panel-footer">
+      
+<div>
+    <button class="student_task_done btn btn-default no" data-task-id="1413">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-default" data-task-id="1413" data-project-id="268" data-toggle="modal" data-target="#task-1413-users-done-modal">
+      Help
+    </button>
+    <div class="modal fade users-done-modal" id="task-1413-users-done-modal" data-task-id="1413" data-project-id="268">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "5. More filters"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+    </div>
+
+
+</div>
+
+    </div>
+    <div data-role="task1414" data-position="83" id="task-num-6">
+      <div class="panel panel-default task-card " id="task-1414">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      6. It's (h)over
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+
+    <!-- Task Body -->
+    <p>Write an HTML page that displays a header, footer and a filters box with dropdown.</p>
+
+<p>Layout: (based on <code>5-index.html</code>)</p>
+
+<ul>
+<li>Update Locations and Amenities filters to display a contextual dropdown when the mouse is on the filter <code>div</code>: 
+
+<ul>
+<li>tag <code>ul</code></li>
+<li>classname <code>popover</code></li>
+<li>text should be fake now</li>
+<li>inside each <code>div</code></li>
+<li>not displayed by default</li>
+<li>color #FAFAFA</li>
+<li>width same as the <code>div</code> filter</li>
+<li>border #DDDDDD 1px with border radius 4px</li>
+<li>no list display</li>
+<li>Location filter has 2 levels of <code>ul</code>/<code>li</code>:
+
+<ul>
+<li>state -&gt; cities</li>
+<li>state name must be display in a <code>h2</code> tag (font size 16px)</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p>Requirements:</p>
+
+<ul>
+<li>You must use: <code>header</code>, <code>footer</code>, <code>section</code>, <code>button</code>, <code>h3</code>, <code>h4</code>, <code>ul</code>, <code>li</code> tags</li>
+<li>No inline style</li>
+<li>You are not allowed to use the <code>img</code> tag</li>
+<li>You are not allowed to use the <code>style</code> tag in the <code>head</code> tag</li>
+<li>All images must be stored in the <code>images</code> folder</li>
+<li>You must have 4 CSS files:
+
+<ul>
+<li><code>styles/4-common.css</code>: for the global style (<code>body</code> and <code>.container</code> styles)</li>
+<li><code>styles/3-header.css</code>: for the header style</li>
+<li><code>styles/3-footer.css</code>: for the footer style</li>
+<li><code>styles/6-filters.css</code>: for the filters style</li>
+</ul></li>
+</ul>
+
+<p><img src="./Project_ 0x01. AirBnB clone - Web static _ ALX Africa Intranet_files/2fc49432137a0f660dedf3fd4b3d86449a72bc53.png" alt="" style="">
+<img src="./Project_ 0x01. AirBnB clone - Web static _ ALX Africa Intranet_files/5aa1d0291e579abd8fc9876af9b9d089147268e2.png" alt="" style=""></p>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+      <div class="list-group-item">
+        <p><strong>Repo:</strong></p>
+        <ul>
+          <li>GitHub repository: <code>AirBnB_clone</code></li>
+            <li>Directory: <code>web_static</code></li>
+            <li>File: <code>6-index.html, styles/4-common.css, styles/3-header.css, styles/3-footer.css, styles/6-filters.css, images/</code></li>
+        </ul>
+      </div>
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+
+    <div class="panel-footer">
+      
+<div>
+    <button class="student_task_done btn btn-default no" data-task-id="1414">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-default" data-task-id="1414" data-project-id="268" data-toggle="modal" data-target="#task-1414-users-done-modal">
+      Help
+    </button>
+    <div class="modal fade users-done-modal" id="task-1414-users-done-modal" data-task-id="1414" data-project-id="268">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "6. It's (h)over"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+    </div>
+
+
+</div>
+
+    </div>
+    <div data-role="task1415" data-position="84" id="task-num-7">
+      <div class="panel panel-default task-card " id="task-1415">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      7. Display results
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+
+    <!-- Task Body -->
+    <p>Write an HTML page that displays a header, footer, a filters box with dropdown and results.</p>
+
+<p>Layout: (based on <code>6-index.html</code>)</p>
+
+<ul>
+<li>Add Places section:
+
+<ul>
+<li>tag: <code>section</code></li>
+<li>classname: <code>places</code></li>
+<li>same level as the filters section, inside <code>.container</code></li>
+<li>contains a title:
+
+<ul>
+<li>tag: <code>h1</code></li>
+<li>text: <code>Places</code></li>
+<li>align in the top left</li>
+<li>font size: 30px</li>
+</ul></li>
+<li>contains multiple “Places” as listing (horizontal or vertical) describe by:
+
+<ul>
+<li>tag: <code>article</code></li>
+<li>width: 390px</li>
+<li>padding and margin 20px</li>
+<li>border #FF5A5F 1px with radius 4px</li>
+<li>contains the place name:
+
+<ul>
+<li>tag: <code>h2</code></li>
+<li>font size: 30px</li>
+<li>center horizontally</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p>Requirements:</p>
+
+<ul>
+<li>You must use: <code>header</code>, <code>footer</code>, <code>section</code>, <code>article</code>, <code>button</code>, <code>h1</code>, <code>h2</code>, <code>h3</code>, <code>h4</code>, <code>ul</code>, <code>li</code> tags</li>
+<li>No inline style</li>
+<li>You are not allowed to use the <code>img</code> tag</li>
+<li>You are not allowed to use the <code>style</code> tag in the <code>head</code> tag</li>
+<li>All images must be stored in the <code>images</code> folder</li>
+<li>You must have 5 CSS files:
+
+<ul>
+<li><code>styles/4-common.css</code>: for the global style (i.e. <code>body</code> and <code>.container</code> styles)</li>
+<li><code>styles/3-header.css</code>: for the header style</li>
+<li><code>styles/3-footer.css</code>: for footer style</li>
+<li><code>styles/6-filters.css</code>: for the filters style</li>
+<li><code>styles/7-places.css</code>: for the places style</li>
+</ul></li>
+</ul>
+
+<p><img src="./Project_ 0x01. AirBnB clone - Web static _ ALX Africa Intranet_files/4655b5086fc9b7832927f0a2ac6f04dc0b44775b.png" alt="" style=""></p>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+      <div class="list-group-item">
+        <p><strong>Repo:</strong></p>
+        <ul>
+          <li>GitHub repository: <code>AirBnB_clone</code></li>
+            <li>Directory: <code>web_static</code></li>
+            <li>File: <code>7-index.html, styles/4-common.css, styles/3-header.css, styles/3-footer.css, styles/6-filters.css, styles/7-places.css, images/</code></li>
+        </ul>
+      </div>
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+
+    <div class="panel-footer">
+      
+<div>
+    <button class="student_task_done btn btn-default no" data-task-id="1415">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-default" data-task-id="1415" data-project-id="268" data-toggle="modal" data-target="#task-1415-users-done-modal">
+      Help
+    </button>
+    <div class="modal fade users-done-modal" id="task-1415-users-done-modal" data-task-id="1415" data-project-id="268">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "7. Display results"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+    </div>
+
+
+</div>
+
+    </div>
+    <div data-role="task1416" data-position="85" id="task-num-8">
+      <div class="panel panel-default task-card " id="task-1416">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      8. More details
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+
+    <!-- Task Body -->
+    <p>Write an HTML page that displays a header, a footer, a filter box (dropdown list) and the result of the search.</p>
+
+<p>Layout: (based on <code>7-index.html</code>)</p>
+
+<p>Add more information to a Place <code>article</code>:</p>
+
+<ul>
+<li>Price by night:
+
+<ul>
+<li>tag: <code>div</code></li>
+<li>classname: <code>price_by_night</code></li>
+<li>same level as the place name</li>
+<li>font color: #FF5A5F</li>
+<li>border: #FF5A5F 4px rounded</li>
+<li>min width: 60px</li>
+<li>height: 60px</li>
+<li>font size: 30px</li>
+<li>align: the top right (with space)</li>
+</ul></li>
+<li>Information section:
+
+<ul>
+<li>tag: <code>div</code></li>
+<li>classname: <code>information</code></li>
+<li>height: 80px</li>
+<li>border: top and bottom #DDDDDD 1px</li>
+<li>contains (align vertically):
+
+<ul>
+<li>Number of guests:
+
+<ul>
+<li>tag: <code>div</code></li>
+<li>classname: <code>max_guest</code></li>
+<li>width: 100px</li>
+<li>fake text</li>
+<li><a href="https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/268/icon_group.png" title="icon" target="_blank">icon</a></li>
+</ul></li>
+<li>Number of bedrooms:
+
+<ul>
+<li>tag: <code>div</code></li>
+<li>classname: <code>number_rooms</code></li>
+<li>width: 100px</li>
+<li>fake text</li>
+<li><a href="https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/268/icon_bed.png" title="icon" target="_blank">icon</a></li>
+</ul></li>
+<li>Number of bathrooms:
+
+<ul>
+<li>tag: <code>div</code></li>
+<li>classname: <code>number_bathrooms</code></li>
+<li>width: 100px</li>
+<li>fake text</li>
+<li><a href="https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/268/icon_bath.png" title="icon" target="_blank">icon</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>User section:
+
+<ul>
+<li>tag: <code>div</code></li>
+<li>classname: <code>user</code></li>
+<li>text <code>Owner: &lt;fake text&gt;</code></li>
+<li><code>Owner</code> text should be in bold</li>
+</ul></li>
+<li>Description section:
+
+<ul>
+<li>tag: <code>div</code></li>
+<li>classname: <code>description</code></li>
+</ul></li>
+</ul>
+
+<p>Requirements:</p>
+
+<ul>
+<li>You must use: <code>header</code>, <code>footer</code>, <code>section</code>, <code>article</code>, <code>button</code>, <code>h1</code>, <code>h2</code>, <code>h3</code>, <code>h4</code>, <code>ul</code>, <code>li</code> tags</li>
+<li>No inline style</li>
+<li>You are not allowed to use the <code>img</code> tag</li>
+<li>You are not allowed to use the <code>style</code> tag in the <code>head</code> tag</li>
+<li>All images must be stored in the <code>images</code> folder</li>
+<li>You must have 5 CSS files:
+
+<ul>
+<li><code>styles/4-common.css</code>: for the global style (i.e. <code>body</code> and <code>.container</code> styles)</li>
+<li><code>styles/3-header.css</code>: for the header style</li>
+<li><code>styles/3-footer.css</code>: for the footer style</li>
+<li><code>styles/6-filters.css</code>: for the filters style</li>
+<li><code>styles/8-places.css</code>: for the places style</li>
+</ul></li>
+</ul>
+
+<p><img src="./Project_ 0x01. AirBnB clone - Web static _ ALX Africa Intranet_files/f47a405fccad371100ff9665dae9b3a84a471e62.png" alt="" style=""></p>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+      <div class="list-group-item">
+        <p><strong>Repo:</strong></p>
+        <ul>
+          <li>GitHub repository: <code>AirBnB_clone</code></li>
+            <li>Directory: <code>web_static</code></li>
+            <li>File: <code>8-index.html, styles/4-common.css, styles/3-header.css, styles/3-footer.css, styles/6-filters.css, styles/8-places.css, images/</code></li>
+        </ul>
+      </div>
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+
+    <div class="panel-footer">
+      
+<div>
+    <button class="student_task_done btn btn-default no" data-task-id="1416">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-default" data-task-id="1416" data-project-id="268" data-toggle="modal" data-target="#task-1416-users-done-modal">
+      Help
+    </button>
+    <div class="modal fade users-done-modal" id="task-1416-users-done-modal" data-task-id="1416" data-project-id="268">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "8. More details"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+    </div>
+
+
+</div>
+
+    </div>
+
+    <p class="lg-gap">
+        <a class="btn btn-primary btn-block" data-confirm="Are you sure? You still have mandatory tasks to do on the project &quot;0x01. AirBnB clone - Web static&quot;, you really should focus on those first." href="https://alx-intranet.hbtn.io/projects/268/unlock_optionals">Done with the mandatory tasks? Unlock 4 advanced tasks now!</a>
+    </p>
+
+
+
+
+
+  </div>
+</div>
+
+      </article>
+
+      <div class="copyright">Copyright © 2021 Holberton Inc, All rights reserved.</div>
+    </main>
+
+      <button class="btn btn-primary" id="search-button" data-search-active="false" data-toggle="modal" data-target="#search-modal">
+  <i aria-hidden="true" class="fa fa-search "></i>
+  <i aria-hidden="true" class="fa fa-window-minimize "></i>
+</button>
+
+      <div class="modal fade" id="search-modal" tabindex="-1" role="dialog" aria-labelledby="search-modal-label">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div id="search-bar-container">
+    <input id="search-bar" type="text" name="hbtn-search-bar" placeholder="✨Start search by typing in this field✨">
+</div>
+
+            </div>
+            <div class="modal-body">
+                <div id="modal-spinner" class="spinner gap">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+                <div id="search-results-container">
+</div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+      <div class="modal fade" id="markdownGuideModal" tabindex="-1" role="dialog" aria-labelledby="markdownGuideModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <h4 class="modal-title">Markdown Guide</h4>
+        </div>
+        <div class="modal-body">
+            <h4>Emphasis</h4>
+<pre>**<strong>bold</strong>**
+*<em>italics</em>*
+~~<strike>strikethrough</strike>~~</pre>
+<h4>Headers</h4>
+<pre># Big header
+## Medium header
+### Small header
+#### Tiny header</pre>
+<h4>Lists</h4>
+<pre>* Generic list item
+* Generic list item
+* Generic list item
+
+1. Numbered list item
+2. Numbered list item
+3. Numbered list item</pre>
+<h4>Links</h4>
+<pre>[Text to display](http://www.example.com)</pre>
+<h4>Quotes</h4>
+<pre>&gt; This is a quote.
+&gt; It can span multiple lines!</pre>
+<h4>Images</h4>
+<p>CSS style available: <code>width, height, opacity</code></p>
+<pre>![](http://www.example.com/image.jpg)
+![](http://www.example.com/image.jpg | width: 200px)
+![](http://www.example.com/image.jpg | height: 124px | width: 80px | opacity: 0.6)
+</pre>
+<h4>Tables</h4>
+<pre>| Column 1 | Column 2 | Column 3 |
+| -------- | -------- | -------- |
+| John     | Doe      | Male     |
+| Mary     | Smith    | Female   |
+
+<em>Or without aligning the columns...</em>
+
+| Column 1 | Column 2 | Column 3 |
+| -------- | -------- | -------- |
+| John | Doe | Male |
+| Mary | Smith | Female |
+</pre>
+<h4>Displaying code</h4>
+<pre>`var example = "hello!";`
+
+<em>Or spanning multiple lines...</em>
+
+```
+var example = "hello!";
+alert(example);
+```</pre>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create',
+            'UA-67152800-9',
+            'auto', {
+              userId: '850'
+            }
+          );
+
+        ga('send', 'pageview');
+
+        $(document).ready(function() {
+          ga(function(tracker) {
+            var clientId = tracker.get('clientId');
+            $('.ga-client-id').val(clientId);
+          });
+        });
+      </script>
+
+
+
+
+      
+
+
+  
+
+</body></html>

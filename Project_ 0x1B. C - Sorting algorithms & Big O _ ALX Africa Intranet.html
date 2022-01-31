@@ -1,0 +1,3568 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)https://alx-intranet.hbtn.io/projects/248 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="google" content="notranslate">
+
+    <title>Project: 0x1B. C - Sorting algorithms &amp; Big O | ALX Africa Intranet</title>
+
+      <link rel="stylesheet" href="./Project_ 0x1B. C - Sorting algorithms &amp; Big O _ ALX Africa Intranet_files/xgz4ilr.css">
+      <link rel="stylesheet" media="all" href="./Project_ 0x1B. C - Sorting algorithms &amp; Big O _ ALX Africa Intranet_files/application_alx-78539009bc28411fcb894326c5b06cbc4ad76bb596695fc5ebc227bce80b7519.css">
+      <script async="" src="./Project_ 0x1B. C - Sorting algorithms &amp; Big O _ ALX Africa Intranet_files/analytics.js.download"></script><script src="./Project_ 0x1B. C - Sorting algorithms &amp; Big O _ ALX Africa Intranet_files/loader.js.download"></script>
+      <script src="./Project_ 0x1B. C - Sorting algorithms &amp; Big O _ ALX Africa Intranet_files/application-893a1fbac8056794487927a8441427ec09bed08e0b9409e3450cc977f2db3e1c.js.download"></script>
+      <link rel="shortcut icon" type="image/x-icon" href="https://alx-intranet.hbtn.io/favicon_alx.ico">
+      <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="3ifeh008y6c6c6oY796EPKEzBRw8uNHzB63iTrp4jMq4mxZ2wA7O6e8K+t/g7GDxJblE7mlYLGBXJiEHPWTbdQ==">
+
+      <link rel="apple-touch-icon" href="https://alx-intranet.hbtn.io/apple-touch-icon_alx.png">
+
+      <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+      <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+
+      <!-- Store user timezone -->
+      <script>
+        Cookies.set('timezone', (new Date()).getTimezoneOffset() / -60.0);
+      </script>
+
+      <!-- intro.js for interactive onboarding -->
+
+      <!-- React -->
+      <script src="./Project_ 0x1B. C - Sorting algorithms &amp; Big O _ ALX Africa Intranet_files/application-c914a91d92cb727f0086.js.download"></script>
+      <link rel="stylesheet" media="screen" href="./Project_ 0x1B. C - Sorting algorithms &amp; Big O _ ALX Africa Intranet_files/application-6a50d1fd.css">
+
+  </head>
+
+  <body class="
+    signed_in
+    env_production
+    
+    " translate="no" data-theme-suffix="_alx" data-checker-special-theme="">
+
+      <input type="hidden" id="hbtn-slack-url" value="https://alx-students.slack.com">
+      <nav class="navbar navbar-default navbar-fixed-top topbar visible-xs">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-mobile" aria-expanded="false">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+
+    <a class="navbar-brand" href="https://alx-intranet.hbtn.io/">
+      <div class="logo"></div>
+</a>  </div>
+
+  <div class="collapse navbar-collapse navigation" id="navbar-mobile">
+    <ul class="nav navbar-nav">
+      
+
+
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Planning"><a href="https://alx-intranet.hbtn.io/dashboards/my_planning"><div class="icon "><i aria-hidden="true" class="fa fa-calendar "></i></div><div class="visible-xs">Planning</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-current-projects-item" title="" data-original-title="Projects"><a href="https://alx-intranet.hbtn.io/projects/current"><div class="icon "><i aria-hidden="true" class="fa fa-code-fork "></i></div><div class="visible-xs">Projects</div></a></li>
+    
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="QA Reviews"><a href="https://alx-intranet.hbtn.io/dashboards/corrections_i_can_make"><div class="icon "><i aria-hidden="true" class="fa fa-check "></i></div><div class="visible-xs">QA Reviews</div></a></li>
+    
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Evaluation quizzes"><a href="https://alx-intranet.hbtn.io/dashboards/my_current_evaluation_quizzes"><div class="icon "><i aria-hidden="true" class="fa fa-question "></i></div><div class="visible-xs">Evaluation quizzes</div></a></li>
+
+    <hr title="My resources">
+
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Curriculums"><a href="https://alx-intranet.hbtn.io/dashboards/my_curriculums"><div class="icon "><i aria-hidden="true" class="fa fa-graduation-cap "></i></div><div class="visible-xs">Curriculums</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-concepts-item" title="" data-original-title="Concepts"><a href="https://alx-intranet.hbtn.io/concepts"><div class="icon "><i aria-hidden="true" class="fa fa-file-text "></i></div><div class="visible-xs">Concepts</div></a></li>
+    
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-dashboards-video-rooms" title="" data-original-title="Conference rooms"><a href="https://alx-intranet.hbtn.io/dashboards/video_rooms"><div class="icon "><i aria-hidden="true" class="fa fa-comments "></i></div><div class="visible-xs">Conference rooms</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Servers"><a href="https://alx-intranet.hbtn.io/servers"><div class="icon "><i aria-hidden="true" class="fa fa-server "></i></div><div class="visible-xs">Servers</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-dashboards-my-containers" title="" data-original-title="Sandboxes"><a href="https://alx-intranet.hbtn.io/dashboards/my_containers"><div class="icon "><i aria-hidden="true" class="fa fa-terminal "></i></div><div class="visible-xs">Sandboxes</div></a></li>
+    
+    
+
+      <hr title="My campus">
+
+      
+      <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Peers"><a href="https://alx-intranet.hbtn.io/dashboards/my_peers"><div class="icon "><i aria-hidden="true" class="fa fa-users "></i></div><div class="visible-xs">Peers</div></a></li>
+      <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Captain&#39;s Logs"><a href="https://alx-intranet.hbtn.io/dashboards/my_captain_log"><div class="icon "><i aria-hidden="true" class="fa fa-book "></i></div><div class="visible-xs">Captain's Logs</div></a></li>
+      
+      <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Speakers of the Day"><a href="https://alx-intranet.hbtn.io/dashboards/my_speakers_of_the_day"><div class="icon "><i aria-hidden="true" class="fa fa-microphone "></i></div><div class="visible-xs">Speakers of the Day</div></a></li>
+
+
+<hr class="visible-xs">
+
+<li>
+    <div data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Slack">
+      <a target="_blank" href="https://alx-students.slack.com/">
+        <div class="image slack">
+          <div class="inner"></div>
+        </div>
+        <div class="visible-xs">Slack</div>
+</a>    </div>
+
+  <div data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="My Profile">
+    <a href="https://alx-intranet.hbtn.io/users/my_profile">
+        <div class="image ">
+          <div class="inner" style="background-image: url(&#39;https://s3.amazonaws.com/alx-intranet.hbtn.io/users/photos/000/000/850/thumb/IMG_20190729_142005.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIARDDGGGOU65GPZGY3%2F20211021%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20211021T134826Z&amp;X-Amz-Expires=600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=a451809ee9bf5e9d4c0e94814c0238f104a9a4428ed6debd38ab9c1b31724692&#39;)"></div>
+        </div>
+
+      <div class="visible-xs">My Profile</div>
+</a>  </div>
+</li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      <div class="hidden-xs navigation sidebar">
+  <a class="logo-container" href="https://alx-intranet.hbtn.io/">
+    <div class="logo"></div>
+</a>
+  <ul>
+    
+
+
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Planning"><a href="https://alx-intranet.hbtn.io/dashboards/my_planning"><div class="icon "><i aria-hidden="true" class="fa fa-calendar "></i></div><div class="visible-xs">Planning</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-current-projects-item" title="" data-original-title="Projects"><a href="https://alx-intranet.hbtn.io/projects/current"><div class="icon "><i aria-hidden="true" class="fa fa-code-fork "></i></div><div class="visible-xs">Projects</div></a></li>
+    
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="QA Reviews"><a href="https://alx-intranet.hbtn.io/dashboards/corrections_i_can_make"><div class="icon "><i aria-hidden="true" class="fa fa-check "></i></div><div class="visible-xs">QA Reviews</div></a></li>
+    
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Evaluation quizzes"><a href="https://alx-intranet.hbtn.io/dashboards/my_current_evaluation_quizzes"><div class="icon "><i aria-hidden="true" class="fa fa-question "></i></div><div class="visible-xs">Evaluation quizzes</div></a></li>
+
+    <hr title="My resources">
+
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Curriculums"><a href="https://alx-intranet.hbtn.io/dashboards/my_curriculums"><div class="icon "><i aria-hidden="true" class="fa fa-graduation-cap "></i></div><div class="visible-xs">Curriculums</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-concepts-item" title="" data-original-title="Concepts"><a href="https://alx-intranet.hbtn.io/concepts"><div class="icon "><i aria-hidden="true" class="fa fa-file-text "></i></div><div class="visible-xs">Concepts</div></a></li>
+    
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-dashboards-video-rooms" title="" data-original-title="Conference rooms"><a href="https://alx-intranet.hbtn.io/dashboards/video_rooms"><div class="icon "><i aria-hidden="true" class="fa fa-comments "></i></div><div class="visible-xs">Conference rooms</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Servers"><a href="https://alx-intranet.hbtn.io/servers"><div class="icon "><i aria-hidden="true" class="fa fa-server "></i></div><div class="visible-xs">Servers</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-dashboards-my-containers" title="" data-original-title="Sandboxes"><a href="https://alx-intranet.hbtn.io/dashboards/my_containers"><div class="icon "><i aria-hidden="true" class="fa fa-terminal "></i></div><div class="visible-xs">Sandboxes</div></a></li>
+    
+    
+
+      <hr title="My campus">
+
+      
+      <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Peers"><a href="https://alx-intranet.hbtn.io/dashboards/my_peers"><div class="icon "><i aria-hidden="true" class="fa fa-users "></i></div><div class="visible-xs">Peers</div></a></li>
+      <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Captain&#39;s Logs"><a href="https://alx-intranet.hbtn.io/dashboards/my_captain_log"><div class="icon "><i aria-hidden="true" class="fa fa-book "></i></div><div class="visible-xs">Captain's Logs</div></a></li>
+      
+      <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Speakers of the Day"><a href="https://alx-intranet.hbtn.io/dashboards/my_speakers_of_the_day"><div class="icon "><i aria-hidden="true" class="fa fa-microphone "></i></div><div class="visible-xs">Speakers of the Day</div></a></li>
+
+
+<hr class="visible-xs">
+
+<li>
+    <div data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Slack">
+      <a target="_blank" href="https://alx-students.slack.com/">
+        <div class="image slack">
+          <div class="inner"></div>
+        </div>
+        <div class="visible-xs">Slack</div>
+</a>    </div>
+
+  <div data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="My Profile">
+    <a href="https://alx-intranet.hbtn.io/users/my_profile">
+        <div class="image ">
+          <div class="inner" style="background-image: url(&#39;https://s3.amazonaws.com/alx-intranet.hbtn.io/users/photos/000/000/850/thumb/IMG_20190729_142005.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIARDDGGGOU65GPZGY3%2F20211021%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20211021T134826Z&amp;X-Amz-Expires=600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=a451809ee9bf5e9d4c0e94814c0238f104a9a4428ed6debd38ab9c1b31724692&#39;)"></div>
+        </div>
+
+      <div class="visible-xs">My Profile</div>
+</a>  </div>
+</li>
+
+
+  </ul>
+</div>
+
+
+    <main>
+      <div id="layout-bars">
+        
+
+        
+
+        
+
+        
+      </div>
+
+      <article class="">
+        
+<div class="project row">
+  <div class="col-xs-12 col-md-10 col-lg-8 contains-images">
+
+      <h1 class="gap">0x1B. C - Sorting algorithms &amp; Big O</h1>
+
+  <ul class="list-group metadata" id="project-metadata">
+
+    <li class="list-group-item">
+      <i aria-hidden="true" class="fa fa-user  fa-fw"></i>
+      By Alexandre Gautier
+    </li>
+
+
+    <li class="list-group-item">
+      <i aria-hidden="true" class="fa fa-users  fa-fw"></i>
+      Project to be done in teams of 2 people
+    </li>
+
+      <li class="list-group-item">
+        <i aria-hidden="true" class="fa fa-calendar  fa-fw"></i>
+            Ongoing project - started 10-21-2021, must end by 10-27-2021 (in 6 days)
+          - you're done with <span id="student_task_done_percentage">0</span>% of tasks.
+      </li>
+
+      <li class="list-group-item">
+        <i aria-hidden="true" class="fa fa-check  fa-fw"></i>
+        Checker will be released at 10-24-2021 06:00 AM
+      </li>
+
+
+      <li class="list-group-item">
+        <i aria-hidden="true" class="fa fa-check-square  fa-fw"></i>
+        QA review fully automated.
+      </li>
+
+</ul>
+
+
+
+
+    <div id="project_id" style="display: none" data-project-id="248"></div>
+
+
+
+
+      
+
+      
+
+      <div class="gap" id="project-description">
+  <p><img src="./Project_ 0x1B. C - Sorting algorithms &amp; Big O _ ALX Africa Intranet_files/willy-wonka.png"><br>
+<br></p>
+
+<h2>Background Context</h2>
+
+<p>This project is meant to be done by groups of two students. Each group of two should <a href="https://alx-intranet.hbtn.io/rltoken/gIcHRL9I7i1lw2CTAll37A" title="pair program" target="_blank">pair program</a> for at least the mandatory part.</p>
+
+<h2>Resources</h2>
+
+<p><strong>Read or watch</strong>:</p>
+
+<ul>
+<li><a href="https://alx-intranet.hbtn.io/rltoken/-j5MKLBlzZAC2RfJ5DTBIg" title="Sorting algorithm" target="_blank">Sorting algorithm</a> </li>
+<li><a href="https://alx-intranet.hbtn.io/rltoken/WRvrE2BaNVQFssHiUATTrw" title="Big O notation" target="_blank">Big O notation</a> </li>
+<li><a href="https://alx-intranet.hbtn.io/rltoken/ol0P7NbYVb5R31iOv4Q40A" title="Sorting algorithms animations" target="_blank">Sorting algorithms animations</a> </li>
+<li><a href="https://alx-intranet.hbtn.io/rltoken/_I0aEvhfJ66Xyob6dd9Utw" title="15 sorting algorithms in 6 minutes" target="_blank">15 sorting algorithms in 6 minutes</a> (<em><b>WARNING</b>: The following video can trigger seizure/epilepsy. It is not required for the project, as it is only a funny visualization of different sorting algorithms</em>)</li>
+</ul>
+
+<h2>Learning Objectives</h2>
+
+<p>At the end of this project, you are expected to be able to <a href="https://alx-intranet.hbtn.io/rltoken/n73m6TI_R5MKRAbyPNOrqw" title="explain to anyone" target="_blank">explain to anyone</a>, <strong>without the help of Google</strong>:</p>
+
+<h3>General</h3>
+
+<ul>
+<li>At least four different sorting algorithms</li>
+<li>What is the Big O notation, and how to evaluate the time complexity of an algorithm</li>
+<li>How to select the best sorting algorithm for a given input</li>
+<li>What is a stable sorting algorithm</li>
+</ul>
+
+<h2>Requirements</h2>
+
+<h3>General</h3>
+
+<ul>
+<li>Allowed editors: <code>vi</code>, <code>vim</code>, <code>emacs</code></li>
+<li>All your files will be compiled on Ubuntu 20.04 LTS using gcc, using the options -Wall -Werror -Wextra -pedantic -std=gnu89</li>
+<li>All your files should end with a new line</li>
+<li>A <code>README.md</code> file, at the root of the folder of the project, is mandatory</li>
+<li>Your code should use the <code>Betty</code> style. It will be checked using <a href="https://github.com/holbertonschool/Betty/blob/master/betty-style.pl" title="betty-style.pl" target="_blank">betty-style.pl</a> and <a href="https://github.com/holbertonschool/Betty/blob/master/betty-doc.pl" title="betty-doc.pl" target="_blank">betty-doc.pl</a></li>
+<li>You are not allowed to use global variables</li>
+<li>No more than 5 functions per file</li>
+<li>Unless specified otherwise, you are not allowed to use the standard library. Any use of functions like <em>printf, puts, …</em> is totally forbidden.</li>
+<li>In the following examples, the <code>main.c</code> files are shown as examples. You can use them to test your functions, but you don’t have to push them to your repo (if you do we won’t take them into account). We will use our own <code>main.c</code> files at compilation. Our <code>main.c</code> files might be different from the one shown in the examples</li>
+<li>The prototypes of all your functions should be included in your header file called <code>sort.h</code></li>
+<li>Don’t forget to push your header file</li>
+<li>All your header files should be include guarded</li>
+<li>A list/array does not need to be sorted if its size is less than 2.</li>
+</ul>
+
+<h3>GitHub</h3>
+
+<p><strong>There should be one project repository per group. If you clone/fork/whatever a project repository with the same name before the second deadline, you risk a 0% score.</strong></p>
+
+<h2>More Info</h2>
+
+<h3>Data Structure and Functions</h3>
+
+<ul>
+<li>For this project you are given the following <code>print_array</code>, and <code>print_list</code> functions:</li>
+</ul>
+
+<pre><code>#include &lt;stdlib.h&gt;
+#include &lt;stdio.h&gt;
+
+/**
+ * print_array - Prints an array of integers
+ *
+ * @array: The array to be printed
+ * @size: Number of elements in @array
+ */
+void print_array(const int *array, size_t size)
+{
+    size_t i;
+
+    i = 0;
+    while (array &amp;&amp; i &lt; size)
+    {
+        if (i &gt; 0)
+            printf(", ");
+        printf("%d", array[i]);
+        ++i;
+    }
+    printf("\n");
+}
+</code></pre>
+
+<pre><code>#include &lt;stdio.h&gt;
+#include "sort.h"
+
+/**
+ * print_list - Prints a list of integers
+ *
+ * @list: The list to be printed
+ */
+void print_list(const listint_t *list)
+{
+    int i;
+
+    i = 0;
+    while (list)
+    {
+        if (i &gt; 0)
+            printf(", ");
+        printf("%d", list-&gt;n);
+        ++i;
+        list = list-&gt;next;
+    }
+    printf("\n");
+}
+</code></pre>
+
+<ul>
+<li>Our files <code>print_array.c</code> and <code>print_list.c</code> (containing the <code>print_array</code> and <code>print_list</code> functions) will be compiled with your functions during the correction.</li>
+<li>Please declare the prototype of the functions <code>print_array</code> and <code>print_list</code> in your <code>sort.h</code> header file</li>
+<li>Please use the following data structure for doubly linked list:</li>
+</ul>
+
+<pre><code>/**
+ * struct listint_s - Doubly linked list node
+ *
+ * @n: Integer stored in the node
+ * @prev: Pointer to the previous element of the list
+ * @next: Pointer to the next element of the list
+ */
+typedef struct listint_s
+{
+    const int n;
+    struct listint_s *prev;
+    struct listint_s *next;
+} listint_t;
+</code></pre>
+
+<p>Please, note this format is used for Quiz and Task questions.</p>
+
+<ul>
+<li><code>O(1)</code></li>
+<li><code>O(n)</code></li>
+<li><code>O(n!)</code></li>
+<li>n square -&gt; <code>O(n^2)</code></li>
+<li>log(n) -&gt; <code>O(log(n))</code></li>
+<li>n * log(n) -&gt; <code>O(nlog(n))</code></li>
+<li>n + k -&gt; <code>O(n+k)</code></li>
+<li>…</li>
+</ul>
+
+<p>Please use the “short” notation (don’t use constants). Example: <code>O(nk)</code> or <code>O(wn)</code> should be written <code>O(n)</code>.
+If an answer is required within a file, all your answers files must have a newline at the end.</p>
+
+<h3>Tests</h3>
+
+<p>Here is a quick tip to help you test your sorting algorithms with big sets of random integers: <a href="https://alx-intranet.hbtn.io/rltoken/YR-VWQbICB59wZs1eAaI3w" title="Random.org" target="_blank">Random.org</a></p>
+
+</div>
+
+
+      
+
+        <h2 class="gap" id="project-quiz-questions-title">
+    Quiz questions
+  </h2>
+
+  <div class="panel panel-default">
+    <div class="panel-body">
+
+      <section class="quiz_questions_show_container">
+          <div class="quiz_question_item_container" data-role="quiz_question694" data-position="1">
+            <div class=" clearfix" id="quiz_question-694">
+
+    <h4 class="quiz_question">Question #0</h4>
+
+    <!-- Quiz question Body -->
+    <p>What is the time complexity of this function / algorithm?</p>
+
+<pre><code>void f(int n)
+{
+    printf("n = %d\n", n);
+}
+</code></pre>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="694">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524509295505" id="quiz-answer-1524509295505" data-quiz-question-id="694" data-quiz-answer-id="1524509295505">
+  <label for="quiz-answer-1524509295505">
+    <p>O(1)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524509373233" id="quiz-answer-1524509373233" data-quiz-question-id="694" data-quiz-answer-id="1524509373233">
+  <label for="quiz-answer-1524509373233">
+    <p>O(n)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524509381604" id="quiz-answer-1524509381604" data-quiz-question-id="694" data-quiz-answer-id="1524509381604">
+  <label for="quiz-answer-1524509381604">
+    <p>O(n!)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524509499820" id="quiz-answer-1524509499820" data-quiz-question-id="694" data-quiz-answer-id="1524509499820">
+  <label for="quiz-answer-1524509499820">
+    <p>O(n^2)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524509702359" id="quiz-answer-1524509702359" data-quiz-question-id="694" data-quiz-answer-id="1524509702359">
+  <label for="quiz-answer-1524509702359">
+    <p>O(log(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524509719705" id="quiz-answer-1524509719705" data-quiz-question-id="694" data-quiz-answer-id="1524509719705">
+  <label for="quiz-answer-1524509719705">
+    <p>O(nlog(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524522685963" id="quiz-answer-1524522685963" data-quiz-question-id="694" data-quiz-answer-id="1524522685963">
+  <label for="quiz-answer-1524522685963">
+    <p>O(2^n)</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question695" data-position="2">
+            <div class=" clearfix" id="quiz_question-695">
+
+    <h4 class="quiz_question">Question #1</h4>
+
+    <!-- Quiz question Body -->
+    <p>What is the time complexity of this function / algorithm?</p>
+
+<pre><code>void f(int n)
+{
+    int i;
+
+    for (i = 0; i &lt; n; i++)
+    {
+        printf("[%d]\n", i);
+    }
+}
+</code></pre>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="695">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524510168364" id="quiz-answer-1524510168364" data-quiz-question-id="695" data-quiz-answer-id="1524510168364">
+  <label for="quiz-answer-1524510168364">
+    <p>O(1)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524510175352" id="quiz-answer-1524510175352" data-quiz-question-id="695" data-quiz-answer-id="1524510175352">
+  <label for="quiz-answer-1524510175352">
+    <p>O(n)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524510182020" id="quiz-answer-1524510182020" data-quiz-question-id="695" data-quiz-answer-id="1524510182020">
+  <label for="quiz-answer-1524510182020">
+    <p>O(n!)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524510189751" id="quiz-answer-1524510189751" data-quiz-question-id="695" data-quiz-answer-id="1524510189751">
+  <label for="quiz-answer-1524510189751">
+    <p>O(n^2)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524510204814" id="quiz-answer-1524510204814" data-quiz-question-id="695" data-quiz-answer-id="1524510204814">
+  <label for="quiz-answer-1524510204814">
+    <p>O(log(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524510223107" id="quiz-answer-1524510223107" data-quiz-question-id="695" data-quiz-answer-id="1524510223107">
+  <label for="quiz-answer-1524510223107">
+    <p>O(nlog(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524522678100" id="quiz-answer-1524522678100" data-quiz-question-id="695" data-quiz-answer-id="1524522678100">
+  <label for="quiz-answer-1524522678100">
+    <p>O(2^n)</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question696" data-position="3">
+            <div class=" clearfix" id="quiz_question-696">
+
+    <h4 class="quiz_question">Question #2</h4>
+
+    <!-- Quiz question Body -->
+    <p>What is the time complexity of this function / algorithm?</p>
+
+<pre><code>void f(int n)
+{
+    int i;
+
+    for (i = 0; i &lt; n; i += 98)
+    {
+        printf("[%d]\n", i);
+    }
+}
+</code></pre>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="696">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524510376132" id="quiz-answer-1524510376132" data-quiz-question-id="696" data-quiz-answer-id="1524510376132">
+  <label for="quiz-answer-1524510376132">
+    <p>O(1)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524510383714" id="quiz-answer-1524510383714" data-quiz-question-id="696" data-quiz-answer-id="1524510383714">
+  <label for="quiz-answer-1524510383714">
+    <p>O(n)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524510389496" id="quiz-answer-1524510389496" data-quiz-question-id="696" data-quiz-answer-id="1524510389496">
+  <label for="quiz-answer-1524510389496">
+    <p>O(n!)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524510400567" id="quiz-answer-1524510400567" data-quiz-question-id="696" data-quiz-answer-id="1524510400567">
+  <label for="quiz-answer-1524510400567">
+    <p>O(n^2)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524510406610" id="quiz-answer-1524510406610" data-quiz-question-id="696" data-quiz-answer-id="1524510406610">
+  <label for="quiz-answer-1524510406610">
+    <p>O(log(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524510413195" id="quiz-answer-1524510413195" data-quiz-question-id="696" data-quiz-answer-id="1524510413195">
+  <label for="quiz-answer-1524510413195">
+    <p>O(nlog(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524522670679" id="quiz-answer-1524522670679" data-quiz-question-id="696" data-quiz-answer-id="1524522670679">
+  <label for="quiz-answer-1524522670679">
+    <p>O(2^n)</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question697" data-position="4">
+            <div class=" clearfix" id="quiz_question-697">
+
+    <h4 class="quiz_question">Question #3</h4>
+
+    <!-- Quiz question Body -->
+    <p>What is the time complexity of this function / algorithm?</p>
+
+<pre><code>void f(unsigned int n)
+{
+    int i;
+
+    for (i = 1; i &lt; n; i = i * 2)
+    {
+        printf("[%d]\n", i);
+    }
+}
+</code></pre>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="697">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524510521315" id="quiz-answer-1524510521315" data-quiz-question-id="697" data-quiz-answer-id="1524510521315">
+  <label for="quiz-answer-1524510521315">
+    <p>O(1)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524510539496" id="quiz-answer-1524510539496" data-quiz-question-id="697" data-quiz-answer-id="1524510539496">
+  <label for="quiz-answer-1524510539496">
+    <p>O(n)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524510543595" id="quiz-answer-1524510543595" data-quiz-question-id="697" data-quiz-answer-id="1524510543595">
+  <label for="quiz-answer-1524510543595">
+    <p>O(n!)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524510549565" id="quiz-answer-1524510549565" data-quiz-question-id="697" data-quiz-answer-id="1524510549565">
+  <label for="quiz-answer-1524510549565">
+    <p>O(n^2)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524510554964" id="quiz-answer-1524510554964" data-quiz-question-id="697" data-quiz-answer-id="1524510554964">
+  <label for="quiz-answer-1524510554964">
+    <p>O(log(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524510568655" id="quiz-answer-1524510568655" data-quiz-question-id="697" data-quiz-answer-id="1524510568655">
+  <label for="quiz-answer-1524510568655">
+    <p>O(nlog(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524522664439" id="quiz-answer-1524522664439" data-quiz-question-id="697" data-quiz-answer-id="1524522664439">
+  <label for="quiz-answer-1524522664439">
+    <p>O(2^n)</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question698" data-position="5">
+            <div class=" clearfix" id="quiz_question-698">
+
+    <h4 class="quiz_question">Question #4</h4>
+
+    <!-- Quiz question Body -->
+    <p>What is the time complexity of this function / algorithm?</p>
+
+<pre><code>var factorial = function(n) {
+    if(n == 0) {
+        return 1
+    } else {
+        return n * factorial(n - 1);
+    }
+}
+</code></pre>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="698">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524511024918" id="quiz-answer-1524511024918" data-quiz-question-id="698" data-quiz-answer-id="1524511024918">
+  <label for="quiz-answer-1524511024918">
+    <p>O(1)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524511028904" id="quiz-answer-1524511028904" data-quiz-question-id="698" data-quiz-answer-id="1524511028904">
+  <label for="quiz-answer-1524511028904">
+    <p>O(n)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524511034379" id="quiz-answer-1524511034379" data-quiz-question-id="698" data-quiz-answer-id="1524511034379">
+  <label for="quiz-answer-1524511034379">
+    <p>O(n!)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524511040140" id="quiz-answer-1524511040140" data-quiz-question-id="698" data-quiz-answer-id="1524511040140">
+  <label for="quiz-answer-1524511040140">
+    <p>O(n^2)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524511047970" id="quiz-answer-1524511047970" data-quiz-question-id="698" data-quiz-answer-id="1524511047970">
+  <label for="quiz-answer-1524511047970">
+    <p>O(log(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524511054348" id="quiz-answer-1524511054348" data-quiz-question-id="698" data-quiz-answer-id="1524511054348">
+  <label for="quiz-answer-1524511054348">
+    <p>O(nlog(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524522658372" id="quiz-answer-1524522658372" data-quiz-question-id="698" data-quiz-answer-id="1524522658372">
+  <label for="quiz-answer-1524522658372">
+    <p>O(2^n)</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question699" data-position="6">
+            <div class=" clearfix" id="quiz_question-699">
+
+    <h4 class="quiz_question">Question #5</h4>
+
+    <!-- Quiz question Body -->
+    <p>What is the time complexity of this function / algorithm?</p>
+
+<pre><code>foreach($numbers as $number)
+{
+    echo $number;
+}
+</code></pre>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="699">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524520598475" id="quiz-answer-1524520598475" data-quiz-question-id="699" data-quiz-answer-id="1524520598475">
+  <label for="quiz-answer-1524520598475">
+    <p>O(1)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524520602952" id="quiz-answer-1524520602952" data-quiz-question-id="699" data-quiz-answer-id="1524520602952">
+  <label for="quiz-answer-1524520602952">
+    <p>O(n)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524521244080" id="quiz-answer-1524521244080" data-quiz-question-id="699" data-quiz-answer-id="1524521244080">
+  <label for="quiz-answer-1524521244080">
+    <p>O(n!)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524521248526" id="quiz-answer-1524521248526" data-quiz-question-id="699" data-quiz-answer-id="1524521248526">
+  <label for="quiz-answer-1524521248526">
+    <p>O(n^2)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524521255886" id="quiz-answer-1524521255886" data-quiz-question-id="699" data-quiz-answer-id="1524521255886">
+  <label for="quiz-answer-1524521255886">
+    <p>O(log(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524521292360" id="quiz-answer-1524521292360" data-quiz-question-id="699" data-quiz-answer-id="1524521292360">
+  <label for="quiz-answer-1524521292360">
+    <p>O(nlog(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524522650308" id="quiz-answer-1524522650308" data-quiz-question-id="699" data-quiz-answer-id="1524522650308">
+  <label for="quiz-answer-1524522650308">
+    <p>O(2^n)</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question700" data-position="7">
+            <div class=" clearfix" id="quiz_question-700">
+
+    <h4 class="quiz_question">Question #6</h4>
+
+    <!-- Quiz question Body -->
+    <p>What is the time complexity of this function / algorithm?</p>
+
+<pre><code>void f(unsigned int n)
+{
+    int i;
+    int j;
+
+    for (i = 0; i &lt; n; i++)
+    {
+        for (j = 1; j &lt; n; j = j * 2)
+        {
+            printf("[%d] [%d]\n", i, j);
+        }
+    }
+}
+</code></pre>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="700">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524521401627" id="quiz-answer-1524521401627" data-quiz-question-id="700" data-quiz-answer-id="1524521401627">
+  <label for="quiz-answer-1524521401627">
+    <p>O(1)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524521407125" id="quiz-answer-1524521407125" data-quiz-question-id="700" data-quiz-answer-id="1524521407125">
+  <label for="quiz-answer-1524521407125">
+    <p>O(n)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524521412357" id="quiz-answer-1524521412357" data-quiz-question-id="700" data-quiz-answer-id="1524521412357">
+  <label for="quiz-answer-1524521412357">
+    <p>O(n!)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524521416741" id="quiz-answer-1524521416741" data-quiz-question-id="700" data-quiz-answer-id="1524521416741">
+  <label for="quiz-answer-1524521416741">
+    <p>O(n^2)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524521424307" id="quiz-answer-1524521424307" data-quiz-question-id="700" data-quiz-answer-id="1524521424307">
+  <label for="quiz-answer-1524521424307">
+    <p>O(log(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524521430213" id="quiz-answer-1524521430213" data-quiz-question-id="700" data-quiz-answer-id="1524521430213">
+  <label for="quiz-answer-1524521430213">
+    <p>O(nlog(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524522642574" id="quiz-answer-1524522642574" data-quiz-question-id="700" data-quiz-answer-id="1524522642574">
+  <label for="quiz-answer-1524522642574">
+    <p>O(2^n)</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question701" data-position="8">
+            <div class=" clearfix" id="quiz_question-701">
+
+    <h4 class="quiz_question">Question #7</h4>
+
+    <!-- Quiz question Body -->
+    <p>What is the time complexity of this function / algorithm?</p>
+
+<pre><code>void f(int n)
+{
+    int i;
+    int j;
+
+    for (i = 0; i &lt; n; i++)
+    {
+        if (i % 2 == 0)
+        {
+            for (j = 1; j &lt; n; j = j * 2)
+            {
+                printf("[%d] [%d]\n", i, j);
+            }
+        }
+        else
+        {
+            for (j = 0; j &lt; n; j = j + 2)
+            {
+                printf("[%d] [%d]\n", i, j);
+            }
+        }
+    }
+}
+</code></pre>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="701">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524521707802" id="quiz-answer-1524521707802" data-quiz-question-id="701" data-quiz-answer-id="1524521707802">
+  <label for="quiz-answer-1524521707802">
+    <p>O(1)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524521711570" id="quiz-answer-1524521711570" data-quiz-question-id="701" data-quiz-answer-id="1524521711570">
+  <label for="quiz-answer-1524521711570">
+    <p>O(n)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524521716276" id="quiz-answer-1524521716276" data-quiz-question-id="701" data-quiz-answer-id="1524521716276">
+  <label for="quiz-answer-1524521716276">
+    <p>O(n!)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524521723058" id="quiz-answer-1524521723058" data-quiz-question-id="701" data-quiz-answer-id="1524521723058">
+  <label for="quiz-answer-1524521723058">
+    <p>O(n^2)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524521729544" id="quiz-answer-1524521729544" data-quiz-question-id="701" data-quiz-answer-id="1524521729544">
+  <label for="quiz-answer-1524521729544">
+    <p>O(log(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524521737531" id="quiz-answer-1524521737531" data-quiz-question-id="701" data-quiz-answer-id="1524521737531">
+  <label for="quiz-answer-1524521737531">
+    <p>O(nlog(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524522634324" id="quiz-answer-1524522634324" data-quiz-question-id="701" data-quiz-answer-id="1524522634324">
+  <label for="quiz-answer-1524522634324">
+    <p>O(2^n)</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question702" data-position="9">
+            <div class=" clearfix" id="quiz_question-702">
+
+    <h4 class="quiz_question">Question #8</h4>
+
+    <!-- Quiz question Body -->
+    <p>What is the time complexity of this function / algorithm?</p>
+
+<pre><code>int Fibonacci(int number)
+{
+    if (number &lt;= 1) return number;
+
+    return Fibonacci(number - 2) + Fibonacci(number - 1);
+}
+</code></pre>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="702">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524522560144" id="quiz-answer-1524522560144" data-quiz-question-id="702" data-quiz-answer-id="1524522560144">
+  <label for="quiz-answer-1524522560144">
+    <p>O(1)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524522569160" id="quiz-answer-1524522569160" data-quiz-question-id="702" data-quiz-answer-id="1524522569160">
+  <label for="quiz-answer-1524522569160">
+    <p>O(n)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524522574160" id="quiz-answer-1524522574160" data-quiz-question-id="702" data-quiz-answer-id="1524522574160">
+  <label for="quiz-answer-1524522574160">
+    <p>O(n!)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524522579707" id="quiz-answer-1524522579707" data-quiz-question-id="702" data-quiz-answer-id="1524522579707">
+  <label for="quiz-answer-1524522579707">
+    <p>O(n^2)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524522585956" id="quiz-answer-1524522585956" data-quiz-question-id="702" data-quiz-answer-id="1524522585956">
+  <label for="quiz-answer-1524522585956">
+    <p>O(log(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524522596822" id="quiz-answer-1524522596822" data-quiz-question-id="702" data-quiz-answer-id="1524522596822">
+  <label for="quiz-answer-1524522596822">
+    <p>O(nlog(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524522613007" id="quiz-answer-1524522613007" data-quiz-question-id="702" data-quiz-answer-id="1524522613007">
+  <label for="quiz-answer-1524522613007">
+    <p>O(2^n)</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question703" data-position="10">
+            <div class=" clearfix" id="quiz_question-703">
+
+    <h4 class="quiz_question">Question #9</h4>
+
+    <!-- Quiz question Body -->
+    <p>What is the time complexity of this function / algorithm?</p>
+
+<pre><code>def func(n):
+    a=5
+    b=6
+    c=10
+    for i in range(n):
+        for j in range(n):
+            x = i * i
+            y = j * j
+            z = i * j
+    for k in range(n):
+        w = a*k + 45
+        v = b*b
+    d = 33
+</code></pre>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="703">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524522968999" id="quiz-answer-1524522968999" data-quiz-question-id="703" data-quiz-answer-id="1524522968999">
+  <label for="quiz-answer-1524522968999">
+    <p>O(1)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524522972552" id="quiz-answer-1524522972552" data-quiz-question-id="703" data-quiz-answer-id="1524522972552">
+  <label for="quiz-answer-1524522972552">
+    <p>O(n)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524522977370" id="quiz-answer-1524522977370" data-quiz-question-id="703" data-quiz-answer-id="1524522977370">
+  <label for="quiz-answer-1524522977370">
+    <p>O(n!)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524522983078" id="quiz-answer-1524522983078" data-quiz-question-id="703" data-quiz-answer-id="1524522983078">
+  <label for="quiz-answer-1524522983078">
+    <p>O(n^2)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524522996030" id="quiz-answer-1524522996030" data-quiz-question-id="703" data-quiz-answer-id="1524522996030">
+  <label for="quiz-answer-1524522996030">
+    <p>O(log(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524523002855" id="quiz-answer-1524523002855" data-quiz-question-id="703" data-quiz-answer-id="1524523002855">
+  <label for="quiz-answer-1524523002855">
+    <p>O(nlog(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524523014089" id="quiz-answer-1524523014089" data-quiz-question-id="703" data-quiz-answer-id="1524523014089">
+  <label for="quiz-answer-1524523014089">
+    <p>O(2^n)</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question704" data-position="11">
+            <div class=" clearfix" id="quiz_question-704">
+
+    <h4 class="quiz_question">Question #10</h4>
+
+    <!-- Quiz question Body -->
+    <p>What is the time complexity of this function / algorithm?</p>
+
+<pre><code>void f(int n)
+{
+     int i;
+     int j;
+
+     for (i = 0; i &lt; n; i++)
+     {
+          for (j = i + 1; j &lt; n; j++)
+          {
+               printf("[%d] [%d]\n", i, j);
+          }
+     }
+}
+</code></pre>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="704">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524523347764" id="quiz-answer-1524523347764" data-quiz-question-id="704" data-quiz-answer-id="1524523347764">
+  <label for="quiz-answer-1524523347764">
+    <p>O(1)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524523352220" id="quiz-answer-1524523352220" data-quiz-question-id="704" data-quiz-answer-id="1524523352220">
+  <label for="quiz-answer-1524523352220">
+    <p>O(n)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524523355541" id="quiz-answer-1524523355541" data-quiz-question-id="704" data-quiz-answer-id="1524523355541">
+  <label for="quiz-answer-1524523355541">
+    <p>O(n!)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524523360108" id="quiz-answer-1524523360108" data-quiz-question-id="704" data-quiz-answer-id="1524523360108">
+  <label for="quiz-answer-1524523360108">
+    <p>O(n^2)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524523366898" id="quiz-answer-1524523366898" data-quiz-question-id="704" data-quiz-answer-id="1524523366898">
+  <label for="quiz-answer-1524523366898">
+    <p>O(log(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524523413733" id="quiz-answer-1524523413733" data-quiz-question-id="704" data-quiz-answer-id="1524523413733">
+  <label for="quiz-answer-1524523413733">
+    <p>O(nlog(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524523419215" id="quiz-answer-1524523419215" data-quiz-question-id="704" data-quiz-answer-id="1524523419215">
+  <label for="quiz-answer-1524523419215">
+    <p>O(2^n)</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question705" data-position="12">
+            <div class=" clearfix" id="quiz_question-705">
+
+    <h4 class="quiz_question">Question #11</h4>
+
+    <!-- Quiz question Body -->
+    <p>What is the time complexity of accessing the nth element on an unsorted array?</p>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="705">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524524138333" id="quiz-answer-1524524138333" data-quiz-question-id="705" data-quiz-answer-id="1524524138333">
+  <label for="quiz-answer-1524524138333">
+    <p>O(1)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524524144551" id="quiz-answer-1524524144551" data-quiz-question-id="705" data-quiz-answer-id="1524524144551">
+  <label for="quiz-answer-1524524144551">
+    <p>O(n)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524524148591" id="quiz-answer-1524524148591" data-quiz-question-id="705" data-quiz-answer-id="1524524148591">
+  <label for="quiz-answer-1524524148591">
+    <p>O(n!)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524524153849" id="quiz-answer-1524524153849" data-quiz-question-id="705" data-quiz-answer-id="1524524153849">
+  <label for="quiz-answer-1524524153849">
+    <p>O(n^2)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524524160329" id="quiz-answer-1524524160329" data-quiz-question-id="705" data-quiz-answer-id="1524524160329">
+  <label for="quiz-answer-1524524160329">
+    <p>O(log(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524524168876" id="quiz-answer-1524524168876" data-quiz-question-id="705" data-quiz-answer-id="1524524168876">
+  <label for="quiz-answer-1524524168876">
+    <p>O(nlog(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524524176061" id="quiz-answer-1524524176061" data-quiz-question-id="705" data-quiz-answer-id="1524524176061">
+  <label for="quiz-answer-1524524176061">
+    <p>O(2^n)</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question706" data-position="13">
+            <div class=" clearfix" id="quiz_question-706">
+
+    <h4 class="quiz_question">Question #12</h4>
+
+    <!-- Quiz question Body -->
+    <p>What is the time complexity of inserting at index n on an unsorted array?</p>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="706">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524525510461" id="quiz-answer-1524525510461" data-quiz-question-id="706" data-quiz-answer-id="1524525510461">
+  <label for="quiz-answer-1524525510461">
+    <p>O(1)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524525603497" id="quiz-answer-1524525603497" data-quiz-question-id="706" data-quiz-answer-id="1524525603497">
+  <label for="quiz-answer-1524525603497">
+    <p>O(n)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524525608772" id="quiz-answer-1524525608772" data-quiz-question-id="706" data-quiz-answer-id="1524525608772">
+  <label for="quiz-answer-1524525608772">
+    <p>O(n!)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524525613544" id="quiz-answer-1524525613544" data-quiz-question-id="706" data-quiz-answer-id="1524525613544">
+  <label for="quiz-answer-1524525613544">
+    <p>O(n^2)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524525621726" id="quiz-answer-1524525621726" data-quiz-question-id="706" data-quiz-answer-id="1524525621726">
+  <label for="quiz-answer-1524525621726">
+    <p>O(log(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524525628222" id="quiz-answer-1524525628222" data-quiz-question-id="706" data-quiz-answer-id="1524525628222">
+  <label for="quiz-answer-1524525628222">
+    <p>O(nlog(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524526701348" id="quiz-answer-1524526701348" data-quiz-question-id="706" data-quiz-answer-id="1524526701348">
+  <label for="quiz-answer-1524526701348">
+    <p>O(2^n)</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question707" data-position="14">
+            <div class=" clearfix" id="quiz_question-707">
+
+    <h4 class="quiz_question">Question #13</h4>
+
+    <!-- Quiz question Body -->
+    <p>What is the time complexity of removing at index n in an unsorted array?</p>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="707">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524525650634" id="quiz-answer-1524525650634" data-quiz-question-id="707" data-quiz-answer-id="1524525650634">
+  <label for="quiz-answer-1524525650634">
+    <p>O(1)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524525655524" id="quiz-answer-1524525655524" data-quiz-question-id="707" data-quiz-answer-id="1524525655524">
+  <label for="quiz-answer-1524525655524">
+    <p>O(n)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524525663783" id="quiz-answer-1524525663783" data-quiz-question-id="707" data-quiz-answer-id="1524525663783">
+  <label for="quiz-answer-1524525663783">
+    <p>O(n!)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524525668997" id="quiz-answer-1524525668997" data-quiz-question-id="707" data-quiz-answer-id="1524525668997">
+  <label for="quiz-answer-1524525668997">
+    <p>O(n^2)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524525675979" id="quiz-answer-1524525675979" data-quiz-question-id="707" data-quiz-answer-id="1524525675979">
+  <label for="quiz-answer-1524525675979">
+    <p>O(log(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524525687218" id="quiz-answer-1524525687218" data-quiz-question-id="707" data-quiz-answer-id="1524525687218">
+  <label for="quiz-answer-1524525687218">
+    <p>O(nlog(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524525693161" id="quiz-answer-1524525693161" data-quiz-question-id="707" data-quiz-answer-id="1524525693161">
+  <label for="quiz-answer-1524525693161">
+    <p>O(2^n)</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question708" data-position="15">
+            <div class=" clearfix" id="quiz_question-708">
+
+    <h4 class="quiz_question">Question #14</h4>
+
+    <!-- Quiz question Body -->
+    <p>What is the time complexity of searching for an element in an unsorted array of size n? </p>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="708">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524526359009" id="quiz-answer-1524526359009" data-quiz-question-id="708" data-quiz-answer-id="1524526359009">
+  <label for="quiz-answer-1524526359009">
+    <p>O(1)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524526365923" id="quiz-answer-1524526365923" data-quiz-question-id="708" data-quiz-answer-id="1524526365923">
+  <label for="quiz-answer-1524526365923">
+    <p>O(n)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524526370099" id="quiz-answer-1524526370099" data-quiz-question-id="708" data-quiz-answer-id="1524526370099">
+  <label for="quiz-answer-1524526370099">
+    <p>O(n!)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524526377053" id="quiz-answer-1524526377053" data-quiz-question-id="708" data-quiz-answer-id="1524526377053">
+  <label for="quiz-answer-1524526377053">
+    <p>O(n^2)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524526388437" id="quiz-answer-1524526388437" data-quiz-question-id="708" data-quiz-answer-id="1524526388437">
+  <label for="quiz-answer-1524526388437">
+    <p>O(log(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524526395252" id="quiz-answer-1524526395252" data-quiz-question-id="708" data-quiz-answer-id="1524526395252">
+  <label for="quiz-answer-1524526395252">
+    <p>O(nlog(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524526407754" id="quiz-answer-1524526407754" data-quiz-question-id="708" data-quiz-answer-id="1524526407754">
+  <label for="quiz-answer-1524526407754">
+    <p>O(2^n)</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question709" data-position="16">
+            <div class=" clearfix" id="quiz_question-709">
+
+    <h4 class="quiz_question">Question #15</h4>
+
+    <!-- Quiz question Body -->
+    <p>What is the time complexity of setting a value at index n in an unsorted array?</p>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="709">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524526428871" id="quiz-answer-1524526428871" data-quiz-question-id="709" data-quiz-answer-id="1524526428871">
+  <label for="quiz-answer-1524526428871">
+    <p>O(1)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524526439417" id="quiz-answer-1524526439417" data-quiz-question-id="709" data-quiz-answer-id="1524526439417">
+  <label for="quiz-answer-1524526439417">
+    <p>O(n)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524526444394" id="quiz-answer-1524526444394" data-quiz-question-id="709" data-quiz-answer-id="1524526444394">
+  <label for="quiz-answer-1524526444394">
+    <p>O(n!)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524526450405" id="quiz-answer-1524526450405" data-quiz-question-id="709" data-quiz-answer-id="1524526450405">
+  <label for="quiz-answer-1524526450405">
+    <p>O(n^2)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524526457877" id="quiz-answer-1524526457877" data-quiz-question-id="709" data-quiz-answer-id="1524526457877">
+  <label for="quiz-answer-1524526457877">
+    <p>O(log(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524526464284" id="quiz-answer-1524526464284" data-quiz-question-id="709" data-quiz-answer-id="1524526464284">
+  <label for="quiz-answer-1524526464284">
+    <p>O(nlog(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524526502987" id="quiz-answer-1524526502987" data-quiz-question-id="709" data-quiz-answer-id="1524526502987">
+  <label for="quiz-answer-1524526502987">
+    <p>O(2^n)</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question710" data-position="17">
+            <div class=" clearfix" id="quiz_question-710">
+
+    <h4 class="quiz_question">Question #16</h4>
+
+    <!-- Quiz question Body -->
+    <p>What is the time complexity of accessing the nth element of a singly linked list?</p>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="710">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524528016345" id="quiz-answer-1524528016345" data-quiz-question-id="710" data-quiz-answer-id="1524528016345">
+  <label for="quiz-answer-1524528016345">
+    <p>O(1)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524528021348" id="quiz-answer-1524528021348" data-quiz-question-id="710" data-quiz-answer-id="1524528021348">
+  <label for="quiz-answer-1524528021348">
+    <p>O(n)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524528029435" id="quiz-answer-1524528029435" data-quiz-question-id="710" data-quiz-answer-id="1524528029435">
+  <label for="quiz-answer-1524528029435">
+    <p>O(n!)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524528034223" id="quiz-answer-1524528034223" data-quiz-question-id="710" data-quiz-answer-id="1524528034223">
+  <label for="quiz-answer-1524528034223">
+    <p>O(n^2)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524528039573" id="quiz-answer-1524528039573" data-quiz-question-id="710" data-quiz-answer-id="1524528039573">
+  <label for="quiz-answer-1524528039573">
+    <p>O(log(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524528045793" id="quiz-answer-1524528045793" data-quiz-question-id="710" data-quiz-answer-id="1524528045793">
+  <label for="quiz-answer-1524528045793">
+    <p>O(nlog(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524528051323" id="quiz-answer-1524528051323" data-quiz-question-id="710" data-quiz-answer-id="1524528051323">
+  <label for="quiz-answer-1524528051323">
+    <p>O(2^n)</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question711" data-position="18">
+            <div class=" clearfix" id="quiz_question-711">
+
+    <h4 class="quiz_question">Question #17</h4>
+
+    <!-- Quiz question Body -->
+    <p>What is the time complexity of inserting after the nth element of a singly linked list? (Assuming you have a pointer to the node to insert)</p>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="711">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524527962262" id="quiz-answer-1524527962262" data-quiz-question-id="711" data-quiz-answer-id="1524527962262">
+  <label for="quiz-answer-1524527962262">
+    <p>O(1)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524527966154" id="quiz-answer-1524527966154" data-quiz-question-id="711" data-quiz-answer-id="1524527966154">
+  <label for="quiz-answer-1524527966154">
+    <p>O(n)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524527971680" id="quiz-answer-1524527971680" data-quiz-question-id="711" data-quiz-answer-id="1524527971680">
+  <label for="quiz-answer-1524527971680">
+    <p>O(n!)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524527976910" id="quiz-answer-1524527976910" data-quiz-question-id="711" data-quiz-answer-id="1524527976910">
+  <label for="quiz-answer-1524527976910">
+    <p>O(n^2)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524527984274" id="quiz-answer-1524527984274" data-quiz-question-id="711" data-quiz-answer-id="1524527984274">
+  <label for="quiz-answer-1524527984274">
+    <p>O(log(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524527998378" id="quiz-answer-1524527998378" data-quiz-question-id="711" data-quiz-answer-id="1524527998378">
+  <label for="quiz-answer-1524527998378">
+    <p>O(nlog(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524528005949" id="quiz-answer-1524528005949" data-quiz-question-id="711" data-quiz-answer-id="1524528005949">
+  <label for="quiz-answer-1524528005949">
+    <p>O(2^n)</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question712" data-position="19">
+            <div class=" clearfix" id="quiz_question-712">
+
+    <h4 class="quiz_question">Question #18</h4>
+
+    <!-- Quiz question Body -->
+    <p>What is the time complexity of removing the nth element of a singly linked list? (Assuming you have a pointer to the node to remove)</p>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="712">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524527884053" id="quiz-answer-1524527884053" data-quiz-question-id="712" data-quiz-answer-id="1524527884053">
+  <label for="quiz-answer-1524527884053">
+    <p>O(1)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524527890603" id="quiz-answer-1524527890603" data-quiz-question-id="712" data-quiz-answer-id="1524527890603">
+  <label for="quiz-answer-1524527890603">
+    <p>O(n)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524527913932" id="quiz-answer-1524527913932" data-quiz-question-id="712" data-quiz-answer-id="1524527913932">
+  <label for="quiz-answer-1524527913932">
+    <p>O(n!)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524527918720" id="quiz-answer-1524527918720" data-quiz-question-id="712" data-quiz-answer-id="1524527918720">
+  <label for="quiz-answer-1524527918720">
+    <p>O(n^2)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524527925904" id="quiz-answer-1524527925904" data-quiz-question-id="712" data-quiz-answer-id="1524527925904">
+  <label for="quiz-answer-1524527925904">
+    <p>O(log(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524527934269" id="quiz-answer-1524527934269" data-quiz-question-id="712" data-quiz-answer-id="1524527934269">
+  <label for="quiz-answer-1524527934269">
+    <p>O(nlog(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524527944503" id="quiz-answer-1524527944503" data-quiz-question-id="712" data-quiz-answer-id="1524527944503">
+  <label for="quiz-answer-1524527944503">
+    <p>O(2^n)</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question713" data-position="20">
+            <div class=" clearfix" id="quiz_question-713">
+
+    <h4 class="quiz_question">Question #19</h4>
+
+    <!-- Quiz question Body -->
+    <p>What is the time complexity of searching for an element in a singly linked list of size n? </p>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="713">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524527780715" id="quiz-answer-1524527780715" data-quiz-question-id="713" data-quiz-answer-id="1524527780715">
+  <label for="quiz-answer-1524527780715">
+    <p>O(1)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524527790427" id="quiz-answer-1524527790427" data-quiz-question-id="713" data-quiz-answer-id="1524527790427">
+  <label for="quiz-answer-1524527790427">
+    <p>O(n)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524527794620" id="quiz-answer-1524527794620" data-quiz-question-id="713" data-quiz-answer-id="1524527794620">
+  <label for="quiz-answer-1524527794620">
+    <p>O(n!)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524527803272" id="quiz-answer-1524527803272" data-quiz-question-id="713" data-quiz-answer-id="1524527803272">
+  <label for="quiz-answer-1524527803272">
+    <p>O(n^2)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524527810555" id="quiz-answer-1524527810555" data-quiz-question-id="713" data-quiz-answer-id="1524527810555">
+  <label for="quiz-answer-1524527810555">
+    <p>O(log(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524527817270" id="quiz-answer-1524527817270" data-quiz-question-id="713" data-quiz-answer-id="1524527817270">
+  <label for="quiz-answer-1524527817270">
+    <p>O(nlog(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524527870369" id="quiz-answer-1524527870369" data-quiz-question-id="713" data-quiz-answer-id="1524527870369">
+  <label for="quiz-answer-1524527870369">
+    <p>O(2^n)</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question714" data-position="21">
+            <div class=" clearfix" id="quiz_question-714">
+
+    <h4 class="quiz_question">Question #20</h4>
+
+    <!-- Quiz question Body -->
+    <p>What is the time complexity of setting the value of the nth element in a singly linked list? (Assuming you have a pointer to the node to set the value of)</p>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="714">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524527520041" id="quiz-answer-1524527520041" data-quiz-question-id="714" data-quiz-answer-id="1524527520041">
+  <label for="quiz-answer-1524527520041">
+    <p>O(1)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524527527116" id="quiz-answer-1524527527116" data-quiz-question-id="714" data-quiz-answer-id="1524527527116">
+  <label for="quiz-answer-1524527527116">
+    <p>O(n)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524527530743" id="quiz-answer-1524527530743" data-quiz-question-id="714" data-quiz-answer-id="1524527530743">
+  <label for="quiz-answer-1524527530743">
+    <p>O(n!)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524527535065" id="quiz-answer-1524527535065" data-quiz-question-id="714" data-quiz-answer-id="1524527535065">
+  <label for="quiz-answer-1524527535065">
+    <p>O(n^2)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524527541660" id="quiz-answer-1524527541660" data-quiz-question-id="714" data-quiz-answer-id="1524527541660">
+  <label for="quiz-answer-1524527541660">
+    <p>O(log(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524527547831" id="quiz-answer-1524527547831" data-quiz-question-id="714" data-quiz-answer-id="1524527547831">
+  <label for="quiz-answer-1524527547831">
+    <p>O(nlog(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524527558179" id="quiz-answer-1524527558179" data-quiz-question-id="714" data-quiz-answer-id="1524527558179">
+  <label for="quiz-answer-1524527558179">
+    <p>O(2^n)</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question715" data-position="22">
+            <div class=" clearfix" id="quiz_question-715">
+
+    <h4 class="quiz_question">Question #21</h4>
+
+    <!-- Quiz question Body -->
+    <p>What is the time complexity of accessing the nth element of a doubly linked list?</p>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="715">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524591525859" id="quiz-answer-1524591525859" data-quiz-question-id="715" data-quiz-answer-id="1524591525859">
+  <label for="quiz-answer-1524591525859">
+    <p>O(1)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524591531357" id="quiz-answer-1524591531357" data-quiz-question-id="715" data-quiz-answer-id="1524591531357">
+  <label for="quiz-answer-1524591531357">
+    <p>O(n)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524591536865" id="quiz-answer-1524591536865" data-quiz-question-id="715" data-quiz-answer-id="1524591536865">
+  <label for="quiz-answer-1524591536865">
+    <p>O(n!)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524591541415" id="quiz-answer-1524591541415" data-quiz-question-id="715" data-quiz-answer-id="1524591541415">
+  <label for="quiz-answer-1524591541415">
+    <p>O(n^2)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524591547348" id="quiz-answer-1524591547348" data-quiz-question-id="715" data-quiz-answer-id="1524591547348">
+  <label for="quiz-answer-1524591547348">
+    <p>O(log(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524591552494" id="quiz-answer-1524591552494" data-quiz-question-id="715" data-quiz-answer-id="1524591552494">
+  <label for="quiz-answer-1524591552494">
+    <p>O(nlog(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524591558778" id="quiz-answer-1524591558778" data-quiz-question-id="715" data-quiz-answer-id="1524591558778">
+  <label for="quiz-answer-1524591558778">
+    <p>O(2^n)</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question716" data-position="23">
+            <div class=" clearfix" id="quiz_question-716">
+
+    <h4 class="quiz_question">Question #22</h4>
+
+    <!-- Quiz question Body -->
+    <p>Assuming you have a pointer to the node to insert, what is the time complexity of inserting after the nth element of a doubly linked list?</p>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="716">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524591586576" id="quiz-answer-1524591586576" data-quiz-question-id="716" data-quiz-answer-id="1524591586576">
+  <label for="quiz-answer-1524591586576">
+    <p>O(1)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524591590204" id="quiz-answer-1524591590204" data-quiz-question-id="716" data-quiz-answer-id="1524591590204">
+  <label for="quiz-answer-1524591590204">
+    <p>O(n)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524591596176" id="quiz-answer-1524591596176" data-quiz-question-id="716" data-quiz-answer-id="1524591596176">
+  <label for="quiz-answer-1524591596176">
+    <p>O(n!)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524591601750" id="quiz-answer-1524591601750" data-quiz-question-id="716" data-quiz-answer-id="1524591601750">
+  <label for="quiz-answer-1524591601750">
+    <p>O(n^2)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524591611750" id="quiz-answer-1524591611750" data-quiz-question-id="716" data-quiz-answer-id="1524591611750">
+  <label for="quiz-answer-1524591611750">
+    <p>O(log(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524591619551" id="quiz-answer-1524591619551" data-quiz-question-id="716" data-quiz-answer-id="1524591619551">
+  <label for="quiz-answer-1524591619551">
+    <p>O(nlog(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524591625871" id="quiz-answer-1524591625871" data-quiz-question-id="716" data-quiz-answer-id="1524591625871">
+  <label for="quiz-answer-1524591625871">
+    <p>O(2^n)</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question717" data-position="24">
+            <div class=" clearfix" id="quiz_question-717">
+
+    <h4 class="quiz_question">Question #23</h4>
+
+    <!-- Quiz question Body -->
+    <p>Assuming you have a pointer to the node to remove, what is the time complexity of removing the nth element of a doubly linked list?</p>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="717">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524591655372" id="quiz-answer-1524591655372" data-quiz-question-id="717" data-quiz-answer-id="1524591655372">
+  <label for="quiz-answer-1524591655372">
+    <p>O(1)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524591661836" id="quiz-answer-1524591661836" data-quiz-question-id="717" data-quiz-answer-id="1524591661836">
+  <label for="quiz-answer-1524591661836">
+    <p>O(n)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524591667375" id="quiz-answer-1524591667375" data-quiz-question-id="717" data-quiz-answer-id="1524591667375">
+  <label for="quiz-answer-1524591667375">
+    <p>O(n!)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524591672145" id="quiz-answer-1524591672145" data-quiz-question-id="717" data-quiz-answer-id="1524591672145">
+  <label for="quiz-answer-1524591672145">
+    <p>O(n^2)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524591678208" id="quiz-answer-1524591678208" data-quiz-question-id="717" data-quiz-answer-id="1524591678208">
+  <label for="quiz-answer-1524591678208">
+    <p>O(log(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524591683482" id="quiz-answer-1524591683482" data-quiz-question-id="717" data-quiz-answer-id="1524591683482">
+  <label for="quiz-answer-1524591683482">
+    <p>O(nlog(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524591690421" id="quiz-answer-1524591690421" data-quiz-question-id="717" data-quiz-answer-id="1524591690421">
+  <label for="quiz-answer-1524591690421">
+    <p>O(2^n)</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question718" data-position="25">
+            <div class=" clearfix" id="quiz_question-718">
+
+    <h4 class="quiz_question">Question #24</h4>
+
+    <!-- Quiz question Body -->
+    <p>What is the time complexity of searching for an element in a doubly linked list of size n?</p>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="718">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524591707481" id="quiz-answer-1524591707481" data-quiz-question-id="718" data-quiz-answer-id="1524591707481">
+  <label for="quiz-answer-1524591707481">
+    <p>O(1)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524591715365" id="quiz-answer-1524591715365" data-quiz-question-id="718" data-quiz-answer-id="1524591715365">
+  <label for="quiz-answer-1524591715365">
+    <p>O(n)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524591727060" id="quiz-answer-1524591727060" data-quiz-question-id="718" data-quiz-answer-id="1524591727060">
+  <label for="quiz-answer-1524591727060">
+    <p>O(n!)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524591732983" id="quiz-answer-1524591732983" data-quiz-question-id="718" data-quiz-answer-id="1524591732983">
+  <label for="quiz-answer-1524591732983">
+    <p>O(n^2)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524591739348" id="quiz-answer-1524591739348" data-quiz-question-id="718" data-quiz-answer-id="1524591739348">
+  <label for="quiz-answer-1524591739348">
+    <p>O(log(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524591745371" id="quiz-answer-1524591745371" data-quiz-question-id="718" data-quiz-answer-id="1524591745371">
+  <label for="quiz-answer-1524591745371">
+    <p>O(nlog(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524591752505" id="quiz-answer-1524591752505" data-quiz-question-id="718" data-quiz-answer-id="1524591752505">
+  <label for="quiz-answer-1524591752505">
+    <p>O(2^n)</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question719" data-position="26">
+            <div class=" clearfix" id="quiz_question-719">
+
+    <h4 class="quiz_question">Question #25</h4>
+
+    <!-- Quiz question Body -->
+    <p>Assuming you have a pointer to the node to set the value of, what is the time complexity of setting the value of the nth element in a doubly linked list?</p>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="719">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524591761677" id="quiz-answer-1524591761677" data-quiz-question-id="719" data-quiz-answer-id="1524591761677">
+  <label for="quiz-answer-1524591761677">
+    <p>O(1)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524591768107" id="quiz-answer-1524591768107" data-quiz-question-id="719" data-quiz-answer-id="1524591768107">
+  <label for="quiz-answer-1524591768107">
+    <p>O(n)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524591775975" id="quiz-answer-1524591775975" data-quiz-question-id="719" data-quiz-answer-id="1524591775975">
+  <label for="quiz-answer-1524591775975">
+    <p>O(n!)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524591780390" id="quiz-answer-1524591780390" data-quiz-question-id="719" data-quiz-answer-id="1524591780390">
+  <label for="quiz-answer-1524591780390">
+    <p>O(n^2)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524591786167" id="quiz-answer-1524591786167" data-quiz-question-id="719" data-quiz-answer-id="1524591786167">
+  <label for="quiz-answer-1524591786167">
+    <p>O(log(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524591792890" id="quiz-answer-1524591792890" data-quiz-question-id="719" data-quiz-answer-id="1524591792890">
+  <label for="quiz-answer-1524591792890">
+    <p>O(nlog(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524591798324" id="quiz-answer-1524591798324" data-quiz-question-id="719" data-quiz-answer-id="1524591798324">
+  <label for="quiz-answer-1524591798324">
+    <p>O(2^n)</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question720" data-position="27">
+            <div class=" clearfix" id="quiz_question-720">
+
+    <h4 class="quiz_question">Question #26</h4>
+
+    <!-- Quiz question Body -->
+    <p>What is the time complexity accessing the nth element in an unsorted Python 3 list?</p>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="720">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524596406648" id="quiz-answer-1524596406648" data-quiz-question-id="720" data-quiz-answer-id="1524596406648">
+  <label for="quiz-answer-1524596406648">
+    <p>O(1)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524596451850" id="quiz-answer-1524596451850" data-quiz-question-id="720" data-quiz-answer-id="1524596451850">
+  <label for="quiz-answer-1524596451850">
+    <p>O(n)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524596456877" id="quiz-answer-1524596456877" data-quiz-question-id="720" data-quiz-answer-id="1524596456877">
+  <label for="quiz-answer-1524596456877">
+    <p>O(n!)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524596462540" id="quiz-answer-1524596462540" data-quiz-question-id="720" data-quiz-answer-id="1524596462540">
+  <label for="quiz-answer-1524596462540">
+    <p>O(n^2)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524596468697" id="quiz-answer-1524596468697" data-quiz-question-id="720" data-quiz-answer-id="1524596468697">
+  <label for="quiz-answer-1524596468697">
+    <p>O(log(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524596474212" id="quiz-answer-1524596474212" data-quiz-question-id="720" data-quiz-answer-id="1524596474212">
+  <label for="quiz-answer-1524596474212">
+    <p>O(nlog(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524596479750" id="quiz-answer-1524596479750" data-quiz-question-id="720" data-quiz-answer-id="1524596479750">
+  <label for="quiz-answer-1524596479750">
+    <p>O(2^n)</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question721" data-position="28">
+            <div class=" clearfix" id="quiz_question-721">
+
+    <h4 class="quiz_question">Question #27</h4>
+
+    <!-- Quiz question Body -->
+    <p>What is the time complexity of inserting into an unsorted Python 3 list at index n?</p>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="721">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524596351477" id="quiz-answer-1524596351477" data-quiz-question-id="721" data-quiz-answer-id="1524596351477">
+  <label for="quiz-answer-1524596351477">
+    <p>O(1)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524596358593" id="quiz-answer-1524596358593" data-quiz-question-id="721" data-quiz-answer-id="1524596358593">
+  <label for="quiz-answer-1524596358593">
+    <p>O(n)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524596363486" id="quiz-answer-1524596363486" data-quiz-question-id="721" data-quiz-answer-id="1524596363486">
+  <label for="quiz-answer-1524596363486">
+    <p>O(n!)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524596369398" id="quiz-answer-1524596369398" data-quiz-question-id="721" data-quiz-answer-id="1524596369398">
+  <label for="quiz-answer-1524596369398">
+    <p>O(n^2)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524596377104" id="quiz-answer-1524596377104" data-quiz-question-id="721" data-quiz-answer-id="1524596377104">
+  <label for="quiz-answer-1524596377104">
+    <p>O(log(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524596385019" id="quiz-answer-1524596385019" data-quiz-question-id="721" data-quiz-answer-id="1524596385019">
+  <label for="quiz-answer-1524596385019">
+    <p>O(nlog(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524596393299" id="quiz-answer-1524596393299" data-quiz-question-id="721" data-quiz-answer-id="1524596393299">
+  <label for="quiz-answer-1524596393299">
+    <p>O(2^n)</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question722" data-position="29">
+            <div class=" clearfix" id="quiz_question-722">
+
+    <h4 class="quiz_question">Question #28</h4>
+
+    <!-- Quiz question Body -->
+    <p>What is the time complexity of removing at index n from an unsorted Python 3 list?</p>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="722">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524596261971" id="quiz-answer-1524596261971" data-quiz-question-id="722" data-quiz-answer-id="1524596261971">
+  <label for="quiz-answer-1524596261971">
+    <p>O(1)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524596270537" id="quiz-answer-1524596270537" data-quiz-question-id="722" data-quiz-answer-id="1524596270537">
+  <label for="quiz-answer-1524596270537">
+    <p>O(n)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524596276124" id="quiz-answer-1524596276124" data-quiz-question-id="722" data-quiz-answer-id="1524596276124">
+  <label for="quiz-answer-1524596276124">
+    <p>O(n!)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524596280782" id="quiz-answer-1524596280782" data-quiz-question-id="722" data-quiz-answer-id="1524596280782">
+  <label for="quiz-answer-1524596280782">
+    <p>O(n^2)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524596287993" id="quiz-answer-1524596287993" data-quiz-question-id="722" data-quiz-answer-id="1524596287993">
+  <label for="quiz-answer-1524596287993">
+    <p>O(log(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524596296470" id="quiz-answer-1524596296470" data-quiz-question-id="722" data-quiz-answer-id="1524596296470">
+  <label for="quiz-answer-1524596296470">
+    <p>O(nlog(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524596303571" id="quiz-answer-1524596303571" data-quiz-question-id="722" data-quiz-answer-id="1524596303571">
+  <label for="quiz-answer-1524596303571">
+    <p>O(2^n)</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question723" data-position="30">
+            <div class=" clearfix" id="quiz_question-723">
+
+    <h4 class="quiz_question">Question #29</h4>
+
+    <!-- Quiz question Body -->
+    <p>What is the time complexity of searching for an element in an unsorted Python 3 list of size n?</p>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="723">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524596203359" id="quiz-answer-1524596203359" data-quiz-question-id="723" data-quiz-answer-id="1524596203359">
+  <label for="quiz-answer-1524596203359">
+    <p>O(1)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524596207511" id="quiz-answer-1524596207511" data-quiz-question-id="723" data-quiz-answer-id="1524596207511">
+  <label for="quiz-answer-1524596207511">
+    <p>O(n)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524596212245" id="quiz-answer-1524596212245" data-quiz-question-id="723" data-quiz-answer-id="1524596212245">
+  <label for="quiz-answer-1524596212245">
+    <p>O(n!)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524596216932" id="quiz-answer-1524596216932" data-quiz-question-id="723" data-quiz-answer-id="1524596216932">
+  <label for="quiz-answer-1524596216932">
+    <p>O(n^2)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524596222365" id="quiz-answer-1524596222365" data-quiz-question-id="723" data-quiz-answer-id="1524596222365">
+  <label for="quiz-answer-1524596222365">
+    <p>O(log(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524596241405" id="quiz-answer-1524596241405" data-quiz-question-id="723" data-quiz-answer-id="1524596241405">
+  <label for="quiz-answer-1524596241405">
+    <p>O(nlog(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524596249656" id="quiz-answer-1524596249656" data-quiz-question-id="723" data-quiz-answer-id="1524596249656">
+  <label for="quiz-answer-1524596249656">
+    <p>O(2^n)</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question724" data-position="31">
+            <div class=" clearfix" id="quiz_question-724">
+
+    <h4 class="quiz_question">Question #30</h4>
+
+    <!-- Quiz question Body -->
+    <p>What is the time complexity of setting value at index n in an unsorted Python 3 list?</p>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="724">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524596080950" id="quiz-answer-1524596080950" data-quiz-question-id="724" data-quiz-answer-id="1524596080950">
+  <label for="quiz-answer-1524596080950">
+    <p>O(1)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524596088182" id="quiz-answer-1524596088182" data-quiz-question-id="724" data-quiz-answer-id="1524596088182">
+  <label for="quiz-answer-1524596088182">
+    <p>O(n)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524596093428" id="quiz-answer-1524596093428" data-quiz-question-id="724" data-quiz-answer-id="1524596093428">
+  <label for="quiz-answer-1524596093428">
+    <p>O(n!)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524596103640" id="quiz-answer-1524596103640" data-quiz-question-id="724" data-quiz-answer-id="1524596103640">
+  <label for="quiz-answer-1524596103640">
+    <p>O(n^2)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524596108190" id="quiz-answer-1524596108190" data-quiz-question-id="724" data-quiz-answer-id="1524596108190">
+  <label for="quiz-answer-1524596108190">
+    <p>O(log(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524596117622" id="quiz-answer-1524596117622" data-quiz-question-id="724" data-quiz-answer-id="1524596117622">
+  <label for="quiz-answer-1524596117622">
+    <p>O(nlog(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524596127761" id="quiz-answer-1524596127761" data-quiz-question-id="724" data-quiz-answer-id="1524596127761">
+  <label for="quiz-answer-1524596127761">
+    <p>O(2^n)</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question725" data-position="32">
+            <div class=" clearfix" id="quiz_question-725">
+
+    <h4 class="quiz_question">Question #31</h4>
+
+    <!-- Quiz question Body -->
+    <p>What is the time complexity of the “push” operation onto a stack?</p>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="725">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524597447876" id="quiz-answer-1524597447876" data-quiz-question-id="725" data-quiz-answer-id="1524597447876">
+  <label for="quiz-answer-1524597447876">
+    <p>O(1)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524597454139" id="quiz-answer-1524597454139" data-quiz-question-id="725" data-quiz-answer-id="1524597454139">
+  <label for="quiz-answer-1524597454139">
+    <p>O(n)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524597457729" id="quiz-answer-1524597457729" data-quiz-question-id="725" data-quiz-answer-id="1524597457729">
+  <label for="quiz-answer-1524597457729">
+    <p>O(n!)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524597462017" id="quiz-answer-1524597462017" data-quiz-question-id="725" data-quiz-answer-id="1524597462017">
+  <label for="quiz-answer-1524597462017">
+    <p>O(n^2)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524597471987" id="quiz-answer-1524597471987" data-quiz-question-id="725" data-quiz-answer-id="1524597471987">
+  <label for="quiz-answer-1524597471987">
+    <p>O(log(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524597477726" id="quiz-answer-1524597477726" data-quiz-question-id="725" data-quiz-answer-id="1524597477726">
+  <label for="quiz-answer-1524597477726">
+    <p>O(nlog(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524597483155" id="quiz-answer-1524597483155" data-quiz-question-id="725" data-quiz-answer-id="1524597483155">
+  <label for="quiz-answer-1524597483155">
+    <p>O(2^n)</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question726" data-position="33">
+            <div class=" clearfix" id="quiz_question-726">
+
+    <h4 class="quiz_question">Question #32</h4>
+
+    <!-- Quiz question Body -->
+    <p>What is the time complexity of the “pop” operation onto a stack?</p>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="726">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524597367865" id="quiz-answer-1524597367865" data-quiz-question-id="726" data-quiz-answer-id="1524597367865">
+  <label for="quiz-answer-1524597367865">
+    <p>O(1)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524597371925" id="quiz-answer-1524597371925" data-quiz-question-id="726" data-quiz-answer-id="1524597371925">
+  <label for="quiz-answer-1524597371925">
+    <p>O(n)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524597377739" id="quiz-answer-1524597377739" data-quiz-question-id="726" data-quiz-answer-id="1524597377739">
+  <label for="quiz-answer-1524597377739">
+    <p>O(n!)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524597381475" id="quiz-answer-1524597381475" data-quiz-question-id="726" data-quiz-answer-id="1524597381475">
+  <label for="quiz-answer-1524597381475">
+    <p>O(n^2)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524597389520" id="quiz-answer-1524597389520" data-quiz-question-id="726" data-quiz-answer-id="1524597389520">
+  <label for="quiz-answer-1524597389520">
+    <p>O(log(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524597430218" id="quiz-answer-1524597430218" data-quiz-question-id="726" data-quiz-answer-id="1524597430218">
+  <label for="quiz-answer-1524597430218">
+    <p>O(nlog(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524597439081" id="quiz-answer-1524597439081" data-quiz-question-id="726" data-quiz-answer-id="1524597439081">
+  <label for="quiz-answer-1524597439081">
+    <p>O(2^n)</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question727" data-position="34">
+            <div class=" clearfix" id="quiz_question-727">
+
+    <h4 class="quiz_question">Question #33</h4>
+
+    <!-- Quiz question Body -->
+    <p>What is the time complexity of searching for an element in a stack of size n?</p>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="727">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524597302761" id="quiz-answer-1524597302761" data-quiz-question-id="727" data-quiz-answer-id="1524597302761">
+  <label for="quiz-answer-1524597302761">
+    <p>O(1)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524597307647" id="quiz-answer-1524597307647" data-quiz-question-id="727" data-quiz-answer-id="1524597307647">
+  <label for="quiz-answer-1524597307647">
+    <p>O(n)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524597311758" id="quiz-answer-1524597311758" data-quiz-question-id="727" data-quiz-answer-id="1524597311758">
+  <label for="quiz-answer-1524597311758">
+    <p>O(n!)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524597316237" id="quiz-answer-1524597316237" data-quiz-question-id="727" data-quiz-answer-id="1524597316237">
+  <label for="quiz-answer-1524597316237">
+    <p>O(n^2)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524597323823" id="quiz-answer-1524597323823" data-quiz-question-id="727" data-quiz-answer-id="1524597323823">
+  <label for="quiz-answer-1524597323823">
+    <p>O(log(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524597329402" id="quiz-answer-1524597329402" data-quiz-question-id="727" data-quiz-answer-id="1524597329402">
+  <label for="quiz-answer-1524597329402">
+    <p>O(nlog(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524597334451" id="quiz-answer-1524597334451" data-quiz-question-id="727" data-quiz-answer-id="1524597334451">
+  <label for="quiz-answer-1524597334451">
+    <p>O(2^n)</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question728" data-position="35">
+            <div class=" clearfix" id="quiz_question-728">
+
+    <h4 class="quiz_question">Question #34</h4>
+
+    <!-- Quiz question Body -->
+    <p>What is the time complexity of “pushing” an element into a queue if you are given a pointer to both the head and the tail of the queue?</p>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="728">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524598643632" id="quiz-answer-1524598643632" data-quiz-question-id="728" data-quiz-answer-id="1524598643632">
+  <label for="quiz-answer-1524598643632">
+    <p>O(1)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524598650245" id="quiz-answer-1524598650245" data-quiz-question-id="728" data-quiz-answer-id="1524598650245">
+  <label for="quiz-answer-1524598650245">
+    <p>O(n)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524598654027" id="quiz-answer-1524598654027" data-quiz-question-id="728" data-quiz-answer-id="1524598654027">
+  <label for="quiz-answer-1524598654027">
+    <p>O(n!)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524598659328" id="quiz-answer-1524598659328" data-quiz-question-id="728" data-quiz-answer-id="1524598659328">
+  <label for="quiz-answer-1524598659328">
+    <p>O(n^2)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524598671204" id="quiz-answer-1524598671204" data-quiz-question-id="728" data-quiz-answer-id="1524598671204">
+  <label for="quiz-answer-1524598671204">
+    <p>O(log(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524598679666" id="quiz-answer-1524598679666" data-quiz-question-id="728" data-quiz-answer-id="1524598679666">
+  <label for="quiz-answer-1524598679666">
+    <p>O(nlog(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524598685090" id="quiz-answer-1524598685090" data-quiz-question-id="728" data-quiz-answer-id="1524598685090">
+  <label for="quiz-answer-1524598685090">
+    <p>O(2^n)</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question729" data-position="36">
+            <div class=" clearfix" id="quiz_question-729">
+
+    <h4 class="quiz_question">Question #35</h4>
+
+    <!-- Quiz question Body -->
+    <p>What is the time complexity of “popping” an element in a queue if you are given a pointer to both the head and the tail of the queue?</p>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="729">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524598447737" id="quiz-answer-1524598447737" data-quiz-question-id="729" data-quiz-answer-id="1524598447737">
+  <label for="quiz-answer-1524598447737">
+    <p>O(1)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524598453987" id="quiz-answer-1524598453987" data-quiz-question-id="729" data-quiz-answer-id="1524598453987">
+  <label for="quiz-answer-1524598453987">
+    <p>O(n)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524598493883" id="quiz-answer-1524598493883" data-quiz-question-id="729" data-quiz-answer-id="1524598493883">
+  <label for="quiz-answer-1524598493883">
+    <p>O(n!)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524598500475" id="quiz-answer-1524598500475" data-quiz-question-id="729" data-quiz-answer-id="1524598500475">
+  <label for="quiz-answer-1524598500475">
+    <p>O(log(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524598506615" id="quiz-answer-1524598506615" data-quiz-question-id="729" data-quiz-answer-id="1524598506615">
+  <label for="quiz-answer-1524598506615">
+    <p>O(nlog(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524598512098" id="quiz-answer-1524598512098" data-quiz-question-id="729" data-quiz-answer-id="1524598512098">
+  <label for="quiz-answer-1524598512098">
+    <p>O(2^n)</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question730" data-position="37">
+            <div class=" clearfix" id="quiz_question-730">
+
+    <h4 class="quiz_question">Question #36</h4>
+
+    <!-- Quiz question Body -->
+    <p>What is the time complexity of searching for an element in a queue of size n if you are given a pointer to both the head and the tail of the queue?</p>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="730">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524598243703" id="quiz-answer-1524598243703" data-quiz-question-id="730" data-quiz-answer-id="1524598243703">
+  <label for="quiz-answer-1524598243703">
+    <p>O(1)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524598248136" id="quiz-answer-1524598248136" data-quiz-question-id="730" data-quiz-answer-id="1524598248136">
+  <label for="quiz-answer-1524598248136">
+    <p>O(n)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524598256976" id="quiz-answer-1524598256976" data-quiz-question-id="730" data-quiz-answer-id="1524598256976">
+  <label for="quiz-answer-1524598256976">
+    <p>O(n!)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524598263561" id="quiz-answer-1524598263561" data-quiz-question-id="730" data-quiz-answer-id="1524598263561">
+  <label for="quiz-answer-1524598263561">
+    <p>O(n^2)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524598272265" id="quiz-answer-1524598272265" data-quiz-question-id="730" data-quiz-answer-id="1524598272265">
+  <label for="quiz-answer-1524598272265">
+    <p>O(log(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524598280703" id="quiz-answer-1524598280703" data-quiz-question-id="730" data-quiz-answer-id="1524598280703">
+  <label for="quiz-answer-1524598280703">
+    <p>O(nlog(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524598413976" id="quiz-answer-1524598413976" data-quiz-question-id="730" data-quiz-answer-id="1524598413976">
+  <label for="quiz-answer-1524598413976">
+    <p>O(2^n)</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question731" data-position="38">
+            <div class=" clearfix" id="quiz_question-731">
+
+    <h4 class="quiz_question">Question #37</h4>
+
+    <!-- Quiz question Body -->
+    <p>What is the best case time complexity searching for an element in a hash table with the implementation you used during the previous Hash Table C project (chaining)?</p>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="731">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524599887474" id="quiz-answer-1524599887474" data-quiz-question-id="731" data-quiz-answer-id="1524599887474">
+  <label for="quiz-answer-1524599887474">
+    <p>O(1)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524599892804" id="quiz-answer-1524599892804" data-quiz-question-id="731" data-quiz-answer-id="1524599892804">
+  <label for="quiz-answer-1524599892804">
+    <p>O(n)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524599897138" id="quiz-answer-1524599897138" data-quiz-question-id="731" data-quiz-answer-id="1524599897138">
+  <label for="quiz-answer-1524599897138">
+    <p>O(n!)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524599902009" id="quiz-answer-1524599902009" data-quiz-question-id="731" data-quiz-answer-id="1524599902009">
+  <label for="quiz-answer-1524599902009">
+    <p>O(n^2)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524599907206" id="quiz-answer-1524599907206" data-quiz-question-id="731" data-quiz-answer-id="1524599907206">
+  <label for="quiz-answer-1524599907206">
+    <p>O(log(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524599917712" id="quiz-answer-1524599917712" data-quiz-question-id="731" data-quiz-answer-id="1524599917712">
+  <label for="quiz-answer-1524599917712">
+    <p>O(nlog(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524599924183" id="quiz-answer-1524599924183" data-quiz-question-id="731" data-quiz-answer-id="1524599924183">
+  <label for="quiz-answer-1524599924183">
+    <p>O(2^n)</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question732" data-position="39">
+            <div class=" clearfix" id="quiz_question-732">
+
+    <h4 class="quiz_question">Question #38</h4>
+
+    <!-- Quiz question Body -->
+    <p>What is the time complexity of searching for an element - worst case - in a hash table with the implementation you used during the previous Hash Table C project (chaining)?</p>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="732">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524599941811" id="quiz-answer-1524599941811" data-quiz-question-id="732" data-quiz-answer-id="1524599941811">
+  <label for="quiz-answer-1524599941811">
+    <p>O(1)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524599950628" id="quiz-answer-1524599950628" data-quiz-question-id="732" data-quiz-answer-id="1524599950628">
+  <label for="quiz-answer-1524599950628">
+    <p>O(n)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524599960394" id="quiz-answer-1524599960394" data-quiz-question-id="732" data-quiz-answer-id="1524599960394">
+  <label for="quiz-answer-1524599960394">
+    <p>O(n!)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524599964368" id="quiz-answer-1524599964368" data-quiz-question-id="732" data-quiz-answer-id="1524599964368">
+  <label for="quiz-answer-1524599964368">
+    <p>O(n^2)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524599970542" id="quiz-answer-1524599970542" data-quiz-question-id="732" data-quiz-answer-id="1524599970542">
+  <label for="quiz-answer-1524599970542">
+    <p>O(log(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524599975807" id="quiz-answer-1524599975807" data-quiz-question-id="732" data-quiz-answer-id="1524599975807">
+  <label for="quiz-answer-1524599975807">
+    <p>O(nlog(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524599980998" id="quiz-answer-1524599980998" data-quiz-question-id="732" data-quiz-answer-id="1524599980998">
+  <label for="quiz-answer-1524599980998">
+    <p>O(2^n)</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question733" data-position="40">
+            <div class=" clearfix" id="quiz_question-733">
+
+    <h4 class="quiz_question">Question #39</h4>
+
+    <!-- Quiz question Body -->
+    <p>What is the best case time complexity of insertion in a hash table with the implementation you used during the previous Hash Table C project (chaining)?</p>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="733">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524600002055" id="quiz-answer-1524600002055" data-quiz-question-id="733" data-quiz-answer-id="1524600002055">
+  <label for="quiz-answer-1524600002055">
+    <p>O(1)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524600007150" id="quiz-answer-1524600007150" data-quiz-question-id="733" data-quiz-answer-id="1524600007150">
+  <label for="quiz-answer-1524600007150">
+    <p>O(n)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524600011133" id="quiz-answer-1524600011133" data-quiz-question-id="733" data-quiz-answer-id="1524600011133">
+  <label for="quiz-answer-1524600011133">
+    <p>O(n!)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524600015647" id="quiz-answer-1524600015647" data-quiz-question-id="733" data-quiz-answer-id="1524600015647">
+  <label for="quiz-answer-1524600015647">
+    <p>O(n^2)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524600022630" id="quiz-answer-1524600022630" data-quiz-question-id="733" data-quiz-answer-id="1524600022630">
+  <label for="quiz-answer-1524600022630">
+    <p>O(log(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524600028889" id="quiz-answer-1524600028889" data-quiz-question-id="733" data-quiz-answer-id="1524600028889">
+  <label for="quiz-answer-1524600028889">
+    <p>O(nlog(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524600036416" id="quiz-answer-1524600036416" data-quiz-question-id="733" data-quiz-answer-id="1524600036416">
+  <label for="quiz-answer-1524600036416">
+    <p>O(2^n)</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question734" data-position="41">
+            <div class=" clearfix" id="quiz_question-734">
+
+    <h4 class="quiz_question">Question #40</h4>
+
+    <!-- Quiz question Body -->
+    <p>What is the worst case time complexity of insertion in a hash table with the implementation you used during the previous Hash Table C project (chaining)?</p>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="734">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524600052049" id="quiz-answer-1524600052049" data-quiz-question-id="734" data-quiz-answer-id="1524600052049">
+  <label for="quiz-answer-1524600052049">
+    <p>O(1)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524600060554" id="quiz-answer-1524600060554" data-quiz-question-id="734" data-quiz-answer-id="1524600060554">
+  <label for="quiz-answer-1524600060554">
+    <p>O(n)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524600064693" id="quiz-answer-1524600064693" data-quiz-question-id="734" data-quiz-answer-id="1524600064693">
+  <label for="quiz-answer-1524600064693">
+    <p>O(n!)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524600069637" id="quiz-answer-1524600069637" data-quiz-question-id="734" data-quiz-answer-id="1524600069637">
+  <label for="quiz-answer-1524600069637">
+    <p>O(n^2)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524600075353" id="quiz-answer-1524600075353" data-quiz-question-id="734" data-quiz-answer-id="1524600075353">
+  <label for="quiz-answer-1524600075353">
+    <p>O(log(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524600084679" id="quiz-answer-1524600084679" data-quiz-question-id="734" data-quiz-answer-id="1524600084679">
+  <label for="quiz-answer-1524600084679">
+    <p>O(nlog(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524600092132" id="quiz-answer-1524600092132" data-quiz-question-id="734" data-quiz-answer-id="1524600092132">
+  <label for="quiz-answer-1524600092132">
+    <p>O(2^n)</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question735" data-position="42">
+            <div class=" clearfix" id="quiz_question-735">
+
+    <h4 class="quiz_question">Question #41</h4>
+
+    <!-- Quiz question Body -->
+    <p>What is the time complexity of best case deletion from a hash table with the implementation you used during the previous Hash Table C project (chaining)?</p>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="735">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524600100146" id="quiz-answer-1524600100146" data-quiz-question-id="735" data-quiz-answer-id="1524600100146">
+  <label for="quiz-answer-1524600100146">
+    <p>O(1)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524600109816" id="quiz-answer-1524600109816" data-quiz-question-id="735" data-quiz-answer-id="1524600109816">
+  <label for="quiz-answer-1524600109816">
+    <p>O(n)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524600114212" id="quiz-answer-1524600114212" data-quiz-question-id="735" data-quiz-answer-id="1524600114212">
+  <label for="quiz-answer-1524600114212">
+    <p>O(n!)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524600118392" id="quiz-answer-1524600118392" data-quiz-question-id="735" data-quiz-answer-id="1524600118392">
+  <label for="quiz-answer-1524600118392">
+    <p>O(n^2)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524600126697" id="quiz-answer-1524600126697" data-quiz-question-id="735" data-quiz-answer-id="1524600126697">
+  <label for="quiz-answer-1524600126697">
+    <p>O(log(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524600131789" id="quiz-answer-1524600131789" data-quiz-question-id="735" data-quiz-answer-id="1524600131789">
+  <label for="quiz-answer-1524600131789">
+    <p>O(nlog(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524600136497" id="quiz-answer-1524600136497" data-quiz-question-id="735" data-quiz-answer-id="1524600136497">
+  <label for="quiz-answer-1524600136497">
+    <p>O(2^n)</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question736" data-position="43">
+            <div class=" clearfix" id="quiz_question-736">
+
+    <h4 class="quiz_question">Question #42</h4>
+
+    <!-- Quiz question Body -->
+    <p>What is the time complexity of worst case deletion from a hash table with the implementation you used during the previous Hash Table C project (chaining)?</p>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="736">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524600151438" id="quiz-answer-1524600151438" data-quiz-question-id="736" data-quiz-answer-id="1524600151438">
+  <label for="quiz-answer-1524600151438">
+    <p>O(1)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524600155596" id="quiz-answer-1524600155596" data-quiz-question-id="736" data-quiz-answer-id="1524600155596">
+  <label for="quiz-answer-1524600155596">
+    <p>O(n)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524600160927" id="quiz-answer-1524600160927" data-quiz-question-id="736" data-quiz-answer-id="1524600160927">
+  <label for="quiz-answer-1524600160927">
+    <p>O(n!)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524600181459" id="quiz-answer-1524600181459" data-quiz-question-id="736" data-quiz-answer-id="1524600181459">
+  <label for="quiz-answer-1524600181459">
+    <p>O(n^2)</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524600186724" id="quiz-answer-1524600186724" data-quiz-question-id="736" data-quiz-answer-id="1524600186724">
+  <label for="quiz-answer-1524600186724">
+    <p>O(log(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524600191143" id="quiz-answer-1524600191143" data-quiz-question-id="736" data-quiz-answer-id="1524600191143">
+  <label for="quiz-answer-1524600191143">
+    <p>O(nlog(n))</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1524600196618" id="quiz-answer-1524600196618" data-quiz-question-id="736" data-quiz-answer-id="1524600196618">
+  <label for="quiz-answer-1524600196618">
+    <p>O(2^n)</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+
+          <div class="quiz_questions_results">
+            <div class="spinner">
+              <div class="bounce1"></div>
+              <div class="bounce2"></div>
+              <div class="bounce3"></div>
+            </div>
+            <button class="btn btn-primary" data-project-id="248">Submit answers</button>
+            <div class="error"></div>
+          </div>
+      </section>
+    </div>
+  </div>
+
+
+        <h2 class="gap warning">Please make sure to validate all quiz questions before moving on to project tasks </h2><h2>
+
+
+  </h2></div>
+</div>
+
+      </article>
+
+      <div class="copyright">Copyright © 2021 Holberton Inc, All rights reserved.</div>
+    </main>
+
+      <button class="btn btn-primary" id="search-button" data-search-active="false" data-toggle="modal" data-target="#search-modal">
+  <i aria-hidden="true" class="fa fa-search "></i>
+  <i aria-hidden="true" class="fa fa-window-minimize "></i>
+</button>
+
+      <div class="modal fade" id="search-modal" tabindex="-1" role="dialog" aria-labelledby="search-modal-label">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div id="search-bar-container">
+    <input id="search-bar" type="text" name="hbtn-search-bar" placeholder="✨Start search by typing in this field✨">
+</div>
+
+            </div>
+            <div class="modal-body">
+                <div id="modal-spinner" class="spinner gap">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+                <div id="search-results-container">
+</div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+      <div class="modal fade" id="markdownGuideModal" tabindex="-1" role="dialog" aria-labelledby="markdownGuideModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <h4 class="modal-title">Markdown Guide</h4>
+        </div>
+        <div class="modal-body">
+            <h4>Emphasis</h4>
+<pre>**<strong>bold</strong>**
+*<em>italics</em>*
+~~<strike>strikethrough</strike>~~</pre>
+<h4>Headers</h4>
+<pre># Big header
+## Medium header
+### Small header
+#### Tiny header</pre>
+<h4>Lists</h4>
+<pre>* Generic list item
+* Generic list item
+* Generic list item
+
+1. Numbered list item
+2. Numbered list item
+3. Numbered list item</pre>
+<h4>Links</h4>
+<pre>[Text to display](http://www.example.com)</pre>
+<h4>Quotes</h4>
+<pre>&gt; This is a quote.
+&gt; It can span multiple lines!</pre>
+<h4>Images</h4>
+<p>CSS style available: <code>width, height, opacity</code></p>
+<pre>![](http://www.example.com/image.jpg)
+![](http://www.example.com/image.jpg | width: 200px)
+![](http://www.example.com/image.jpg | height: 124px | width: 80px | opacity: 0.6)
+</pre>
+<h4>Tables</h4>
+<pre>| Column 1 | Column 2 | Column 3 |
+| -------- | -------- | -------- |
+| John     | Doe      | Male     |
+| Mary     | Smith    | Female   |
+
+<em>Or without aligning the columns...</em>
+
+| Column 1 | Column 2 | Column 3 |
+| -------- | -------- | -------- |
+| John | Doe | Male |
+| Mary | Smith | Female |
+</pre>
+<h4>Displaying code</h4>
+<pre>`var example = "hello!";`
+
+<em>Or spanning multiple lines...</em>
+
+```
+var example = "hello!";
+alert(example);
+```</pre>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create',
+            'UA-67152800-9',
+            'auto', {
+              userId: '850'
+            }
+          );
+
+        ga('send', 'pageview');
+
+        $(document).ready(function() {
+          ga(function(tracker) {
+            var clientId = tracker.get('clientId');
+            $('.ga-client-id').val(clientId);
+          });
+        });
+      </script>
+
+
+
+
+      
+
+
+  
+
+</body></html>

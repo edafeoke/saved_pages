@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)https://alx-intranet.hbtn.io/projects/220 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="google" content="notranslate">
+
+    <title>Project: 0x09. C - Static libraries | ALX Africa Intranet</title>
+
+      <link rel="stylesheet" href="./Project_ 0x09. C - Static libraries _ ALX Africa Intranet_files/xgz4ilr.css">
+      <link rel="stylesheet" media="all" href="./Project_ 0x09. C - Static libraries _ ALX Africa Intranet_files/application_alx-78539009bc28411fcb894326c5b06cbc4ad76bb596695fc5ebc227bce80b7519.css">
+      <script async="" src="./Project_ 0x09. C - Static libraries _ ALX Africa Intranet_files/analytics.js.download"></script><script src="./Project_ 0x09. C - Static libraries _ ALX Africa Intranet_files/loader.js.download"></script>
+      <script src="./Project_ 0x09. C - Static libraries _ ALX Africa Intranet_files/application-0a70bfdc9bb56b90a181b0c638cc166dc48a8632199952f2454c0757f99142af.js.download"></script>
+      <link rel="shortcut icon" type="image/x-icon" href="https://alx-intranet.hbtn.io/favicon_alx.ico">
+      <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="pHmnnW1VW1wib7p5oRLpgKN9GFuCISB6TxQIoXx3OkXxDgTvuUnByQoS26rFPYTZVZeiCpnF7bb3HRHoAZejZw==">
+
+      <link rel="apple-touch-icon" href="https://alx-intranet.hbtn.io/apple-touch-icon_alx.png">
+
+      <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+      <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+
+      <!-- Store user timezone -->
+      <script>
+        Cookies.set('timezone', (new Date()).getTimezoneOffset() / -60.0);
+      </script>
+
+      <!-- intro.js for interactive onboarding -->
+
+      <!-- React -->
+      <script src="./Project_ 0x09. C - Static libraries _ ALX Africa Intranet_files/application-a1b2a373bda61174ac35.js.download"></script>
+      <link rel="stylesheet" media="screen" href="./Project_ 0x09. C - Static libraries _ ALX Africa Intranet_files/application-6a50d1fd.css">
+
+  </head>
+
+  <body class="
+    signed_in
+    env_production
+    
+    " translate="no" data-theme-suffix="_alx" data-checker-special-theme="">
+
+      <input type="hidden" id="hbtn-slack-url" value="https://alx-students.slack.com">
+      <nav class="navbar navbar-default navbar-fixed-top topbar visible-xs">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-mobile" aria-expanded="false">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+
+    <a class="navbar-brand" href="https://alx-intranet.hbtn.io/">
+      <div class="logo"></div>
+</a>  </div>
+
+  <div class="collapse navbar-collapse navigation" id="navbar-mobile">
+    <ul class="nav navbar-nav">
+      
+
+
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Planning"><a href="https://alx-intranet.hbtn.io/dashboards/my_planning"><div class="icon "><i aria-hidden="true" class="fa fa-calendar "></i></div><div class="visible-xs">Planning</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-current-projects-item" title="" data-original-title="Projects"><a href="https://alx-intranet.hbtn.io/projects/current"><div class="icon "><i aria-hidden="true" class="fa fa-code-fork "></i></div><div class="visible-xs">Projects</div></a></li>
+    
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="QA Reviews"><a href="https://alx-intranet.hbtn.io/dashboards/corrections_i_can_make"><div class="icon "><i aria-hidden="true" class="fa fa-check "></i></div><div class="visible-xs">QA Reviews</div></a></li>
+    
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Evaluation quizzes"><a href="https://alx-intranet.hbtn.io/dashboards/my_current_evaluation_quizzes"><div class="icon "><i aria-hidden="true" class="fa fa-question "></i></div><div class="visible-xs">Evaluation quizzes</div></a></li>
+
+    <hr title="My resources">
+
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Curriculums"><a href="https://alx-intranet.hbtn.io/dashboards/my_curriculums"><div class="icon "><i aria-hidden="true" class="fa fa-graduation-cap "></i></div><div class="visible-xs">Curriculums</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-concepts-item" title="" data-original-title="Concepts"><a href="https://alx-intranet.hbtn.io/concepts"><div class="icon "><i aria-hidden="true" class="fa fa-file-text "></i></div><div class="visible-xs">Concepts</div></a></li>
+    
+    
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-dashboards-video-rooms" title="" data-original-title="Conference rooms"><a href="https://alx-intranet.hbtn.io/dashboards/video_rooms"><div class="icon "><i aria-hidden="true" class="fa fa-comments "></i></div><div class="visible-xs">Conference rooms</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Servers"><a href="https://alx-intranet.hbtn.io/servers"><div class="icon "><i aria-hidden="true" class="fa fa-server "></i></div><div class="visible-xs">Servers</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-dashboards-my-containers" title="" data-original-title="Sandboxes"><a href="https://alx-intranet.hbtn.io/dashboards/my_containers"><div class="icon "><i aria-hidden="true" class="fa fa-terminal "></i></div><div class="visible-xs">Sandboxes</div></a></li>
+    
+    
+
+      <hr title="My campus">
+
+      
+      <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Peers"><a href="https://alx-intranet.hbtn.io/dashboards/my_peers"><div class="icon "><i aria-hidden="true" class="fa fa-users "></i></div><div class="visible-xs">Peers</div></a></li>
+      <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Captain&#39;s Logs"><a href="https://alx-intranet.hbtn.io/dashboards/my_captain_log"><div class="icon "><i aria-hidden="true" class="fa fa-book "></i></div><div class="visible-xs">Captain's Logs</div></a></li>
+      
+      <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Speakers of the Day"><a href="https://alx-intranet.hbtn.io/dashboards/my_speakers_of_the_day"><div class="icon "><i aria-hidden="true" class="fa fa-microphone "></i></div><div class="visible-xs">Speakers of the Day</div></a></li>
+
+
+<hr class="visible-xs">
+
+<li>
+    <div data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Slack">
+      <a target="_blank" href="https://alx-students.slack.com/">
+        <div class="image slack">
+          <div class="inner"></div>
+        </div>
+        <div class="visible-xs">Slack</div>
+</a>    </div>
+
+  <div data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="My Profile">
+    <a href="https://alx-intranet.hbtn.io/users/my_profile">
+        <div class="image ">
+          <div class="inner" style="background-image: url(&#39;https://s3.amazonaws.com/alx-intranet.hbtn.io/users/photos/000/000/850/thumb/IMG_20190729_142005.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIARDDGGGOU65GPZGY3%2F20211005%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20211005T014535Z&amp;X-Amz-Expires=600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=508e38e8b5e26b1159a9fd0ff2d99f1933386fb90e5b2089038868b81b413efa&#39;)"></div>
+        </div>
+
+      <div class="visible-xs">My Profile</div>
+</a>  </div>
+</li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      <div class="hidden-xs navigation sidebar">
+  <a class="logo-container" href="https://alx-intranet.hbtn.io/">
+    <div class="logo"></div>
+</a>
+  <ul>
+    
+
+
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Planning"><a href="https://alx-intranet.hbtn.io/dashboards/my_planning"><div class="icon "><i aria-hidden="true" class="fa fa-calendar "></i></div><div class="visible-xs">Planning</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-current-projects-item" title="" data-original-title="Projects"><a href="https://alx-intranet.hbtn.io/projects/current"><div class="icon "><i aria-hidden="true" class="fa fa-code-fork "></i></div><div class="visible-xs">Projects</div></a></li>
+    
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="QA Reviews"><a href="https://alx-intranet.hbtn.io/dashboards/corrections_i_can_make"><div class="icon "><i aria-hidden="true" class="fa fa-check "></i></div><div class="visible-xs">QA Reviews</div></a></li>
+    
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Evaluation quizzes"><a href="https://alx-intranet.hbtn.io/dashboards/my_current_evaluation_quizzes"><div class="icon "><i aria-hidden="true" class="fa fa-question "></i></div><div class="visible-xs">Evaluation quizzes</div></a></li>
+
+    <hr title="My resources">
+
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Curriculums"><a href="https://alx-intranet.hbtn.io/dashboards/my_curriculums"><div class="icon "><i aria-hidden="true" class="fa fa-graduation-cap "></i></div><div class="visible-xs">Curriculums</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-concepts-item" title="" data-original-title="Concepts"><a href="https://alx-intranet.hbtn.io/concepts"><div class="icon "><i aria-hidden="true" class="fa fa-file-text "></i></div><div class="visible-xs">Concepts</div></a></li>
+    
+    
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-dashboards-video-rooms" title="" data-original-title="Conference rooms"><a href="https://alx-intranet.hbtn.io/dashboards/video_rooms"><div class="icon "><i aria-hidden="true" class="fa fa-comments "></i></div><div class="visible-xs">Conference rooms</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Servers"><a href="https://alx-intranet.hbtn.io/servers"><div class="icon "><i aria-hidden="true" class="fa fa-server "></i></div><div class="visible-xs">Servers</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-dashboards-my-containers" title="" data-original-title="Sandboxes"><a href="https://alx-intranet.hbtn.io/dashboards/my_containers"><div class="icon "><i aria-hidden="true" class="fa fa-terminal "></i></div><div class="visible-xs">Sandboxes</div></a></li>
+    
+    
+
+      <hr title="My campus">
+
+      
+      <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Peers"><a href="https://alx-intranet.hbtn.io/dashboards/my_peers"><div class="icon "><i aria-hidden="true" class="fa fa-users "></i></div><div class="visible-xs">Peers</div></a></li>
+      <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Captain&#39;s Logs"><a href="https://alx-intranet.hbtn.io/dashboards/my_captain_log"><div class="icon "><i aria-hidden="true" class="fa fa-book "></i></div><div class="visible-xs">Captain's Logs</div></a></li>
+      
+      <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Speakers of the Day"><a href="https://alx-intranet.hbtn.io/dashboards/my_speakers_of_the_day"><div class="icon "><i aria-hidden="true" class="fa fa-microphone "></i></div><div class="visible-xs">Speakers of the Day</div></a></li>
+
+
+<hr class="visible-xs">
+
+<li>
+    <div data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Slack">
+      <a target="_blank" href="https://alx-students.slack.com/">
+        <div class="image slack">
+          <div class="inner"></div>
+        </div>
+        <div class="visible-xs">Slack</div>
+</a>    </div>
+
+  <div data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="My Profile">
+    <a href="https://alx-intranet.hbtn.io/users/my_profile">
+        <div class="image ">
+          <div class="inner" style="background-image: url(&#39;https://s3.amazonaws.com/alx-intranet.hbtn.io/users/photos/000/000/850/thumb/IMG_20190729_142005.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIARDDGGGOU65GPZGY3%2F20211005%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20211005T014535Z&amp;X-Amz-Expires=600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=508e38e8b5e26b1159a9fd0ff2d99f1933386fb90e5b2089038868b81b413efa&#39;)"></div>
+        </div>
+
+      <div class="visible-xs">My Profile</div>
+</a>  </div>
+</li>
+
+
+  </ul>
+</div>
+
+
+    <main>
+      <div id="layout-bars">
+        
+
+        
+
+        
+
+        
+      </div>
+
+      <article class="">
+        
+<div class="project row">
+  <div class="col-xs-12 col-md-10 col-lg-8 contains-images">
+
+      <h1 class="gap">0x09. C - Static libraries</h1>
+
+
+  <ul class="list-group metadata" id="project-metadata">
+
+    <li class="list-group-item">
+      <i aria-hidden="true" class="fa fa-user  fa-fw"></i>
+      By Julien Barbier
+    </li>
+
+    <li class="list-group-item">
+      <i aria-hidden="true" class="fa fa-cogs  fa-fw"></i>
+      Weight: 1
+    </li>
+
+
+      <li class="list-group-item">
+        <i aria-hidden="true" class="fa fa-calendar  fa-fw"></i>
+          Project over - took place from 07-09-2021 to 07-10-2021
+          - you're done with <span id="student_task_done_percentage">100</span>% of tasks.
+      </li>
+
+
+
+      <li class="list-group-item">
+        <i aria-hidden="true" class="fa fa-check-square  fa-fw"></i>
+        QA review fully automated.
+      </li>
+
+      <div class="gap clean well">
+  <h4>In a nutshell…</h4>
+  <ul>
+
+
+      <li>
+        <strong>Auto QA review:</strong>
+          16.65/24 mandatory
+      </li>
+    <li>
+      <strong>Altogether:</strong>
+        &nbsp;<strong>69.37%</strong>
+        <ul>
+          <li>Mandatory: 69.37%</li>
+            <li>Optional: no optional tasks</li>
+        </ul>
+    </li>
+  </ul>
+</div>
+
+</ul>
+
+
+
+
+    <div id="project_id" style="display: none" data-project-id="220"></div>
+
+
+
+
+      
+
+        <h2>Concepts</h2>
+
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <p>
+        <em>For this project, students are expected to look at this concept:</em>
+      </p>
+
+      <ul>
+          <li>
+            <a href="https://alx-intranet.hbtn.io/concepts/61">C static libraries</a>
+          </li>
+      </ul>
+    </div>
+  </div>
+
+
+      <div class="gap" id="project-description">
+  <h2>Resources</h2>
+
+<p><strong>Read or watch</strong>:</p>
+
+<ul>
+<li><a href="https://alx-intranet.hbtn.io/rltoken/XB1iH0qE6gshx0x8TfRAPQ" title="What Is A &quot;C&quot; Library? What Is It Good For?" target="_blank">What Is A “C” Library? What Is It Good For?</a> </li>
+<li><a href="https://alx-intranet.hbtn.io/rltoken/XB1iH0qE6gshx0x8TfRAPQ" title="Creating A Static &quot;C&quot; Library Using &quot;ar&quot; and &quot;ranlib&quot;" target="_blank">Creating A Static “C” Library Using “ar” and “ranlib”</a> </li>
+<li><a href="https://alx-intranet.hbtn.io/rltoken/XB1iH0qE6gshx0x8TfRAPQ" title="Using A &quot;C&quot; Library In A Program" target="_blank">Using A “C” Library In A Program</a> </li>
+<li><a href="https://alx-intranet.hbtn.io/rltoken/PexOGO-npR_ZDQk-SpOR9g" title="What is difference between Dynamic and Static library(Static and Dynamic linking)" target="_blank">What is difference between Dynamic and Static library(Static and Dynamic linking)</a> (<em>stop at 4:44</em>)</li>
+</ul>
+
+<p><strong>man or help</strong>:</p>
+
+<ul>
+<li><code>ar</code></li>
+<li><code>ranlib</code></li>
+<li><code>nm</code></li>
+</ul>
+
+<h2>Learning Objectives</h2>
+
+<p>At the end of this project, you are expected to be able to <a href="https://alx-intranet.hbtn.io/rltoken/R2SLiVhepS5knw2WgTDRkg" title="explain to anyone" target="_blank">explain to anyone</a>, <strong>without the help of Google</strong>:</p>
+
+<h3>General</h3>
+
+<ul>
+<li>What is a static library, how does it work, how to create one, and how to use it</li>
+<li>Basic usage of <code>ar</code>, <code>ranlib</code>, <code>nm</code></li>
+</ul>
+
+<h2>Requirements</h2>
+
+<h3>C</h3>
+
+<ul>
+<li>Allowed editors: <code>vi</code>, <code>vim</code>, <code>emacs</code></li>
+<li>All your files will be compiled on Ubuntu 20.04 LTS using <code>gcc</code>, using the options <code>-Wall -Werror -Wextra -pedantic -std=gnu89</code></li>
+<li>All your files should end with a new line</li>
+<li>A <code>README.md</code> file, at the root of the folder of the project is mandatory</li>
+<li>Your code should use the <code>Betty</code> style. It will be checked using <a href="https://github.com/holbertonschool/Betty/blob/master/betty-style.pl" title="betty-style.pl" target="_blank">betty-style.pl</a> and <a href="https://github.com/holbertonschool/Betty/blob/master/betty-doc.pl" title="betty-doc.pl" target="_blank">betty-doc.pl</a></li>
+<li>You are not allowed to use global variables</li>
+<li>No more than 5 functions per file</li>
+<li>You are not allowed to use the standard library. Any use of functions like <code>printf</code>, <code>puts</code>, etc… is forbidden</li>
+<li>You are allowed to use <a href="https://github.com/holbertonschool/_putchar.c/blob/master/_putchar.c" title="_putchar" target="_blank">_putchar</a></li>
+<li>You don’t have to push <code>_putchar.c</code>, we will use our file. If you do it won’t be taken into account</li>
+<li>In the following examples, the <code>main.c</code> files are shown as examples. You can use them to test your functions, but you don’t have to push them to your repo (if you do we won’t take them into account). We will use our own <code>main.c</code> files at compilation. Our <code>main.c</code> files might be different from the one shown in the examples</li>
+<li>The prototypes of all your functions and the prototype of the function <code>_putchar</code> should be included in your header file called <code>main.h</code></li>
+<li>Don’t forget to push your header file</li>
+</ul>
+
+<h3>Bash</h3>
+
+<ul>
+<li>Allowed editors: <code>vi</code>, <code>vim</code>, <code>emacs</code></li>
+<li>All your scripts will be tested on Ubuntu 20.04 LTS</li>
+<li>All your files should end with a new line (<a href="http://unix.stackexchange.com/questions/18743/whats-the-point-in-adding-a-new-line-to-the-end-of-a-file/18789">why?</a>)</li>
+<li>The first line of all your files should be exactly <code>#!/bin/bash</code></li>
+<li>A <code>README.md</code> file, at the root of the folder of the project, describing what each script is doing</li>
+<li>All your files must be executable</li>
+</ul>
+
+<h2>More Info</h2>
+
+<p>You do not need to learn about dynamic libraries, yet.</p>
+
+</div>
+
+
+      
+
+        <h2 class="gap" id="project-quiz-questions-title">
+    Quiz questions
+  </h2>
+
+  <div class="panel panel-default">
+    <div class="panel-body">
+        <p id="quiz_questions_collapse_toggle">Show</p>
+
+      <section class="quiz_questions_show_container" style="display: none;">
+          <div class="quiz_question_item_container" data-role="quiz_question464" data-position="1">
+            <div class=" clearfix" id="quiz_question-464">
+
+    <h4 class="quiz_question">Question #0</h4>
+
+    <!-- Quiz question Body -->
+    <p>What command is used to create a static library from object files?</p>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="464">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1507174705705" id="quiz-answer-1507174705705" data-quiz-question-id="464" data-quiz-answer-id="1507174705705" disabled="disabled">
+  <label for="quiz-answer-1507174705705">
+    <p>gcc</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1507174712385" id="quiz-answer-1507174712385" data-quiz-question-id="464" data-quiz-answer-id="1507174712385" disabled="disabled">
+  <label for="quiz-answer-1507174712385">
+    <p>ld</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1507174721674" id="quiz-answer-1507174721674" data-quiz-question-id="464" data-quiz-answer-id="1507174721674" disabled="disabled">
+  <label for="quiz-answer-1507174721674">
+    <p>ranlib</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1507174725198" id="quiz-answer-1507174725198" data-quiz-question-id="464" data-quiz-answer-id="1507174725198" disabled="disabled" checked="checked">
+  <label for="quiz-answer-1507174725198">
+    <p>ar</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1507174728036" id="quiz-answer-1507174728036" data-quiz-question-id="464" data-quiz-answer-id="1507174728036" disabled="disabled">
+  <label for="quiz-answer-1507174728036">
+    <p>nm</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question465" data-position="2">
+            <div class=" clearfix" id="quiz_question-465">
+
+    <h4 class="quiz_question">Question #1</h4>
+
+    <!-- Quiz question Body -->
+    <p>What is the point of using <code>ranlib</code>?</p>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="465">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1507174733784" id="quiz-answer-1507174733784" data-quiz-question-id="465" data-quiz-answer-id="1507174733784" disabled="disabled">
+  <label for="quiz-answer-1507174733784">
+    <p>Creating an archive</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1507174742872" id="quiz-answer-1507174742872" data-quiz-question-id="465" data-quiz-answer-id="1507174742872" disabled="disabled" checked="checked">
+  <label for="quiz-answer-1507174742872">
+    <p>Indexing an archive</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1507174748680" id="quiz-answer-1507174748680" data-quiz-question-id="465" data-quiz-answer-id="1507174748680" disabled="disabled">
+  <label for="quiz-answer-1507174748680">
+    <p>Create a library from a simple archive</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1507174767322" id="quiz-answer-1507174767322" data-quiz-question-id="465" data-quiz-answer-id="1507174767322" disabled="disabled">
+  <label for="quiz-answer-1507174767322">
+    <p>List the content of a library</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question466" data-position="3">
+            <div class=" clearfix" id="quiz_question-466">
+
+    <h4 class="quiz_question">Question #2</h4>
+
+    <!-- Quiz question Body -->
+    <p>What command(s) can be used to list the symbols stored in a static library?</p>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="466">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1507174842148" id="quiz-answer-1507174842148" data-quiz-question-id="466" data-quiz-answer-id="1507174842148" disabled="disabled" checked="checked">
+  <label for="quiz-answer-1507174842148">
+    <p>nm</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1507174850894" id="quiz-answer-1507174850894" data-quiz-question-id="466" data-quiz-answer-id="1507174850894" disabled="disabled">
+  <label for="quiz-answer-1507174850894">
+    <p>ranlib</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1507174855503" id="quiz-answer-1507174855503" data-quiz-question-id="466" data-quiz-answer-id="1507174855503" disabled="disabled" checked="checked">
+  <label for="quiz-answer-1507174855503">
+    <p>ar</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1507174921096" id="quiz-answer-1507174921096" data-quiz-question-id="466" data-quiz-answer-id="1507174921096" disabled="disabled">
+  <label for="quiz-answer-1507174921096">
+    <p>ld</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+          <div class="quiz_question_item_container" data-role="quiz_question467" data-position="4">
+            <div class=" clearfix" id="quiz_question-467">
+
+    <h4 class="quiz_question">Question #3</h4>
+
+    <!-- Quiz question Body -->
+    <p>What is the format of a static library?</p>
+
+
+    <!-- Quiz question Answers -->
+        <ul class="quiz_question_answers" data-question-id="467">
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1507175002498" id="quiz-answer-1507175002498" data-quiz-question-id="467" data-quiz-answer-id="1507175002498" disabled="disabled">
+  <label for="quiz-answer-1507175002498">
+    <p>A relocatable ELF file</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1507175022171" id="quiz-answer-1507175022171" data-quiz-question-id="467" data-quiz-answer-id="1507175022171" disabled="disabled">
+  <label for="quiz-answer-1507175022171">
+    <p>An executable ELF file</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1507175039751" id="quiz-answer-1507175039751" data-quiz-question-id="467" data-quiz-answer-id="1507175039751" disabled="disabled">
+  <label for="quiz-answer-1507175039751">
+    <p>A shared ELF file</p>
+
+</label></li>
+
+                <li class="">
+  <input type="checkbox" name="quiz-answer-1507175048143" id="quiz-answer-1507175048143" data-quiz-question-id="467" data-quiz-answer-id="1507175048143" disabled="disabled" checked="checked">
+  <label for="quiz-answer-1507175048143">
+    <p>An archive</p>
+
+</label></li>
+
+        </ul>
+
+    <!-- Quiz question Tips -->
+
+</div>
+
+          </div>
+
+      </section>
+    </div>
+  </div>
+
+
+        
+          <h2 class="gap">Tasks</h2>
+
+    <div data-role="task923" data-position="1" id="task-num-0">
+      <div class="panel panel-default task-card " id="task-923">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      0. A library is not a luxury but one of the necessities of life 
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+      <div class="task_progress_score_bar" data-task-id="923" data-correction-id="29833">
+        <div class="task_progress_bar" style="width: 100%;">
+          <div class="task_score_bar" style="width: 66.5909%;">
+          </div>
+        </div>
+        <div class="task_progress_score_text">
+          Score: <span class="task_score_value">66.59%</span> (<span class="task_progress_value">Checks completed: 100.00%</span>)
+        </div>
+      </div>
+
+    <!-- Task Body -->
+    <p>Create the static library <code>libmy.a</code> containing all the functions listed below:</p>
+
+<pre><code>int _putchar(char c);
+int _islower(int c);
+int _isalpha(int c);
+int _abs(int n);
+int _isupper(int c);
+int _isdigit(int c);
+int _strlen(char *s);
+void _puts(char *s);
+char *_strcpy(char *dest, char *src);
+int _atoi(char *s);
+char *_strcat(char *dest, char *src);
+char *_strncat(char *dest, char *src, int n);
+char *_strncpy(char *dest, char *src, int n);
+int _strcmp(char *s1, char *s2);
+char *_memset(char *s, char b, unsigned int n);
+char *_memcpy(char *dest, char *src, unsigned int n);
+char *_strchr(char *s, char c);
+unsigned int _strspn(char *s, char *accept);
+char *_strpbrk(char *s, char *accept);
+char *_strstr(char *haystack, char *needle);
+</code></pre>
+
+<p>If you haven’t coded all of the above functions create empty ones with the right prototype.<br>
+Don’t forget to push your <code>main.h</code> file to your repository. It should at least contain all the prototypes of the above functions.</p>
+
+<pre><code>julien@ubuntu:~/0x09. Static Librairies$ ar -t libmy.a 
+0-isupper.o
+0-memset.o
+0-strcat.o
+1-isdigit.o
+1-memcpy.o
+1-strncat.o
+100-atoi.o
+2-strchr.o
+2-strlen.o
+2-strncpy.o
+3-islower.o
+3-puts.o
+3-strcmp.o
+3-strspn.o
+4-isalpha.o
+4-strpbrk.o
+5-strstr.o
+6-abs.o
+9-strcpy.o
+_putchar.o
+julien@ubuntu:~/0x09. Static Librairies$ nm libmy.a 
+
+0-isupper.o:
+0000000000000000 T _isupper
+
+0-memset.o:
+0000000000000000 T _memset
+
+0-strcat.o:
+0000000000000000 T _strcat
+
+1-isdigit.o:
+0000000000000000 T _isdigit
+
+1-memcpy.o:
+0000000000000000 T _memcpy
+
+1-strncat.o:
+0000000000000000 T _strncat
+
+100-atoi.o:
+0000000000000000 T _atoi
+
+2-strchr.o:
+0000000000000000 T _strchr
+
+2-strlen.o:
+0000000000000000 T _strlen
+
+2-strncpy.o:
+0000000000000000 T _strncpy
+
+3-islower.o:
+0000000000000000 T _islower
+
+3-puts.o:
+                 U _putchar
+0000000000000000 T _puts
+
+3-strcmp.o:
+0000000000000000 T _strcmp
+
+3-strspn.o:
+0000000000000000 T _strspn
+
+4-isalpha.o:
+0000000000000000 T _isalpha
+
+4-strpbrk.o:
+0000000000000000 T _strpbrk
+
+5-strstr.o:
+0000000000000000 T _strstr
+
+6-abs.o:
+0000000000000000 T _abs
+
+9-strcpy.o:
+0000000000000000 T _strcpy
+
+_putchar.o:
+0000000000000000 T _putchar
+                 U write
+julien@ubuntu:~/0x09. Static Librairies$ cat main.c 
+#include "main.h"
+
+int main(void)
+{
+    _puts("\"At the end of the day, my goal was to be the best hacker\"\n\t- Kevin Mitnick");
+    return (0);
+}
+julien@ubuntu:~/0x09. Static Librairies$ gcc -std=gnu89 main.c -L. -lmy -o quote
+julien@ubuntu:~/0x09. Static Librairies$ ./quote 
+"At the end of the day, my goal was to be the best hacker"
+    - Kevin Mitnick
+julien@ubuntu:~/0x09. Static Librairies$ 
+</code></pre>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+      <div class="list-group-item">
+        <p><strong>Repo:</strong></p>
+        <ul>
+          <li>GitHub repository: <code>alx-low_level_programming</code></li>
+            <li>Directory: <code>0x09-static_libraries</code></li>
+            <li>File: <code>libmy.a, main.h</code></li>
+        </ul>
+      </div>
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+
+    <div class="panel-footer">
+      
+<div>
+    <button class="student_task_done btn btn-default yes" data-task-id="923">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-default" data-task-id="923" data-project-id="220" data-toggle="modal" data-target="#task-923-users-done-modal">
+      Help
+    </button>
+    <div class="modal fade users-done-modal" id="task-923-users-done-modal" data-task-id="923" data-project-id="220">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "0. A library is not a luxury but one of the necessities of life "</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+      <button class="btn btn-default" data-task-id="923" data-toggle="modal" data-target="#task-test-correction-923-correction-modal" id="task-num-0-check-code-btn">
+        Check your code
+      </button>
+      <div class="modal fade task_correction_modal student_modal" id="task-test-correction-923-correction-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Correction of "0. A library is not a luxury but one of the necessities of life "</h4>
+            </div>
+            <div class="modal-body">
+                <div class="actions">
+                    <center>
+                        <div class="alert alert-info hidden"></div>
+
+                        <button name="button" type="submit" class="btn btn-primary correction_request_test_send" data-task-id="923">Start a new test</button>
+                        <button class="btn btn-default close-modal hidden" data-dismiss="modal" type="button">Close</button>
+
+                        <div class="spinner" style="display: none;">
+                            <div class="bounce1"></div>
+                            <div class="bounce2"></div>
+                            <div class="bounce3"></div>
+                        </div>
+                        <div class="error"></div>
+                        <div class="info"></div>
+
+
+                    </center>
+                </div>
+                <div class="result"></div>
+
+                <div class="help">
+    <button data-task-id="923">
+        <i aria-hidden="true" class="fa fa-info-circle "></i>
+    </button>
+    <div class="help-container" data-task-id="923">
+        <div class="check-line">
+            <div class="check-inline requirement success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Requirement success
+            </div>
+            <div class="check-inline requirement fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Requirement fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline code success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Code success
+            </div>
+            <div class="check-inline code fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Code fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline efficiency success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Efficiency success
+            </div>
+            <div class="check-inline efficiency fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Efficiency fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline answer success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Text answer success
+            </div>
+            <div class="check-inline answer fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Text answer fail
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+
+
+
+      <button class="btn btn-default" data-task-id="923" data-toggle="modal" data-target="#task-qa-review-923-modal">
+        QA Review
+      </button>
+      <div class="modal fade task_get_qa_review" id="task-qa-review-923-modal" data-correction-id="29833" data-task-id="923">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">0. A library is not a luxury but one of the necessities of life </h4>
+            </div>
+            <div class="modal-body">
+                <div class="spinner gap">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+                <div class="review-container">
+                    <div class="review-corrector"></div>
+                    <div class="review-github"></div>
+                    <div class="review-percentage_down"></div>
+                    <ul class="review-checks list-group sm-gap"></ul>
+                    <div class="review-comment"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+    </div>
+
+
+</div>
+
+    </div>
+    <div data-role="task925" data-position="3" id="task-num-1">
+      <div class="panel panel-default task-card " id="task-925">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      1. Without libraries what have we? We have no past and no future
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+      <div class="task_progress_score_bar" data-task-id="925" data-correction-id="29833">
+        <div class="task_progress_bar" style="width: 100%;">
+          <div class="task_score_bar" style="width: 100%;">
+          </div>
+        </div>
+        <div class="task_progress_score_text">
+          Score: <span class="task_score_value">100.00%</span> (<span class="task_progress_value">Checks completed: 100.00%</span>)
+        </div>
+      </div>
+
+    <!-- Task Body -->
+    <p>Create a script called <code>create_static_lib.sh</code> that creates a static library called <code>liball.a</code> from all the <code>.c</code> files that are in the current directory.</p>
+
+<pre><code>julien@ubuntu:~/0x09. Static Librairies$ ls *.c
+0-isupper.c  0-strcat.c  1-isdigit.c  1-strncat.c  2-strlen.c   3-islower.c  3-strcmp.c  4-isalpha.c  5-strstr.c  9-strcpy.c  _putchar.c
+0-memset.c   100-atoi.c  1-memcpy.c   2-strchr.c   2-strncpy.c  3-puts.c     3-strspn.c  4-strpbrk.c  6-abs.c
+julien@ubuntu:~/0x09. Static Librairies$ ./create_static_lib.sh 
+julien@ubuntu:~/0x09. Static Librairies$ ls *.a
+liball.a
+julien@ubuntu:~/0x09. Static Librairies$ ar -t liball.a
+0-isupper.o
+0-memset.o
+0-strcat.o
+100-atoi.o
+1-isdigit.o
+1-memcpy.o
+1-strncat.o
+2-strchr.o
+2-strlen.o
+2-strncpy.o
+3-islower.o
+3-puts.o
+3-strcmp.o
+3-strspn.o
+4-isalpha.o
+4-strpbrk.o
+5-strstr.o
+6-abs.o
+9-strcpy.o
+_putchar.o
+julien@ubuntu:~/0x09. Static Librairies$ 
+</code></pre>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+      <div class="list-group-item">
+        <p><strong>Repo:</strong></p>
+        <ul>
+          <li>GitHub repository: <code>alx-low_level_programming</code></li>
+            <li>Directory: <code>0x09-static_libraries</code></li>
+            <li>File: <code>create_static_lib.sh</code></li>
+        </ul>
+      </div>
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+
+    <div class="panel-footer">
+      
+<div>
+    <button class="student_task_done btn btn-default yes" data-task-id="925">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-default" data-task-id="925" data-project-id="220" data-toggle="modal" data-target="#task-925-users-done-modal">
+      Help
+    </button>
+    <div class="modal fade users-done-modal" id="task-925-users-done-modal" data-task-id="925" data-project-id="220">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "1. Without libraries what have we? We have no past and no future"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+      <button class="btn btn-default" data-task-id="925" data-toggle="modal" data-target="#task-test-correction-925-correction-modal" id="task-num-1-check-code-btn">Re-check your code</button>
+      <div class="modal fade task_correction_modal student_modal" id="task-test-correction-925-correction-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Correction of "1. Without libraries what have we? We have no past and no future"</h4>
+            </div>
+            <div class="modal-body">
+                <div class="actions">
+                    <center>
+                        <div class="alert alert-info hidden"></div>
+
+                        <button name="button" type="submit" class="btn btn-primary correction_request_test_send" data-task-id="925">Start a new test</button>
+                        <button class="btn btn-default close-modal hidden" data-dismiss="modal" type="button">Close</button>
+
+                        <div class="spinner" style="display: none;">
+                            <div class="bounce1"></div>
+                            <div class="bounce2"></div>
+                            <div class="bounce3"></div>
+                        </div>
+                        <div class="error"></div>
+                        <div class="info"></div>
+
+
+                    </center>
+                </div>
+                <div class="result"></div>
+
+                <div class="help">
+    <button data-task-id="925">
+        <i aria-hidden="true" class="fa fa-info-circle "></i>
+    </button>
+    <div class="help-container" data-task-id="925">
+        <div class="check-line">
+            <div class="check-inline requirement success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Requirement success
+            </div>
+            <div class="check-inline requirement fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Requirement fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline code success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Code success
+            </div>
+            <div class="check-inline code fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Code fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline efficiency success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Efficiency success
+            </div>
+            <div class="check-inline efficiency fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Efficiency fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline answer success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Text answer success
+            </div>
+            <div class="check-inline answer fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Text answer fail
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+
+
+      <button class="btn btn-default task_containers_modal" data-task-id="925" data-container-spec-ids="[39]" data-toggle="modal" data-target="#task-containers-925-modal">
+        <i aria-hidden="true" class="fa fa-terminal "></i><span>Get a sandbox</span>
+      </button>
+      <div class="modal fade task_containers_modal" id="task-containers-925-modal" data-task-id="925" data-container-spec-ids="[39]">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">
+              <i aria-hidden="true" class="fa fa-terminal  fa-fw"></i><span>Sandboxes</span>
+            </h4>
+        </div>
+        <div class="modal-body">
+        <p>Each sandbox will be available for 8 months max</p>
+
+        <div class="panel panel-default" id="task_925_container_spec_39">
+
+            <!-- Default panel contents -->
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="panel-title col-md-8 text-left">
+                        <b>Ubuntu 20.04</b>
+                        <span class="container_id"></span>
+                    </div>
+                    <div class="col-md-4 text-right row">
+                        <span class="container_webterm" style="margin-right: 20px;" title="Web terminal (Beta)"></span>
+                        <span>
+                            <input type="submit" name="commit" value="Start" class="btn btn-primary start_container" data-task-id="925" data-container-spec-id="39">
+                            <input type="submit" name="commit" value="Destroy" class="btn btn-primary destroy_container" data-task-id="925" data-container-spec-id="39">
+                            <div class="spinner">
+                                <div class="bounce1"></div>
+                                <div class="bounce2"></div>
+                                <div class="bounce3"></div>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container_body">
+                <div class="panel-body">
+                    <div class="container_error alert alert-danger" role="alert"></div>
+                    <div class="container_error_limit alert alert-danger" role="alert">
+                      <div>
+                        <p>
+                          You have reached the limit of sandboxes you can spawn
+                          (3)<br>
+                          Please terminate a running sandbox before starting a new one
+                        </p>
+                      </div>
+                      <div>
+                        <a class="btn btn-default" href="https://alx-intranet.hbtn.io/dashboards/my_containers">My sandboxes</a>
+                      </div>
+                    </div>
+                    <table class="table container_info">
+                        <thead>
+                            <tr>
+                                <th class="container_public_access_header">Access from anywhere</th>
+                                <th class="container_private_access_header">Access from campus</th>
+                                <th>Detailed port mapping</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="container_public_access">
+                                    <ul class="fa-ul" style="line-height: 2.0;">
+                                        <li class="container_http_access" style="line-height: 1.6;">
+                                            <span class="fa-li"><i aria-hidden="true" class="fa fa-globe "></i></span>
+                                            <b>HTTP:</b>
+                                            <div class="container_http"></div>
+                                        </li>
+                                        <li class="container_https_access">
+                                            <span class="fa-li"><i aria-hidden="true" class="fa fa-lock "></i></span>
+                                            <b>HTTPS:</b>
+                                            <span class="container_https"></span>
+                                        </li>
+
+                                        <li class="container_user_info" style="margin-top: 12px;">
+                                            <span class="fa-li"><i aria-hidden="true" class="fa fa-user "></i></span>
+                                            <b>User:</b>
+                                            <code class="container_user"></code>
+                                        </li>
+                                        <li class="container_password_info">
+                                            <span class="fa-li"><i aria-hidden="true" class="fa fa-key "></i></span>
+                                            <b>Password:</b>
+                                            <code class="container_password"></code>
+                                        </li>
+
+                                        <li class="container_ssh_access" style="margin-top: 12px;">
+                                            <span class="fa-li"><i aria-hidden="true" class="fa fa-terminal "></i></span>
+                                            <b>SSH:</b>
+                                            <code class="container_ssh"></code>
+                                        </li>
+                                        <li class="container_sftp_access">
+                                            <span class="fa-li"><i aria-hidden="true" class="fa fa-exchange "></i></span>
+                                            <b>SFTP:</b>
+                                            <code class="container_sftp"></code>
+                                        </li>
+                                        <li class="container_scp_access">
+                                            <span class="fa-li"><i aria-hidden="true" class="fa fa-files-o "></i></span>
+                                            <b>SCP:</b>
+                                            <code class="container_scp"></code>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td class="container_private_access">
+                                    <ul class="fa-ul" style="line-height: 2.0;">
+                                        <li class="container_http_access" style="line-height: 1.6;">
+                                            <span class="fa-li"><i aria-hidden="true" class="fa fa-globe "></i></span>
+                                            <b>HTTP:</b>
+                                            <div class="container_http"></div>
+                                        </li>
+                                        <li class="container_https_access">
+                                            <span class="fa-li"><i aria-hidden="true" class="fa fa-lock "></i></span>
+                                            <b>HTTPS:</b>
+                                            <span class="container_https"></span>
+                                        </li>
+
+                                        <li class="container_user_info" style="margin-top: 12px;">
+                                            <span class="fa-li"><i aria-hidden="true" class="fa fa-user "></i></span>
+                                            <b>User:</b>
+                                            <code class="container_user"></code>
+                                        </li>
+                                        <li class="container_password_info">
+                                            <span class="fa-li"><i aria-hidden="true" class="fa fa-key "></i></span>
+                                            <b>Password:</b>
+                                            <code class="container_password"></code>
+                                        </li>
+
+                                        <li class="container_ssh_access" style="margin-top: 12px;">
+                                            <span class="fa-li"><i aria-hidden="true" class="fa fa-terminal "></i></span>
+                                            <b>SSH:</b>
+                                            <code class="container_ssh"></code>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td class="container_ports"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="error"></div>
+
+        <p class="gap alert alert-info">
+            <strong>Ports mapping</strong><br>
+            Each exposed port is mapped to another one.
+            Example: the port SSH <strong>22</strong> is mapped to the port <strong>33511</strong>.
+        </p>
+        </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+
+      <button class="btn btn-default" data-task-id="925" data-toggle="modal" data-target="#task-qa-review-925-modal">
+        QA Review
+      </button>
+      <div class="modal fade task_get_qa_review" id="task-qa-review-925-modal" data-correction-id="29833" data-task-id="925">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">1. Without libraries what have we? We have no past and no future</h4>
+            </div>
+            <div class="modal-body">
+                <div class="spinner gap">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+                <div class="review-container">
+                    <div class="review-corrector"></div>
+                    <div class="review-github"></div>
+                    <div class="review-percentage_down"></div>
+                    <ul class="review-checks list-group sm-gap"></ul>
+                    <div class="review-comment"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+    </div>
+
+
+</div>
+
+    </div>
+
+
+
+
+
+
+  </div>
+</div>
+
+      </article>
+
+      <div class="copyright">Copyright © 2021 Holberton Inc, All rights reserved.</div>
+    </main>
+
+      <button class="btn btn-primary" id="search-button" data-search-active="false" data-toggle="modal" data-target="#search-modal">
+  <i aria-hidden="true" class="fa fa-search "></i>
+  <i aria-hidden="true" class="fa fa-window-minimize "></i>
+</button>
+
+      <div class="modal fade" id="search-modal" tabindex="-1" role="dialog" aria-labelledby="search-modal-label">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div id="search-bar-container">
+    <input id="search-bar" type="text" name="hbtn-search-bar" placeholder="✨Start search by typing in this field✨">
+</div>
+
+            </div>
+            <div class="modal-body">
+                <div id="modal-spinner" class="spinner gap">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+                <div id="search-results-container">
+</div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+      <div class="modal fade" id="markdownGuideModal" tabindex="-1" role="dialog" aria-labelledby="markdownGuideModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <h4 class="modal-title">Markdown Guide</h4>
+        </div>
+        <div class="modal-body">
+            <h4>Emphasis</h4>
+<pre>**<strong>bold</strong>**
+*<em>italics</em>*
+~~<strike>strikethrough</strike>~~</pre>
+<h4>Headers</h4>
+<pre># Big header
+## Medium header
+### Small header
+#### Tiny header</pre>
+<h4>Lists</h4>
+<pre>* Generic list item
+* Generic list item
+* Generic list item
+
+1. Numbered list item
+2. Numbered list item
+3. Numbered list item</pre>
+<h4>Links</h4>
+<pre>[Text to display](http://www.example.com)</pre>
+<h4>Quotes</h4>
+<pre>&gt; This is a quote.
+&gt; It can span multiple lines!</pre>
+<h4>Images</h4>
+<p>CSS style available: <code>width, height, opacity</code></p>
+<pre>![](http://www.example.com/image.jpg)
+![](http://www.example.com/image.jpg | width: 200px)
+![](http://www.example.com/image.jpg | height: 124px | width: 80px | opacity: 0.6)
+</pre>
+<h4>Tables</h4>
+<pre>| Column 1 | Column 2 | Column 3 |
+| -------- | -------- | -------- |
+| John     | Doe      | Male     |
+| Mary     | Smith    | Female   |
+
+<em>Or without aligning the columns...</em>
+
+| Column 1 | Column 2 | Column 3 |
+| -------- | -------- | -------- |
+| John | Doe | Male |
+| Mary | Smith | Female |
+</pre>
+<h4>Displaying code</h4>
+<pre>`var example = "hello!";`
+
+<em>Or spanning multiple lines...</em>
+
+```
+var example = "hello!";
+alert(example);
+```</pre>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create',
+            'UA-67152800-9',
+            'auto', {
+              userId: '850'
+            }
+          );
+
+        ga('send', 'pageview');
+
+        $(document).ready(function() {
+          ga(function(tracker) {
+            var clientId = tracker.get('clientId');
+            $('.ga-client-id').val(clientId);
+          });
+        });
+      </script>
+
+
+
+      <input id="checker_pride_assets" type="hidden" value="[]">
+
+      
+
+
+  
+
+</body></html>
