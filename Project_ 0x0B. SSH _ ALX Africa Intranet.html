@@ -1,0 +1,1829 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)https://alx-intranet.hbtn.io/projects/244 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="google" content="notranslate">
+
+    <title>Project: 0x0B. SSH | ALX Africa Intranet</title>
+
+      <link rel="stylesheet" href="./Project_ 0x0B. SSH _ ALX Africa Intranet_files/xgz4ilr.css">
+      <link rel="stylesheet" media="all" href="./Project_ 0x0B. SSH _ ALX Africa Intranet_files/application_alx-797565f98971caf22e304b8614ecbc3b779f242f268834e9b46baa0f0eab4c36.css">
+      <script async="" src="./Project_ 0x0B. SSH _ ALX Africa Intranet_files/analytics.js"></script><script src="./Project_ 0x0B. SSH _ ALX Africa Intranet_files/loader.js"></script>
+      <script src="./Project_ 0x0B. SSH _ ALX Africa Intranet_files/application-fbcf5ccea5ceafdf088aa0038b1711206df04afdbfaa68fdac52645a6794d031.js"></script>
+      <link rel="shortcut icon" type="image/x-icon" href="https://alx-intranet.hbtn.io/favicon_alx.ico">
+      <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="//EWotGmLeyy4VS1vwGHY8FB4AzxuFbkN29bmVgsH00aY80qAakqMeqEWLrCAcE50MpGJaBWL6Iwre8k1/HY1Q==">
+
+      <link rel="apple-touch-icon" href="https://alx-intranet.hbtn.io/apple-touch-icon_alx.png">
+
+      <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+      <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+
+      <!-- Store user timezone -->
+      <script>
+        Cookies.set('timezone', (new Date()).getTimezoneOffset() / -60.0);
+      </script>
+
+      <!-- intro.js for interactive onboarding -->
+
+      <!-- React -->
+      <script src="./Project_ 0x0B. SSH _ ALX Africa Intranet_files/application-8906ffaaef5d4eccdf0b.js"></script>
+      <link rel="stylesheet" media="screen" href="./Project_ 0x0B. SSH _ ALX Africa Intranet_files/application-f61adf9f.css">
+
+  </head>
+
+  <body class="
+    signed_in
+    env_production
+    
+    " translate="no" data-theme-suffix="_alx" data-checker-special-theme="">
+
+      <input type="hidden" id="hbtn-slack-url" value="https://alx-students.slack.com">
+      <nav class="navbar navbar-default navbar-fixed-top topbar visible-xs">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-mobile" aria-expanded="false">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+
+    <a class="navbar-brand" href="https://alx-intranet.hbtn.io/">
+      <div class="logo"></div>
+</a>  </div>
+
+  <div class="collapse navbar-collapse navigation" id="navbar-mobile">
+    <ul class="nav navbar-nav">
+      
+
+
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Planning"><a href="https://alx-intranet.hbtn.io/dashboards/my_planning"><div class="icon "><i aria-hidden="true" class="fa fa-calendar "></i></div><div class="visible-xs">Planning</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-current-projects-item" title="" data-original-title="Projects"><a href="https://alx-intranet.hbtn.io/projects/current"><div class="icon "><i aria-hidden="true" class="fa fa-code-fork "></i></div><div class="visible-xs">Projects</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="My reports"><a href="https://alx-intranet.hbtn.io/users/my_reports"><div class="icon "><i aria-hidden="true" class="fa fa-sticky-note-o "></i></div><div class="visible-xs">My reports</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="QA Reviews I can make"><a href="https://alx-intranet.hbtn.io/corrections/to_review"><div class="icon "><i aria-hidden="true" class="fa fa-check "></i></div><div class="visible-xs">QA Reviews I can make</div></a></li>
+    
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Evaluation quizzes"><a href="https://alx-intranet.hbtn.io/dashboards/my_current_evaluation_quizzes"><div class="icon "><i aria-hidden="true" class="fa fa-question "></i></div><div class="visible-xs">Evaluation quizzes</div></a></li>
+
+    <hr title="My resources">
+
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Curriculums"><a href="https://alx-intranet.hbtn.io/dashboards/my_curriculums"><div class="icon "><i aria-hidden="true" class="fa fa-graduation-cap "></i></div><div class="visible-xs">Curriculums</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-concepts-item" title="" data-original-title="Concepts"><a href="https://alx-intranet.hbtn.io/concepts"><div class="icon "><i aria-hidden="true" class="fa fa-file-text "></i></div><div class="visible-xs">Concepts</div></a></li>
+    
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-dashboards-video-rooms" title="" data-original-title="Conference rooms"><a href="https://alx-intranet.hbtn.io/dashboards/video_rooms"><div class="icon "><i aria-hidden="true" class="fa fa-comments "></i></div><div class="visible-xs">Conference rooms</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Servers"><a href="https://alx-intranet.hbtn.io/servers"><div class="icon "><i aria-hidden="true" class="fa fa-server "></i></div><div class="visible-xs">Servers</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-dashboards-my-containers" title="" data-original-title="Sandboxes"><a href="https://alx-intranet.hbtn.io/user_containers/current"><div class="icon "><i aria-hidden="true" class="fa fa-terminal "></i></div><div class="visible-xs">Sandboxes</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Tools"><a href="https://alx-intranet.hbtn.io/dashboards/my_tools"><div class="icon "><i aria-hidden="true" class="fa fa-wrench "></i></div><div class="visible-xs">Tools</div></a></li>
+    
+
+      <hr title="My campus">
+
+      
+      <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Peers"><a href="https://alx-intranet.hbtn.io/users/peers"><div class="icon "><i aria-hidden="true" class="fa fa-users "></i></div><div class="visible-xs">Peers</div></a></li>
+      <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Captain&#39;s Logs"><a href="https://alx-intranet.hbtn.io/dashboards/my_captain_log"><div class="icon "><i aria-hidden="true" class="fa fa-book "></i></div><div class="visible-xs">Captain's Logs</div></a></li>
+      
+      
+
+
+<hr class="visible-xs">
+
+<li>
+    <div data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Slack">
+      <a target="_blank" href="https://alx-students.slack.com/">
+        <div class="image slack">
+          <div class="inner"></div>
+        </div>
+        <div class="visible-xs">Slack</div>
+</a>    </div>
+
+  <div data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="My Profile">
+    <a href="https://alx-intranet.hbtn.io/users/my_profile">
+        <div class="image ">
+          <div class="inner" style="background-image: url(&#39;https://s3.amazonaws.com/alx-intranet.hbtn.io/users/photos/000/000/850/thumb/IMG_20190729_142005.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20220422%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20220422T223952Z&amp;X-Amz-Expires=600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=cf3fca31b02c4f92d3dd917816eb8254d02616fe881827d031ba73e12c75e7c8&#39;)"></div>
+        </div>
+
+      <div class="visible-xs">My Profile</div>
+</a>  </div>
+</li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      <div class="hidden-xs navigation sidebar">
+  <a class="logo-container" href="https://alx-intranet.hbtn.io/">
+    <div class="logo"></div>
+</a>
+  <ul>
+    
+
+
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Planning"><a href="https://alx-intranet.hbtn.io/dashboards/my_planning"><div class="icon "><i aria-hidden="true" class="fa fa-calendar "></i></div><div class="visible-xs">Planning</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-current-projects-item" title="" data-original-title="Projects"><a href="https://alx-intranet.hbtn.io/projects/current"><div class="icon "><i aria-hidden="true" class="fa fa-code-fork "></i></div><div class="visible-xs">Projects</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="My reports"><a href="https://alx-intranet.hbtn.io/users/my_reports"><div class="icon "><i aria-hidden="true" class="fa fa-sticky-note-o "></i></div><div class="visible-xs">My reports</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="QA Reviews I can make"><a href="https://alx-intranet.hbtn.io/corrections/to_review"><div class="icon "><i aria-hidden="true" class="fa fa-check "></i></div><div class="visible-xs">QA Reviews I can make</div></a></li>
+    
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Evaluation quizzes"><a href="https://alx-intranet.hbtn.io/dashboards/my_current_evaluation_quizzes"><div class="icon "><i aria-hidden="true" class="fa fa-question "></i></div><div class="visible-xs">Evaluation quizzes</div></a></li>
+
+    <hr title="My resources">
+
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Curriculums"><a href="https://alx-intranet.hbtn.io/dashboards/my_curriculums"><div class="icon "><i aria-hidden="true" class="fa fa-graduation-cap "></i></div><div class="visible-xs">Curriculums</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-concepts-item" title="" data-original-title="Concepts"><a href="https://alx-intranet.hbtn.io/concepts"><div class="icon "><i aria-hidden="true" class="fa fa-file-text "></i></div><div class="visible-xs">Concepts</div></a></li>
+    
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-dashboards-video-rooms" title="" data-original-title="Conference rooms"><a href="https://alx-intranet.hbtn.io/dashboards/video_rooms"><div class="icon "><i aria-hidden="true" class="fa fa-comments "></i></div><div class="visible-xs">Conference rooms</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Servers"><a href="https://alx-intranet.hbtn.io/servers"><div class="icon "><i aria-hidden="true" class="fa fa-server "></i></div><div class="visible-xs">Servers</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-dashboards-my-containers" title="" data-original-title="Sandboxes"><a href="https://alx-intranet.hbtn.io/user_containers/current"><div class="icon "><i aria-hidden="true" class="fa fa-terminal "></i></div><div class="visible-xs">Sandboxes</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Tools"><a href="https://alx-intranet.hbtn.io/dashboards/my_tools"><div class="icon "><i aria-hidden="true" class="fa fa-wrench "></i></div><div class="visible-xs">Tools</div></a></li>
+    
+
+      <hr title="My campus">
+
+      
+      <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Peers"><a href="https://alx-intranet.hbtn.io/users/peers"><div class="icon "><i aria-hidden="true" class="fa fa-users "></i></div><div class="visible-xs">Peers</div></a></li>
+      <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Captain&#39;s Logs"><a href="https://alx-intranet.hbtn.io/dashboards/my_captain_log"><div class="icon "><i aria-hidden="true" class="fa fa-book "></i></div><div class="visible-xs">Captain's Logs</div></a></li>
+      
+      
+
+
+<hr class="visible-xs">
+
+<li>
+    <div data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Slack">
+      <a target="_blank" href="https://alx-students.slack.com/">
+        <div class="image slack">
+          <div class="inner"></div>
+        </div>
+        <div class="visible-xs">Slack</div>
+</a>    </div>
+
+  <div data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="My Profile">
+    <a href="https://alx-intranet.hbtn.io/users/my_profile">
+        <div class="image ">
+          <div class="inner" style="background-image: url(&#39;https://s3.amazonaws.com/alx-intranet.hbtn.io/users/photos/000/000/850/thumb/IMG_20190729_142005.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20220422%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20220422T223952Z&amp;X-Amz-Expires=600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=cf3fca31b02c4f92d3dd917816eb8254d02616fe881827d031ba73e12c75e7c8&#39;)"></div>
+        </div>
+
+      <div class="visible-xs">My Profile</div>
+</a>  </div>
+</li>
+
+
+  </ul>
+</div>
+
+
+    <main>
+      <div id="layout-bars">
+        
+
+        
+
+        
+
+        
+      </div>
+
+      <article class="">
+
+        
+<div class="project row">
+  <div class="col-xs-12 col-md-10 col-lg-8 contains-images">
+
+      <h1 class="gap">0x0B. SSH</h1>
+
+  <div data-react-class="tags/Tags" data-react-props="{&quot;tags&quot;:[]}" data-react-cache-id="tags/Tags-0"></div>
+
+  <ul class="list-group metadata" id="project-metadata">
+
+    <li class="list-group-item">
+      <i aria-hidden="true" class="fa fa-user  fa-fw"></i>
+      By Sylvain Kalache
+    </li>
+
+    <li class="list-group-item">
+      <i aria-hidden="true" class="fa fa-cogs  fa-fw"></i>
+      Weight: 1
+    </li>
+
+
+
+      <li class="list-group-item">
+        <i aria-hidden="true" class="fa fa-calendar  fa-fw"></i>
+          Project over - took place from <div data-react-class="common/DateTime" data-react-props="{&quot;showDate&quot;:true,&quot;showTime&quot;:false,&quot;value&quot;:&quot;2022-01-03T06:00:00.000+03:00&quot;}" data-react-cache-id="common/DateTime-0" class="d-inline-block"><span data-container="body" data-html="false" data-placement="auto top" data-toggle="tooltip" title="" data-original-title="2022-01-03 04:00 (GMT+01:00)"><span class="datetime">Jan 3, 2022 </span></span></div> to <div data-react-class="common/DateTime" data-react-props="{&quot;showDate&quot;:true,&quot;showTime&quot;:false,&quot;value&quot;:&quot;2022-01-05T06:00:00.000+03:00&quot;}" data-react-cache-id="common/DateTime-0" class="d-inline-block"><span data-container="body" data-html="false" data-placement="auto top" data-toggle="tooltip" title="" data-original-title="2022-01-05 04:00 (GMT+01:00)"><span class="datetime">Jan 5, 2022 </span></span></div>
+          - you're done with <span id="student_task_done_percentage">100</span>% of tasks.
+      </li>
+
+
+
+      <li class="list-group-item">
+        <i aria-hidden="true" class="fa fa-check-square  fa-fw"></i>
+        An auto review will be launched at the deadline
+      </li>
+
+      <div class="gap clean well">
+  <h4>In a nutshell…</h4>
+  <ul>
+
+
+      <li>
+        <strong>Auto QA review:</strong>
+          5.2/8 mandatory
+            &amp;
+            0.0/2 optional
+      </li>
+    <li>
+      <strong>Altogether:</strong>
+        &nbsp;<strong>65.0%</strong>
+        <ul>
+          <li>Mandatory: 65.0%</li>
+            <li>Optional: 0.0%</li>
+            <li>
+              Calculation:&nbsp;
+                  65.0%
+                    + (65.0% * 0.0%)
+              &nbsp;==&nbsp;<strong>65.0%</strong>
+            </li>
+        </ul>
+    </li>
+  </ul>
+</div>
+
+</ul>
+
+
+
+
+    <div id="project_id" style="display: none" data-project-id="244"></div>
+
+
+
+
+      
+
+      
+
+      <div class="well clean" id="project-description">
+  <h2>Background Context</h2>
+
+<p><img src="./Project_ 0x0B. SSH _ ALX Africa Intranet_files/zPVRKhPsUP5lK.gif" alt="" style=""></p>
+
+<p>Along with this project, you have been attributed an Ubuntu server, living in a datacenter far far away.  Like level 2 of the application process, you will connect using <code>ssh</code>. But contrary to level 2, you will not connect using a password but an RSA key. We’ve configured your server with the public key you created in the first task of <a href="https://alx-intranet.hbtn.io/rltoken/UQIQV4HJGvBv0qrHhlDFaQ" title="a previous project" target="_blank">a previous project</a> shared in your <a href="https://alx-intranet.hbtn.io/rltoken/8ZlNV0J-sa-dijhmhJolOg" title="intranet profile" target="_blank">intranet profile</a>.</p>
+
+<p>You can access your server information in the <a href="https://alx-intranet.hbtn.io/rltoken/e2_s_pXwBVuYbhrvoesfrg" title="my servers" target="_blank">my servers</a> section of the intranet, each line with contains the IP and username you should use to connect via <code>ssh</code>.</p>
+
+<p><strong>Note:</strong> Your server is configured with an Ubuntu 20.04 LTS environment. </p>
+
+<h2>Resources</h2>
+
+<p><strong>Read or watch</strong>:</p>
+
+<ul>
+<li><a href="https://alx-intranet.hbtn.io/rltoken/dkgW9lKiBRiUZHfq0MDJuw" title="What is a (physical) server - text" target="_blank">What is a (physical) server - text</a> </li>
+<li><a href="https://alx-intranet.hbtn.io/rltoken/AxFcTdcXUCsrVp01X_EbFA" title="What is a (physical) server - video" target="_blank">What is a (physical) server - video</a> </li>
+<li><a href="https://alx-intranet.hbtn.io/rltoken/ux0eM1QU9reNyG45b0erAQ" title="SSH essentials" target="_blank">SSH essentials</a> </li>
+<li><a href="https://alx-intranet.hbtn.io/rltoken/Rc9FpSy4ZaQWPlcWLinbNw" title="SSH Config File" target="_blank">SSH Config File</a></li>
+<li><a href="https://alx-intranet.hbtn.io/rltoken/tOcxk5mtkedBM0WxyDZxTw" title="Public Key Authentication for SSH" target="_blank">Public Key Authentication for SSH</a></li>
+<li><a href="https://alx-intranet.hbtn.io/rltoken/j0atjRrVfZ6F810qmPfAzA" title="How Secure Shell Works" target="_blank">How Secure Shell Works</a></li>
+<li><a href="https://alx-intranet.hbtn.io/rltoken/FKqd8CjxExmpWGu6xGavKw" title="SSH Crash Course" target="_blank">SSH Crash Course</a> (Long, but highly informative. Watch this if configuring SSH is still confusing. It may be helpful to watch at x1.25 speed or above.)</li>
+</ul>
+
+<p><strong>For reference:</strong></p>
+
+<ul>
+<li> <a href="https://alx-intranet.hbtn.io/rltoken/JB-Vi4dR3q6nF4MBhsn8kQ" title="Understanding the SSH Encryption and Connection Process" target="_blank">Understanding the SSH Encryption and Connection Process</a></li>
+<li><a href="https://alx-intranet.hbtn.io/rltoken/SpiYWE79Yfr_vWDg42dzCw" title="Secure Shell Wiki" target="_blank">Secure Shell Wiki</a></li>
+<li><a href="https://alx-intranet.hbtn.io/rltoken/f2O0OQq9tch2MYeNAzkg5w" title="IETF RFC 4251 (Description of the SSH Protocol)" target="_blank">IETF RFC 4251 (Description of the SSH Protocol)</a></li>
+<li><a href="https://alx-intranet.hbtn.io/rltoken/gd1W1UvB0KeJVWwM8BLvhA" title="Internet Engineering Task Force" target="_blank">Internet Engineering Task Force</a></li>
+<li><a href="https://alx-intranet.hbtn.io/rltoken/jb-IrnQnUh-PsEDlbAU0Kw" title="Request for Comments" target="_blank">Request for Comments</a></li>
+</ul>
+
+<p><strong>man or help</strong>:</p>
+
+<ul>
+<li><code>ssh</code></li>
+<li><code>ssh-keygen</code></li>
+<li><code>env</code></li>
+</ul>
+
+<h2>Learning Objectives</h2>
+
+<p>At the end of this project, you are expected to be able to <a href="https://alx-intranet.hbtn.io/rltoken/0Wgw_i87NIVCfUcRzdZgkg" title="explain to anyone" target="_blank">explain to anyone</a>, <strong>without the help of Google</strong>:</p>
+
+<h3>General</h3>
+
+<ul>
+<li>What is a server</li>
+<li>Where servers usually live</li>
+<li>What is SSH</li>
+<li>How to create an SSH RSA key pair</li>
+<li>How to connect to a remote host using an SSH RSA key pair</li>
+<li>The advantage of using  <code>#!/usr/bin/env bash</code> instead of <code>/bin/bash</code> </li>
+</ul>
+
+<h2>Requirements</h2>
+
+<h3>General</h3>
+
+<ul>
+<li>Allowed editors: <code>vi</code>, <code>vim</code>, <code>emacs</code></li>
+<li>All your files will be interpreted on Ubuntu 20.04 LTS</li>
+<li>All your files should end with a new line</li>
+<li>A <code>README.md</code> file, at the root of the folder of the project, is mandatory</li>
+<li>All your Bash script files must be executable</li>
+<li>The first line of all your Bash scripts should be exactly <code>#!/usr/bin/env bash</code></li>
+<li>The second line of all your Bash scripts should be a comment explaining what is the script doing</li>
+</ul>
+
+</div>
+
+
+      
+
+      
+
+          <h2 class="gap">
+    Your servers
+  </h2>
+
+  <div class="panel panel-default overflow_visible">
+    <div class="panel-body">
+      <table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Username</th>
+      <th>IP</th>
+      <th>State</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td>850-web-01</td>
+        <td><code></code></td>
+        <td><code></code></td>
+        <td></td>
+        <td>
+          <div class="btn-group">
+            <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">
+              Actions
+              <span class="caret"></span>
+              <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-right">
+
+              <li role="separator" class="divider"></li>
+
+                <li><a data-confirm="Did you set your SSH Key in your intranet profile?" href="https://alx-intranet.hbtn.io/servers/ask_new_by_name?name=850-web-01&amp;project_id=244">Ask a server</a></li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+    </div>
+  </div>
+
+          <h2 class="gap">Tasks</h2>
+
+    <div data-role="task1371" data-position="1" id="task-num-0">
+      <div class="panel panel-default task-card " id="task-1371">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      0. Use a private key
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+      <div class="task_progress_score_bar" data-task-id="1371" data-correction-id="110948">
+        <div class="task_progress_bar" style="width: 100%;">
+          <div class="task_score_bar" style="width: 65%;">
+          </div>
+        </div>
+        <div class="task_progress_score_text">
+          Score: <span class="task_score_value">65.00%</span> (<span class="task_progress_value">Checks completed: 100.00%</span>)
+        </div>
+      </div>
+
+    <!-- Task Body -->
+    <p>Write a Bash script that uses <code>ssh</code> to connect to your server using the private key <code>~/.ssh/school</code> with the user <code>ubuntu</code>.</p>
+
+<p>Requirements:</p>
+
+<ul>
+<li>Only use <code>ssh</code> single-character flags</li>
+<li>You cannot use <code>-l</code></li>
+<li>You do not need to handle the case of a private key protected by a passphrase</li>
+</ul>
+
+<pre><code>sylvain@ubuntu$ ./0-use_a_private_key
+ubuntu@server01:~$ exit
+Connection to 8.8.8.8 closed.
+sylvain@ubuntu$ 
+</code></pre>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+      <div class="list-group-item">
+        <p><strong>Repo:</strong></p>
+        <ul>
+          <li>GitHub repository: <code>alx-system_engineering-devops</code></li>
+            <li>Directory: <code>0x0B-ssh</code></li>
+            <li>File: <code>0-use_a_private_key</code></li>
+        </ul>
+      </div>
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+  <div class="panel-footer">
+      <div class="align-items-center d-flex justify-content-between">
+        
+<div>
+    <button class="student_task_done btn btn-default btn-sm yes" data-task-id="1371">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1371" data-project-id="244" data-toggle="modal" data-target="#task-1371-users-done-modal">
+      Help
+    </button>
+    <div class="modal fade users-done-modal" id="task-1371-users-done-modal" data-task-id="1371" data-project-id="244">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "0. Use a private key"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+      <button class="btn btn-default btn-sm" data-task-id="1371" data-toggle="modal" data-target="#task-test-correction-1371-correction-modal" id="task-num-0-check-code-btn">
+        Check your code
+      </button>
+      <div class="modal fade task_correction_modal student_modal" id="task-test-correction-1371-correction-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Correction of "0. Use a private key"</h4>
+            </div>
+            <div class="modal-body">
+                <div class="actions">
+                    <center>
+                        <div class="alert alert-info hidden"></div>
+
+                        <button name="button" type="submit" class="btn btn-primary correction_request_test_send" data-task-id="1371">Start a new test</button>
+                        <button class="btn btn-default close-modal hidden" data-dismiss="modal" type="button">Close</button>
+
+                        <div class="spinner" style="display: none;">
+                            <div class="bounce1"></div>
+                            <div class="bounce2"></div>
+                            <div class="bounce3"></div>
+                        </div>
+                        <div class="error"></div>
+                        <div class="info"></div>
+
+
+                    </center>
+                </div>
+                <div class="result"></div>
+
+                <div class="help">
+    <button data-task-id="1371">
+        <i aria-hidden="true" class="fa fa-info-circle "></i>
+    </button>
+    <div class="help-container" data-task-id="1371">
+        <div class="check-line">
+            <div class="check-inline requirement success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Requirement success
+            </div>
+            <div class="check-inline requirement fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Requirement fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline code success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Code success
+            </div>
+            <div class="check-inline code fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Code fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline efficiency success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Efficiency success
+            </div>
+            <div class="check-inline efficiency fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Efficiency fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline answer success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Text answer success
+            </div>
+            <div class="check-inline answer fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Text answer fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline requirement fail offline">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Skipped - Previous check failed
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+
+
+    
+
+      <button class="btn btn-default btn-sm" data-task-id="1371" data-toggle="modal" data-target="#task-qa-review-1371-modal">
+        QA Review
+      </button>
+      <div class="modal fade task_get_qa_review" id="task-qa-review-1371-modal" data-correction-id="110948" data-task-id="1371">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">0. Use a private key</h4>
+            </div>
+            <div class="modal-body">
+                <div class="spinner gap">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+                <div class="review-container">
+                    <div class="review-corrector"></div>
+                    <div class="review-github well" style="display:none">
+                        <h5>Commit used:</h5>
+                        <ul>
+                            <li style="display:none"><strong>User:</strong> <code class="review-github-id"></code> <span class="review-github-name">---</span></li>
+                            <li style="display:none"><strong>URL:</strong> <a class="review-github-url" target="_blank">Click here</a></li>
+                            <li style="display:none"><strong>ID:</strong> <code class="review-github-commit_id">---</code></li>
+                            <li style="display:none"><strong>Author:</strong> <span class="review-github-committer_username">---</span></li>
+                            <li style="display:none"><strong>Subject:</strong> <em class="review-github-subject">---</em></li>
+                            <li style="display:none"><strong>Date:</strong> <span class="review-github-datetime">---</span></li>
+                        </ul>
+                    </div>
+                    <div class="review-percentage_down"></div>
+                    <ul class="review-checks list-group sm-gap"></ul>
+                    <div class="review-comment"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+        <div class="fs-4">
+        </div>
+      </div>
+
+
+  </div>
+</div>
+
+    </div>
+    <div data-role="task1153" data-position="2" id="task-num-1">
+      <div class="panel panel-default task-card " id="task-1153">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      1. Create an SSH key pair
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+      <div class="task_progress_score_bar" data-task-id="1153" data-correction-id="110948">
+        <div class="task_progress_bar" style="width: 100%;">
+          <div class="task_score_bar" style="width: 65%;">
+          </div>
+        </div>
+        <div class="task_progress_score_text">
+          Score: <span class="task_score_value">65.00%</span> (<span class="task_progress_value">Checks completed: 100.00%</span>)
+        </div>
+      </div>
+
+    <!-- Task Body -->
+    <p>Write a Bash script that creates an RSA key pair.</p>
+
+<p>Requirements:</p>
+
+<ul>
+<li>Name of the created private key must be <code>school</code></li>
+<li>Number of bits in the created key to be created 4096</li>
+<li>The created key must be protected by the passphrase <code>betty</code></li>
+</ul>
+
+<p>Example:</p>
+
+<pre><code>sylvain@ubuntu$ ls
+1-create_ssh_key_pair
+sylvain@ubuntu$ ./1-create_ssh_key_pair
+Generating public/private rsa key pair.
+Your identification has been saved in school.
+Your public key has been saved in school.pub.
+The key fingerprint is:
+5d:a8:c1:f5:98:b6:e5:c0:9b:ee:02:c4:d4:01:f3:ba vagrant@ubuntu
+The key's randomart image is:
++--[ RSA 4096]----+
+|      oo...      |
+|      .+.o =     |
+|     o  + B +    |
+|      o. = O     |
+|     .. S = .    |
+|      .. .       |
+|      E.  .      |
+|        ..       |
+|         ..      |
++-----------------+
+sylvain@ubuntu$ ls
+1-create_ssh_key_pair school  school.pub
+sylvain@ubuntu$ 
+</code></pre>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+      <div class="list-group-item">
+        <p><strong>Repo:</strong></p>
+        <ul>
+          <li>GitHub repository: <code>alx-system_engineering-devops</code></li>
+            <li>Directory: <code>0x0B-ssh</code></li>
+            <li>File: <code>1-create_ssh_key_pair</code></li>
+        </ul>
+      </div>
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+  <div class="panel-footer">
+      <div class="align-items-center d-flex justify-content-between">
+        
+<div>
+    <button class="student_task_done btn btn-default btn-sm yes" data-task-id="1153">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1153" data-project-id="244" data-toggle="modal" data-target="#task-1153-users-done-modal">
+      Help
+    </button>
+    <div class="modal fade users-done-modal" id="task-1153-users-done-modal" data-task-id="1153" data-project-id="244">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "1. Create an SSH key pair"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+      <button class="btn btn-default btn-sm" data-task-id="1153" data-toggle="modal" data-target="#task-test-correction-1153-correction-modal" id="task-num-1-check-code-btn">
+        Check your code
+      </button>
+      <div class="modal fade task_correction_modal student_modal" id="task-test-correction-1153-correction-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Correction of "1. Create an SSH key pair"</h4>
+            </div>
+            <div class="modal-body">
+                <div class="actions">
+                    <center>
+                        <div class="alert alert-info hidden"></div>
+
+                        <button name="button" type="submit" class="btn btn-primary correction_request_test_send" data-task-id="1153">Start a new test</button>
+                        <button class="btn btn-default close-modal hidden" data-dismiss="modal" type="button">Close</button>
+
+                        <div class="spinner" style="display: none;">
+                            <div class="bounce1"></div>
+                            <div class="bounce2"></div>
+                            <div class="bounce3"></div>
+                        </div>
+                        <div class="error"></div>
+                        <div class="info"></div>
+
+
+                    </center>
+                </div>
+                <div class="result"></div>
+
+                <div class="help">
+    <button data-task-id="1153">
+        <i aria-hidden="true" class="fa fa-info-circle "></i>
+    </button>
+    <div class="help-container" data-task-id="1153">
+        <div class="check-line">
+            <div class="check-inline requirement success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Requirement success
+            </div>
+            <div class="check-inline requirement fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Requirement fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline code success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Code success
+            </div>
+            <div class="check-inline code fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Code fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline efficiency success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Efficiency success
+            </div>
+            <div class="check-inline efficiency fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Efficiency fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline answer success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Text answer success
+            </div>
+            <div class="check-inline answer fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Text answer fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline requirement fail offline">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Skipped - Previous check failed
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+
+
+    
+
+      <button class="btn btn-default btn-sm" data-task-id="1153" data-toggle="modal" data-target="#task-qa-review-1153-modal">
+        QA Review
+      </button>
+      <div class="modal fade task_get_qa_review" id="task-qa-review-1153-modal" data-correction-id="110948" data-task-id="1153">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">1. Create an SSH key pair</h4>
+            </div>
+            <div class="modal-body">
+                <div class="spinner gap">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+                <div class="review-container">
+                    <div class="review-corrector"></div>
+                    <div class="review-github well" style="display:none">
+                        <h5>Commit used:</h5>
+                        <ul>
+                            <li style="display:none"><strong>User:</strong> <code class="review-github-id"></code> <span class="review-github-name">---</span></li>
+                            <li style="display:none"><strong>URL:</strong> <a class="review-github-url" target="_blank">Click here</a></li>
+                            <li style="display:none"><strong>ID:</strong> <code class="review-github-commit_id">---</code></li>
+                            <li style="display:none"><strong>Author:</strong> <span class="review-github-committer_username">---</span></li>
+                            <li style="display:none"><strong>Subject:</strong> <em class="review-github-subject">---</em></li>
+                            <li style="display:none"><strong>Date:</strong> <span class="review-github-datetime">---</span></li>
+                        </ul>
+                    </div>
+                    <div class="review-percentage_down"></div>
+                    <ul class="review-checks list-group sm-gap"></ul>
+                    <div class="review-comment"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+        <div class="fs-4">
+        </div>
+      </div>
+
+
+  </div>
+</div>
+
+    </div>
+    <div data-role="task1165" data-position="3" id="task-num-2">
+      <div class="panel panel-default task-card " id="task-1165">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      2. Client configuration file
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+      <div class="task_progress_score_bar" data-task-id="1165" data-correction-id="110948">
+        <div class="task_progress_bar" style="width: 100%;">
+          <div class="task_score_bar" style="width: 65%;">
+          </div>
+        </div>
+        <div class="task_progress_score_text">
+          Score: <span class="task_score_value">65.00%</span> (<span class="task_progress_value">Checks completed: 100.00%</span>)
+        </div>
+      </div>
+
+    <!-- Task Body -->
+    <p>Your machine has an SSH configuration file for the local SSH client, let’s configure it to our needs so that you can connect to a server without typing a password.
+Share your SSH client configuration in your answer file.</p>
+
+<p>Requirements:</p>
+
+<ul>
+<li>Your SSH client configuration must be configured to use the private key <code>~/.ssh/school</code></li>
+<li>Your SSH client configuration must be configured to refuse to authenticate using a password</li>
+</ul>
+
+<p>Example:</p>
+
+<pre><code>sylvain@ubuntu$ ssh -v ubuntu@98.98.98.98
+OpenSSH_6.6.1, OpenSSL 1.0.1f 6 Jan 2014
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: /etc/ssh/ssh_config line 47: Applying options for *
+debug1: Connecting to 98.98.98.98 port 22.
+debug1: Connection established.
+debug1: identity file /home/sylvain/.ssh/school type -1
+debug1: identity file /home/sylvain/.ssh/school-cert type -1
+debug1: Enabling compatibility mode for protocol 2.0
+debug1: Local version string SSH-2.0-OpenSSH_8.1
+debug1:Remote protocol version 2.0, remote software version OpenSSH_7.6p1 Ubuntu-4ubuntu0.5
+debug1: match: OpenSSH_7.6p1 Ubuntu-4ubuntu2.1 pat OpenSSH* compat 0x04000000
+debug1: SSH2_MSG_KEXINIT sent
+debug1: SSH2_MSG_KEXINIT received
+debug1: kex: server-&gt;client aes128-ctr hmac-sha1-etm@openssh.com none
+debug1: kex: client-&gt;server aes128-ctr hmac-sha1-etm@openssh.com none
+debug1: sending SSH2_MSG_KEX_ECDH_INIT
+debug1: expecting SSH2_MSG_KEX_ECDH_REPLY
+debug1: Server host key: ECDSA bd:03:f8:6a:12:28:d6:17:85:c1:b6:91:f1:da:0f:37
+debug1: Host '98.98.98.98' is known and matches the ECDSA host key.
+debug1: Found key in /home/sylvain/.ssh/known_hosts:1
+debug1: ssh_ecdsa_verify: signature correct
+debug1: SSH2_MSG_NEWKEYS sent
+debug1: expecting SSH2_MSG_NEWKEYS
+debug1: SSH2_MSG_NEWKEYS received
+debug1: SSH2_MSG_SERVICE_REQUEST sent
+debug1: SSH2_MSG_SERVICE_ACCEPT received
+debug1: Authentications that can continue: publickey,password
+debug1: Next authentication method: publickey
+debug1: Trying private key: /home/sylvain/.ssh/school
+debug1: key_parse_private2: missing begin marker
+debug1: read PEM private key done: type RSA
+debug1: Authentication succeeded (publickey).
+Authenticated to 98.98.98.98 ([98.98.98.98]:22).
+debug1: channel 0: new [client-session]
+debug1: Requesting no-more-sessions@openssh.com
+debug1: Entering interactive session.
+debug1: client_input_global_request: rtype hostkeys-00@openssh.com want_reply 0
+debug1: Sending environment.
+debug1: Sending env LANG = en_US.UTF-8
+ubuntu@magic-server:~$
+</code></pre>
+
+<p>In the example above, we can see that <code>ssh</code> tries to authenticate using <code>school</code> and does not try to authenticate using a password. You can replace <code>98.98.98.98</code> by the IP of your server for testing purposes.</p>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+      <div class="list-group-item">
+        <p><strong>Repo:</strong></p>
+        <ul>
+          <li>GitHub repository: <code>alx-system_engineering-devops</code></li>
+            <li>Directory: <code>0x0B-ssh</code></li>
+            <li>File: <code>2-ssh_config</code></li>
+        </ul>
+      </div>
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+  <div class="panel-footer">
+      <div class="align-items-center d-flex justify-content-between">
+        
+<div>
+    <button class="student_task_done btn btn-default btn-sm yes" data-task-id="1165">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1165" data-project-id="244" data-toggle="modal" data-target="#task-1165-users-done-modal">
+      Help
+    </button>
+    <div class="modal fade users-done-modal" id="task-1165-users-done-modal" data-task-id="1165" data-project-id="244">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "2. Client configuration file"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+      <button class="btn btn-default btn-sm" data-task-id="1165" data-toggle="modal" data-target="#task-test-correction-1165-correction-modal" id="task-num-2-check-code-btn">
+        Check your code
+      </button>
+      <div class="modal fade task_correction_modal student_modal" id="task-test-correction-1165-correction-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Correction of "2. Client configuration file"</h4>
+            </div>
+            <div class="modal-body">
+                <div class="actions">
+                    <center>
+                        <div class="alert alert-info hidden"></div>
+
+                        <button name="button" type="submit" class="btn btn-primary correction_request_test_send" data-task-id="1165">Start a new test</button>
+                        <button class="btn btn-default close-modal hidden" data-dismiss="modal" type="button">Close</button>
+
+                        <div class="spinner" style="display: none;">
+                            <div class="bounce1"></div>
+                            <div class="bounce2"></div>
+                            <div class="bounce3"></div>
+                        </div>
+                        <div class="error"></div>
+                        <div class="info"></div>
+
+
+                    </center>
+                </div>
+                <div class="result"></div>
+
+                <div class="help">
+    <button data-task-id="1165">
+        <i aria-hidden="true" class="fa fa-info-circle "></i>
+    </button>
+    <div class="help-container" data-task-id="1165">
+        <div class="check-line">
+            <div class="check-inline requirement success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Requirement success
+            </div>
+            <div class="check-inline requirement fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Requirement fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline code success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Code success
+            </div>
+            <div class="check-inline code fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Code fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline efficiency success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Efficiency success
+            </div>
+            <div class="check-inline efficiency fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Efficiency fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline answer success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Text answer success
+            </div>
+            <div class="check-inline answer fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Text answer fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline requirement fail offline">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Skipped - Previous check failed
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+
+
+    
+
+      <button class="btn btn-default btn-sm" data-task-id="1165" data-toggle="modal" data-target="#task-qa-review-1165-modal">
+        QA Review
+      </button>
+      <div class="modal fade task_get_qa_review" id="task-qa-review-1165-modal" data-correction-id="110948" data-task-id="1165">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">2. Client configuration file</h4>
+            </div>
+            <div class="modal-body">
+                <div class="spinner gap">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+                <div class="review-container">
+                    <div class="review-corrector"></div>
+                    <div class="review-github well" style="display:none">
+                        <h5>Commit used:</h5>
+                        <ul>
+                            <li style="display:none"><strong>User:</strong> <code class="review-github-id"></code> <span class="review-github-name">---</span></li>
+                            <li style="display:none"><strong>URL:</strong> <a class="review-github-url" target="_blank">Click here</a></li>
+                            <li style="display:none"><strong>ID:</strong> <code class="review-github-commit_id">---</code></li>
+                            <li style="display:none"><strong>Author:</strong> <span class="review-github-committer_username">---</span></li>
+                            <li style="display:none"><strong>Subject:</strong> <em class="review-github-subject">---</em></li>
+                            <li style="display:none"><strong>Date:</strong> <span class="review-github-datetime">---</span></li>
+                        </ul>
+                    </div>
+                    <div class="review-percentage_down"></div>
+                    <ul class="review-checks list-group sm-gap"></ul>
+                    <div class="review-comment"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+        <div class="fs-4">
+        </div>
+      </div>
+
+
+  </div>
+</div>
+
+    </div>
+    <div data-role="task1372" data-position="4" id="task-num-3">
+      <div class="panel panel-default task-card " id="task-1372">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      3. Let me in!
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+      <div class="task_progress_score_bar" data-task-id="1372" data-correction-id="110948">
+        <div class="task_progress_bar" style="width: 100%;">
+          <div class="task_score_bar" style="width: 65%;">
+          </div>
+        </div>
+        <div class="task_progress_score_text">
+          Score: <span class="task_score_value">65.00%</span> (<span class="task_progress_value">Checks completed: 100.00%</span>)
+        </div>
+      </div>
+
+    <!-- Task Body -->
+    <p>Now that you have successfully connected to your server, we would also like to join the party.</p>
+
+<p>Add the SSH public key below to your server so that we can connect using the <code>ubuntu</code> user.</p>
+
+<pre><code>ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDNdtrNGtTXe5Tp1EJQop8mOSAuRGLjJ6DW4PqX4wId/Kawz35ESampIqHSOTJmbQ8UlxdJuk0gAXKk3Ncle4safGYqM/VeDK3LN5iAJxf4kcaxNtS3eVxWBE5iF3FbIjOqwxw5Lf5sRa5yXxA8HfWidhbIG5TqKL922hPgsCGABIrXRlfZYeC0FEuPWdr6smOElSVvIXthRWp9cr685KdCI+COxlj1RdVsvIo+zunmLACF9PYdjB2s96Fn0ocD3c5SGLvDOFCyvDojSAOyE70ebIElnskKsDTGwfT4P6jh9OBzTyQEIS2jOaE5RQq4IB4DsMhvbjDSQrP0MdCLgwkN
+</code></pre>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+      <div class="list-group-item">
+        <p><strong>Repo:</strong></p>
+        <ul>
+          <li>GitHub repository: <code>alx-system_engineering-devops</code></li>
+            <li>Directory: <code>0x0B-ssh</code></li>
+        </ul>
+      </div>
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+  <div class="panel-footer">
+      <div class="align-items-center d-flex justify-content-between">
+        
+<div>
+    <button class="student_task_done btn btn-default btn-sm yes" data-task-id="1372">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1372" data-project-id="244" data-toggle="modal" data-target="#task-1372-users-done-modal">
+      Help
+    </button>
+    <div class="modal fade users-done-modal" id="task-1372-users-done-modal" data-task-id="1372" data-project-id="244">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "3. Let me in!"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+      <button class="btn btn-default btn-sm" data-task-id="1372" data-toggle="modal" data-target="#task-test-correction-1372-correction-modal" id="task-num-3-check-code-btn">
+        Check your code
+      </button>
+      <div class="modal fade task_correction_modal student_modal" id="task-test-correction-1372-correction-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Correction of "3. Let me in!"</h4>
+            </div>
+            <div class="modal-body">
+                <div class="actions">
+                    <center>
+                        <div class="alert alert-info hidden"></div>
+
+                        <button name="button" type="submit" class="btn btn-primary correction_request_test_send" data-task-id="1372">Start a new test</button>
+                        <button class="btn btn-default close-modal hidden" data-dismiss="modal" type="button">Close</button>
+
+                        <div class="spinner" style="display: none;">
+                            <div class="bounce1"></div>
+                            <div class="bounce2"></div>
+                            <div class="bounce3"></div>
+                        </div>
+                        <div class="error"></div>
+                        <div class="info"></div>
+
+
+                    </center>
+                </div>
+                <div class="result"></div>
+
+                <div class="help">
+    <button data-task-id="1372">
+        <i aria-hidden="true" class="fa fa-info-circle "></i>
+    </button>
+    <div class="help-container" data-task-id="1372">
+        <div class="check-line">
+            <div class="check-inline requirement success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Requirement success
+            </div>
+            <div class="check-inline requirement fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Requirement fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline code success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Code success
+            </div>
+            <div class="check-inline code fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Code fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline efficiency success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Efficiency success
+            </div>
+            <div class="check-inline efficiency fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Efficiency fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline answer success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Text answer success
+            </div>
+            <div class="check-inline answer fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Text answer fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline requirement fail offline">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Skipped - Previous check failed
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+
+
+    <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#container-specs-modal"><i aria-hidden="true" class="fa fa-terminal "></i><span>Get a sandbox</span></button>
+
+      <button class="btn btn-default btn-sm" data-task-id="1372" data-toggle="modal" data-target="#task-qa-review-1372-modal">
+        QA Review
+      </button>
+      <div class="modal fade task_get_qa_review" id="task-qa-review-1372-modal" data-correction-id="110948" data-task-id="1372">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">3. Let me in!</h4>
+            </div>
+            <div class="modal-body">
+                <div class="spinner gap">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+                <div class="review-container">
+                    <div class="review-corrector"></div>
+                    <div class="review-github well" style="display:none">
+                        <h5>Commit used:</h5>
+                        <ul>
+                            <li style="display:none"><strong>User:</strong> <code class="review-github-id"></code> <span class="review-github-name">---</span></li>
+                            <li style="display:none"><strong>URL:</strong> <a class="review-github-url" target="_blank">Click here</a></li>
+                            <li style="display:none"><strong>ID:</strong> <code class="review-github-commit_id">---</code></li>
+                            <li style="display:none"><strong>Author:</strong> <span class="review-github-committer_username">---</span></li>
+                            <li style="display:none"><strong>Subject:</strong> <em class="review-github-subject">---</em></li>
+                            <li style="display:none"><strong>Date:</strong> <span class="review-github-datetime">---</span></li>
+                        </ul>
+                    </div>
+                    <div class="review-percentage_down"></div>
+                    <ul class="review-checks list-group sm-gap"></ul>
+                    <div class="review-comment"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+        <div class="fs-4">
+        </div>
+      </div>
+
+
+  </div>
+</div>
+
+    </div>
+    <div data-role="task3829" data-position="5" id="task-num-4">
+      <div class="panel panel-default task-card " id="task-3829">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      4. Client configuration file (w/ Puppet)
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          #advanced
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+      <div class="task_progress_score_bar" data-task-id="3829" data-correction-id="110948">
+        <div class="task_progress_bar" style="width: 0%;">
+          <div class="task_score_bar">
+          </div>
+        </div>
+        <div class="task_progress_score_text">
+          Score: <span class="task_score_value">0.00%</span> (<span class="task_progress_value">Checks completed: 0.00%</span>)
+        </div>
+      </div>
+
+    <!-- Task Body -->
+    <p>Let’s practice using Puppet to make changes to our configuration file. Just as in the previous configuration file task, we’d like you to set up your client SSH configuration file so that you can connect to a server without typing a password.</p>
+
+<p>Requirements:</p>
+
+<ul>
+<li>Your SSH client configuration must be configured to use the private key <code>~/.ssh/school</code></li>
+<li>Your SSH client configuration must be configured to refuse to authenticate using a password</li>
+</ul>
+
+<p>Example:</p>
+
+<pre><code>vagrant@ubuntu:~$ sudo puppet apply 100-puppet_ssh_config.pp
+Notice: Compiled catalog for ubuntu-xenial in environment production in 0.11 seconds
+Notice: /Stage[main]/Main/File_line[Turn off passwd auth]/ensure: created
+Notice: /Stage[main]/Main/File_line[Declare identity file]/ensure: created
+Notice: Finished catalog run in 0.03 seconds
+vagrant@ubuntu:~$
+</code></pre>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+      <div class="list-group-item">
+        <p><strong>Repo:</strong></p>
+        <ul>
+          <li>GitHub repository: <code>alx-system_engineering-devops</code></li>
+            <li>Directory: <code>0x0B-ssh</code></li>
+            <li>File: <code>100-puppet_ssh_config.pp</code></li>
+        </ul>
+      </div>
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+  <div class="panel-footer">
+      <div class="align-items-center d-flex justify-content-between">
+        
+<div>
+    <button class="student_task_done btn btn-default btn-sm no" data-task-id="3829">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-sm" data-task-id="3829" data-project-id="244" data-toggle="modal" data-target="#task-3829-users-done-modal">
+      Help
+    </button>
+    <div class="modal fade users-done-modal" id="task-3829-users-done-modal" data-task-id="3829" data-project-id="244">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "4. Client configuration file (w/ Puppet)"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+      <button class="btn btn-default btn-sm" data-task-id="3829" data-toggle="modal" data-target="#task-test-correction-3829-correction-modal" id="task-num-4-check-code-btn">
+        Check your code
+      </button>
+      <div class="modal fade task_correction_modal student_modal" id="task-test-correction-3829-correction-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Correction of "4. Client configuration file (w/ Puppet)"</h4>
+            </div>
+            <div class="modal-body">
+                <div class="actions">
+                    <center>
+                        <div class="alert alert-info hidden"></div>
+
+                        <button name="button" type="submit" class="btn btn-primary correction_request_test_send" data-task-id="3829">Start a new test</button>
+                        <button class="btn btn-default close-modal hidden" data-dismiss="modal" type="button">Close</button>
+
+                        <div class="spinner" style="display: none;">
+                            <div class="bounce1"></div>
+                            <div class="bounce2"></div>
+                            <div class="bounce3"></div>
+                        </div>
+                        <div class="error"></div>
+                        <div class="info"></div>
+
+
+                    </center>
+                </div>
+                <div class="result"></div>
+
+                <div class="help">
+    <button data-task-id="3829">
+        <i aria-hidden="true" class="fa fa-info-circle "></i>
+    </button>
+    <div class="help-container" data-task-id="3829">
+        <div class="check-line">
+            <div class="check-inline requirement success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Requirement success
+            </div>
+            <div class="check-inline requirement fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Requirement fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline code success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Code success
+            </div>
+            <div class="check-inline code fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Code fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline efficiency success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Efficiency success
+            </div>
+            <div class="check-inline efficiency fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Efficiency fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline answer success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Text answer success
+            </div>
+            <div class="check-inline answer fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Text answer fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline requirement fail offline">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Skipped - Previous check failed
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+
+      <button class="btn btn-primary btn-sm task_ask_new_correction" data-task-id="3829" data-correction-id="110948">
+        Ask for a new correction <span class="in_progress_info">: in progress...</span><span class="error_occured_info">: an error occured</span>
+      </button>
+
+    
+
+      <button class="btn btn-default btn-sm" data-task-id="3829" data-toggle="modal" data-target="#task-qa-review-3829-modal">
+        QA Review
+      </button>
+      <div class="modal fade task_get_qa_review" id="task-qa-review-3829-modal" data-correction-id="110948" data-task-id="3829">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">4. Client configuration file (w/ Puppet)</h4>
+            </div>
+            <div class="modal-body">
+                <div class="spinner gap">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+                <div class="review-container">
+                    <div class="review-corrector"></div>
+                    <div class="review-github well" style="display:none">
+                        <h5>Commit used:</h5>
+                        <ul>
+                            <li style="display:none"><strong>User:</strong> <code class="review-github-id"></code> <span class="review-github-name">---</span></li>
+                            <li style="display:none"><strong>URL:</strong> <a class="review-github-url" target="_blank">Click here</a></li>
+                            <li style="display:none"><strong>ID:</strong> <code class="review-github-commit_id">---</code></li>
+                            <li style="display:none"><strong>Author:</strong> <span class="review-github-committer_username">---</span></li>
+                            <li style="display:none"><strong>Subject:</strong> <em class="review-github-subject">---</em></li>
+                            <li style="display:none"><strong>Date:</strong> <span class="review-github-datetime">---</span></li>
+                        </ul>
+                    </div>
+                    <div class="review-percentage_down"></div>
+                    <ul class="review-checks list-group sm-gap"></ul>
+                    <div class="review-comment"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+        <div class="fs-4">
+        </div>
+      </div>
+
+
+  </div>
+</div>
+
+    </div>
+
+
+
+
+
+          <div class="modal fade" id="container-specs-modal"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button><h4 class="modal-title">Recommended Sandbox</h4></div><div class="modal-body"><div data-react-class="user_containers/ContainerSpecs" data-react-props="{&quot;containerModelName&quot;:&quot;Sandbox&quot;,&quot;containerSpecs&quot;:[{&quot;description&quot;:&quot;\u003cp\u003eBasic Ubuntu 20.04, with vim, emacs, curl, wget and all needed for Foundations\u003c/p\u003e\n&quot;,&quot;id&quot;:39,&quot;name&quot;:&quot;Ubuntu 20.04&quot;,&quot;online&quot;:true,&quot;container&quot;:{&quot;container_id&quot;:&quot;d4a952a7b82f879c049f94a4f305a5f6c664dd3bbf983ef67cda60f1952c1c14&quot;,&quot;id&quot;:9394,&quot;restart_uri&quot;:null,&quot;uri&quot;:&quot;/user_containers/9394.json&quot;,&quot;webterm_uri&quot;:&quot;/user_containers/9394/webterm&quot;,&quot;host&quot;:&quot;d4a952a7b82f.84b088a2.alx-cod.online&quot;,&quot;password&quot;:&quot;c7feb6e8d8dbc5ece8f0&quot;,&quot;ports&quot;:{&quot;8080&quot;:50137,&quot;22&quot;:50146,&quot;3306&quot;:50142,&quot;443&quot;:50144,&quot;5000&quot;:50140,&quot;5001&quot;:50139,&quot;80&quot;:50145,&quot;3000&quot;:50143,&quot;4000&quot;:50141,&quot;8000&quot;:50138}}}],&quot;containersLimit&quot;:2,&quot;csrfToken&quot;:&quot;4nzbedtfi2oc+jXYQAGR1vuvw1mjTu4AdmtnOwVv3l8H7gDxC1CMt0SfOdc9AdeM6iRlcPKgl0ZxqdOGirIZxw==&quot;,&quot;startURI&quot;:&quot;/user_containers/start.json&quot;}" data-react-cache-id="user_containers/ContainerSpecs-0"><div><div class="d-flex gap-4 sandboxes-filters"><a class="btn btn-outline-primary"><i aria-hidden="true" class="fa fa-filter"></i><span>Running only</span></a><div class="align-items-center d-flex" style="position: relative; width: 100%;"><input class="form-control" placeholder="Search for an image ..." type="search" value=""></div></div><div class="mt-3"><h3>1 image<small class="ml-2">(1/2 Sandboxes spawned)</small></h3></div><div class="mt-3"><div class="panel panel-default"><div class="panel-body border-left-success" style="border-left: 6px solid;"><div class="align-items-center d-flex flex-wrap justify-content-between"><div><h3 class="mt-0"><i aria-hidden="true" class="fa fa-terminal text-success"></i><span class="ml-2">Ubuntu 20.04</span></h3><div class="mt-2 text-muted"><p>Basic Ubuntu 20.04, with vim, emacs, curl, wget and all needed for Foundations</p>
+</div></div><div class="d-flex flex-wrap gap-5"><div class="align-items-center d-flex gap-3"><div><span data-container="body" data-html="false" data-placement="top" data-toggle="tooltip" title="" data-original-title="Copy SSH command"><span role="button"><button class="btn btn-default">SSH</button></span></span></div><div><span data-container="body" data-html="false" data-placement="top" data-toggle="tooltip" title="" data-original-title="Copy SFTP command"><span role="button"><button class="btn btn-default">SFTP</button></span></span></div><a class="btn btn-webterm" href="https://alx-intranet.hbtn.io/user_containers/9394/webterm" rel="noreferrer" target="_blank"><i aria-hidden="true" class="fa fa-terminal"></i><span>Webterm</span></a></div><span data-container="body" data-html="false" data-placement="auto top" data-toggle="tooltip" title="" data-original-title="Restart is available only on new Sandboxes. To access this feature, please make sure all your data is backed up or pushed to GitHub before destroying this Sandbox and requesting a new one"><a class="btn btn-warning  disabled"><i aria-hidden="true" class="fa fa-power-off"></i><span>Restart</span></a></span><a class="btn btn-danger"><i aria-hidden="true" class="fa fa-trash"></i><span>Destroy</span></a></div></div><div class="d-flex flex-wrap gap-5 mt-3"><div class="p-4" style="flex-shrink: 0;"><div class="d-flex flex-column gap-3"><h4 class="mt-0"><i aria-hidden="true" class="fa fa-user text-info"></i><span class="ml-2">Credentials</span></h4><div class="d-flex gap-2"><strong>Host</strong><span data-container="body" data-html="false" data-placement="auto top" data-toggle="tooltip" title="" data-original-title="Click to copy"><span role="button"><small>d4a952a7b82f.84b088a2.alx-cod.online</small></span></span></div><div class="d-flex gap-2"><strong>Username</strong><span data-container="body" data-html="false" data-placement="auto top" data-toggle="tooltip" title="" data-original-title="Click to copy"><span role="button"><small>d4a952a7b82f</small></span></span></div><div class="d-flex gap-2"><strong>Password</strong><span data-container="body" data-html="false" data-placement="auto top" data-toggle="tooltip" title="" data-original-title="Click to copy"><span role="button"><small>c7feb6e8d8dbc5ece8f0</small></span></span></div></div></div><div class="p-4" style="flex: 1 1 40%;"><div class="d-flex flex-column gap-3"><h4 class="mt-0"><i aria-hidden="true" class="fa fa-globe text-info"></i><span class="ml-2">Web access</span></h4><div class="align-items-center d-flex flex-wrap gap-2"><a class="btn btn-outline-primary" href="https://d4a952a7b82f.84b088a2.alx-cod.online/" rel="noreferrer" target="_blank">HTTPS</a><a class="btn btn-outline-primary" href="http://d4a952a7b82f.84b088a2.alx-cod.online/" rel="noreferrer" target="_blank">HTTP</a><a class="btn btn-default" href="http://d4a952a7b82f.84b088a2.alx-cod.online:3000/" rel="noreferrer" target="_blank">3000</a><a class="btn btn-default" href="http://d4a952a7b82f.84b088a2.alx-cod.online:4000/" rel="noreferrer" target="_blank">4000</a><a class="btn btn-default" href="http://d4a952a7b82f.84b088a2.alx-cod.online:5000/" rel="noreferrer" target="_blank">5000</a><a class="btn btn-default" href="http://d4a952a7b82f.84b088a2.alx-cod.online:5001/" rel="noreferrer" target="_blank">5001</a><a class="btn btn-default" href="http://d4a952a7b82f.84b088a2.alx-cod.online:8000/" rel="noreferrer" target="_blank">8000</a><a class="btn btn-default" href="http://d4a952a7b82f.84b088a2.alx-cod.online:8080/" rel="noreferrer" target="_blank">8080</a></div></div></div><div class="p-4" style="flex: 1 1 35%;"><div class="d-flex flex-column gap-3"><h4 class="mt-0"><i aria-hidden="true" class="fa fa-map-signs text-info"></i><span class="ml-2">Port mapping</span></h4><div class="align-items-center d-flex flex-wrap"><div class="align-items-center text-primary d-flex gap-2" style="padding: 5px 10px;"><strong>SSH</strong><i aria-hidden="true" class="fa fa-long-arrow-right"></i><span>50146</span></div><div class="align-items-center text-primary d-flex gap-2" style="padding: 5px 10px;"><strong>HTTP</strong><i aria-hidden="true" class="fa fa-long-arrow-right"></i><span>50145</span></div><div class="align-items-center text-primary d-flex gap-2" style="padding: 5px 10px;"><strong>HTTPS</strong><i aria-hidden="true" class="fa fa-long-arrow-right"></i><span>50144</span></div><div class="align-items-center  d-flex gap-2" style="padding: 5px 10px;"><strong>3000</strong><i aria-hidden="true" class="fa fa-long-arrow-right"></i><span>50143</span></div><div class="align-items-center text-primary d-flex gap-2" style="padding: 5px 10px;"><strong>MySQL</strong><i aria-hidden="true" class="fa fa-long-arrow-right"></i><span>50142</span></div><div class="align-items-center  d-flex gap-2" style="padding: 5px 10px;"><strong>4000</strong><i aria-hidden="true" class="fa fa-long-arrow-right"></i><span>50141</span></div><div class="align-items-center  d-flex gap-2" style="padding: 5px 10px;"><strong>5000</strong><i aria-hidden="true" class="fa fa-long-arrow-right"></i><span>50140</span></div><div class="align-items-center  d-flex gap-2" style="padding: 5px 10px;"><strong>5001</strong><i aria-hidden="true" class="fa fa-long-arrow-right"></i><span>50139</span></div><div class="align-items-center  d-flex gap-2" style="padding: 5px 10px;"><strong>8000</strong><i aria-hidden="true" class="fa fa-long-arrow-right"></i><span>50138</span></div><div class="align-items-center  d-flex gap-2" style="padding: 5px 10px;"><strong>8080</strong><i aria-hidden="true" class="fa fa-long-arrow-right"></i><span>50137</span></div></div></div></div></div></div></div></div></div></div></div></div></div></div>
+
+
+  </div>
+</div>
+
+
+      </article>
+
+      <div class="copyright">Copyright © 2022 ALX, All rights reserved.</div>
+    </main>
+
+      <button class="btn btn-primary" id="search-button" data-search-active="false" data-toggle="modal" data-target="#search-modal">
+  <i aria-hidden="true" class="fa fa-search "></i>
+  <i aria-hidden="true" class="fa fa-window-minimize "></i>
+</button>
+
+      <div class="modal fade" id="search-modal" tabindex="-1" role="dialog" aria-labelledby="search-modal-label">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div id="search-bar-container">
+    <input id="search-bar" type="text" name="hbtn-search-bar" placeholder="✨Start search by typing in this field✨">
+</div>
+
+            </div>
+            <div class="modal-body">
+                <div id="modal-spinner" class="spinner gap">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+                <div id="search-results-container">
+</div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+      <div class="modal fade" id="markdownGuideModal" tabindex="-1" role="dialog" aria-labelledby="markdownGuideModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <h4 class="modal-title">Markdown Guide</h4>
+        </div>
+        <div class="modal-body">
+            <h4>Emphasis</h4>
+<pre>**<strong>bold</strong>**
+*<em>italics</em>*
+~~<strike>strikethrough</strike>~~</pre>
+<h4>Headers</h4>
+<pre># Big header
+## Medium header
+### Small header
+#### Tiny header</pre>
+<h4>Lists</h4>
+<pre>* Generic list item
+* Generic list item
+* Generic list item
+
+1. Numbered list item
+2. Numbered list item
+3. Numbered list item</pre>
+<h4>Links</h4>
+<pre>[Text to display](http://www.example.com)</pre>
+<h4>Quotes</h4>
+<pre>&gt; This is a quote.
+&gt; It can span multiple lines!</pre>
+<h4>Images</h4>
+<p>CSS style available: <code>width, height, opacity</code></p>
+<pre>![](http://www.example.com/image.jpg)
+![](http://www.example.com/image.jpg | width: 200px)
+![](http://www.example.com/image.jpg | height: 124px | width: 80px | opacity: 0.6)
+</pre>
+<h4>Tables</h4>
+<pre>| Column 1 | Column 2 | Column 3 |
+| -------- | -------- | -------- |
+| John     | Doe      | Male     |
+| Mary     | Smith    | Female   |
+
+<em>Or without aligning the columns...</em>
+
+| Column 1 | Column 2 | Column 3 |
+| -------- | -------- | -------- |
+| John | Doe | Male |
+| Mary | Smith | Female |
+</pre>
+<h4>Displaying code</h4>
+<pre>`var example = "hello!";`
+
+<em>Or spanning multiple lines...</em>
+
+```
+var example = "hello!";
+alert(example);
+```</pre>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create',
+            'UA-67152800-9',
+            'auto', {
+              userId: '850'
+            }
+          );
+
+        ga('send', 'pageview');
+
+        $(document).ready(function() {
+          ga(function(tracker) {
+            var clientId = tracker.get('clientId');
+            $('.ga-client-id').val(clientId);
+          });
+        });
+      </script>
+
+
+
+
+      
+
+
+  
+
+</body></html>

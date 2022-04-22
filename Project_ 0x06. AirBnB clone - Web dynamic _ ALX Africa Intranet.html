@@ -1,0 +1,1680 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)https://alx-intranet.hbtn.io/projects/309 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="google" content="notranslate">
+
+    <title>Project: 0x06. AirBnB clone - Web dynamic | ALX Africa Intranet</title>
+
+      <link rel="stylesheet" href="./Project_ 0x06. AirBnB clone - Web dynamic _ ALX Africa Intranet_files/xgz4ilr.css">
+      <link rel="stylesheet" media="all" href="./Project_ 0x06. AirBnB clone - Web dynamic _ ALX Africa Intranet_files/application_alx-797565f98971caf22e304b8614ecbc3b779f242f268834e9b46baa0f0eab4c36.css">
+      <script async="" src="./Project_ 0x06. AirBnB clone - Web dynamic _ ALX Africa Intranet_files/analytics.js"></script><script src="./Project_ 0x06. AirBnB clone - Web dynamic _ ALX Africa Intranet_files/loader.js"></script>
+      <script src="./Project_ 0x06. AirBnB clone - Web dynamic _ ALX Africa Intranet_files/application-fbcf5ccea5ceafdf088aa0038b1711206df04afdbfaa68fdac52645a6794d031.js"></script>
+      <link rel="shortcut icon" type="image/x-icon" href="https://alx-intranet.hbtn.io/favicon_alx.ico">
+      <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="cVkNGb34hSPzQzRH3XGhPcB5XZKPIyU7+JjqLr5kfsqUy9aRbfeC/qsmOEigcedn0fL7u97NXH3/Wl6TMbm5Ug==">
+
+      <link rel="apple-touch-icon" href="https://alx-intranet.hbtn.io/apple-touch-icon_alx.png">
+
+      <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+      <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+
+      <!-- Store user timezone -->
+      <script>
+        Cookies.set('timezone', (new Date()).getTimezoneOffset() / -60.0);
+      </script>
+
+      <!-- intro.js for interactive onboarding -->
+
+      <!-- React -->
+      <script src="./Project_ 0x06. AirBnB clone - Web dynamic _ ALX Africa Intranet_files/application-8906ffaaef5d4eccdf0b.js"></script>
+      <link rel="stylesheet" media="screen" href="./Project_ 0x06. AirBnB clone - Web dynamic _ ALX Africa Intranet_files/application-f61adf9f.css">
+
+  </head>
+
+  <body class="
+    signed_in
+    env_production
+    
+    " translate="no" data-theme-suffix="_alx" data-checker-special-theme="">
+
+      <input type="hidden" id="hbtn-slack-url" value="https://alx-students.slack.com">
+      <nav class="navbar navbar-default navbar-fixed-top topbar visible-xs">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-mobile" aria-expanded="false">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+
+    <a class="navbar-brand" href="https://alx-intranet.hbtn.io/">
+      <div class="logo"></div>
+</a>  </div>
+
+  <div class="collapse navbar-collapse navigation" id="navbar-mobile">
+    <ul class="nav navbar-nav">
+      
+
+
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Planning"><a href="https://alx-intranet.hbtn.io/dashboards/my_planning"><div class="icon "><i aria-hidden="true" class="fa fa-calendar "></i></div><div class="visible-xs">Planning</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-current-projects-item" title="" data-original-title="Projects"><a href="https://alx-intranet.hbtn.io/projects/current"><div class="icon "><i aria-hidden="true" class="fa fa-code-fork "></i></div><div class="visible-xs">Projects</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="My reports"><a href="https://alx-intranet.hbtn.io/users/my_reports"><div class="icon "><i aria-hidden="true" class="fa fa-sticky-note-o "></i></div><div class="visible-xs">My reports</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="QA Reviews I can make"><a href="https://alx-intranet.hbtn.io/corrections/to_review"><div class="icon "><i aria-hidden="true" class="fa fa-check "></i></div><div class="visible-xs">QA Reviews I can make</div></a></li>
+    
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Evaluation quizzes"><a href="https://alx-intranet.hbtn.io/dashboards/my_current_evaluation_quizzes"><div class="icon "><i aria-hidden="true" class="fa fa-question "></i></div><div class="visible-xs">Evaluation quizzes</div></a></li>
+
+    <hr title="My resources">
+
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Curriculums"><a href="https://alx-intranet.hbtn.io/dashboards/my_curriculums"><div class="icon "><i aria-hidden="true" class="fa fa-graduation-cap "></i></div><div class="visible-xs">Curriculums</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-concepts-item" title="" data-original-title="Concepts"><a href="https://alx-intranet.hbtn.io/concepts"><div class="icon "><i aria-hidden="true" class="fa fa-file-text "></i></div><div class="visible-xs">Concepts</div></a></li>
+    
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-dashboards-video-rooms" title="" data-original-title="Conference rooms"><a href="https://alx-intranet.hbtn.io/dashboards/video_rooms"><div class="icon "><i aria-hidden="true" class="fa fa-comments "></i></div><div class="visible-xs">Conference rooms</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Servers"><a href="https://alx-intranet.hbtn.io/servers"><div class="icon "><i aria-hidden="true" class="fa fa-server "></i></div><div class="visible-xs">Servers</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-dashboards-my-containers" title="" data-original-title="Sandboxes"><a href="https://alx-intranet.hbtn.io/user_containers/current"><div class="icon "><i aria-hidden="true" class="fa fa-terminal "></i></div><div class="visible-xs">Sandboxes</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Tools"><a href="https://alx-intranet.hbtn.io/dashboards/my_tools"><div class="icon "><i aria-hidden="true" class="fa fa-wrench "></i></div><div class="visible-xs">Tools</div></a></li>
+    
+
+      <hr title="My campus">
+
+      
+      <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Peers"><a href="https://alx-intranet.hbtn.io/users/peers"><div class="icon "><i aria-hidden="true" class="fa fa-users "></i></div><div class="visible-xs">Peers</div></a></li>
+      <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Captain&#39;s Logs"><a href="https://alx-intranet.hbtn.io/dashboards/my_captain_log"><div class="icon "><i aria-hidden="true" class="fa fa-book "></i></div><div class="visible-xs">Captain's Logs</div></a></li>
+      
+      
+
+
+<hr class="visible-xs">
+
+<li>
+    <div data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Slack">
+      <a target="_blank" href="https://alx-students.slack.com/">
+        <div class="image slack">
+          <div class="inner"></div>
+        </div>
+        <div class="visible-xs">Slack</div>
+</a>    </div>
+
+  <div data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="My Profile">
+    <a href="https://alx-intranet.hbtn.io/users/my_profile">
+        <div class="image ">
+          <div class="inner" style="background-image: url(&#39;https://s3.amazonaws.com/alx-intranet.hbtn.io/users/photos/000/000/850/thumb/IMG_20190729_142005.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20220422%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20220422T220732Z&amp;X-Amz-Expires=600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=839da3c2b3febdeaf7caef4e022162584681deb22be7653b3c17f9509ab92125&#39;)"></div>
+        </div>
+
+      <div class="visible-xs">My Profile</div>
+</a>  </div>
+</li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      <div class="hidden-xs navigation sidebar">
+  <a class="logo-container" href="https://alx-intranet.hbtn.io/">
+    <div class="logo"></div>
+</a>
+  <ul>
+    
+
+
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Planning"><a href="https://alx-intranet.hbtn.io/dashboards/my_planning"><div class="icon "><i aria-hidden="true" class="fa fa-calendar "></i></div><div class="visible-xs">Planning</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-current-projects-item" title="" data-original-title="Projects"><a href="https://alx-intranet.hbtn.io/projects/current"><div class="icon "><i aria-hidden="true" class="fa fa-code-fork "></i></div><div class="visible-xs">Projects</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="My reports"><a href="https://alx-intranet.hbtn.io/users/my_reports"><div class="icon "><i aria-hidden="true" class="fa fa-sticky-note-o "></i></div><div class="visible-xs">My reports</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="QA Reviews I can make"><a href="https://alx-intranet.hbtn.io/corrections/to_review"><div class="icon "><i aria-hidden="true" class="fa fa-check "></i></div><div class="visible-xs">QA Reviews I can make</div></a></li>
+    
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Evaluation quizzes"><a href="https://alx-intranet.hbtn.io/dashboards/my_current_evaluation_quizzes"><div class="icon "><i aria-hidden="true" class="fa fa-question "></i></div><div class="visible-xs">Evaluation quizzes</div></a></li>
+
+    <hr title="My resources">
+
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Curriculums"><a href="https://alx-intranet.hbtn.io/dashboards/my_curriculums"><div class="icon "><i aria-hidden="true" class="fa fa-graduation-cap "></i></div><div class="visible-xs">Curriculums</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-concepts-item" title="" data-original-title="Concepts"><a href="https://alx-intranet.hbtn.io/concepts"><div class="icon "><i aria-hidden="true" class="fa fa-file-text "></i></div><div class="visible-xs">Concepts</div></a></li>
+    
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-dashboards-video-rooms" title="" data-original-title="Conference rooms"><a href="https://alx-intranet.hbtn.io/dashboards/video_rooms"><div class="icon "><i aria-hidden="true" class="fa fa-comments "></i></div><div class="visible-xs">Conference rooms</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Servers"><a href="https://alx-intranet.hbtn.io/servers"><div class="icon "><i aria-hidden="true" class="fa fa-server "></i></div><div class="visible-xs">Servers</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-dashboards-my-containers" title="" data-original-title="Sandboxes"><a href="https://alx-intranet.hbtn.io/user_containers/current"><div class="icon "><i aria-hidden="true" class="fa fa-terminal "></i></div><div class="visible-xs">Sandboxes</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Tools"><a href="https://alx-intranet.hbtn.io/dashboards/my_tools"><div class="icon "><i aria-hidden="true" class="fa fa-wrench "></i></div><div class="visible-xs">Tools</div></a></li>
+    
+
+      <hr title="My campus">
+
+      
+      <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Peers"><a href="https://alx-intranet.hbtn.io/users/peers"><div class="icon "><i aria-hidden="true" class="fa fa-users "></i></div><div class="visible-xs">Peers</div></a></li>
+      <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Captain&#39;s Logs"><a href="https://alx-intranet.hbtn.io/dashboards/my_captain_log"><div class="icon "><i aria-hidden="true" class="fa fa-book "></i></div><div class="visible-xs">Captain's Logs</div></a></li>
+      
+      
+
+
+<hr class="visible-xs">
+
+<li>
+    <div data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Slack">
+      <a target="_blank" href="https://alx-students.slack.com/">
+        <div class="image slack">
+          <div class="inner"></div>
+        </div>
+        <div class="visible-xs">Slack</div>
+</a>    </div>
+
+  <div data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="My Profile">
+    <a href="https://alx-intranet.hbtn.io/users/my_profile">
+        <div class="image ">
+          <div class="inner" style="background-image: url(&#39;https://s3.amazonaws.com/alx-intranet.hbtn.io/users/photos/000/000/850/thumb/IMG_20190729_142005.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20220422%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20220422T220732Z&amp;X-Amz-Expires=600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=839da3c2b3febdeaf7caef4e022162584681deb22be7653b3c17f9509ab92125&#39;)"></div>
+        </div>
+
+      <div class="visible-xs">My Profile</div>
+</a>  </div>
+</li>
+
+
+  </ul>
+</div>
+
+
+    <main>
+      <div id="layout-bars">
+        
+
+        
+
+        
+
+        
+      </div>
+
+      <article class="">
+
+        
+<div class="project row">
+  <div class="col-xs-12 col-md-10 col-lg-8 contains-images">
+
+      <h1 class="gap">0x06. AirBnB clone - Web dynamic</h1>
+
+  <div data-react-class="tags/Tags" data-react-props="{&quot;tags&quot;:[]}" data-react-cache-id="tags/Tags-0"></div>
+
+  <ul class="list-group metadata" id="project-metadata">
+
+    <li class="list-group-item">
+      <i aria-hidden="true" class="fa fa-user  fa-fw"></i>
+      By Guillaume, CTO at Holberton School
+    </li>
+
+    <li class="list-group-item">
+      <i aria-hidden="true" class="fa fa-cogs  fa-fw"></i>
+      Weight: 2
+    </li>
+
+
+    <li class="list-group-item">
+      <i aria-hidden="true" class="fa fa-users  fa-fw"></i>
+      Project to be done in teams of 2 people
+        (your team: Henok Gashaw, Edafe Oke
+    </li>
+
+      <li class="list-group-item">
+        <i aria-hidden="true" class="fa fa-calendar  fa-fw"></i>
+          Project over - took place from <div data-react-class="common/DateTime" data-react-props="{&quot;showDate&quot;:true,&quot;showTime&quot;:false,&quot;value&quot;:&quot;2022-02-10T06:00:00.000+03:00&quot;}" data-react-cache-id="common/DateTime-0" class="d-inline-block"><span data-container="body" data-html="false" data-placement="auto top" data-toggle="tooltip" title="" data-original-title="2022-02-10 04:00 (GMT+01:00)"><span class="datetime">Feb 10, 2022 </span></span></div> to <div data-react-class="common/DateTime" data-react-props="{&quot;showDate&quot;:true,&quot;showTime&quot;:false,&quot;value&quot;:&quot;2022-02-14T06:00:00.000+03:00&quot;}" data-react-cache-id="common/DateTime-0" class="d-inline-block"><span data-container="body" data-html="false" data-placement="auto top" data-toggle="tooltip" title="" data-original-title="2022-02-14 04:00 (GMT+01:00)"><span class="datetime">Feb 14, 2022 </span></span></div>
+          - you're done with <span id="student_task_done_percentage">0</span>% of tasks.
+      </li>
+
+
+      <li class="list-group-item">
+        <i aria-hidden="true" class="fa fa-check-square  fa-fw"></i>
+          Manual QA review was done
+            on <div data-react-class="common/DateTime" data-react-props="{&quot;showDate&quot;:true,&quot;showTime&quot;:true,&quot;value&quot;:&quot;2022-02-22T11:15:36.000+03:00&quot;}" data-react-cache-id="common/DateTime-0" class="d-inline-block"><span data-container="body" data-html="false" data-placement="auto top" data-toggle="tooltip" title="" data-original-title="2022-02-22 09:15 (GMT+01:00)"><span class="datetime">Feb 22, 2022 9:15 AM</span></span></div>
+      </li>
+
+      <li class="list-group-item">
+        <i aria-hidden="true" class="fa fa-check-square  fa-fw"></i>
+        An auto review will be launched at the deadline
+      </li>
+
+      <div class="gap clean well">
+  <h4>In a nutshell…</h4>
+  <ul>
+
+      <li>
+        <strong>Manual QA review:</strong>
+          0.0/117 mandatory
+            &amp;
+            0.0/63 optional
+      </li>
+
+      <li>
+        <strong>Auto QA review:</strong>
+          0.0/6 mandatory
+      </li>
+    <li>
+      <strong>Altogether:</strong>
+        &nbsp;<strong>0.0%</strong>
+        <ul>
+          <li>Mandatory: 0.0%</li>
+            <li>Optional: 0.0%</li>
+            <li>
+              Calculation:&nbsp;
+                  0.0%
+                    + (0.0% * 0.0%)
+              &nbsp;==&nbsp;<strong>0.0%</strong>
+            </li>
+        </ul>
+    </li>
+  </ul>
+</div>
+
+</ul>
+
+
+
+
+    <div id="project_id" style="display: none" data-project-id="309"></div>
+
+
+
+
+      
+
+        <h2>Concepts</h2>
+
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <p>
+        <em>For this project, students are expected to look at this concept:</em>
+      </p>
+
+      <ul>
+          <li>
+            <a href="https://alx-intranet.hbtn.io/concepts/74">AirBnB clone</a>
+          </li>
+      </ul>
+    </div>
+  </div>
+
+
+      <div class="well clean" id="project-description">
+  <h2>Resources</h2>
+
+<p><strong>Read or watch</strong>:</p>
+
+<ul>
+<li><a href="https://alx-intranet.hbtn.io/rltoken/Bl2mJVVG07XCP6E8qtsQMg" title="Selector" target="_blank">Selector</a> </li>
+<li><a href="https://alx-intranet.hbtn.io/rltoken/oM3b0a0FGTy6AQ_UJ201Yw" title="Get and set content" target="_blank">Get and set content</a> </li>
+<li><a href="https://alx-intranet.hbtn.io/rltoken/LL2uScQvjWnj2ZEx2CzxXw" title="Manipulate CSS classes" target="_blank">Manipulate CSS classes</a> </li>
+<li><a href="https://alx-intranet.hbtn.io/rltoken/6JtTz9SaNX3AyVXht4tMYA" title="Manipulate DOM elements" target="_blank">Manipulate DOM elements</a> </li>
+<li><a href="https://alx-intranet.hbtn.io/rltoken/1AbzN1nEfBKoSjB-9kjmrA" title="Document ready" target="_blank">Document ready</a> </li>
+<li><a href="https://alx-intranet.hbtn.io/rltoken/OGDoIOd0cdmwDJFJy4aw5w" title="Introduction" target="_blank">Introduction</a> </li>
+<li><a href="https://alx-intranet.hbtn.io/rltoken/kmBzs_QPD72Oz--Yk80JHw" title="GET &amp; POST request" target="_blank">GET &amp; POST request</a> </li>
+<li><a href="https://alx-intranet.hbtn.io/rltoken/tzqJx5SS5cF1BW_lAnXqqg" title="HTTP access control (CORS)" target="_blank">HTTP access control (CORS)</a> </li>
+</ul>
+
+<h2>Learning Objectives</h2>
+
+<p>At the end of this project, you are expected to be able to <a href="https://alx-intranet.hbtn.io/rltoken/_ii906pZ1sg8gkAF1dvsNQ" title="explain to anyone" target="_blank">explain to anyone</a>, <strong>without the help of Google</strong>:</p>
+
+<h3>General</h3>
+
+<ul>
+<li>How cool it is to request your own API</li>
+<li>How to modify an HTML element style</li>
+<li>How to get and update an HTML element content</li>
+<li>How to modify the DOM</li>
+<li>How to make a <code>GET</code> request with JQuery Ajax</li>
+<li>How to make a <code>POST</code> request with JQuery Ajax</li>
+<li>How to listen/bind to DOM events</li>
+<li>How to listen/bind to user events</li>
+</ul>
+
+<h2>Requirements</h2>
+
+<h3>General</h3>
+
+<ul>
+<li>Allowed editors: <code>vi</code>, <code>vim</code>, <code>emacs</code></li>
+<li>All your files will be interpreted on Chrome (version 57.0)</li>
+<li>All your files should end with a new line</li>
+<li>A <code>README.md</code> file, at the root of the folder of the project, is mandatory</li>
+<li>Your code should be <code>semistandard</code> compliant with the flag <code>--global $</code>: <code>semistandard *.js --global $</code></li>
+<li>All your JavaScript must be in the folder <code>scripts</code></li>
+<li>You must use JQuery version 3.x</li>
+<li>You are not allowed to use <code>var</code></li>
+<li>HTML should not reload for each action: DOM manipulation, update values, fetch data…</li>
+</ul>
+
+<h3>GitHub</h3>
+
+<p><strong>There should be one project repository per group. If you clone/fork/whatever a project repository with the same name before the second deadline, you risk a 0% score.</strong></p>
+
+<h2>More Info</h2>
+
+<h3>Import JQuery</h3>
+
+<pre><code>&lt;head&gt;
+    &lt;script src="https://code.jquery.com/jquery-3.2.1.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+</code></pre>
+
+<h3>Before starting the project…</h3>
+
+<p>You will work on a codebase using <a href="https://alx-intranet.hbtn.io/rltoken/VmGDpw_DCN16OJt_UoqsDQ" title="Flasgger" target="_blank">Flasgger</a>, you will need to install it locally first before starting the RestAPI:</p>
+
+<pre><code>$ sudo apt-get install -y python3-lxml
+$ sudo pip3 install flask_cors # if it was not installed yet
+$ sudo pip3 install flasgger
+</code></pre>
+
+<p>If the RestAPI is not starting, please read the error message. 
+Based on the(ses) error message(s), you will have to troubleshoot potential dependencies issues. </p>
+
+<p>Here some solutions:</p>
+
+<h4><code>jsonschema</code> exception</h4>
+
+<pre><code>$ sudo pip3 uninstall -y jsonschema 
+$ sudo pip3 install jsonschema==3.0.1
+</code></pre>
+
+<h4><code>No module named 'pathlib2'</code></h4>
+
+<pre><code>$ sudo pip3 install pathlib2
+</code></pre>
+
+<h3>Expose ports from your Vagrant</h3>
+
+<p>In your <code>Vagrantfile</code>, add this line for each port forwarded</p>
+
+<pre><code># I expose the port 5001 of my vm to the port 5001 on my computer
+config.vm.network :forwarded_port, guest: 5001, host: 5001 
+</code></pre>
+
+<p>if you need to expose other ports, same line but you will need to replace the “guest port” (inside your vagrant) and your “host port” (outside your vagrant, used from your browser for example)</p>
+
+<p>It’s important in your project, to use the AirBnB API with the port <code>5001</code></p>
+
+<p><br>
+<br>
+<img src="./Project_ 0x06. AirBnB clone - Web dynamic _ ALX Africa Intranet_files/hbnb_step5.png" alt="" style=""></p>
+
+<h3>Manual QA Review</h3>
+
+<p><strong>It is your responsibility to request a review for this project from a peer before the project’s deadline. If no peers have been reviewed, you should request a review from a TA or staff member.</strong></p>
+
+</div>
+
+
+      
+
+      
+
+        
+          <h2 class="gap">Tasks</h2>
+
+    <div data-role="task1844" data-position="1" id="task-num-0">
+      <div class="panel panel-default task-card " id="task-1844">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      0. Last clone!
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+      <div class="task_progress_score_bar" data-task-id="1844" data-correction-id="127121">
+        <div class="task_progress_bar" style="width: 0%;">
+          <div class="task_score_bar">
+          </div>
+        </div>
+        <div class="task_progress_score_text">
+          Score: <span class="task_score_value">0.00%</span> (<span class="task_progress_value">Checks completed: 0.00%</span>)
+        </div>
+      </div>
+
+    <!-- Task Body -->
+    <p>A new codebase again? Yes!</p>
+
+<p>For this project you will fork this <a href="https://alx-intranet.hbtn.io/rltoken/18CpThAKqBP5uviO1DSSGw" title="codebase" target="_blank">codebase</a>:</p>
+
+<ul>
+<li>Update the repository name to <code>AirBnB_clone_v4</code></li>
+<li>Update the <code>README.md</code>:
+
+<ul>
+<li>Add yourself as an author of the project</li>
+<li>Add new information about your new contribution</li>
+<li>Make it better!</li>
+</ul></li>
+<li>If you’re the owner of this codebase, create a new repository called <code>AirBnB_clone_v4</code> and copy over all files from <code>AirBnB_clone_v3</code> </li>
+<li>If you didn’t install Flasgger from the previous project, it’s time! <code>sudo pip3 install flasgger</code></li>
+</ul>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+      <div class="list-group-item">
+        <p><strong>Repo:</strong></p>
+        <ul>
+          <li>GitHub repository: <code>AirBnB_clone_v4</code></li>
+        </ul>
+      </div>
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+  <div class="panel-footer">
+      <div class="align-items-center d-flex justify-content-between">
+        
+<div>
+    <button class="student_task_done btn btn-default btn-sm no" data-task-id="1844">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1844" data-project-id="309" data-toggle="modal" data-target="#task-1844-users-done-modal">
+      Help
+    </button>
+    <div class="modal fade users-done-modal" id="task-1844-users-done-modal" data-task-id="1844" data-project-id="309">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "0. Last clone!"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+      <button class="btn btn-default btn-sm" data-task-id="1844" data-toggle="modal" data-target="#task-test-correction-1844-correction-modal" id="task-num-0-check-code-btn">
+        Check your code
+      </button>
+      <div class="modal fade task_correction_modal student_modal" id="task-test-correction-1844-correction-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Correction of "0. Last clone!"</h4>
+            </div>
+            <div class="modal-body">
+                <div class="actions">
+                    <center>
+                        <div class="alert alert-info hidden"></div>
+
+                        <button name="button" type="submit" class="btn btn-primary correction_request_test_send" data-task-id="1844">Start a new test</button>
+                        <button class="btn btn-default close-modal hidden" data-dismiss="modal" type="button">Close</button>
+
+                        <div class="spinner" style="display: none;">
+                            <div class="bounce1"></div>
+                            <div class="bounce2"></div>
+                            <div class="bounce3"></div>
+                        </div>
+                        <div class="error"></div>
+                        <div class="info"></div>
+
+
+                    </center>
+                </div>
+                <div class="result"></div>
+
+                <div class="help">
+    <button data-task-id="1844">
+        <i aria-hidden="true" class="fa fa-info-circle "></i>
+    </button>
+    <div class="help-container" data-task-id="1844">
+        <div class="check-line">
+            <div class="check-inline requirement success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Requirement success
+            </div>
+            <div class="check-inline requirement fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Requirement fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline code success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Code success
+            </div>
+            <div class="check-inline code fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Code fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline efficiency success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Efficiency success
+            </div>
+            <div class="check-inline efficiency fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Efficiency fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline answer success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Text answer success
+            </div>
+            <div class="check-inline answer fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Text answer fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline requirement fail offline">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Skipped - Previous check failed
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+
+      <button class="btn btn-primary btn-sm task_ask_new_correction" data-task-id="1844" data-correction-id="127121">
+        Ask for a new correction <span class="in_progress_info">: in progress...</span><span class="error_occured_info">: an error occured</span>
+      </button>
+
+    <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#container-specs-modal"><i aria-hidden="true" class="fa fa-terminal "></i><span>Get a sandbox</span></button>
+
+      <button class="btn btn-default btn-sm" data-task-id="1844" data-toggle="modal" data-target="#task-qa-review-1844-modal">
+        QA Review
+      </button>
+      <div class="modal fade task_get_qa_review" id="task-qa-review-1844-modal" data-correction-id="127121" data-task-id="1844">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">0. Last clone!</h4>
+            </div>
+            <div class="modal-body">
+                <div class="spinner gap">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+                <div class="review-container">
+                    <div class="review-corrector"></div>
+                    <div class="review-github well" style="display:none">
+                        <h5>Commit used:</h5>
+                        <ul>
+                            <li style="display:none"><strong>User:</strong> <code class="review-github-id"></code> <span class="review-github-name">---</span></li>
+                            <li style="display:none"><strong>URL:</strong> <a class="review-github-url" target="_blank">Click here</a></li>
+                            <li style="display:none"><strong>ID:</strong> <code class="review-github-commit_id">---</code></li>
+                            <li style="display:none"><strong>Author:</strong> <span class="review-github-committer_username">---</span></li>
+                            <li style="display:none"><strong>Subject:</strong> <em class="review-github-subject">---</em></li>
+                            <li style="display:none"><strong>Date:</strong> <span class="review-github-datetime">---</span></li>
+                        </ul>
+                    </div>
+                    <div class="review-percentage_down"></div>
+                    <ul class="review-checks list-group sm-gap"></ul>
+                    <div class="review-comment"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+        <div class="fs-4">
+        </div>
+      </div>
+
+
+  </div>
+</div>
+
+    </div>
+    <div data-role="task1845" data-position="2" id="task-num-1">
+      <div class="panel panel-default task-card " id="task-1845">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      1. Cash only
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+      <div class="task_progress_score_bar" data-task-id="1845" data-correction-id="127121">
+        <div class="task_progress_bar" style="width: 0%;">
+          <div class="task_score_bar">
+          </div>
+        </div>
+        <div class="task_progress_score_text">
+          Score: <span class="task_score_value">0.00%</span> (<span class="task_progress_value">Checks completed: 0.00%</span>)
+        </div>
+      </div>
+
+    <!-- Task Body -->
+    <p>Write a script that starts a Flask web application:</p>
+
+<ul>
+<li>Based on <code>web_flask</code>, copy: <code>web_flask/static</code>, <code>web_flask/templates/100-hbnb.html</code>, <code>web_flask/__init__.py</code> and <code>web_flask/100-hbnb.py</code> into the <code>web_dynamic</code> folder</li>
+<li>Rename <code>100-hbnb.py</code> to <code>0-hbnb.py</code></li>
+<li>Rename <code>100-hbnb.html</code> to <code>0-hbnb.html</code></li>
+<li>Update <code>0-hbnb.py</code> to replace the existing route to <code>/0-hbnb/</code></li>
+</ul>
+
+<p><strong>If <code>100-hbnb.html</code> is not present, use <code>8-hbnb.html</code> instead</strong></p>
+
+<pre><code>guillaume@ubuntu:~/AirBnB_v4$ HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db python3 -m web_dynamic.0-hbnb
+* Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+....
+</code></pre>
+
+<p>One problem now is the asset caching done by Flask.</p>
+
+<p>To avoid that, you will add a query string to each asset:</p>
+
+<p>In <code>0-hbnb.py</code>, add a variable <code>cache_id</code> to the <code>render_template</code>. The value of this variable must be an UUID (<code>uuid.uuid4()</code>)</p>
+
+<p>In <code>0-hbnb.html</code>, add this variable <code>cache_id</code> as query string to each <code>&lt;link&gt;</code> tag URL</p>
+
+<pre><code>guillaume@ubuntu:~/AirBnB_v4$ curl -s -XGET http://0.0.0.0:5000/0-hbnb/ | head -6
+&lt;!DOCTYPE HTML&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;link rel="stylesheet" type="text/css" href="../static/styles/4-common.css?e211c9eb-7d17-4f12-85eb-4d50fa50cb1d" /&gt;
+    &lt;link rel="stylesheet" type="text/css" href="../static/styles/3-header.css?e211c9eb-7d17-4f12-85eb-4d50fa50cb1d" /&gt;
+guillaume@ubuntu:~/AirBnB_v4$ curl -s -XGET http://0.0.0.0:5000/0-hbnb/ | head -6
+&lt;!DOCTYPE HTML&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;link rel="stylesheet" type="text/css" href="../static/styles/4-common.css?f834413e-0aa9-4767-b64a-c92db9cb1f82" /&gt;
+    &lt;link rel="stylesheet" type="text/css" href="../static/styles/3-header.css?f834413e-0aa9-4767-b64a-c92db9cb1f82" /&gt;
+guillaume@ubuntu:~/AirBnB_v4$ 
+</code></pre>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+      <div class="list-group-item">
+        <p><strong>Repo:</strong></p>
+        <ul>
+          <li>GitHub repository: <code>AirBnB_clone_v4</code></li>
+            <li>Directory: <code>web_dynamic</code></li>
+            <li>File: <code>0-hbnb.py, templates/0-hbnb.html</code></li>
+        </ul>
+      </div>
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+  <div class="panel-footer">
+      <div class="align-items-center d-flex justify-content-between">
+        
+<div>
+    <button class="student_task_done btn btn-default btn-sm no" data-task-id="1845">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1845" data-project-id="309" data-toggle="modal" data-target="#task-1845-users-done-modal">
+      Help
+    </button>
+    <div class="modal fade users-done-modal" id="task-1845-users-done-modal" data-task-id="1845" data-project-id="309">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "1. Cash only"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#container-specs-modal"><i aria-hidden="true" class="fa fa-terminal "></i><span>Get a sandbox</span></button>
+
+      <button class="btn btn-default btn-sm" data-task-id="1845" data-toggle="modal" data-target="#task-qa-review-1845-modal">
+        QA Review
+      </button>
+      <div class="modal fade task_get_qa_review" id="task-qa-review-1845-modal" data-correction-id="127121" data-task-id="1845">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">1. Cash only</h4>
+            </div>
+            <div class="modal-body">
+                <div class="spinner gap">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+                <div class="review-container">
+                    <div class="review-corrector"></div>
+                    <div class="review-github well" style="display:none">
+                        <h5>Commit used:</h5>
+                        <ul>
+                            <li style="display:none"><strong>User:</strong> <code class="review-github-id"></code> <span class="review-github-name">---</span></li>
+                            <li style="display:none"><strong>URL:</strong> <a class="review-github-url" target="_blank">Click here</a></li>
+                            <li style="display:none"><strong>ID:</strong> <code class="review-github-commit_id">---</code></li>
+                            <li style="display:none"><strong>Author:</strong> <span class="review-github-committer_username">---</span></li>
+                            <li style="display:none"><strong>Subject:</strong> <em class="review-github-subject">---</em></li>
+                            <li style="display:none"><strong>Date:</strong> <span class="review-github-datetime">---</span></li>
+                        </ul>
+                    </div>
+                    <div class="review-percentage_down"></div>
+                    <ul class="review-checks list-group sm-gap"></ul>
+                    <div class="review-comment"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+        <div class="fs-4">
+        </div>
+      </div>
+
+
+  </div>
+</div>
+
+    </div>
+    <div data-role="task1846" data-position="3" id="task-num-2">
+      <div class="panel panel-default task-card " id="task-1846">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      2. Select some Amenities to be comfortable!
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+      <div class="task_progress_score_bar" data-task-id="1846" data-correction-id="127121">
+        <div class="task_progress_bar" style="width: 0%;">
+          <div class="task_score_bar">
+          </div>
+        </div>
+        <div class="task_progress_score_text">
+          Score: <span class="task_score_value">0.00%</span> (<span class="task_progress_value">Checks completed: 0.00%</span>)
+        </div>
+      </div>
+
+    <!-- Task Body -->
+    <p>For the moment the filters section is static, let’s make it dynamic!</p>
+
+<p>Replace the route <code>0-hbnb</code> with <code>1-hbnb</code> in the file <code>1-hbnb.py</code> (based on <code>0-hbnb.py</code>)</p>
+
+<p>Create a new template <code>1-hbnb.html</code> (based on <code>0-hbnb.html</code>) and update it:</p>
+
+<ul>
+<li>Import JQuery in the <code>&lt;head&gt;</code> tag</li>
+<li>Import the JavaScript <code>static/scripts/1-hbnb.js</code> in the <code>&lt;head&gt;</code> tag
+
+<ul>
+<li>In 1-hbnb.html and the following HTML files, add this variable cache_id as query string to the above <code>&lt;script&gt;</code> tag</li>
+</ul></li>
+<li>Add a <code>&lt;input type="checkbox"&gt;</code> tag to the <code>li</code> tag of each amenity </li>
+<li>The new checkbox must be at 10px on the left of the Amenity name</li>
+<li>Add to the <code>input</code> tags of each amenity (<code>&lt;li&gt;</code> tag) the attribute <code>data-id=":amenity_id"</code> =&gt; this will allow us to retrieve the Amenity ID from the DOM</li>
+<li>Add to the <code>input</code> tags of each amenity (<code>&lt;li&gt;</code> tag) the attribute <code>data-name=":amenity_name"</code> =&gt; this will allow us to retrieve the Amenity name from the DOM</li>
+</ul>
+
+<p>Write a JavaScript script (<code>static/scripts/1-hbnb.js</code>):</p>
+
+<ul>
+<li>Your script must be executed only when DOM is loaded</li>
+<li>You must use JQuery</li>
+<li>Listen for changes on each <code>input</code> checkbox tag:
+
+<ul>
+<li>if the checkbox is checked, you must store the Amenity ID in a variable (dictionary or list)</li>
+<li>if the checkbox is unchecked, you must remove the Amenity ID from the variable </li>
+<li>update the <code>h4</code> tag inside the <code>div</code> Amenities with the list of Amenities checked </li>
+</ul></li>
+</ul>
+
+<p>As example:</p>
+
+<p><img src="./Project_ 0x06. AirBnB clone - Web dynamic _ ALX Africa Intranet_files/8e3c27078d62806b8ad1c1a682fbb3a48636ab89.jpg" alt="" style="">
+<img src="./Project_ 0x06. AirBnB clone - Web dynamic _ ALX Africa Intranet_files/4e5cecdd82a70f07cd283ef8e242ad325c95b564.jpg" alt="" style="">
+<img src="./Project_ 0x06. AirBnB clone - Web dynamic _ ALX Africa Intranet_files/fb54e3081e229654db6e71ba919db753a791dcc3.jpg" alt="" style=""></p>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+      <div class="list-group-item">
+        <p><strong>Repo:</strong></p>
+        <ul>
+          <li>GitHub repository: <code>AirBnB_clone_v4</code></li>
+            <li>Directory: <code>web_dynamic</code></li>
+            <li>File: <code>1-hbnb.py, templates/1-hbnb.html, static/scripts/1-hbnb.js</code></li>
+        </ul>
+      </div>
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+  <div class="panel-footer">
+      <div class="align-items-center d-flex justify-content-between">
+        
+<div>
+    <button class="student_task_done btn btn-default btn-sm no" data-task-id="1846">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1846" data-project-id="309" data-toggle="modal" data-target="#task-1846-users-done-modal">
+      Help
+    </button>
+    <div class="modal fade users-done-modal" id="task-1846-users-done-modal" data-task-id="1846" data-project-id="309">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "2. Select some Amenities to be comfortable!"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#container-specs-modal"><i aria-hidden="true" class="fa fa-terminal "></i><span>Get a sandbox</span></button>
+
+      <button class="btn btn-default btn-sm" data-task-id="1846" data-toggle="modal" data-target="#task-qa-review-1846-modal">
+        QA Review
+      </button>
+      <div class="modal fade task_get_qa_review" id="task-qa-review-1846-modal" data-correction-id="127121" data-task-id="1846">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">2. Select some Amenities to be comfortable!</h4>
+            </div>
+            <div class="modal-body">
+                <div class="spinner gap">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+                <div class="review-container">
+                    <div class="review-corrector"></div>
+                    <div class="review-github well" style="display:none">
+                        <h5>Commit used:</h5>
+                        <ul>
+                            <li style="display:none"><strong>User:</strong> <code class="review-github-id"></code> <span class="review-github-name">---</span></li>
+                            <li style="display:none"><strong>URL:</strong> <a class="review-github-url" target="_blank">Click here</a></li>
+                            <li style="display:none"><strong>ID:</strong> <code class="review-github-commit_id">---</code></li>
+                            <li style="display:none"><strong>Author:</strong> <span class="review-github-committer_username">---</span></li>
+                            <li style="display:none"><strong>Subject:</strong> <em class="review-github-subject">---</em></li>
+                            <li style="display:none"><strong>Date:</strong> <span class="review-github-datetime">---</span></li>
+                        </ul>
+                    </div>
+                    <div class="review-percentage_down"></div>
+                    <ul class="review-checks list-group sm-gap"></ul>
+                    <div class="review-comment"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+        <div class="fs-4">
+        </div>
+      </div>
+
+
+  </div>
+</div>
+
+    </div>
+    <div data-role="task1847" data-position="4" id="task-num-3">
+      <div class="panel panel-default task-card " id="task-1847">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      3. API status
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+      <div class="task_progress_score_bar" data-task-id="1847" data-correction-id="127121">
+        <div class="task_progress_bar" style="width: 0%;">
+          <div class="task_score_bar">
+          </div>
+        </div>
+        <div class="task_progress_score_text">
+          Score: <span class="task_score_value">0.00%</span> (<span class="task_progress_value">Checks completed: 0.00%</span>)
+        </div>
+      </div>
+
+    <!-- Task Body -->
+    <p>Before requesting the HBNB API, it’s better to know the status of this one.</p>
+
+<p>Update the API entry point (<code>api/v1/app.py</code>) by replacing the current CORS <code>CORS(app, origins="0.0.0.0")</code> by <code>CORS(app, resources={r"/api/v1/*": {"origins": "*"}})</code>.</p>
+
+<p>Change the route <code>1-hbnb</code> to <code>2-hbnb</code> in the file <code>2-hbnb.py</code> (based on <code>1-hbnb.py</code>)</p>
+
+<p>Create a new template <code>2-hbnb.html</code> (based on <code>1-hbnb.html</code>) and update it:</p>
+
+<ul>
+<li>Import the JavaScript <code>static/scripts/2-hbnb.js</code> in the <code>&lt;head&gt;</code> tag (instead of <code>1-hbnb.js</code>)</li>
+<li>Add a new <code>div</code> element in the <code>header</code> tag:
+
+<ul>
+<li>Attribute ID should be <code>api_status</code></li>
+<li>Align to the right</li>
+<li>Circle of 40px diameter</li>
+<li>Center vertically</li>
+<li>At 30px of the right border</li>
+<li>Background color #cccccc</li>
+</ul></li>
+<li>Also add a class <code>available</code> for this new element in <code>web_dynamic/static/styles/3-header.css</code>:
+
+<ul>
+<li>Background color #ff545f</li>
+</ul></li>
+</ul>
+
+<p>Write a JavaScript script (<code>static/scripts/2-hbnb.js</code>): </p>
+
+<ul>
+<li>Based on <code>1-hbnb.js</code></li>
+<li>Request <code>http://0.0.0.0:5001/api/v1/status/</code>:
+
+<ul>
+<li>If in the status is “OK”, add the class <code>available</code> to the <code>div#api_status</code> </li>
+<li>Otherwise, remove the class <code>available</code> to the <code>div#api_status</code> </li>
+</ul></li>
+</ul>
+
+<p>To start the API in the port 5001:</p>
+
+<pre><code>guillaume@ubuntu:~/AirBnB_v4$ HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db HBNB_API_PORT=5001 python3 -m api.v1.app
+...
+</code></pre>
+
+<p>For example:</p>
+
+<p><img src="./Project_ 0x06. AirBnB clone - Web dynamic _ ALX Africa Intranet_files/b68cd1e385963da099899f51ee5f3a6bbf0adcb3.jpg" alt="" style="">
+<img src="./Project_ 0x06. AirBnB clone - Web dynamic _ ALX Africa Intranet_files/62fbb2d674fca4a843458e61cf3b05ee9f68ad04.jpg" alt="" style=""></p>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+      <div class="list-group-item">
+        <p><strong>Repo:</strong></p>
+        <ul>
+          <li>GitHub repository: <code>AirBnB_clone_v4</code></li>
+            <li>File: <code>api/v1/app.py, web_dynamic/2-hbnb.py, web_dynamic/templates/2-hbnb.html, web_dynamic/static/styles/3-header.css, web_dynamic/static/scripts/2-hbnb.js</code></li>
+        </ul>
+      </div>
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+  <div class="panel-footer">
+      <div class="align-items-center d-flex justify-content-between">
+        
+<div>
+    <button class="student_task_done btn btn-default btn-sm no" data-task-id="1847">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1847" data-project-id="309" data-toggle="modal" data-target="#task-1847-users-done-modal">
+      Help
+    </button>
+    <div class="modal fade users-done-modal" id="task-1847-users-done-modal" data-task-id="1847" data-project-id="309">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "3. API status"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#container-specs-modal"><i aria-hidden="true" class="fa fa-terminal "></i><span>Get a sandbox</span></button>
+
+      <button class="btn btn-default btn-sm" data-task-id="1847" data-toggle="modal" data-target="#task-qa-review-1847-modal">
+        QA Review
+      </button>
+      <div class="modal fade task_get_qa_review" id="task-qa-review-1847-modal" data-correction-id="127121" data-task-id="1847">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">3. API status</h4>
+            </div>
+            <div class="modal-body">
+                <div class="spinner gap">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+                <div class="review-container">
+                    <div class="review-corrector"></div>
+                    <div class="review-github well" style="display:none">
+                        <h5>Commit used:</h5>
+                        <ul>
+                            <li style="display:none"><strong>User:</strong> <code class="review-github-id"></code> <span class="review-github-name">---</span></li>
+                            <li style="display:none"><strong>URL:</strong> <a class="review-github-url" target="_blank">Click here</a></li>
+                            <li style="display:none"><strong>ID:</strong> <code class="review-github-commit_id">---</code></li>
+                            <li style="display:none"><strong>Author:</strong> <span class="review-github-committer_username">---</span></li>
+                            <li style="display:none"><strong>Subject:</strong> <em class="review-github-subject">---</em></li>
+                            <li style="display:none"><strong>Date:</strong> <span class="review-github-datetime">---</span></li>
+                        </ul>
+                    </div>
+                    <div class="review-percentage_down"></div>
+                    <ul class="review-checks list-group sm-gap"></ul>
+                    <div class="review-comment"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+        <div class="fs-4">
+        </div>
+      </div>
+
+
+  </div>
+</div>
+
+    </div>
+    <div data-role="task1848" data-position="5" id="task-num-4">
+      <div class="panel panel-default task-card " id="task-1848">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      4. Fetch places
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+      <div class="task_progress_score_bar" data-task-id="1848" data-correction-id="127121">
+        <div class="task_progress_bar" style="width: 0%;">
+          <div class="task_score_bar">
+          </div>
+        </div>
+        <div class="task_progress_score_text">
+          Score: <span class="task_score_value">0.00%</span> (<span class="task_progress_value">Checks completed: 0.00%</span>)
+        </div>
+      </div>
+
+    <!-- Task Body -->
+    <p>Replace the route <code>2-hbnb</code> with <code>3-hbnb</code> in the file <code>3-hbnb.py</code> (based on <code>2-hbnb.py</code>)</p>
+
+<p>Create a new template <code>3-hbnb.html</code> (based on <code>2-hbnb.html</code>) and update it:</p>
+
+<ul>
+<li>Import the JavaScript <code>static/scripts/3-hbnb.js</code> in the <code>&lt;head&gt;</code> tag (instead of <code>2-hbnb.js</code>)</li>
+<li>Remove the entire Jinja section of displaying all places (all <code>article</code> tags)</li>
+</ul>
+
+<p>Write a JavaScript script (<code>static/scripts/3-hbnb.js</code>): </p>
+
+<ul>
+<li>Based on <code>2-hbnb.js</code></li>
+<li>Request <code>http://0.0.0.0:5001/api/v1/places_search/</code>: 
+
+<ul>
+<li>Description of this endpoint <a href="https://alx-intranet.hbtn.io/rltoken/EkC2rNKurYIznWBiJYPtgA" title="here" target="_blank">here</a>. <strong>If this endpoint is not available, you will have to add it to the API</strong> (you can work all together for creating this endpoint)</li>
+<li>Send a <code>POST</code> request with <code>Content-Type: application/json</code> and an empty dictionary in the body - cURL version: <code>curl "http://0.0.0.0:5001/api/v1/places_search" -XPOST -H "Content-Type: application/json" -d '{}'</code></li>
+<li>Loop into the result of the request and create an <code>article</code> tag representing a <code>Place</code> in the <code>section.places</code>. (you can remove the Owner tag in the place description)</li>
+</ul></li>
+</ul>
+
+<p>The final result must be the same as previously, but now, places are loaded from the front-end, not from the back-end!</p>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+      <div class="list-group-item">
+        <p><strong>Repo:</strong></p>
+        <ul>
+          <li>GitHub repository: <code>AirBnB_clone_v4</code></li>
+            <li>File: <code>web_dynamic/3-hbnb.py, web_dynamic/templates/3-hbnb.html, web_dynamic/static/scripts/3-hbnb.js</code></li>
+        </ul>
+      </div>
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+  <div class="panel-footer">
+      <div class="align-items-center d-flex justify-content-between">
+        
+<div>
+    <button class="student_task_done btn btn-default btn-sm no" data-task-id="1848">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1848" data-project-id="309" data-toggle="modal" data-target="#task-1848-users-done-modal">
+      Help
+    </button>
+    <div class="modal fade users-done-modal" id="task-1848-users-done-modal" data-task-id="1848" data-project-id="309">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "4. Fetch places"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#container-specs-modal"><i aria-hidden="true" class="fa fa-terminal "></i><span>Get a sandbox</span></button>
+
+      <button class="btn btn-default btn-sm" data-task-id="1848" data-toggle="modal" data-target="#task-qa-review-1848-modal">
+        QA Review
+      </button>
+      <div class="modal fade task_get_qa_review" id="task-qa-review-1848-modal" data-correction-id="127121" data-task-id="1848">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">4. Fetch places</h4>
+            </div>
+            <div class="modal-body">
+                <div class="spinner gap">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+                <div class="review-container">
+                    <div class="review-corrector"></div>
+                    <div class="review-github well" style="display:none">
+                        <h5>Commit used:</h5>
+                        <ul>
+                            <li style="display:none"><strong>User:</strong> <code class="review-github-id"></code> <span class="review-github-name">---</span></li>
+                            <li style="display:none"><strong>URL:</strong> <a class="review-github-url" target="_blank">Click here</a></li>
+                            <li style="display:none"><strong>ID:</strong> <code class="review-github-commit_id">---</code></li>
+                            <li style="display:none"><strong>Author:</strong> <span class="review-github-committer_username">---</span></li>
+                            <li style="display:none"><strong>Subject:</strong> <em class="review-github-subject">---</em></li>
+                            <li style="display:none"><strong>Date:</strong> <span class="review-github-datetime">---</span></li>
+                        </ul>
+                    </div>
+                    <div class="review-percentage_down"></div>
+                    <ul class="review-checks list-group sm-gap"></ul>
+                    <div class="review-comment"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+        <div class="fs-4">
+        </div>
+      </div>
+
+
+  </div>
+</div>
+
+    </div>
+    <div data-role="task1849" data-position="6" id="task-num-5">
+      <div class="panel panel-default task-card " id="task-1849">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      5. Filter places by Amenity
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+      <div class="task_progress_score_bar" data-task-id="1849" data-correction-id="127121">
+        <div class="task_progress_bar" style="width: 0%;">
+          <div class="task_score_bar">
+          </div>
+        </div>
+        <div class="task_progress_score_text">
+          Score: <span class="task_score_value">0.00%</span> (<span class="task_progress_value">Checks completed: 0.00%</span>)
+        </div>
+      </div>
+
+    <!-- Task Body -->
+    <p>Replace the route <code>3-hbnb</code> with <code>4-hbnb</code> in the file <code>4-hbnb.py</code> (based on <code>3-hbnb.py</code>)</p>
+
+<p>Create a new template <code>4-hbnb.html</code> (based on <code>3-hbnb.html</code>) and update it:</p>
+
+<ul>
+<li>Import the JavaScript <code>static/scripts/4-hbnb.js</code> in the <code>&lt;head&gt;</code> tag (instead of <code>3-hbnb.js</code>)</li>
+</ul>
+
+<p>Write a JavaScript script (<code>static/scripts/4-hbnb.js</code>): </p>
+
+<ul>
+<li>Based on <code>3-hbnb.js</code></li>
+<li>When the <code>button</code> tag is clicked, a new POST request to <code>places_search</code> should be made with the list of Amenities checked</li>
+</ul>
+
+<p>Now you have the first filter implemented, enjoy!</p>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+      <div class="list-group-item">
+        <p><strong>Repo:</strong></p>
+        <ul>
+          <li>GitHub repository: <code>AirBnB_clone_v4</code></li>
+            <li>File: <code>web_dynamic/4-hbnb.py, web_dynamic/templates/4-hbnb.html, web_dynamic/static/scripts/4-hbnb.js</code></li>
+        </ul>
+      </div>
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+  <div class="panel-footer">
+      <div class="align-items-center d-flex justify-content-between">
+        
+<div>
+    <button class="student_task_done btn btn-default btn-sm no" data-task-id="1849">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-sm" data-task-id="1849" data-project-id="309" data-toggle="modal" data-target="#task-1849-users-done-modal">
+      Help
+    </button>
+    <div class="modal fade users-done-modal" id="task-1849-users-done-modal" data-task-id="1849" data-project-id="309">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "5. Filter places by Amenity"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#container-specs-modal"><i aria-hidden="true" class="fa fa-terminal "></i><span>Get a sandbox</span></button>
+
+      <button class="btn btn-default btn-sm" data-task-id="1849" data-toggle="modal" data-target="#task-qa-review-1849-modal">
+        QA Review
+      </button>
+      <div class="modal fade task_get_qa_review" id="task-qa-review-1849-modal" data-correction-id="127121" data-task-id="1849">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">5. Filter places by Amenity</h4>
+            </div>
+            <div class="modal-body">
+                <div class="spinner gap">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+                <div class="review-container">
+                    <div class="review-corrector"></div>
+                    <div class="review-github well" style="display:none">
+                        <h5>Commit used:</h5>
+                        <ul>
+                            <li style="display:none"><strong>User:</strong> <code class="review-github-id"></code> <span class="review-github-name">---</span></li>
+                            <li style="display:none"><strong>URL:</strong> <a class="review-github-url" target="_blank">Click here</a></li>
+                            <li style="display:none"><strong>ID:</strong> <code class="review-github-commit_id">---</code></li>
+                            <li style="display:none"><strong>Author:</strong> <span class="review-github-committer_username">---</span></li>
+                            <li style="display:none"><strong>Subject:</strong> <em class="review-github-subject">---</em></li>
+                            <li style="display:none"><strong>Date:</strong> <span class="review-github-datetime">---</span></li>
+                        </ul>
+                    </div>
+                    <div class="review-percentage_down"></div>
+                    <ul class="review-checks list-group sm-gap"></ul>
+                    <div class="review-comment"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+        <div class="fs-4">
+        </div>
+      </div>
+
+
+  </div>
+</div>
+
+    </div>
+
+    <p class="lg-gap">
+        <a class="btn btn-primary btn-block" href="https://alx-intranet.hbtn.io/projects/309/unlock_optionals">Done with the mandatory tasks? Unlock 2 advanced tasks now!</a>
+    </p>
+
+
+
+          <div data-react-class="projects/ProjectReadyForReview" data-react-props="{&quot;canReviewPeerDirectly&quot;:true,&quot;correctCorrectionURI&quot;:&quot;https://alx-intranet.hbtn.io/corrections/127121/correct&quot;,&quot;csrfToken&quot;:&quot;aJjWylk/xqoPcUdP4fW841Kacqn5vqyNyBKq+qktcYGNCg1CiTDBd1cUS0Cc9fq5QxHUgKhQ1cvP0B5HJvC2GQ==&quot;,&quot;firstReview&quot;:false,&quot;qaReviewsURI&quot;:&quot;/corrections/to_review&quot;,&quot;readyForReviewURI&quot;:&quot;https://alx-intranet.hbtn.io/corrections/127121/toggle_ready_for_review&quot;,&quot;toggled&quot;:false}" data-react-cache-id="projects/ProjectReadyForReview-0"><div class="row gap"><div class="col-md-12"><div class="text-center"><button class="btn btn-lg btn-primary">Ready for a new manual review</button></div></div></div></div>
+
+          <div class="modal fade" id="container-specs-modal"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button><h4 class="modal-title">Recommended Sandbox</h4></div><div class="modal-body"><div data-react-class="user_containers/ContainerSpecs" data-react-props="{&quot;containerModelName&quot;:&quot;Sandbox&quot;,&quot;containerSpecs&quot;:[{&quot;description&quot;:&quot;\u003cp\u003eUbuntu 14.04 with all tools needed and Python 3.4\u003c/p\u003e\n&quot;,&quot;id&quot;:5,&quot;name&quot;:&quot;Ubuntu 14.04 - Python 3.4&quot;,&quot;online&quot;:true}],&quot;containersLimit&quot;:2,&quot;csrfToken&quot;:&quot;d/rfp1A4CCGKSBSD+y95Wp5YgODeGav98lxBujFEk++SaAQvgDcP/NItGIyGLz8Aj9MmyY/30rv1nvUHvplUdw==&quot;,&quot;startURI&quot;:&quot;/user_containers/start.json&quot;}" data-react-cache-id="user_containers/ContainerSpecs-0"><div><div class="d-flex gap-4 sandboxes-filters"><a class="btn btn-outline-primary"><i aria-hidden="true" class="fa fa-filter"></i><span>Running only</span></a><div class="align-items-center d-flex" style="position: relative; width: 100%;"><input class="form-control" placeholder="Search for an image ..." type="search" value=""></div></div><div class="mt-3"><h3>1 image<small class="ml-2">(0/2 Sandboxes spawned)</small></h3></div><div class="mt-3"><div class="panel panel-default"><div class="panel-body"><div class="align-items-center d-flex flex-wrap justify-content-between"><div><h3 class="mt-0"><i aria-hidden="true" class="fa fa-terminal text-danger"></i><span class="ml-2">Ubuntu 14.04 - Python 3.4</span></h3><div class="mt-2 text-muted"><p>Ubuntu 14.04 with all tools needed and Python 3.4</p>
+</div></div><div class="d-flex flex-wrap gap-5"><a class="btn btn-success"><i aria-hidden="true" class="fa fa-play"></i><span>Run</span></a></div></div></div></div></div></div></div></div></div></div></div>
+
+
+  </div>
+</div>
+
+
+      </article>
+
+      <div class="copyright">Copyright © 2022 ALX, All rights reserved.</div>
+    </main>
+
+      <button class="btn btn-primary" id="search-button" data-search-active="false" data-toggle="modal" data-target="#search-modal">
+  <i aria-hidden="true" class="fa fa-search "></i>
+  <i aria-hidden="true" class="fa fa-window-minimize "></i>
+</button>
+
+      <div class="modal fade" id="search-modal" tabindex="-1" role="dialog" aria-labelledby="search-modal-label">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div id="search-bar-container">
+    <input id="search-bar" type="text" name="hbtn-search-bar" placeholder="✨Start search by typing in this field✨">
+</div>
+
+            </div>
+            <div class="modal-body">
+                <div id="modal-spinner" class="spinner gap">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+                <div id="search-results-container">
+</div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+      <div class="modal fade" id="markdownGuideModal" tabindex="-1" role="dialog" aria-labelledby="markdownGuideModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <h4 class="modal-title">Markdown Guide</h4>
+        </div>
+        <div class="modal-body">
+            <h4>Emphasis</h4>
+<pre>**<strong>bold</strong>**
+*<em>italics</em>*
+~~<strike>strikethrough</strike>~~</pre>
+<h4>Headers</h4>
+<pre># Big header
+## Medium header
+### Small header
+#### Tiny header</pre>
+<h4>Lists</h4>
+<pre>* Generic list item
+* Generic list item
+* Generic list item
+
+1. Numbered list item
+2. Numbered list item
+3. Numbered list item</pre>
+<h4>Links</h4>
+<pre>[Text to display](http://www.example.com)</pre>
+<h4>Quotes</h4>
+<pre>&gt; This is a quote.
+&gt; It can span multiple lines!</pre>
+<h4>Images</h4>
+<p>CSS style available: <code>width, height, opacity</code></p>
+<pre>![](http://www.example.com/image.jpg)
+![](http://www.example.com/image.jpg | width: 200px)
+![](http://www.example.com/image.jpg | height: 124px | width: 80px | opacity: 0.6)
+</pre>
+<h4>Tables</h4>
+<pre>| Column 1 | Column 2 | Column 3 |
+| -------- | -------- | -------- |
+| John     | Doe      | Male     |
+| Mary     | Smith    | Female   |
+
+<em>Or without aligning the columns...</em>
+
+| Column 1 | Column 2 | Column 3 |
+| -------- | -------- | -------- |
+| John | Doe | Male |
+| Mary | Smith | Female |
+</pre>
+<h4>Displaying code</h4>
+<pre>`var example = "hello!";`
+
+<em>Or spanning multiple lines...</em>
+
+```
+var example = "hello!";
+alert(example);
+```</pre>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create',
+            'UA-67152800-9',
+            'auto', {
+              userId: '850'
+            }
+          );
+
+        ga('send', 'pageview');
+
+        $(document).ready(function() {
+          ga(function(tracker) {
+            var clientId = tracker.get('clientId');
+            $('.ga-client-id').val(clientId);
+          });
+        });
+      </script>
+
+
+
+
+      
+
+
+  
+
+</body></html>

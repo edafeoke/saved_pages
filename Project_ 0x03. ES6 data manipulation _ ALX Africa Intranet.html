@@ -1,0 +1,3033 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)https://alx-intranet.hbtn.io/projects/1227 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="google" content="notranslate">
+
+    <title>Project: 0x03. ES6 data manipulation | ALX Africa Intranet</title>
+
+      <link rel="stylesheet" href="./Project_ 0x03. ES6 data manipulation _ ALX Africa Intranet_files/xgz4ilr.css">
+      <link rel="stylesheet" media="all" href="./Project_ 0x03. ES6 data manipulation _ ALX Africa Intranet_files/application_alx-797565f98971caf22e304b8614ecbc3b779f242f268834e9b46baa0f0eab4c36.css">
+      <script async="" src="./Project_ 0x03. ES6 data manipulation _ ALX Africa Intranet_files/analytics.js"></script><script src="./Project_ 0x03. ES6 data manipulation _ ALX Africa Intranet_files/loader.js"></script>
+      <script src="./Project_ 0x03. ES6 data manipulation _ ALX Africa Intranet_files/application-c0eba1cb196c99a856f32efc56d178773f6619916fb180fce94cca958e910a3f.js"></script>
+      <link rel="shortcut icon" type="image/x-icon" href="https://alx-intranet.hbtn.io/favicon_alx.ico">
+      <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="Y8SWeNMQka1ga9llFFe9ff2nflr1HuViIxfMSWZP49eGVk3wAx+WcDgO1WppV/sn7CzYc6TwnCQk1Xj06ZIkTw==">
+
+      <link rel="apple-touch-icon" href="https://alx-intranet.hbtn.io/apple-touch-icon_alx.png">
+
+      <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+      <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+
+      <!-- Store user timezone -->
+      <script>
+        Cookies.set('timezone', (new Date()).getTimezoneOffset() / -60.0);
+      </script>
+
+      <!-- intro.js for interactive onboarding -->
+
+      <!-- React -->
+      <script src="./Project_ 0x03. ES6 data manipulation _ ALX Africa Intranet_files/application-2e6f840d760e3d8e6c7b.js"></script>
+      <link rel="stylesheet" media="screen" href="./Project_ 0x03. ES6 data manipulation _ ALX Africa Intranet_files/application-f61adf9f.css">
+
+  </head>
+
+  <body class="signed_in     env_production" translate="no" data-theme-suffix="_alx" data-checker-special-theme="">
+
+      <input type="hidden" id="hbtn-slack-url" value="https://alx-students.slack.com">
+      <nav class="navbar navbar-default navbar-fixed-top topbar visible-xs">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-mobile" aria-expanded="false">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+
+    <a class="navbar-brand" href="https://alx-intranet.hbtn.io/">
+      <div class="logo"></div>
+</a>  </div>
+
+  <div class="collapse navbar-collapse navigation" id="navbar-mobile">
+    <ul class="nav navbar-nav">
+      
+
+
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Planning"><a href="https://alx-intranet.hbtn.io/dashboards/my_planning"><div class="icon "><i aria-hidden="true" class="fa fa-calendar "></i></div><div class="visible-xs">Planning</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-current-projects-item" title="" data-original-title="Projects"><a href="https://alx-intranet.hbtn.io/projects/current"><div class="icon "><i aria-hidden="true" class="fa fa-code-fork "></i></div><div class="visible-xs">Projects</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="My reports"><a href="https://alx-intranet.hbtn.io/users/my_reports"><div class="icon "><i aria-hidden="true" class="fa fa-sticky-note-o "></i></div><div class="visible-xs">My reports</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="QA Reviews I can make"><a href="https://alx-intranet.hbtn.io/corrections/to_review"><div class="icon "><i aria-hidden="true" class="fa fa-check "></i></div><div class="visible-xs">QA Reviews I can make</div></a></li>
+    
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Evaluation quizzes"><a href="https://alx-intranet.hbtn.io/dashboards/my_current_evaluation_quizzes"><div class="icon "><i aria-hidden="true" class="fa fa-question "></i></div><div class="visible-xs">Evaluation quizzes</div></a></li>
+
+    <hr title="My resources">
+
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Curriculums"><a href="https://alx-intranet.hbtn.io/dashboards/my_curriculums"><div class="icon "><i aria-hidden="true" class="fa fa-graduation-cap "></i></div><div class="visible-xs">Curriculums</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-concepts-item" title="" data-original-title="Concepts"><a href="https://alx-intranet.hbtn.io/concepts"><div class="icon "><i aria-hidden="true" class="fa fa-file-text "></i></div><div class="visible-xs">Concepts</div></a></li>
+    
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-dashboards-video-rooms" title="" data-original-title="Conference rooms"><a href="https://alx-intranet.hbtn.io/dashboards/video_rooms"><div class="icon "><i aria-hidden="true" class="fa fa-comments "></i></div><div class="visible-xs">Conference rooms</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Servers"><a href="https://alx-intranet.hbtn.io/servers"><div class="icon "><i aria-hidden="true" class="fa fa-server "></i></div><div class="visible-xs">Servers</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-dashboards-my-containers" title="" data-original-title="Sandboxes"><a href="https://alx-intranet.hbtn.io/user_containers/current"><div class="icon "><i aria-hidden="true" class="fa fa-terminal "></i></div><div class="visible-xs">Sandboxes</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Tools"><a href="https://alx-intranet.hbtn.io/dashboards/my_tools"><div class="icon "><i aria-hidden="true" class="fa fa-wrench "></i></div><div class="visible-xs">Tools</div></a></li>
+    
+
+      <hr title="My campus">
+
+      
+      <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Peers"><a href="https://alx-intranet.hbtn.io/users/peers"><div class="icon "><i aria-hidden="true" class="fa fa-users "></i></div><div class="visible-xs">Peers</div></a></li>
+      <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Captain&#39;s Logs"><a href="https://alx-intranet.hbtn.io/dashboards/my_captain_log"><div class="icon "><i aria-hidden="true" class="fa fa-book "></i></div><div class="visible-xs">Captain's Logs</div></a></li>
+      
+      
+
+
+<hr class="visible-xs">
+
+<li>
+    <div data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Slack">
+      <a target="_blank" href="https://alx-students.slack.com/">
+        <div class="image slack">
+          <div class="inner"></div>
+        </div>
+        <div class="visible-xs">Slack</div>
+</a>    </div>
+
+  <div data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="My Profile">
+    <a href="https://alx-intranet.hbtn.io/users/my_profile">
+        <div class="image ">
+          <div class="inner" style="background-image: url(&#39;https://s3.amazonaws.com/alx-intranet.hbtn.io/users/photos/000/000/850/thumb/IMG_20190729_142005.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20220412%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20220412T122527Z&amp;X-Amz-Expires=600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=f626acf61273aa30cfb1b319d5fc6d2f1151091e899bd49881070dd12be53a72&#39;)"></div>
+        </div>
+
+      <div class="visible-xs">My Profile</div>
+</a>  </div>
+</li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      <div class="hidden-xs navigation sidebar">
+  <a class="logo-container" href="https://alx-intranet.hbtn.io/">
+    <div class="logo"></div>
+</a>
+  <ul>
+    
+
+
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Planning"><a href="https://alx-intranet.hbtn.io/dashboards/my_planning"><div class="icon "><i aria-hidden="true" class="fa fa-calendar "></i></div><div class="visible-xs">Planning</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-current-projects-item" title="" data-original-title="Projects"><a href="https://alx-intranet.hbtn.io/projects/current"><div class="icon "><i aria-hidden="true" class="fa fa-code-fork "></i></div><div class="visible-xs">Projects</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="My reports"><a href="https://alx-intranet.hbtn.io/users/my_reports"><div class="icon "><i aria-hidden="true" class="fa fa-sticky-note-o "></i></div><div class="visible-xs">My reports</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="QA Reviews I can make"><a href="https://alx-intranet.hbtn.io/corrections/to_review"><div class="icon "><i aria-hidden="true" class="fa fa-check "></i></div><div class="visible-xs">QA Reviews I can make</div></a></li>
+    
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Evaluation quizzes"><a href="https://alx-intranet.hbtn.io/dashboards/my_current_evaluation_quizzes"><div class="icon "><i aria-hidden="true" class="fa fa-question "></i></div><div class="visible-xs">Evaluation quizzes</div></a></li>
+
+    <hr title="My resources">
+
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Curriculums"><a href="https://alx-intranet.hbtn.io/dashboards/my_curriculums"><div class="icon "><i aria-hidden="true" class="fa fa-graduation-cap "></i></div><div class="visible-xs">Curriculums</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-concepts-item" title="" data-original-title="Concepts"><a href="https://alx-intranet.hbtn.io/concepts"><div class="icon "><i aria-hidden="true" class="fa fa-file-text "></i></div><div class="visible-xs">Concepts</div></a></li>
+    
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-dashboards-video-rooms" title="" data-original-title="Conference rooms"><a href="https://alx-intranet.hbtn.io/dashboards/video_rooms"><div class="icon "><i aria-hidden="true" class="fa fa-comments "></i></div><div class="visible-xs">Conference rooms</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Servers"><a href="https://alx-intranet.hbtn.io/servers"><div class="icon "><i aria-hidden="true" class="fa fa-server "></i></div><div class="visible-xs">Servers</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-dashboards-my-containers" title="" data-original-title="Sandboxes"><a href="https://alx-intranet.hbtn.io/user_containers/current"><div class="icon "><i aria-hidden="true" class="fa fa-terminal "></i></div><div class="visible-xs">Sandboxes</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Tools"><a href="https://alx-intranet.hbtn.io/dashboards/my_tools"><div class="icon "><i aria-hidden="true" class="fa fa-wrench "></i></div><div class="visible-xs">Tools</div></a></li>
+    
+
+      <hr title="My campus">
+
+      
+      <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Peers"><a href="https://alx-intranet.hbtn.io/users/peers"><div class="icon "><i aria-hidden="true" class="fa fa-users "></i></div><div class="visible-xs">Peers</div></a></li>
+      <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Captain&#39;s Logs"><a href="https://alx-intranet.hbtn.io/dashboards/my_captain_log"><div class="icon "><i aria-hidden="true" class="fa fa-book "></i></div><div class="visible-xs">Captain's Logs</div></a></li>
+      
+      
+
+
+<hr class="visible-xs">
+
+<li>
+    <div data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Slack">
+      <a target="_blank" href="https://alx-students.slack.com/">
+        <div class="image slack">
+          <div class="inner"></div>
+        </div>
+        <div class="visible-xs">Slack</div>
+</a>    </div>
+
+  <div data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="My Profile">
+    <a href="https://alx-intranet.hbtn.io/users/my_profile">
+        <div class="image ">
+          <div class="inner" style="background-image: url(&#39;https://s3.amazonaws.com/alx-intranet.hbtn.io/users/photos/000/000/850/thumb/IMG_20190729_142005.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20220412%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20220412T122527Z&amp;X-Amz-Expires=600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=f626acf61273aa30cfb1b319d5fc6d2f1151091e899bd49881070dd12be53a72&#39;)"></div>
+        </div>
+
+      <div class="visible-xs">My Profile</div>
+</a>  </div>
+</li>
+
+
+  </ul>
+</div>
+
+
+    <main>
+      <div id="layout-bars">
+        
+
+        
+
+        
+
+        
+      </div>
+
+      <article class="">
+
+        
+<div class="project row">
+  <div class="col-xs-12 col-md-10 col-lg-8 contains-images">
+
+      <h1 class="gap">0x03. ES6 data manipulation</h1>
+
+  <div data-react-class="tags/Tags" data-react-props="{&quot;tags&quot;:[]}" data-react-cache-id="tags/Tags-0"></div>
+
+  <ul class="list-group metadata" id="project-metadata">
+
+    <li class="list-group-item">
+      <i aria-hidden="true" class="fa fa-user  fa-fw"></i>
+      By Johann Kerbrat, Engineering Manager at Uber Works
+    </li>
+
+    <li class="list-group-item">
+      <i aria-hidden="true" class="fa fa-cogs  fa-fw"></i>
+      Weight: 1
+    </li>
+
+
+
+      <li class="list-group-item">
+        <i aria-hidden="true" class="fa fa-calendar  fa-fw"></i>
+            Ongoing project - started <div data-react-class="common/DateTime" data-react-props="{&quot;showDate&quot;:true,&quot;showTime&quot;:false,&quot;value&quot;:&quot;2022-04-11T06:00:00.000+03:00&quot;}" data-react-cache-id="common/DateTime-0" class="d-inline-block"><span data-container="body" data-html="false" data-placement="auto top" data-toggle="tooltip" title="" data-original-title="2022-04-11 04:00 (GMT+01:00)"><span class="datetime">Apr 11, 2022 </span></span></div>, must end by <div data-react-class="common/DateTime" data-react-props="{&quot;showDate&quot;:true,&quot;showTime&quot;:false,&quot;value&quot;:&quot;2022-04-13T06:00:00.000+03:00&quot;}" data-react-cache-id="common/DateTime-0" class="d-inline-block"><span data-container="body" data-html="false" data-placement="auto top" data-toggle="tooltip" title="" data-original-title="2022-04-13 04:00 (GMT+01:00)"><span class="datetime">Apr 13, 2022 </span></span></div>
+          - you're done with <span id="student_task_done_percentage">9</span>% of tasks.
+      </li>
+
+      <li class="list-group-item">
+        <i aria-hidden="true" class="fa fa-check  fa-fw"></i>
+        Checker was released at <div data-react-class="common/DateTime" data-react-props="{&quot;showDate&quot;:true,&quot;showTime&quot;:true,&quot;value&quot;:&quot;2022-04-11T18:00:00.000+03:00&quot;}" data-react-cache-id="common/DateTime-0" class="d-inline-block"><span data-container="body" data-html="false" data-placement="auto top" data-toggle="tooltip" title="" data-original-title="2022-04-11 16:00 (GMT+01:00)"><span class="datetime">Apr 11, 2022 4:00 PM</span></span></div>
+      </li>
+
+
+      <li class="list-group-item">
+        <i aria-hidden="true" class="fa fa-check-square  fa-fw"></i>
+        An auto review will be launched at the deadline
+      </li>
+
+</ul>
+
+
+
+
+    <div id="project_id" style="display: none" data-project-id="1227"></div>
+
+
+
+
+      
+
+      
+
+      <div class="well clean" id="project-description">
+  <p><img src="./Project_ 0x03. ES6 data manipulation _ ALX Africa Intranet_files/6ab7bec4727cb5c91257.jpg" alt="" style=""></p>
+
+<h2>Resources</h2>
+
+<p><strong>Read or watch</strong>:</p>
+
+<ul>
+<li><a href="https://alx-intranet.hbtn.io/rltoken/bcXqK1IaIHtrZ45sv0RxsQ" title="Array" target="_blank">Array</a></li>
+<li><a href="https://alx-intranet.hbtn.io/rltoken/BQ5bjKk8Q2YrpwVl0gZpXQ" title="Typed Array" target="_blank">Typed Array</a></li>
+<li><a href="https://alx-intranet.hbtn.io/rltoken/Ch8vq39y9QnlTMr8CymgEg" title="Set Data Structure" target="_blank">Set Data Structure</a></li>
+<li><a href="https://alx-intranet.hbtn.io/rltoken/W29MV3f8Ii4HmeJSALNIpw" title="Map Data Structure" target="_blank">Map Data Structure</a></li>
+<li><a href="https://alx-intranet.hbtn.io/rltoken/pSetFVFeIR660GPE0flPdg" title="WeakMap" target="_blank">WeakMap</a></li>
+</ul>
+
+<h2>Learning Objectives</h2>
+
+<p>At the end of this project, you are expected to be able to <a href="https://alx-intranet.hbtn.io/rltoken/vFyWo9TJ_4ypOC6uPi2low" title="explain to anyone" target="_blank">explain to anyone</a>, <strong>without the help of Google</strong>:</p>
+
+<ul>
+<li>How to use map, filter and reduce on arrays</li>
+<li>Typed arrays</li>
+<li>The Set, Map, and Weak link data structures</li>
+</ul>
+
+<h2>Requirements</h2>
+
+<ul>
+<li>All your files will be executed on Ubuntu 18.04 LTS using NodeJS 12.11.x</li>
+<li>Allowed editors: <code>vi</code>, <code>vim</code>, <code>emacs</code>, <code>Visual Studio Code</code></li>
+<li>All your files should end with a new line</li>
+<li>A <code>README.md</code> file, at the root of the folder of the project, is mandatory</li>
+<li>Your code should use the <code>js</code> extension</li>
+<li>Your code will be tested using <code>Jest</code> and the command <code>npm run test</code></li>
+<li>Your code will be verified against lint using ESLint</li>
+<li>Your code needs to pass all the tests and lint. You can verify the entire project running <code>npm run full-test</code></li>
+<li>All of your functions must be exported</li>
+</ul>
+
+<h2>Setup</h2>
+
+<h3>Install NodeJS 12.11.x</h3>
+
+<p>(in your home directory): </p>
+
+<pre><code>curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh
+sudo bash nodesource_setup.sh
+sudo apt install nodejs -y
+</code></pre>
+
+<pre><code>$ nodejs -v
+v12.11.1
+$ npm -v
+6.11.3
+</code></pre>
+
+<h3>Install Jest, Babel, and ESLint</h3>
+
+<p>in your project directory: </p>
+
+<ul>
+<li>Install Jest using: <code>npm install --save-dev jest</code></li>
+<li>Install Babel using: <code>npm install --save-dev babel-jest @babel/core @babel/preset-env</code></li>
+<li>Install ESLint using: <code>npm install --save-dev eslint</code></li>
+</ul>
+
+<h2>Configuration files</h2>
+
+<h3><code>package.json</code></h3>
+
+<details>
+<summary>Click to show/hide file contents</summary>
+<pre><code>
+{
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint",
+    "check-lint": "lint [0-9]*.js",
+    "dev": "npx babel-node",
+    "test": "jest",
+    "full-test": "./node_modules/.bin/eslint [0-9]*.js &amp;&amp; jest"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/node": "^7.8.0",
+    "@babel/preset-env": "^7.6.0",
+    "eslint": "^6.4.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^22.17.0",
+    "jest": "^24.9.0"
+  }
+}
+</code>
+</pre>
+</details>
+
+<h3><code>babel.config.js</code></h3>
+
+<details>
+<summary>Click to show/hide file contents</summary>
+<pre><code>
+module.exports = {
+  presets: [
+    [
+      '@babel/preset-env',
+      {
+        targets: {
+          node: 'current',
+        },
+      },
+    ],
+  ],
+};
+</code>
+</pre>
+</details>
+
+<h3><code>.eslintrc.js</code></h3>
+
+<details>
+<summary>Click to show/hide file contents</summary>
+<pre><code>
+module.exports = {
+  env: {
+    browser: false,
+    es6: true,
+    jest: true,
+  },
+  extends: [
+    'airbnb-base',
+    'plugin:jest/all',
+  ],
+  globals: {
+    Atomics: 'readonly',
+    SharedArrayBuffer: 'readonly',
+  },
+  parserOptions: {
+    ecmaVersion: 2018,
+    sourceType: 'module',
+  },
+  plugins: ['jest'],
+  rules: {
+    'max-classes-per-file': 'off',
+    'no-underscore-dangle': 'off',
+    'no-console': 'off',
+    'no-shadow': 'off',
+    'no-restricted-syntax': [
+      'error',
+      'LabeledStatement',
+      'WithStatement',
+    ],
+  },
+  overrides:[
+    {
+      files: ['*.js'],
+      excludedFiles: 'babel.config.js',
+    }
+  ]
+};
+</code>
+</pre>
+</details>
+
+<h3>and…</h3>
+
+<p>Don’t forget to run <code>$ npm install</code> when you have the <code>package.json</code></p>
+
+</div>
+
+
+      
+
+      
+
+        
+          <h2 class="gap">Tasks</h2>
+
+    <div data-role="task11588" data-position="1" id="task-num-0">
+      <div class="panel panel-default task-card " id="task-11588">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      0. Basic list of objects
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+
+    <!-- Task Body -->
+    <p>Create a function named <code>getListStudents</code> that returns an array of objects. </p>
+
+<p>Each object should have three attributes: <code>id</code> (Number), <code>firstName</code> (String), and <code>location</code> (String). </p>
+
+<p>The array contains the following students in order: </p>
+
+<ul>
+<li><code>Guillaume</code>, id: <code>1</code>, in <code>San Francisco</code></li>
+<li><code>James</code>, id: <code>2</code>, in <code>Columbia</code></li>
+<li><code>Serena</code>, id: <code>5</code>, in <code>San Francisco</code></li>
+</ul>
+
+<pre><code>bob@dylan:~$ cat 0-main.js
+import getListStudents from "./0-get_list_students.js";
+
+console.log(getListStudents());
+
+bob@dylan:~$ 
+bob@dylan:~$ npm run dev 0-main.js 
+[
+  { id: 1, firstName: 'Guillaume', location: 'San Francisco' },
+  { id: 2, firstName: 'James', location: 'Columbia' },
+  { id: 5, firstName: 'Serena', location: 'San Francisco' }
+]
+bob@dylan:~$ 
+</code></pre>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+      <div class="list-group-item">
+        <p><strong>Repo:</strong></p>
+        <ul>
+          <li>GitHub repository: <code>alx-backend-javascript</code></li>
+            <li>Directory: <code>0x03-ES6_data_manipulation</code></li>
+            <li>File: <code>0-get_list_students.js</code></li>
+        </ul>
+      </div>
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+
+    <div class="panel-footer">
+      
+<div>
+    <button class="student_task_done btn btn-default btn-sm no" data-task-id="11588">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-sm" data-task-id="11588" data-project-id="1227" data-toggle="modal" data-target="#task-11588-users-done-modal">
+      Help
+    </button>
+    
+
+
+      <button class="btn btn-default btn-sm" data-task-id="11588" data-toggle="modal" data-target="#task-test-correction-11588-correction-modal" id="task-num-0-check-code-btn">
+        Check your code
+      </button>
+      
+
+
+
+    <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#container-specs-modal"><i aria-hidden="true" class="fa fa-terminal "></i><span>Get a sandbox</span></button>
+
+</div>
+
+    </div>
+
+
+</div>
+
+    </div>
+    <div data-role="task11589" data-position="2" id="task-num-1">
+      <div class="panel panel-default task-card " id="task-11589">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      1. More mapping
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+
+    <!-- Task Body -->
+    <p>Create a function <code>getListStudentIds</code> that returns an array of ids from a list of object.</p>
+
+<p>This function is taking one argument which is an array of objects - and this array is the same format as <code>getListStudents</code> from the previous task.</p>
+
+<p>If the argument is not an array, the function is returning an empty array.</p>
+
+<p>You must use the <code>map</code> function on the array.</p>
+
+<pre><code>bob@dylan:~$ cat 1-main.js
+import getListStudentIds from "./1-get_list_student_ids.js";
+import getListStudents from "./0-get_list_students.js";
+
+console.log(getListStudentIds("hello"));
+console.log(getListStudentIds(getListStudents()));
+
+bob@dylan:~$ 
+bob@dylan:~$ npm run dev 1-main.js 
+[]
+[ 1, 2, 5 ]
+bob@dylan:~$ 
+</code></pre>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+      <div class="list-group-item">
+        <p><strong>Repo:</strong></p>
+        <ul>
+          <li>GitHub repository: <code>alx-backend-javascript</code></li>
+            <li>Directory: <code>0x03-ES6_data_manipulation</code></li>
+            <li>File: <code>1-get_list_student_ids.js</code></li>
+        </ul>
+      </div>
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+
+    <div class="panel-footer">
+      
+<div>
+    <button class="student_task_done btn btn-default btn-sm yes" data-task-id="11589">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-sm" data-task-id="11589" data-project-id="1227" data-toggle="modal" data-target="#task-11589-users-done-modal">
+      Help
+    </button>
+    
+
+
+      <button class="btn btn-default btn-sm" data-task-id="11589" data-toggle="modal" data-target="#task-test-correction-11589-correction-modal" id="task-num-1-check-code-btn">
+        Check your code
+      </button>
+      
+
+
+
+    <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#container-specs-modal"><i aria-hidden="true" class="fa fa-terminal "></i><span>Get a sandbox</span></button>
+
+</div>
+
+    </div>
+
+
+</div>
+
+    </div>
+    <div data-role="task11590" data-position="3" id="task-num-2">
+      <div class="panel panel-default task-card " id="task-11590">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      2. Filter
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+
+    <!-- Task Body -->
+    <p>Create a function <code>getStudentsByLocation</code> that returns an array of objects who are located in a specific city.</p>
+
+<p>It should accept a list of students (from <code>getListStudents</code>) and a <code>city</code> (string) as parameters.</p>
+
+<p>You must use the <code>filter</code> function on the array.</p>
+
+<pre><code>bob@dylan:~$ cat 2-main.js
+import getListStudents from "./0-get_list_students.js";
+import getStudentsByLocation from "./2-get_students_by_loc.js";
+
+const students = getListStudents();
+
+console.log(getStudentsByLocation(students, 'San Francisco'));
+
+bob@dylan:~$ 
+bob@dylan:~$ npm run dev 2-main.js 
+[
+  { id: 1, firstName: 'Guillaume', location: 'San Francisco' },
+  { id: 5, firstName: 'Serena', location: 'San Francisco' }
+]
+bob@dylan:~$ 
+</code></pre>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+      <div class="list-group-item">
+        <p><strong>Repo:</strong></p>
+        <ul>
+          <li>GitHub repository: <code>alx-backend-javascript</code></li>
+            <li>Directory: <code>0x03-ES6_data_manipulation</code></li>
+            <li>File: <code>2-get_students_by_loc.js</code></li>
+        </ul>
+      </div>
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+
+    <div class="panel-footer">
+      
+<div>
+    <button class="student_task_done btn btn-default btn-sm no" data-task-id="11590">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-sm" data-task-id="11590" data-project-id="1227" data-toggle="modal" data-target="#task-11590-users-done-modal">
+      Help
+    </button>
+    
+
+
+      <button class="btn btn-default btn-sm" data-task-id="11590" data-toggle="modal" data-target="#task-test-correction-11590-correction-modal" id="task-num-2-check-code-btn">
+        Check your code
+      </button>
+      
+
+
+
+    <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#container-specs-modal"><i aria-hidden="true" class="fa fa-terminal "></i><span>Get a sandbox</span></button>
+
+</div>
+
+    </div>
+
+
+</div>
+
+    </div>
+    <div data-role="task11591" data-position="4" id="task-num-3">
+      <div class="panel panel-default task-card " id="task-11591">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      3. Reduce
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+
+    <!-- Task Body -->
+    <p>Create a function <code>getStudentIdsSum</code> that returns the sum of all the student ids.</p>
+
+<p>It should accept a list of students (from <code>getListStudents</code>) as a parameter. </p>
+
+<p>You must use the <code>reduce</code> function on the array. </p>
+
+<pre><code>bob@dylan:~$ cat 3-main.js
+import getListStudents from "./0-get_list_students.js";
+import getStudentIdsSum from "./3-get_ids_sum.js";
+
+const students = getListStudents();
+const value = getStudentIdsSum(students);
+
+console.log(value);
+
+bob@dylan:~$ 
+bob@dylan:~$ npm run dev 3-main.js 
+8
+bob@dylan:~$ 
+</code></pre>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+      <div class="list-group-item">
+        <p><strong>Repo:</strong></p>
+        <ul>
+          <li>GitHub repository: <code>alx-backend-javascript</code></li>
+            <li>Directory: <code>0x03-ES6_data_manipulation</code></li>
+            <li>File: <code>3-get_ids_sum.js</code></li>
+        </ul>
+      </div>
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+
+    <div class="panel-footer">
+      
+<div>
+    <button class="student_task_done btn btn-default btn-sm no" data-task-id="11591">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-sm" data-task-id="11591" data-project-id="1227" data-toggle="modal" data-target="#task-11591-users-done-modal">
+      Help
+    </button>
+    
+
+
+      <button class="btn btn-default btn-sm" data-task-id="11591" data-toggle="modal" data-target="#task-test-correction-11591-correction-modal" id="task-num-3-check-code-btn">
+        Check your code
+      </button>
+      
+
+
+
+    <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#container-specs-modal"><i aria-hidden="true" class="fa fa-terminal "></i><span>Get a sandbox</span></button>
+
+</div>
+
+    </div>
+
+
+</div>
+
+    </div>
+    <div data-role="task11592" data-position="5" id="task-num-4">
+      <div class="panel panel-default task-card " id="task-11592">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      4. Combine
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+
+    <!-- Task Body -->
+    <p>Create a function <code>updateStudentGradeByCity</code> that returns an array of students for a specific city with their new grade</p>
+
+<p>It should accept a list of students (from <code>getListStudents</code>), a <code>city</code> (String), and <code>newGrades</code> (Array of “grade” objects) as parameters. </p>
+
+<p><code>newGrades</code> is an array of objects with this format:</p>
+
+<pre><code>  {
+    studentId: 31,
+    grade: 78,
+  }
+</code></pre>
+
+<p>If a student doesn’t have grade in <code>newGrades</code>, the final grade should be <code>N/A</code>.</p>
+
+<p>You must use <code>filter</code> and <code>map</code> combined.</p>
+
+<pre><code>bob@dylan:~$ cat 4-main.js
+import getListStudents from "./0-get_list_students.js";
+import updateStudentGradeByCity from "./4-update_grade_by_city.js";
+
+console.log(updateStudentGradeByCity(getListStudents(), "San Francisco", [{ studentId: 5, grade: 97 }, { studentId: 1, grade: 86 }]));
+
+console.log(updateStudentGradeByCity(getListStudents(), "San Francisco", [{ studentId: 5, grade: 97 }]));
+
+bob@dylan:~$ 
+bob@dylan:~$ npm run dev 4-main.js 
+[
+  {
+    id: 1,
+    firstName: 'Guillaume',
+    location: 'San Francisco',
+    grade: 86
+  },
+  { id: 5, firstName: 'Serena', location: 'San Francisco', grade: 97 }
+]
+[
+  {
+    id: 1,
+    firstName: 'Guillaume',
+    location: 'San Francisco',
+    grade: 'N/A'
+  },
+  { id: 5, firstName: 'Serena', location: 'San Francisco', grade: 97 }
+]
+bob@dylan:~$ 
+</code></pre>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+      <div class="list-group-item">
+        <p><strong>Repo:</strong></p>
+        <ul>
+          <li>GitHub repository: <code>alx-backend-javascript</code></li>
+            <li>Directory: <code>0x03-ES6_data_manipulation</code></li>
+            <li>File: <code>4-update_grade_by_city.js</code></li>
+        </ul>
+      </div>
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+
+    <div class="panel-footer">
+      
+<div>
+    <button class="student_task_done btn btn-default btn-sm no" data-task-id="11592">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-sm" data-task-id="11592" data-project-id="1227" data-toggle="modal" data-target="#task-11592-users-done-modal">
+      Help
+    </button>
+    
+
+
+      <button class="btn btn-default btn-sm" data-task-id="11592" data-toggle="modal" data-target="#task-test-correction-11592-correction-modal" id="task-num-4-check-code-btn">
+        Check your code
+      </button>
+      
+
+
+
+    <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#container-specs-modal"><i aria-hidden="true" class="fa fa-terminal "></i><span>Get a sandbox</span></button>
+
+</div>
+
+    </div>
+
+
+</div>
+
+    </div>
+    <div data-role="task11593" data-position="6" id="task-num-5">
+      <div class="panel panel-default task-card " id="task-11593">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      5. Typed Arrays
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+
+    <!-- Task Body -->
+    <p>Create a function named <code>createInt8TypedArray</code> that returns a new <code>ArrayBuffer</code> with an <code>Int8</code> value at a specific position.</p>
+
+<p>It should accept three arguments: <code>length</code> (Number), <code>position</code> (Number), and <code>value</code> (Number).</p>
+
+<p>If adding the value is not possible the error <code>Position outside range</code> should be thrown.</p>
+
+<pre><code>bob@dylan:~$ cat 5-main.js
+import createInt8TypedArray from "./5-typed_arrays.js";
+
+console.log(createInt8TypedArray(10, 2, 89));
+
+bob@dylan:~$ 
+bob@dylan:~$ npm run dev 5-main.js 
+DataView {
+  byteLength: 10,
+  byteOffset: 0,
+  buffer: ArrayBuffer {
+    [Uint8Contents]: &lt;00 00 59 00 00 00 00 00 00 00&gt;,
+    byteLength: 10
+  }
+}
+bob@dylan:~$ 
+</code></pre>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+      <div class="list-group-item">
+        <p><strong>Repo:</strong></p>
+        <ul>
+          <li>GitHub repository: <code>alx-backend-javascript</code></li>
+            <li>Directory: <code>0x03-ES6_data_manipulation</code></li>
+            <li>File: <code>5-typed_arrays.js</code></li>
+        </ul>
+      </div>
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+
+    <div class="panel-footer">
+      
+<div>
+    <button class="student_task_done btn btn-default btn-sm no" data-task-id="11593">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-sm" data-task-id="11593" data-project-id="1227" data-toggle="modal" data-target="#task-11593-users-done-modal">
+      Help
+    </button>
+    
+
+
+      <button class="btn btn-default btn-sm" data-task-id="11593" data-toggle="modal" data-target="#task-test-correction-11593-correction-modal" id="task-num-5-check-code-btn">
+        Check your code
+      </button>
+      
+
+
+
+    <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#container-specs-modal"><i aria-hidden="true" class="fa fa-terminal "></i><span>Get a sandbox</span></button>
+
+</div>
+
+    </div>
+
+
+</div>
+
+    </div>
+    <div data-role="task11594" data-position="7" id="task-num-6">
+      <div class="panel panel-default task-card " id="task-11594">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      6. Set data structure
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+
+    <!-- Task Body -->
+    <p>Create a function named <code>setFromArray</code> that returns a <code>Set</code> from an array.</p>
+
+<p>It accepts an argument (Array, of any kind of element). </p>
+
+<pre><code>bob@dylan:~$ cat 6-main.js
+import setFromArray from "./6-set.js";
+
+console.log(setFromArray([12, 32, 15, 78, 98, 15]));
+
+bob@dylan:~$ 
+bob@dylan:~$ npm run dev 6-main.js 
+Set { 12, 32, 15, 78, 98 }
+bob@dylan:~$ 
+</code></pre>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+      <div class="list-group-item">
+        <p><strong>Repo:</strong></p>
+        <ul>
+          <li>GitHub repository: <code>alx-backend-javascript</code></li>
+            <li>Directory: <code>0x03-ES6_data_manipulation</code></li>
+            <li>File: <code>6-set.js</code></li>
+        </ul>
+      </div>
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+
+    <div class="panel-footer">
+      
+<div>
+    <button class="student_task_done btn btn-default btn-sm no" data-task-id="11594">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-sm" data-task-id="11594" data-project-id="1227" data-toggle="modal" data-target="#task-11594-users-done-modal">
+      Help
+    </button>
+    
+
+
+      <button class="btn btn-default btn-sm" data-task-id="11594" data-toggle="modal" data-target="#task-test-correction-11594-correction-modal" id="task-num-6-check-code-btn">
+        Check your code
+      </button>
+      
+
+
+
+    <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#container-specs-modal"><i aria-hidden="true" class="fa fa-terminal "></i><span>Get a sandbox</span></button>
+
+</div>
+
+    </div>
+
+
+</div>
+
+    </div>
+    <div data-role="task11595" data-position="8" id="task-num-7">
+      <div class="panel panel-default task-card " id="task-11595">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      7. More set data structure
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+
+    <!-- Task Body -->
+    <p>Create a function named <code>hasValuesFromArray</code> that returns a boolean if all the elements in the array exist within the set.</p>
+
+<p>It accepts two arguments: a <code>set</code> (Set) and an <code>array</code> (Array). </p>
+
+<pre><code>bob@dylan:~$ cat 7-main.js
+import hasValuesFromArray from "./7-has_array_values.js";
+
+console.log(hasValuesFromArray(new Set([1, 2, 3, 4, 5]), [1]));
+console.log(hasValuesFromArray(new Set([1, 2, 3, 4, 5]), [10]));
+console.log(hasValuesFromArray(new Set([1, 2, 3, 4, 5]), [1, 10]));
+
+bob@dylan:~$ 
+bob@dylan:~$ npm run dev 7-main.js 
+true
+false
+false
+bob@dylan:~$ 
+</code></pre>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+      <div class="list-group-item">
+        <p><strong>Repo:</strong></p>
+        <ul>
+          <li>GitHub repository: <code>alx-backend-javascript</code></li>
+            <li>Directory: <code>0x03-ES6_data_manipulation</code></li>
+            <li>File: <code>7-has_array_values.js</code></li>
+        </ul>
+      </div>
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+
+    <div class="panel-footer">
+      
+<div>
+    <button class="student_task_done btn btn-default btn-sm no" data-task-id="11595">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-sm" data-task-id="11595" data-project-id="1227" data-toggle="modal" data-target="#task-11595-users-done-modal">
+      Help
+    </button>
+    
+
+
+      <button class="btn btn-default btn-sm" data-task-id="11595" data-toggle="modal" data-target="#task-test-correction-11595-correction-modal" id="task-num-7-check-code-btn">
+        Check your code
+      </button>
+      
+
+
+
+    <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#container-specs-modal"><i aria-hidden="true" class="fa fa-terminal "></i><span>Get a sandbox</span></button>
+
+</div>
+
+    </div>
+
+
+</div>
+
+    </div>
+    <div data-role="task11596" data-position="9" id="task-num-8">
+      <div class="panel panel-default task-card " id="task-11596">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      8. Clean set
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+
+    <!-- Task Body -->
+    <p>Create a function named <code>cleanSet</code> that returns a string of all the set values that start with a specific string (<code>startString</code>).</p>
+
+<p>It accepts two arguments: a <code>set</code> (Set) and a <code>startString</code> (String). </p>
+
+<p>When a value starts with <code>startString</code> you only append the rest of the string. The string contains all the values of the set separated by <code>-</code>. </p>
+
+<pre><code>bob@dylan:~$ cat 8-main.js
+import cleanSet from "./8-clean_set.js";
+
+console.log(cleanSet(new Set(['bonjovi', 'bonaparte', 'bonappetit', 'banana']), 'bon'));
+console.log(cleanSet(new Set(['bonjovi', 'bonaparte', 'bonappetit', 'banana']), ''));
+
+bob@dylan:~$ 
+bob@dylan:~$ npm run dev 8-main.js 
+jovi-aparte-appetit
+
+bob@dylan:~$ 
+</code></pre>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+      <div class="list-group-item">
+        <p><strong>Repo:</strong></p>
+        <ul>
+          <li>GitHub repository: <code>alx-backend-javascript</code></li>
+            <li>Directory: <code>0x03-ES6_data_manipulation</code></li>
+            <li>File: <code>8-clean_set.js</code></li>
+        </ul>
+      </div>
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+
+    <div class="panel-footer">
+      
+<div>
+    <button class="student_task_done btn btn-default btn-sm no" data-task-id="11596">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-sm" data-task-id="11596" data-project-id="1227" data-toggle="modal" data-target="#task-11596-users-done-modal">
+      Help
+    </button>
+    
+
+
+      <button class="btn btn-default btn-sm" data-task-id="11596" data-toggle="modal" data-target="#task-test-correction-11596-correction-modal" id="task-num-8-check-code-btn">
+        Check your code
+      </button>
+      
+
+
+
+    <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#container-specs-modal"><i aria-hidden="true" class="fa fa-terminal "></i><span>Get a sandbox</span></button>
+
+</div>
+
+    </div>
+
+
+</div>
+
+    </div>
+    <div data-role="task11597" data-position="10" id="task-num-9">
+      <div class="panel panel-default task-card " id="task-11597">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      9. Map data structure
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+
+    <!-- Task Body -->
+    <p>Create a function named <code>groceriesList</code> that returns a map of groceries with the following items (name, quantity): </p>
+
+<pre><code>Apples, 10
+Tomatoes, 10
+Pasta, 1
+Rice, 1
+Banana, 5
+</code></pre>
+
+<p>Result:</p>
+
+<pre><code>bob@dylan:~$ cat 9-main.js
+import groceriesList from "./9-groceries_list.js";
+
+console.log(groceriesList());
+
+bob@dylan:~$ 
+bob@dylan:~$ npm run dev 9-main.js 
+Map {
+  'Apples' =&gt; 10,
+  'Tomatoes' =&gt; 10,
+  'Pasta' =&gt; 1,
+  'Rice' =&gt; 1,
+  'Banana' =&gt; 5
+}
+bob@dylan:~$ 
+</code></pre>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+      <div class="list-group-item">
+        <p><strong>Repo:</strong></p>
+        <ul>
+          <li>GitHub repository: <code>alx-backend-javascript</code></li>
+            <li>Directory: <code>0x03-ES6_data_manipulation</code></li>
+            <li>File: <code>9-groceries_list.js</code></li>
+        </ul>
+      </div>
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+
+    <div class="panel-footer">
+      
+<div>
+    <button class="student_task_done btn btn-default btn-sm no" data-task-id="11597">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-sm" data-task-id="11597" data-project-id="1227" data-toggle="modal" data-target="#task-11597-users-done-modal">
+      Help
+    </button>
+    
+
+
+      <button class="btn btn-default btn-sm" data-task-id="11597" data-toggle="modal" data-target="#task-test-correction-11597-correction-modal" id="task-num-9-check-code-btn">
+        Check your code
+      </button>
+      
+
+
+
+    <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#container-specs-modal"><i aria-hidden="true" class="fa fa-terminal "></i><span>Get a sandbox</span></button>
+
+</div>
+
+    </div>
+
+
+</div>
+
+    </div>
+    <div data-role="task11598" data-position="11" id="task-num-10">
+      <div class="panel panel-default task-card " id="task-11598">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      10. More map data structure
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+
+    <!-- Task Body -->
+    <p>Create a function named <code>updateUniqueItems</code> that returns an updated map for all items with initial quantity at 1.</p>
+
+<p>It should accept a map as an argument. The map it accepts for argument is similar to the map you create in the previous task.</p>
+
+<p>For each entry of the map where the quantity is 1, update the quantity to 100. 
+If updating the quantity is not possible (argument is not a map) the error <code>Cannot process</code> should be thrown.</p>
+
+<pre><code>bob@dylan:~$ cat 10-main.js
+import updateUniqueItems from "./10-update_uniq_items.js";
+import groceriesList from "./9-groceries_list.js";
+
+const map = groceriesList();
+console.log(map);
+
+updateUniqueItems(map)
+console.log(map);
+
+bob@dylan:~$ 
+bob@dylan:~$ npm run dev 10-main.js 
+Map {
+  'Apples' =&gt; 10,
+  'Tomatoes' =&gt; 10,
+  'Pasta' =&gt; 1,
+  'Rice' =&gt; 1,
+  'Banana' =&gt; 5
+}
+Map {
+  'Apples' =&gt; 10,
+  'Tomatoes' =&gt; 10,
+  'Pasta' =&gt; 100,
+  'Rice' =&gt; 100,
+  'Banana' =&gt; 5
+}
+bob@dylan:~$ 
+</code></pre>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+      <div class="list-group-item">
+        <p><strong>Repo:</strong></p>
+        <ul>
+          <li>GitHub repository: <code>alx-backend-javascript</code></li>
+            <li>Directory: <code>0x03-ES6_data_manipulation</code></li>
+            <li>File: <code>10-update_uniq_items.js</code></li>
+        </ul>
+      </div>
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+
+    <div class="panel-footer">
+      
+<div>
+    <button class="student_task_done btn btn-default btn-sm no" data-task-id="11598">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-sm" data-task-id="11598" data-project-id="1227" data-toggle="modal" data-target="#task-11598-users-done-modal">
+      Help
+    </button>
+    
+
+
+      <button class="btn btn-default btn-sm" data-task-id="11598" data-toggle="modal" data-target="#task-test-correction-11598-correction-modal" id="task-num-10-check-code-btn">
+        Check your code
+      </button>
+      
+
+
+
+    <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#container-specs-modal"><i aria-hidden="true" class="fa fa-terminal "></i><span>Get a sandbox</span></button>
+
+</div>
+
+    </div>
+
+
+</div>
+
+    </div>
+    <div data-role="task11599" data-position="12" id="task-num-11">
+      <div class="panel panel-default task-card " id="task-11599">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      11. Weak link data structure
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          #advanced
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+
+    <!-- Task Body -->
+    <p>Export a <code>const</code> instance of <code>WeakMap</code> and name it <code>weakMap</code>.</p>
+
+<p>Export a new function named <code>queryAPI</code>. It should accept an endpoint argument like so: </p>
+
+<pre><code>  {
+    protocol: 'http',
+    name: 'getUsers',
+  }
+</code></pre>
+
+<p>Track within the <code>weakMap</code> the number of times <code>queryAPI</code> is called for each endpoint.</p>
+
+<p>When the number of queries is &gt;= 5 throw an error with the message <code>Endpoint load is high</code>.</p>
+
+<pre><code>bob@dylan:~$ cat 100-main.js
+import { queryAPI, weakMap } from "./100-weak.js";
+
+const endpoint = { protocol: 'http', name: 'getUsers' };
+weakMap.get(endpoint);
+
+queryAPI(endpoint);
+console.log(weakMap.get(endpoint));
+
+queryAPI(endpoint);
+console.log(weakMap.get(endpoint));
+
+queryAPI(endpoint);
+queryAPI(endpoint);
+queryAPI(endpoint);
+queryAPI(endpoint);
+
+bob@dylan:~$ 
+bob@dylan:~$ npm run dev 100-main.js 
+1
+2
+.../100-weak.js:16
+    throw new Error('Endpoint load is high');
+   ...
+bob@dylan:~$ 
+</code></pre>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+      <div class="list-group-item">
+        <p><strong>Repo:</strong></p>
+        <ul>
+          <li>GitHub repository: <code>alx-backend-javascript</code></li>
+            <li>Directory: <code>0x03-ES6_data_manipulation</code></li>
+            <li>File: <code>100-weak.js</code></li>
+        </ul>
+      </div>
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+
+    <div class="panel-footer">
+      
+<div>
+    <button class="student_task_done btn btn-default btn-sm no" data-task-id="11599">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-sm" data-task-id="11599" data-project-id="1227" data-toggle="modal" data-target="#task-11599-users-done-modal">
+      Help
+    </button>
+    
+
+
+      <button class="btn btn-default btn-sm" data-task-id="11599" data-toggle="modal" data-target="#task-test-correction-11599-correction-modal" id="task-num-11-check-code-btn">
+        Check your code
+      </button>
+      
+
+
+
+    <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#container-specs-modal"><i aria-hidden="true" class="fa fa-terminal "></i><span>Get a sandbox</span></button>
+
+</div>
+
+    </div>
+
+
+</div>
+
+    </div>
+
+
+
+
+
+          
+
+
+  </div>
+</div>
+
+
+      </article>
+
+      <div class="copyright">Copyright © 2022 ALX, All rights reserved.</div>
+    </main>
+
+      <button class="btn btn-primary" id="search-button" data-search-active="false" data-toggle="modal" data-target="#search-modal">
+  <i aria-hidden="true" class="fa fa-search "></i>
+  <i aria-hidden="true" class="fa fa-window-minimize "></i>
+</button>
+
+      
+
+
+
+      
+
+
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create',
+            'UA-67152800-9',
+            'auto', {
+              userId: '850'
+            }
+          );
+
+        ga('send', 'pageview');
+
+        $(document).ready(function() {
+          ga(function(tracker) {
+            var clientId = tracker.get('clientId');
+            $('.ga-client-id').val(clientId);
+          });
+        });
+      </script>
+
+
+
+
+      
+
+
+  
+
+<div class="modal fade users-done-modal" id="task-11588-users-done-modal" data-task-id="11588" data-project-id="1227">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "0. Basic list of objects"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div><div class="modal fade task_correction_modal student_modal" id="task-test-correction-11588-correction-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Correction of "0. Basic list of objects"</h4>
+            </div>
+            <div class="modal-body">
+                <div class="actions">
+                    <center>
+                        <div class="alert alert-info">Some checks are failing. Make sure you fix them before starting a new review<br><strong>You got this!</strong></div>
+
+                        <button name="button" type="submit" class="btn btn-primary correction_request_test_send" data-task-id="11588" data-last-request-id="10048976">Start a new test</button>
+                        <button class="btn btn-default close-modal" data-dismiss="modal" type="button">Close</button>
+
+                        <div class="spinner" style="display: none;">
+                            <div class="bounce1"></div>
+                            <div class="bounce2"></div>
+                            <div class="bounce3"></div>
+                        </div>
+                        <div class="error" style="display: none;"></div>
+                        <div class="info" style="display: none;"></div>
+
+
+                    </center>
+                </div>
+                <div class="result" style="display: block;"><hr><h4>Result:</h4><div class="well"><h5>Commit used:</h5><ul><li><b>URL: </b><a target="_blank" href="https://github.com/edafeoke/alx-backend-javascript/tree/4f0f3386956a1d6096ef072d733f1cc58febe1a1">Click here</a></li><li><b>ID: </b><code>4f0f3386956a1d6096ef072d733f1cc58febe1a1</code></li><li><b>Author: </b><span>Oke Edafe Great</span></li><li><b>Subject: </b><em>Added task 1</em></li><li><b>Date: </b><span>2022-04-11 13:31:15 -0700</span></li></ul></div><div class="check-inline requirement success" id="76028" title="Requirement - success"><i class="fa fa-check-circle" aria-hidden="true"></i>Check 0</div><div class="check-inline requirement success" id="76029" title="Requirement - success"><i class="fa fa-check-circle" aria-hidden="true"></i>Check 1</div><div class="check-inline requirement fail" id="76031" title="Requirement - fail"><i class="fa fa-times-circle" aria-hidden="true"></i>Check 2</div><div class="check-inline code fail" id="76030" title="Correct output of your code - fail"><i class="fa fa-times-circle" aria-hidden="true"></i>Check 3</div></div>
+
+                <div class="help" style="display: block;">
+    <button data-task-id="11588">
+        <i aria-hidden="true" class="fa fa-info-circle "></i>
+    </button>
+    <div class="help-container" data-task-id="11588">
+        <div class="check-line">
+            <div class="check-inline requirement success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Requirement success
+            </div>
+            <div class="check-inline requirement fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Requirement fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline code success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Code success
+            </div>
+            <div class="check-inline code fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Code fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline efficiency success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Efficiency success
+            </div>
+            <div class="check-inline efficiency fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Efficiency fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline answer success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Text answer success
+            </div>
+            <div class="check-inline answer fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Text answer fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline requirement fail offline">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Skipped - Previous check failed
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><div class="modal fade users-done-modal" id="task-11589-users-done-modal" data-task-id="11589" data-project-id="1227">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "1. More mapping"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div><div class="modal fade task_correction_modal student_modal" id="task-test-correction-11589-correction-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Correction of "1. More mapping"</h4>
+            </div>
+            <div class="modal-body">
+                <div class="actions">
+                    <center>
+                        <div class="alert alert-info"><strong>Congratulations!</strong> All tests passed successfully!<br>You are ready for your next mission!</div>
+
+                        <button name="button" type="submit" class="btn btn-primary correction_request_test_send" data-task-id="11589" data-last-request-id="10049669">Start a new test</button>
+                        <button class="btn btn-default close-modal" data-dismiss="modal" type="button">Close</button>
+
+                        <div class="spinner" style="display: none;">
+                            <div class="bounce1"></div>
+                            <div class="bounce2"></div>
+                            <div class="bounce3"></div>
+                        </div>
+                        <div class="error" style="display: none;"></div>
+                        <div class="info" style="display: none;"></div>
+
+
+                    </center>
+                </div>
+                <div class="result" style="display: block;"><hr><h4>Result:</h4><div class="well"><h5>Commit used:</h5><ul><li><b>URL: </b><a target="_blank" href="https://github.com/edafeoke/alx-backend-javascript/tree/e21920fb5670c187ce5a640013297e9a29afca0c">Click here</a></li><li><b>ID: </b><code>e21920fb5670c187ce5a640013297e9a29afca0c</code></li><li><b>Author: </b><span>Oke Edafe Great</span></li><li><b>Subject: </b><em>Added task 1</em></li><li><b>Date: </b><span>2022-04-11 13:41:55 -0700</span></li></ul></div><div class="check-inline requirement success" id="76032" title="Requirement - success"><i class="fa fa-check-circle" aria-hidden="true"></i>Check 0</div><div class="check-inline requirement success" id="76034" title="Requirement - success"><i class="fa fa-check-circle" aria-hidden="true"></i>Check 1</div><div class="check-inline code success" id="76035" title="Correct output of your code - success"><i class="fa fa-check-circle" aria-hidden="true"></i>Check 2</div><div class="check-inline code success" id="76033" title="Correct output of your code - success"><i class="fa fa-check-circle" aria-hidden="true"></i>Check 3</div></div>
+
+                <div class="help" style="display: block;">
+    <button data-task-id="11589">
+        <i aria-hidden="true" class="fa fa-info-circle "></i>
+    </button>
+    <div class="help-container" data-task-id="11589">
+        <div class="check-line">
+            <div class="check-inline requirement success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Requirement success
+            </div>
+            <div class="check-inline requirement fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Requirement fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline code success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Code success
+            </div>
+            <div class="check-inline code fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Code fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline efficiency success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Efficiency success
+            </div>
+            <div class="check-inline efficiency fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Efficiency fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline answer success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Text answer success
+            </div>
+            <div class="check-inline answer fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Text answer fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline requirement fail offline">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Skipped - Previous check failed
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><div class="modal fade users-done-modal" id="task-11590-users-done-modal" data-task-id="11590" data-project-id="1227">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "2. Filter"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div><div class="modal fade task_correction_modal student_modal" id="task-test-correction-11590-correction-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Correction of "2. Filter"</h4>
+            </div>
+            <div class="modal-body">
+                <div class="actions">
+                    <center>
+                        <div class="alert alert-info">Some checks are failing. Make sure you fix them before starting a new review<br><strong>You got this!</strong></div>
+
+                        <button name="button" type="submit" class="btn btn-primary correction_request_test_send" data-task-id="11590" data-last-request-id="10049837">Start a new test</button>
+                        <button class="btn btn-default close-modal" data-dismiss="modal" type="button">Close</button>
+
+                        <div class="spinner" style="display: none;">
+                            <div class="bounce1"></div>
+                            <div class="bounce2"></div>
+                            <div class="bounce3"></div>
+                        </div>
+                        <div class="error" style="display: none;"></div>
+                        <div class="info" style="display: none;"></div>
+
+
+                    </center>
+                </div>
+                <div class="result" style="display: block;"><hr><h4>Result:</h4><div class="well"><h5>Commit used:</h5><ul><li><b>URL: </b><a target="_blank" href="https://github.com/edafeoke/alx-backend-javascript/tree/92b5f86b7111a1d50ebd8a20e3d15ed95d6a151c">Click here</a></li><li><b>ID: </b><code>92b5f86b7111a1d50ebd8a20e3d15ed95d6a151c</code></li><li><b>Author: </b><span>Oke Edafe Great</span></li><li><b>Subject: </b><em>Added task 1</em></li><li><b>Date: </b><span>2022-04-11 13:44:44 -0700</span></li></ul></div><div class="check-inline requirement success" id="76036" title="Requirement - success"><i class="fa fa-check-circle" aria-hidden="true"></i>Check 0</div><div class="check-inline requirement success" id="76038" title="Requirement - success"><i class="fa fa-check-circle" aria-hidden="true"></i>Check 1</div><div class="check-inline code fail" id="76037" title="Correct output of your code - fail"><i class="fa fa-times-circle" aria-hidden="true"></i>Check 2</div><div class="check-inline code success" id="76039" title="Correct output of your code - success"><i class="fa fa-check-circle" aria-hidden="true"></i>Check 3</div></div>
+
+                <div class="help" style="display: block;">
+    <button data-task-id="11590">
+        <i aria-hidden="true" class="fa fa-info-circle "></i>
+    </button>
+    <div class="help-container" data-task-id="11590">
+        <div class="check-line">
+            <div class="check-inline requirement success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Requirement success
+            </div>
+            <div class="check-inline requirement fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Requirement fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline code success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Code success
+            </div>
+            <div class="check-inline code fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Code fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline efficiency success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Efficiency success
+            </div>
+            <div class="check-inline efficiency fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Efficiency fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline answer success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Text answer success
+            </div>
+            <div class="check-inline answer fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Text answer fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline requirement fail offline">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Skipped - Previous check failed
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><div class="modal fade users-done-modal" id="task-11591-users-done-modal" data-task-id="11591" data-project-id="1227">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "3. Reduce"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div><div class="modal fade task_correction_modal student_modal" id="task-test-correction-11591-correction-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Correction of "3. Reduce"</h4>
+            </div>
+            <div class="modal-body">
+                <div class="actions">
+                    <center>
+                        <div class="alert alert-info">Some checks are failing. Make sure you fix them before starting a new review<br><strong>You got this!</strong></div>
+
+                        <button name="button" type="submit" class="btn btn-primary correction_request_test_send" data-task-id="11591" data-last-request-id="10050843">Start a new test</button>
+                        <button class="btn btn-default close-modal" data-dismiss="modal" type="button">Close</button>
+
+                        <div class="spinner" style="display: none;">
+                            <div class="bounce1"></div>
+                            <div class="bounce2"></div>
+                            <div class="bounce3"></div>
+                        </div>
+                        <div class="error" style="display: none;"></div>
+                        <div class="info" style="display: none;"></div>
+
+
+                    </center>
+                </div>
+                <div class="result" style="display: block;"><hr><h4>Result:</h4><div class="well"><h5>Commit used:</h5><ul><li><b>URL: </b><a target="_blank" href="https://github.com/edafeoke/alx-backend-javascript/tree/0d2c4136c91eee805ea1711b875f82f277e0e468">Click here</a></li><li><b>ID: </b><code>0d2c4136c91eee805ea1711b875f82f277e0e468</code></li><li><b>Author: </b><span>Oke Edafe Great</span></li><li><b>Subject: </b><em>Added task 3</em></li><li><b>Date: </b><span>2022-04-11 14:00:06 -0700</span></li></ul></div><div class="check-inline requirement success" id="76040" title="Requirement - success"><i class="fa fa-check-circle" aria-hidden="true"></i>Check 0</div><div class="check-inline requirement fail" id="76042" title="Requirement - fail"><i class="fa fa-times-circle" aria-hidden="true"></i>Check 1</div><div class="check-inline code success" id="76043" title="Correct output of your code - success"><i class="fa fa-check-circle" aria-hidden="true"></i>Check 2</div><div class="check-inline code fail" id="76041" title="Correct output of your code - fail"><i class="fa fa-times-circle" aria-hidden="true"></i>Check 3</div></div>
+
+                <div class="help" style="display: block;">
+    <button data-task-id="11591">
+        <i aria-hidden="true" class="fa fa-info-circle "></i>
+    </button>
+    <div class="help-container" data-task-id="11591">
+        <div class="check-line">
+            <div class="check-inline requirement success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Requirement success
+            </div>
+            <div class="check-inline requirement fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Requirement fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline code success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Code success
+            </div>
+            <div class="check-inline code fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Code fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline efficiency success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Efficiency success
+            </div>
+            <div class="check-inline efficiency fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Efficiency fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline answer success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Text answer success
+            </div>
+            <div class="check-inline answer fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Text answer fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline requirement fail offline">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Skipped - Previous check failed
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><div class="modal fade users-done-modal" id="task-11592-users-done-modal" data-task-id="11592" data-project-id="1227">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "4. Combine"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div><div class="modal fade task_correction_modal student_modal" id="task-test-correction-11592-correction-modal" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Correction of "4. Combine"</h4>
+            </div>
+            <div class="modal-body">
+                <div class="actions">
+                    <center>
+                        <div class="alert alert-info">Some checks are failing. Make sure you fix them before starting a new review<br><strong>You got this!</strong></div>
+
+                        <button name="button" type="submit" class="btn btn-primary correction_request_test_send" data-task-id="11592" style="display: inline-block;">Start a new test</button>
+                        <button class="btn btn-default close-modal" data-dismiss="modal" type="button">Close</button>
+
+                        <div class="spinner" style="display: none;">
+                            <div class="bounce1"></div>
+                            <div class="bounce2"></div>
+                            <div class="bounce3"></div>
+                        </div>
+                        <div class="error" style="display: none;"></div>
+                        <div class="info" style="display: none;"></div>
+
+
+                    </center>
+                </div>
+                <div class="result" style="display: block;"><hr><h4>Result:</h4><div class="well"><h5>Commit used:</h5><ul><li><b>URL: </b><a target="_blank" href="https://github.com/edafeoke/alx-backend-javascript/tree/5eb5ba7bdaee4ab1f4238262eb15b5292f934f3c">Click here</a></li><li><b>ID: </b><code>5eb5ba7bdaee4ab1f4238262eb15b5292f934f3c</code></li><li><b>Author: </b><span>Oke Edafe Great</span></li><li><b>Subject: </b><em>Added 5-typed_arrays.js</em></li><li><b>Date: </b><span>2022-04-12 05:33:42 -0700</span></li></ul></div><div class="check-inline requirement success" id="76044" title="Requirement - success"><i class="fa fa-check-circle" aria-hidden="true"></i>Check 0</div><div class="check-inline requirement fail" id="76046" title="Requirement - fail"><i class="fa fa-times-circle" aria-hidden="true"></i>Check 1</div><div class="check-inline code fail" id="76045" title="Correct output of your code - fail"><i class="fa fa-times-circle" aria-hidden="true"></i>Check 2</div><div class="check-inline code success" id="76047" title="Correct output of your code - success"><i class="fa fa-check-circle" aria-hidden="true"></i>Check 3</div></div>
+
+                <div class="help" style="display: block;">
+    <button data-task-id="11592">
+        <i aria-hidden="true" class="fa fa-info-circle "></i>
+    </button>
+    <div class="help-container" data-task-id="11592">
+        <div class="check-line">
+            <div class="check-inline requirement success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Requirement success
+            </div>
+            <div class="check-inline requirement fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Requirement fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline code success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Code success
+            </div>
+            <div class="check-inline code fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Code fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline efficiency success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Efficiency success
+            </div>
+            <div class="check-inline efficiency fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Efficiency fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline answer success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Text answer success
+            </div>
+            <div class="check-inline answer fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Text answer fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline requirement fail offline">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Skipped - Previous check failed
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><div class="modal fade users-done-modal" id="task-11593-users-done-modal" data-task-id="11593" data-project-id="1227">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "5. Typed Arrays"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div><div class="modal fade task_correction_modal student_modal" id="task-test-correction-11593-correction-modal" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Correction of "5. Typed Arrays"</h4>
+            </div>
+            <div class="modal-body">
+                <div class="actions">
+                    <center>
+                        <div class="alert alert-info">Some checks are failing. Make sure you fix them before starting a new review<br><strong>You got this!</strong></div>
+
+                        <button name="button" type="submit" class="btn btn-primary correction_request_test_send" data-task-id="11593" style="display: inline-block;">Start a new test</button>
+                        <button class="btn btn-default close-modal" data-dismiss="modal" type="button">Close</button>
+
+                        <div class="spinner" style="display: none;">
+                            <div class="bounce1"></div>
+                            <div class="bounce2"></div>
+                            <div class="bounce3"></div>
+                        </div>
+                        <div class="error" style="display: none;"></div>
+                        <div class="info" style="display: none;"></div>
+
+
+                    </center>
+                </div>
+                <div class="result" style="display: block;"><hr><h4>Result:</h4><div class="well"><h5>Commit used:</h5><ul><li><b>URL: </b><a target="_blank" href="https://github.com/edafeoke/alx-backend-javascript/tree/5eb5ba7bdaee4ab1f4238262eb15b5292f934f3c">Click here</a></li><li><b>ID: </b><code>5eb5ba7bdaee4ab1f4238262eb15b5292f934f3c</code></li><li><b>Author: </b><span>Oke Edafe Great</span></li><li><b>Subject: </b><em>Added 5-typed_arrays.js</em></li><li><b>Date: </b><span>2022-04-12 05:33:42 -0700</span></li></ul></div><div class="check-inline requirement success" id="76048" title="Requirement - success"><i class="fa fa-check-circle" aria-hidden="true"></i>Check 0</div><div class="check-inline requirement fail" id="76050" title="Requirement - fail"><i class="fa fa-times-circle" aria-hidden="true"></i>Check 1</div><div class="check-inline code success" id="76049" title="Correct output of your code - success"><i class="fa fa-check-circle" aria-hidden="true"></i>Check 2</div><div class="check-inline code success" id="76051" title="Correct output of your code - success"><i class="fa fa-check-circle" aria-hidden="true"></i>Check 3</div></div>
+
+                <div class="help" style="display: block;">
+    <button data-task-id="11593">
+        <i aria-hidden="true" class="fa fa-info-circle "></i>
+    </button>
+    <div class="help-container" data-task-id="11593">
+        <div class="check-line">
+            <div class="check-inline requirement success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Requirement success
+            </div>
+            <div class="check-inline requirement fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Requirement fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline code success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Code success
+            </div>
+            <div class="check-inline code fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Code fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline efficiency success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Efficiency success
+            </div>
+            <div class="check-inline efficiency fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Efficiency fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline answer success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Text answer success
+            </div>
+            <div class="check-inline answer fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Text answer fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline requirement fail offline">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Skipped - Previous check failed
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><div class="modal fade users-done-modal" id="task-11594-users-done-modal" data-task-id="11594" data-project-id="1227">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "6. Set data structure"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div><div class="modal fade task_correction_modal student_modal" id="task-test-correction-11594-correction-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Correction of "6. Set data structure"</h4>
+            </div>
+            <div class="modal-body">
+                <div class="actions">
+                    <center>
+                        <div class="alert alert-info hidden"></div>
+
+                        <button name="button" type="submit" class="btn btn-primary correction_request_test_send" data-task-id="11594">Start a new test</button>
+                        <button class="btn btn-default close-modal hidden" data-dismiss="modal" type="button">Close</button>
+
+                        <div class="spinner" style="display: none;">
+                            <div class="bounce1"></div>
+                            <div class="bounce2"></div>
+                            <div class="bounce3"></div>
+                        </div>
+                        <div class="error"></div>
+                        <div class="info"></div>
+
+
+                    </center>
+                </div>
+                <div class="result"></div>
+
+                <div class="help">
+    <button data-task-id="11594">
+        <i aria-hidden="true" class="fa fa-info-circle "></i>
+    </button>
+    <div class="help-container" data-task-id="11594">
+        <div class="check-line">
+            <div class="check-inline requirement success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Requirement success
+            </div>
+            <div class="check-inline requirement fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Requirement fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline code success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Code success
+            </div>
+            <div class="check-inline code fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Code fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline efficiency success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Efficiency success
+            </div>
+            <div class="check-inline efficiency fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Efficiency fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline answer success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Text answer success
+            </div>
+            <div class="check-inline answer fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Text answer fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline requirement fail offline">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Skipped - Previous check failed
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><div class="modal fade users-done-modal" id="task-11595-users-done-modal" data-task-id="11595" data-project-id="1227">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "7. More set data structure"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div><div class="modal fade task_correction_modal student_modal" id="task-test-correction-11595-correction-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Correction of "7. More set data structure"</h4>
+            </div>
+            <div class="modal-body">
+                <div class="actions">
+                    <center>
+                        <div class="alert alert-info hidden"></div>
+
+                        <button name="button" type="submit" class="btn btn-primary correction_request_test_send" data-task-id="11595">Start a new test</button>
+                        <button class="btn btn-default close-modal hidden" data-dismiss="modal" type="button">Close</button>
+
+                        <div class="spinner" style="display: none;">
+                            <div class="bounce1"></div>
+                            <div class="bounce2"></div>
+                            <div class="bounce3"></div>
+                        </div>
+                        <div class="error"></div>
+                        <div class="info"></div>
+
+
+                    </center>
+                </div>
+                <div class="result"></div>
+
+                <div class="help">
+    <button data-task-id="11595">
+        <i aria-hidden="true" class="fa fa-info-circle "></i>
+    </button>
+    <div class="help-container" data-task-id="11595">
+        <div class="check-line">
+            <div class="check-inline requirement success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Requirement success
+            </div>
+            <div class="check-inline requirement fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Requirement fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline code success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Code success
+            </div>
+            <div class="check-inline code fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Code fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline efficiency success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Efficiency success
+            </div>
+            <div class="check-inline efficiency fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Efficiency fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline answer success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Text answer success
+            </div>
+            <div class="check-inline answer fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Text answer fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline requirement fail offline">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Skipped - Previous check failed
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><div class="modal fade users-done-modal" id="task-11596-users-done-modal" data-task-id="11596" data-project-id="1227">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "8. Clean set"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div><div class="modal fade task_correction_modal student_modal" id="task-test-correction-11596-correction-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Correction of "8. Clean set"</h4>
+            </div>
+            <div class="modal-body">
+                <div class="actions">
+                    <center>
+                        <div class="alert alert-info hidden"></div>
+
+                        <button name="button" type="submit" class="btn btn-primary correction_request_test_send" data-task-id="11596">Start a new test</button>
+                        <button class="btn btn-default close-modal hidden" data-dismiss="modal" type="button">Close</button>
+
+                        <div class="spinner" style="display: none;">
+                            <div class="bounce1"></div>
+                            <div class="bounce2"></div>
+                            <div class="bounce3"></div>
+                        </div>
+                        <div class="error"></div>
+                        <div class="info"></div>
+
+
+                    </center>
+                </div>
+                <div class="result"></div>
+
+                <div class="help">
+    <button data-task-id="11596">
+        <i aria-hidden="true" class="fa fa-info-circle "></i>
+    </button>
+    <div class="help-container" data-task-id="11596">
+        <div class="check-line">
+            <div class="check-inline requirement success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Requirement success
+            </div>
+            <div class="check-inline requirement fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Requirement fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline code success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Code success
+            </div>
+            <div class="check-inline code fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Code fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline efficiency success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Efficiency success
+            </div>
+            <div class="check-inline efficiency fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Efficiency fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline answer success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Text answer success
+            </div>
+            <div class="check-inline answer fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Text answer fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline requirement fail offline">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Skipped - Previous check failed
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><div class="modal fade users-done-modal" id="task-11597-users-done-modal" data-task-id="11597" data-project-id="1227">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "9. Map data structure"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div><div class="modal fade task_correction_modal student_modal" id="task-test-correction-11597-correction-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Correction of "9. Map data structure"</h4>
+            </div>
+            <div class="modal-body">
+                <div class="actions">
+                    <center>
+                        <div class="alert alert-info hidden"></div>
+
+                        <button name="button" type="submit" class="btn btn-primary correction_request_test_send" data-task-id="11597">Start a new test</button>
+                        <button class="btn btn-default close-modal hidden" data-dismiss="modal" type="button">Close</button>
+
+                        <div class="spinner" style="display: none;">
+                            <div class="bounce1"></div>
+                            <div class="bounce2"></div>
+                            <div class="bounce3"></div>
+                        </div>
+                        <div class="error"></div>
+                        <div class="info"></div>
+
+
+                    </center>
+                </div>
+                <div class="result"></div>
+
+                <div class="help">
+    <button data-task-id="11597">
+        <i aria-hidden="true" class="fa fa-info-circle "></i>
+    </button>
+    <div class="help-container" data-task-id="11597">
+        <div class="check-line">
+            <div class="check-inline requirement success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Requirement success
+            </div>
+            <div class="check-inline requirement fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Requirement fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline code success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Code success
+            </div>
+            <div class="check-inline code fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Code fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline efficiency success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Efficiency success
+            </div>
+            <div class="check-inline efficiency fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Efficiency fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline answer success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Text answer success
+            </div>
+            <div class="check-inline answer fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Text answer fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline requirement fail offline">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Skipped - Previous check failed
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><div class="modal fade users-done-modal" id="task-11598-users-done-modal" data-task-id="11598" data-project-id="1227">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "10. More map data structure"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div><div class="modal fade task_correction_modal student_modal" id="task-test-correction-11598-correction-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Correction of "10. More map data structure"</h4>
+            </div>
+            <div class="modal-body">
+                <div class="actions">
+                    <center>
+                        <div class="alert alert-info hidden"></div>
+
+                        <button name="button" type="submit" class="btn btn-primary correction_request_test_send" data-task-id="11598">Start a new test</button>
+                        <button class="btn btn-default close-modal hidden" data-dismiss="modal" type="button">Close</button>
+
+                        <div class="spinner" style="display: none;">
+                            <div class="bounce1"></div>
+                            <div class="bounce2"></div>
+                            <div class="bounce3"></div>
+                        </div>
+                        <div class="error"></div>
+                        <div class="info"></div>
+
+
+                    </center>
+                </div>
+                <div class="result"></div>
+
+                <div class="help">
+    <button data-task-id="11598">
+        <i aria-hidden="true" class="fa fa-info-circle "></i>
+    </button>
+    <div class="help-container" data-task-id="11598">
+        <div class="check-line">
+            <div class="check-inline requirement success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Requirement success
+            </div>
+            <div class="check-inline requirement fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Requirement fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline code success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Code success
+            </div>
+            <div class="check-inline code fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Code fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline efficiency success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Efficiency success
+            </div>
+            <div class="check-inline efficiency fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Efficiency fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline answer success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Text answer success
+            </div>
+            <div class="check-inline answer fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Text answer fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline requirement fail offline">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Skipped - Previous check failed
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><div class="modal fade users-done-modal" id="task-11599-users-done-modal" data-task-id="11599" data-project-id="1227">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "11. Weak link data structure"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div><div class="modal fade task_correction_modal student_modal" id="task-test-correction-11599-correction-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Correction of "11. Weak link data structure"</h4>
+            </div>
+            <div class="modal-body">
+                <div class="actions">
+                    <center>
+                        <div class="alert alert-info hidden"></div>
+
+                        <button name="button" type="submit" class="btn btn-primary correction_request_test_send" data-task-id="11599">Start a new test</button>
+                        <button class="btn btn-default close-modal hidden" data-dismiss="modal" type="button">Close</button>
+
+                        <div class="spinner" style="display: none;">
+                            <div class="bounce1"></div>
+                            <div class="bounce2"></div>
+                            <div class="bounce3"></div>
+                        </div>
+                        <div class="error"></div>
+                        <div class="info"></div>
+
+
+                    </center>
+                </div>
+                <div class="result"></div>
+
+                <div class="help">
+    <button data-task-id="11599">
+        <i aria-hidden="true" class="fa fa-info-circle "></i>
+    </button>
+    <div class="help-container" data-task-id="11599">
+        <div class="check-line">
+            <div class="check-inline requirement success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Requirement success
+            </div>
+            <div class="check-inline requirement fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Requirement fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline code success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Code success
+            </div>
+            <div class="check-inline code fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Code fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline efficiency success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Efficiency success
+            </div>
+            <div class="check-inline efficiency fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Efficiency fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline answer success">
+                  <i aria-hidden="true" class="fa fa-check-circle "></i>
+                Text answer success
+            </div>
+            <div class="check-inline answer fail">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Text answer fail
+            </div>
+        </div>
+        <div class="check-line">
+            <div class="check-inline requirement fail offline">
+                  <i aria-hidden="true" class="fa fa-times-circle "></i>
+                Skipped - Previous check failed
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><div class="modal fade" id="container-specs-modal"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button><h4 class="modal-title">Recommended Sandbox</h4></div><div class="modal-body"><div data-react-class="user_containers/ContainerSpecs" data-react-props="{&quot;containerModelName&quot;:&quot;Sandbox&quot;,&quot;containerSpecs&quot;:[{&quot;description&quot;:&quot;\u003cp\u003eUbuntu 18.04 with Node 12\u003c/p\u003e\n&quot;,&quot;id&quot;:29,&quot;name&quot;:&quot;Ubuntu 18.04 - Node 12&quot;,&quot;online&quot;:true}],&quot;containersLimit&quot;:2,&quot;csrfToken&quot;:&quot;2ki8G7J/w403i8qKAnXJgYy77jfKYeJ+4o6zwgxfmyw/2meTYnDEUG/uxoV/dY/bnTBIHpuPmzjlTAd/g4JctA==&quot;,&quot;startURI&quot;:&quot;/user_containers/start.json&quot;}" data-react-cache-id="user_containers/ContainerSpecs-0"><div><div class="d-flex gap-4 sandboxes-filters"><a class="btn btn-outline-primary"><i aria-hidden="true" class="fa fa-filter"></i><span>Running only</span></a><div class="align-items-center d-flex" style="position: relative; width: 100%;"><input class="form-control" placeholder="Search for an image ..." type="search" value=""></div></div><div class="mt-3"><h3>1 image<small class="ml-2">(0/2 Sandboxes spawned)</small></h3></div><div class="mt-3"><div class="panel panel-default"><div class="panel-body"><div class="align-items-center d-flex flex-wrap justify-content-between"><div><h3 class="mt-0"><i aria-hidden="true" class="fa fa-terminal text-danger"></i><span class="ml-2">Ubuntu 18.04 - Node 12</span></h3><div class="mt-2 text-muted"><p>Ubuntu 18.04 with Node 12</p>
+</div></div><div class="d-flex flex-wrap gap-5"><a class="btn btn-success"><i aria-hidden="true" class="fa fa-play"></i><span>Run</span></a></div></div></div></div></div></div></div></div></div></div></div><div class="modal fade" id="search-modal" tabindex="-1" role="dialog" aria-labelledby="search-modal-label">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div id="search-bar-container">
+    <input id="search-bar" type="text" name="hbtn-search-bar" placeholder="✨Start search by typing in this field✨">
+</div>
+
+            </div>
+            <div class="modal-body">
+                <div id="modal-spinner" class="spinner gap">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+                <div id="search-results-container">
+</div>
+
+            </div>
+        </div>
+    </div>
+</div><div class="modal fade" id="markdownGuideModal" tabindex="-1" role="dialog" aria-labelledby="markdownGuideModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <h4 class="modal-title">Markdown Guide</h4>
+        </div>
+        <div class="modal-body">
+            <h4>Emphasis</h4>
+<pre>**<strong>bold</strong>**
+*<em>italics</em>*
+~~<strike>strikethrough</strike>~~</pre>
+<h4>Headers</h4>
+<pre># Big header
+## Medium header
+### Small header
+#### Tiny header</pre>
+<h4>Lists</h4>
+<pre>* Generic list item
+* Generic list item
+* Generic list item
+
+1. Numbered list item
+2. Numbered list item
+3. Numbered list item</pre>
+<h4>Links</h4>
+<pre>[Text to display](http://www.example.com)</pre>
+<h4>Quotes</h4>
+<pre>&gt; This is a quote.
+&gt; It can span multiple lines!</pre>
+<h4>Images</h4>
+<p>CSS style available: <code>width, height, opacity</code></p>
+<pre>![](http://www.example.com/image.jpg)
+![](http://www.example.com/image.jpg | width: 200px)
+![](http://www.example.com/image.jpg | height: 124px | width: 80px | opacity: 0.6)
+</pre>
+<h4>Tables</h4>
+<pre>| Column 1 | Column 2 | Column 3 |
+| -------- | -------- | -------- |
+| John     | Doe      | Male     |
+| Mary     | Smith    | Female   |
+
+<em>Or without aligning the columns...</em>
+
+| Column 1 | Column 2 | Column 3 |
+| -------- | -------- | -------- |
+| John | Doe | Male |
+| Mary | Smith | Female |
+</pre>
+<h4>Displaying code</h4>
+<pre>`var example = "hello!";`
+
+<em>Or spanning multiple lines...</em>
+
+```
+var example = "hello!";
+alert(example);
+```</pre>
+        </div>
+    </div>
+  </div>
+</div></body></html>

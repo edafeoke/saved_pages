@@ -1,0 +1,1644 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)https://alx-intranet.hbtn.io/projects/361 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="google" content="notranslate">
+
+    <title>Project: Research &amp; Project approval (Part 1) | ALX Africa Intranet</title>
+
+      <link rel="stylesheet" href="./Project_ Research &amp; Project approval (Part 1) _ ALX Africa Intranet_files/xgz4ilr.css">
+      <link rel="stylesheet" media="all" href="./Project_ Research &amp; Project approval (Part 1) _ ALX Africa Intranet_files/application_alx-797565f98971caf22e304b8614ecbc3b779f242f268834e9b46baa0f0eab4c36.css">
+      <script async="" src="./Project_ Research &amp; Project approval (Part 1) _ ALX Africa Intranet_files/analytics.js"></script><script src="./Project_ Research &amp; Project approval (Part 1) _ ALX Africa Intranet_files/loader.js"></script>
+      <script src="./Project_ Research &amp; Project approval (Part 1) _ ALX Africa Intranet_files/application-fbcf5ccea5ceafdf088aa0038b1711206df04afdbfaa68fdac52645a6794d031.js"></script>
+      <link rel="shortcut icon" type="image/x-icon" href="https://alx-intranet.hbtn.io/favicon_alx.ico">
+      <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="wQ43zsXvYFDEmvSKIiqR9YSLPCNE19Alzlctse60pJ0knOxGFeBnjZz/+IVfKtevlQCaChU5qWPJlZkMYWljBQ==">
+
+      <link rel="apple-touch-icon" href="https://alx-intranet.hbtn.io/apple-touch-icon_alx.png">
+
+      <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+      <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+
+      <!-- Store user timezone -->
+      <script>
+        Cookies.set('timezone', (new Date()).getTimezoneOffset() / -60.0);
+      </script>
+
+      <!-- intro.js for interactive onboarding -->
+
+      <!-- React -->
+      <script src="./Project_ Research &amp; Project approval (Part 1) _ ALX Africa Intranet_files/application-8906ffaaef5d4eccdf0b.js"></script>
+      <link rel="stylesheet" media="screen" href="./Project_ Research &amp; Project approval (Part 1) _ ALX Africa Intranet_files/application-f61adf9f.css">
+
+  </head>
+
+  <body class="
+    signed_in
+    env_production
+    
+    " translate="no" data-theme-suffix="_alx" data-checker-special-theme="">
+
+      <input type="hidden" id="hbtn-slack-url" value="https://alx-students.slack.com">
+      <nav class="navbar navbar-default navbar-fixed-top topbar visible-xs">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-mobile" aria-expanded="false">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+
+    <a class="navbar-brand" href="https://alx-intranet.hbtn.io/">
+      <div class="logo"></div>
+</a>  </div>
+
+  <div class="collapse navbar-collapse navigation" id="navbar-mobile">
+    <ul class="nav navbar-nav">
+      
+
+
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Planning"><a href="https://alx-intranet.hbtn.io/dashboards/my_planning"><div class="icon "><i aria-hidden="true" class="fa fa-calendar "></i></div><div class="visible-xs">Planning</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-current-projects-item" title="" data-original-title="Projects"><a href="https://alx-intranet.hbtn.io/projects/current"><div class="icon "><i aria-hidden="true" class="fa fa-code-fork "></i></div><div class="visible-xs">Projects</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="My reports"><a href="https://alx-intranet.hbtn.io/users/my_reports"><div class="icon "><i aria-hidden="true" class="fa fa-sticky-note-o "></i></div><div class="visible-xs">My reports</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="QA Reviews I can make"><a href="https://alx-intranet.hbtn.io/corrections/to_review"><div class="icon "><i aria-hidden="true" class="fa fa-check "></i></div><div class="visible-xs">QA Reviews I can make</div></a></li>
+    
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Evaluation quizzes"><a href="https://alx-intranet.hbtn.io/dashboards/my_current_evaluation_quizzes"><div class="icon "><i aria-hidden="true" class="fa fa-question "></i></div><div class="visible-xs">Evaluation quizzes</div></a></li>
+
+    <hr title="My resources">
+
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Curriculums"><a href="https://alx-intranet.hbtn.io/dashboards/my_curriculums"><div class="icon "><i aria-hidden="true" class="fa fa-graduation-cap "></i></div><div class="visible-xs">Curriculums</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-concepts-item" title="" data-original-title="Concepts"><a href="https://alx-intranet.hbtn.io/concepts"><div class="icon "><i aria-hidden="true" class="fa fa-file-text "></i></div><div class="visible-xs">Concepts</div></a></li>
+    
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-dashboards-video-rooms" title="" data-original-title="Conference rooms"><a href="https://alx-intranet.hbtn.io/dashboards/video_rooms"><div class="icon "><i aria-hidden="true" class="fa fa-comments "></i></div><div class="visible-xs">Conference rooms</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Servers"><a href="https://alx-intranet.hbtn.io/servers"><div class="icon "><i aria-hidden="true" class="fa fa-server "></i></div><div class="visible-xs">Servers</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-dashboards-my-containers" title="" data-original-title="Sandboxes"><a href="https://alx-intranet.hbtn.io/user_containers/current"><div class="icon "><i aria-hidden="true" class="fa fa-terminal "></i></div><div class="visible-xs">Sandboxes</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Tools"><a href="https://alx-intranet.hbtn.io/dashboards/my_tools"><div class="icon "><i aria-hidden="true" class="fa fa-wrench "></i></div><div class="visible-xs">Tools</div></a></li>
+    
+
+      <hr title="My campus">
+
+      
+      <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Peers"><a href="https://alx-intranet.hbtn.io/users/peers"><div class="icon "><i aria-hidden="true" class="fa fa-users "></i></div><div class="visible-xs">Peers</div></a></li>
+      <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Captain&#39;s Logs"><a href="https://alx-intranet.hbtn.io/dashboards/my_captain_log"><div class="icon "><i aria-hidden="true" class="fa fa-book "></i></div><div class="visible-xs">Captain's Logs</div></a></li>
+      
+      
+
+
+<hr class="visible-xs">
+
+<li>
+    <div data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Slack">
+      <a target="_blank" href="https://alx-students.slack.com/">
+        <div class="image slack">
+          <div class="inner"></div>
+        </div>
+        <div class="visible-xs">Slack</div>
+</a>    </div>
+
+  <div data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="My Profile">
+    <a href="https://alx-intranet.hbtn.io/users/my_profile">
+        <div class="image ">
+          <div class="inner" style="background-image: url(&#39;https://s3.amazonaws.com/alx-intranet.hbtn.io/users/photos/000/000/850/thumb/IMG_20190729_142005.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20220422%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20220422T220732Z&amp;X-Amz-Expires=600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=839da3c2b3febdeaf7caef4e022162584681deb22be7653b3c17f9509ab92125&#39;)"></div>
+        </div>
+
+      <div class="visible-xs">My Profile</div>
+</a>  </div>
+</li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      <div class="hidden-xs navigation sidebar">
+  <a class="logo-container" href="https://alx-intranet.hbtn.io/">
+    <div class="logo"></div>
+</a>
+  <ul>
+    
+
+
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Planning"><a href="https://alx-intranet.hbtn.io/dashboards/my_planning"><div class="icon "><i aria-hidden="true" class="fa fa-calendar "></i></div><div class="visible-xs">Planning</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-current-projects-item" title="" data-original-title="Projects"><a href="https://alx-intranet.hbtn.io/projects/current"><div class="icon "><i aria-hidden="true" class="fa fa-code-fork "></i></div><div class="visible-xs">Projects</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="My reports"><a href="https://alx-intranet.hbtn.io/users/my_reports"><div class="icon "><i aria-hidden="true" class="fa fa-sticky-note-o "></i></div><div class="visible-xs">My reports</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="QA Reviews I can make"><a href="https://alx-intranet.hbtn.io/corrections/to_review"><div class="icon "><i aria-hidden="true" class="fa fa-check "></i></div><div class="visible-xs">QA Reviews I can make</div></a></li>
+    
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Evaluation quizzes"><a href="https://alx-intranet.hbtn.io/dashboards/my_current_evaluation_quizzes"><div class="icon "><i aria-hidden="true" class="fa fa-question "></i></div><div class="visible-xs">Evaluation quizzes</div></a></li>
+
+    <hr title="My resources">
+
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Curriculums"><a href="https://alx-intranet.hbtn.io/dashboards/my_curriculums"><div class="icon "><i aria-hidden="true" class="fa fa-graduation-cap "></i></div><div class="visible-xs">Curriculums</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-concepts-item" title="" data-original-title="Concepts"><a href="https://alx-intranet.hbtn.io/concepts"><div class="icon "><i aria-hidden="true" class="fa fa-file-text "></i></div><div class="visible-xs">Concepts</div></a></li>
+    
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-dashboards-video-rooms" title="" data-original-title="Conference rooms"><a href="https://alx-intranet.hbtn.io/dashboards/video_rooms"><div class="icon "><i aria-hidden="true" class="fa fa-comments "></i></div><div class="visible-xs">Conference rooms</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Servers"><a href="https://alx-intranet.hbtn.io/servers"><div class="icon "><i aria-hidden="true" class="fa fa-server "></i></div><div class="visible-xs">Servers</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" id="sidebar-dashboards-my-containers" title="" data-original-title="Sandboxes"><a href="https://alx-intranet.hbtn.io/user_containers/current"><div class="icon "><i aria-hidden="true" class="fa fa-terminal "></i></div><div class="visible-xs">Sandboxes</div></a></li>
+    <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Tools"><a href="https://alx-intranet.hbtn.io/dashboards/my_tools"><div class="icon "><i aria-hidden="true" class="fa fa-wrench "></i></div><div class="visible-xs">Tools</div></a></li>
+    
+
+      <hr title="My campus">
+
+      
+      <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Peers"><a href="https://alx-intranet.hbtn.io/users/peers"><div class="icon "><i aria-hidden="true" class="fa fa-users "></i></div><div class="visible-xs">Peers</div></a></li>
+      <li data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Captain&#39;s Logs"><a href="https://alx-intranet.hbtn.io/dashboards/my_captain_log"><div class="icon "><i aria-hidden="true" class="fa fa-book "></i></div><div class="visible-xs">Captain's Logs</div></a></li>
+      
+      
+
+
+<hr class="visible-xs">
+
+<li>
+    <div data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="Slack">
+      <a target="_blank" href="https://alx-students.slack.com/">
+        <div class="image slack">
+          <div class="inner"></div>
+        </div>
+        <div class="visible-xs">Slack</div>
+</a>    </div>
+
+  <div data-container="body" data-placement="right" data-toggle="tooltip" title="" data-original-title="My Profile">
+    <a href="https://alx-intranet.hbtn.io/users/my_profile">
+        <div class="image ">
+          <div class="inner" style="background-image: url(&#39;https://s3.amazonaws.com/alx-intranet.hbtn.io/users/photos/000/000/850/thumb/IMG_20190729_142005.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20220422%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20220422T220732Z&amp;X-Amz-Expires=600&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=839da3c2b3febdeaf7caef4e022162584681deb22be7653b3c17f9509ab92125&#39;)"></div>
+        </div>
+
+      <div class="visible-xs">My Profile</div>
+</a>  </div>
+</li>
+
+
+  </ul>
+</div>
+
+
+    <main>
+      <div id="layout-bars">
+        
+
+        
+
+        
+
+        
+      </div>
+
+      <article class="">
+
+        
+<div class="project row">
+  <div class="col-xs-12 col-md-10 col-lg-8 contains-images">
+
+      <h1 class="gap">Research &amp; Project approval (Part 1)</h1>
+
+  <div data-react-class="tags/Tags" data-react-props="{&quot;tags&quot;:[]}" data-react-cache-id="tags/Tags-0"></div>
+
+  <ul class="list-group metadata" id="project-metadata">
+
+    <li class="list-group-item">
+      <i aria-hidden="true" class="fa fa-user  fa-fw"></i>
+      By Michelle Lai
+    </li>
+
+    <li class="list-group-item">
+      <i aria-hidden="true" class="fa fa-cogs  fa-fw"></i>
+      Weight: 1
+    </li>
+
+
+    <li class="list-group-item">
+      <i aria-hidden="true" class="fa fa-users  fa-fw"></i>
+      Project to be done in teams of 3 people
+        (your team: Elijah Daniel, Njagi Ndungo, Edafe Oke
+    </li>
+
+      <li class="list-group-item">
+        <i aria-hidden="true" class="fa fa-calendar  fa-fw"></i>
+          Project over - took place from <div data-react-class="common/DateTime" data-react-props="{&quot;showDate&quot;:true,&quot;showTime&quot;:false,&quot;value&quot;:&quot;2022-02-04T06:00:00.000+03:00&quot;}" data-react-cache-id="common/DateTime-0" class="d-inline-block"><span data-container="body" data-html="false" data-placement="auto top" data-toggle="tooltip" title="" data-original-title="2022-02-04 04:00 (GMT+01:00)"><span class="datetime">Feb 4, 2022 </span></span></div> to <div data-react-class="common/DateTime" data-react-props="{&quot;showDate&quot;:true,&quot;showTime&quot;:false,&quot;value&quot;:&quot;2022-02-11T06:00:00.000+03:00&quot;}" data-react-cache-id="common/DateTime-0" class="d-inline-block"><span data-container="body" data-html="false" data-placement="auto top" data-toggle="tooltip" title="" data-original-title="2022-02-11 04:00 (GMT+01:00)"><span class="datetime">Feb 11, 2022 </span></span></div>
+          - you're done with <span id="student_task_done_percentage">100</span>% of tasks.
+      </li>
+
+
+      <li class="list-group-item">
+        <i aria-hidden="true" class="fa fa-check-square  fa-fw"></i>
+          Manual QA review was done by Faith Okoth
+            on <div data-react-class="common/DateTime" data-react-props="{&quot;showDate&quot;:true,&quot;showTime&quot;:true,&quot;value&quot;:&quot;2022-02-14T16:26:28.000+03:00&quot;}" data-react-cache-id="common/DateTime-0" class="d-inline-block"><span data-container="body" data-html="false" data-placement="auto top" data-toggle="tooltip" title="" data-original-title="2022-02-14 14:26 (GMT+01:00)"><span class="datetime">Feb 14, 2022 2:26 PM</span></span></div>
+      </li>
+
+
+      <div class="gap clean well">
+  <h4>In a nutshell…</h4>
+  <ul>
+
+      <li>
+        <strong>Manual QA review:</strong>
+          20.3/23 mandatory
+      </li>
+
+    <li>
+      <strong>Altogether:</strong>
+        &nbsp;<strong>88.26%</strong>
+        <ul>
+          <li>Mandatory: 88.26%</li>
+            <li>Optional: no optional tasks</li>
+        </ul>
+    </li>
+  </ul>
+</div>
+
+</ul>
+
+
+
+
+    <div id="project_id" style="display: none" data-project-id="361"></div>
+
+
+
+
+      
+
+        <h2>Concepts</h2>
+
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <p>
+        <em>For this project, students are expected to look at these concepts:</em>
+      </p>
+
+      <ul>
+          <li>
+            <a href="https://alx-intranet.hbtn.io/concepts/133">Maze project</a>
+          </li>
+          <li>
+            <a href="https://alx-intranet.hbtn.io/concepts/137">Portfolio Project Overview</a>
+          </li>
+      </ul>
+    </div>
+  </div>
+
+
+      <div class="well clean" id="project-description">
+  <p><img src="./Project_ Research &amp; Project approval (Part 1) _ ALX Africa Intranet_files/be601df25eea91eaaf0d.gif" alt="" style=""></p>
+
+<h2>What’s this “Research &amp; project approval”?</h2>
+
+<p>Before starting any coding, you will need to research and define your portfolio project over the course of 3 weeks. In the first week, the Project Proposal will be approved, followed by the second week where the MVP will be defined, and finally presented as a collection of tasks on a Trello board. </p>
+
+<p>This first part is focused on creating a Project Proposal and requires that a google Document is submitted for Manual Review by a technical staff member. Please take time to brainstorm, research, and explore what currently exists during this first phase.</p>
+
+<h2>Examples of the past</h2>
+
+<p>Explore some student projects from previous cohorts!</p>
+
+<ul>
+<li>Puppr (<a href="https://alx-intranet.hbtn.io/rltoken/AyGvpWenXZWHeqHoBcScGA" title="GitHub" target="_blank">GitHub</a>) – by <a href="https://alx-intranet.hbtn.io/rltoken/m5rGc4Hj9f9dmF3k3OqEog" title="Laura Roudge (Cohort 8)" target="_blank">Laura Roudge (Cohort 8)</a>, <a href="https://alx-intranet.hbtn.io/rltoken/MDkrhTm1R1Qd1C0lIxwKHw" title="Drew Maring (Cohort 8)" target="_blank">Drew Maring (Cohort 8)</a>, and <a href="https://alx-intranet.hbtn.io/rltoken/Rvj0vOji2rb5hJlyI7CzYg" title="Marc Cavigli (Cohort 8)" target="_blank">Marc Cavigli (Cohort 8)</a></li>
+<li>OCR for Whiteboarding(<a href="https://alx-intranet.hbtn.io/rltoken/YlDFt-_gmrWv5ojMn5RyBw" title="GitHub" target="_blank">GitHub</a>) – by <a href="https://alx-intranet.hbtn.io/rltoken/sOq8YIeuG_d3R42_eC2WAg" title="John Cooke (Cohort 8)" target="_blank">John Cooke (Cohort 8)</a></li>
+<li>Lyrical Learning (<a href="https://alx-intranet.hbtn.io/rltoken/nftYC6VX-RtFs39QjY15Hg" title="GitHub" target="_blank">GitHub</a>) – by <a href="https://alx-intranet.hbtn.io/rltoken/fPhJzGARXYbOvTUyCgku6Q" title="David Kwan (Cohort 8)" target="_blank">David Kwan (Cohort 8)</a></li>
+<li>Eggify (<a href="https://alx-intranet.hbtn.io/rltoken/0-W_Ybq6iI5OX8SyhxYGDQ" title="GitHub" target="_blank">GitHub</a>) – by <a href="https://alx-intranet.hbtn.io/rltoken/_g6Zz_hYcwEYecXkBq98Hw" title="Athena Deng (Cohort 7)" target="_blank">Athena Deng (Cohort 7)</a> &amp; <a href="https://alx-intranet.hbtn.io/rltoken/6ErsGSP_2vvJV3REc--RKQ" title="Samie Azad (Cohort 7)" target="_blank">Samie Azad (Cohort 7)</a></li>
+<li>IdeaDog (<a href="https://alx-intranet.hbtn.io/rltoken/F1V9oW1LVgojsfpmXDBNYQ" title="GitHub" target="_blank">GitHub</a>) – by <a href="https://alx-intranet.hbtn.io/rltoken/gBDqwJz1UEpfnlXLJkSJFA" title="Brennan D Baraban (Cohort 7)" target="_blank">Brennan D Baraban (Cohort 7)</a></li>
+<li>Job Odyssey (<a href="https://alx-intranet.hbtn.io/rltoken/RkrrfaCIsVvWIrE_KkCPlw" title="GitHub" target="_blank">GitHub</a>) – by <a href="https://alx-intranet.hbtn.io/rltoken/hYfutlm7ZvxrEcLtlcrSGQ" title="Susan Su (Cohort 7)" target="_blank">Susan Su (Cohort 7)</a> &amp; <a href="https://alx-intranet.hbtn.io/rltoken/hQKWStTqRelSRw9F4UJEOQ" title="Christopher Choe (Cohort 7)" target="_blank">Christopher Choe (Cohort 7)</a></li>
+</ul>
+
+<h2>Some things to think about</h2>
+
+<h4>Role</h4>
+
+<p>Within the team you are on, we encourage you to take on the challenges that will be relevant for you to speak about in your (eventual) job search. For example, if your project is an ride-sharing clone, and you want to be a front end engineer, then it’s important to take on challenges with accessibility, interactive elements and user-interface. Likewise, if you are interested in backend engineering, it will be important to architect the API endpoints, data modeling and performance.</p>
+
+<h4>Scope</h4>
+
+<p>There is always a risk that your project is too ambitious, or not ambitious enough. Each has its disadvantage. For this project, consider that it is much better to end up with something a bit smaller in scope that has undergone a couple (or at least one) iteration of deployment, testing and bug fixes. Documentation is also a big bonus!</p>
+
+<h4>Novelty</h4>
+
+<p>Each person and team is unique. We encourage you to bring a sense of individuality to your project, so that you can use it as a tool to speak about other aspects of yourself or your team. As an example, if a team wants to create a buy/sell marketplace app and they are both passionate about bicycling, they may want to focus their marketplace on bicycles exclusively so specific attributes can be defined to track the items. </p>
+
+<p><strong>Note:</strong> A professional project theme is a requirement. We recommend avoiding themes focused on religion, political parties and views, sexuality, sexual orientation, or illegal substances. If there is a specific reason you are passionate about a topic and would like to pursue it, please meet with a staff member to discuss. As an example, creating a platform to have open political discourse with a moderation feature would be acceptable. A site to promote all the representatives and voting history of a single political party would <strong>not</strong> be acceptable.</p>
+
+<h2>No idea? we have some for you…</h2>
+
+<p>If you don’t know what to build, we have some ideas for you:</p>
+
+<ul>
+<li>Create a web service that uses <a href="https://alx-intranet.hbtn.io/rltoken/P5Ri2TnqqPOzWdRZEE1mEQ" title="API" target="_blank">API</a> (like a GitHub stats of an account, etc.)</li>
+<li>Import a rich data set, sanitize it, and create a website to visualize the data with interactive zoom and sliders</li>
+<li>Create a music recommender based on a set of ‘liked’ songs</li>
+<li>Write a game that can be played against another person or an AI</li>
+<li>Ship an Android app</li>
+<li>Create an IoT system</li>
+<li>Write an image compression algorithm</li>
+<li>Write a compiler</li>
+<li>Write your own Docker-like container service</li>
+<li>Create a “One click” to deploy a cluster of blockchain mining workers with a web page to report on its statistics</li>
+<li>Create a “One click” to deploy a cluster of servers hosting docker, with a web page where you can start containers on-demand</li>
+</ul>
+
+<h2>Default Project</h2>
+
+<p>If you do not have an idea, and do not submit a proposal or do not gain approval for your proposed projects, you’ll be expected to complete the 2D Game: <strong>The Maze</strong> - concept page available on top of this project.</p>
+
+<h2>More Info</h2>
+
+<h3>Manual QA Review</h3>
+
+<p><strong>Review and approval for your portfolio project must be done by a staff member.</strong></p>
+
+</div>
+
+
+      
+
+      
+
+        
+          <h2 class="gap">Tasks</h2>
+
+    <div data-role="task4078" data-position="1" id="task-num-0">
+      <div class="panel panel-default task-card " id="task-4078">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      0. Share your project proposal!
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+      <div class="task_progress_score_bar" data-task-id="4078" data-correction-id="123472">
+        <div class="task_progress_bar" style="width: 100%;">
+          <div class="task_score_bar" style="width: 100%;">
+          </div>
+        </div>
+        <div class="task_progress_score_text">
+          Score: <span class="task_score_value">100.00%</span> (<span class="task_progress_value">Checks completed: 100.00%</span>)
+        </div>
+      </div>
+
+    <!-- Task Body -->
+    <p>Share a link here to a Google Document where each of the following tasks are addressed.</p>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+      <div class="list-group-item">
+        <div class="blog_post_div">
+          <h4>Add URLs here:</h4>
+
+          <div class="input-group">
+            <input id="input_4078" type="text" value="" class="form-control">
+            <span class="input-group-btn">
+              <button data-task-requesting="0" data-user-id="850" data-task-id="4078" type="button" class="add_task_url btn btn-primary">
+                Save
+              </button>
+            </span>
+          </div>
+
+          <div class="task_url_error_msg" data-task-id="4078"></div>
+
+          <ol class="list_4078 sm-gap">
+              <li>
+                <a target="_blank" href="https://docs.google.com/document/d/1-HvHIyanOoJXwlI_MVcBC4HUiz3t3ToPoWd-1F-rpPA/edit?usp=sharing">https://docs.google.com/document/d/1-HvHIyanOoJXwlI_MVcBC4HUiz3t3ToPoWd-1F-rpPA/edit?usp=sharing</a>
+                <button data-task-requesting="0" id="4078" type="button" data-task-id="4078" data-task-url-id="1882" class="remove_blog_post btn btn-xs btn-default ml-2">
+                  Remove
+                </button>
+              </li>
+          </ol>
+
+        </div>
+      </div>
+
+    <!-- Github information -->
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+  <div class="panel-footer">
+      <div class="align-items-center d-flex justify-content-between">
+        
+<div>
+    <button class="student_task_done btn btn-default btn-sm yes" data-task-id="4078">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-sm" data-task-id="4078" data-project-id="361" data-toggle="modal" data-target="#task-4078-users-done-modal">
+      Help
+    </button>
+    <div class="modal fade users-done-modal" id="task-4078-users-done-modal" data-task-id="4078" data-project-id="361">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "0. Share your project proposal!"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    
+
+      <button class="btn btn-default btn-sm" data-task-id="4078" data-toggle="modal" data-target="#task-qa-review-4078-modal">
+        QA Review
+      </button>
+      <div class="modal fade task_get_qa_review" id="task-qa-review-4078-modal" data-correction-id="123472" data-task-id="4078">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">0. Share your project proposal!</h4>
+            </div>
+            <div class="modal-body">
+                <div class="spinner gap">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+                <div class="review-container">
+                    <div class="review-corrector"></div>
+                    <div class="review-github well" style="display:none">
+                        <h5>Commit used:</h5>
+                        <ul>
+                            <li style="display:none"><strong>User:</strong> <code class="review-github-id"></code> <span class="review-github-name">---</span></li>
+                            <li style="display:none"><strong>URL:</strong> <a class="review-github-url" target="_blank">Click here</a></li>
+                            <li style="display:none"><strong>ID:</strong> <code class="review-github-commit_id">---</code></li>
+                            <li style="display:none"><strong>Author:</strong> <span class="review-github-committer_username">---</span></li>
+                            <li style="display:none"><strong>Subject:</strong> <em class="review-github-subject">---</em></li>
+                            <li style="display:none"><strong>Date:</strong> <span class="review-github-datetime">---</span></li>
+                        </ul>
+                    </div>
+                    <div class="review-percentage_down"></div>
+                    <ul class="review-checks list-group sm-gap"></ul>
+                    <div class="review-comment"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+        <div class="fs-4">
+        </div>
+      </div>
+
+
+  </div>
+</div>
+
+    </div>
+    <div data-role="task4079" data-position="2" id="task-num-1">
+      <div class="panel panel-default task-card " id="task-4079">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      1. Project name and tag line
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+      <div class="task_progress_score_bar" data-task-id="4079" data-correction-id="123472">
+        <div class="task_progress_bar" style="width: 100%;">
+          <div class="task_score_bar" style="width: 100%;">
+          </div>
+        </div>
+        <div class="task_progress_score_text">
+          Score: <span class="task_score_value">100.00%</span> (<span class="task_progress_value">Checks completed: 100.00%</span>)
+        </div>
+      </div>
+
+    <!-- Task Body -->
+    <p>Rename the document to be the Project’s name.</p>
+
+<p>At the top of the document restate the project name as a header. Add a tagline below which is exactly one sentence (or phrase) that best summarizes your project.</p>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+  <div class="panel-footer">
+      <div class="align-items-center d-flex justify-content-between">
+        
+<div>
+    <button class="student_task_done btn btn-default btn-sm yes" data-task-id="4079">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-sm" data-task-id="4079" data-project-id="361" data-toggle="modal" data-target="#task-4079-users-done-modal">
+      Help
+    </button>
+    <div class="modal fade users-done-modal" id="task-4079-users-done-modal" data-task-id="4079" data-project-id="361">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "1. Project name and tag line"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    
+
+      <button class="btn btn-default btn-sm" data-task-id="4079" data-toggle="modal" data-target="#task-qa-review-4079-modal">
+        QA Review
+      </button>
+      <div class="modal fade task_get_qa_review" id="task-qa-review-4079-modal" data-correction-id="123472" data-task-id="4079">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">1. Project name and tag line</h4>
+            </div>
+            <div class="modal-body">
+                <div class="spinner gap">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+                <div class="review-container">
+                    <div class="review-corrector"></div>
+                    <div class="review-github well" style="display:none">
+                        <h5>Commit used:</h5>
+                        <ul>
+                            <li style="display:none"><strong>User:</strong> <code class="review-github-id"></code> <span class="review-github-name">---</span></li>
+                            <li style="display:none"><strong>URL:</strong> <a class="review-github-url" target="_blank">Click here</a></li>
+                            <li style="display:none"><strong>ID:</strong> <code class="review-github-commit_id">---</code></li>
+                            <li style="display:none"><strong>Author:</strong> <span class="review-github-committer_username">---</span></li>
+                            <li style="display:none"><strong>Subject:</strong> <em class="review-github-subject">---</em></li>
+                            <li style="display:none"><strong>Date:</strong> <span class="review-github-datetime">---</span></li>
+                        </ul>
+                    </div>
+                    <div class="review-percentage_down"></div>
+                    <ul class="review-checks list-group sm-gap"></ul>
+                    <div class="review-comment"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+        <div class="fs-4">
+        </div>
+      </div>
+
+
+  </div>
+</div>
+
+    </div>
+    <div data-role="task4080" data-position="3" id="task-num-2">
+      <div class="panel panel-default task-card " id="task-4080">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      2. Team Members
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+      <div class="task_progress_score_bar" data-task-id="4080" data-correction-id="123472">
+        <div class="task_progress_bar" style="width: 100%;">
+          <div class="task_score_bar" style="width: 82.5%;">
+          </div>
+        </div>
+        <div class="task_progress_score_text">
+          Score: <span class="task_score_value">82.50%</span> (<span class="task_progress_value">Checks completed: 100.00%</span>)
+        </div>
+      </div>
+
+    <!-- Task Body -->
+    <p>In a section named “Team”, answer:</p>
+
+<ul>
+<li>What are the names of the team members?</li>
+<li>What role will each person play in completing the project?</li>
+<li>Why have those roles been decided?</li>
+</ul>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+  <div class="panel-footer">
+      <div class="align-items-center d-flex justify-content-between">
+        
+<div>
+    <button class="student_task_done btn btn-default btn-sm yes" data-task-id="4080">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-sm" data-task-id="4080" data-project-id="361" data-toggle="modal" data-target="#task-4080-users-done-modal">
+      Help
+    </button>
+    <div class="modal fade users-done-modal" id="task-4080-users-done-modal" data-task-id="4080" data-project-id="361">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "2. Team Members"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    
+
+      <button class="btn btn-default btn-sm" data-task-id="4080" data-toggle="modal" data-target="#task-qa-review-4080-modal">
+        QA Review
+      </button>
+      <div class="modal fade task_get_qa_review" id="task-qa-review-4080-modal" data-correction-id="123472" data-task-id="4080">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">2. Team Members</h4>
+            </div>
+            <div class="modal-body">
+                <div class="spinner gap">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+                <div class="review-container">
+                    <div class="review-corrector"></div>
+                    <div class="review-github well" style="display:none">
+                        <h5>Commit used:</h5>
+                        <ul>
+                            <li style="display:none"><strong>User:</strong> <code class="review-github-id"></code> <span class="review-github-name">---</span></li>
+                            <li style="display:none"><strong>URL:</strong> <a class="review-github-url" target="_blank">Click here</a></li>
+                            <li style="display:none"><strong>ID:</strong> <code class="review-github-commit_id">---</code></li>
+                            <li style="display:none"><strong>Author:</strong> <span class="review-github-committer_username">---</span></li>
+                            <li style="display:none"><strong>Subject:</strong> <em class="review-github-subject">---</em></li>
+                            <li style="display:none"><strong>Date:</strong> <span class="review-github-datetime">---</span></li>
+                        </ul>
+                    </div>
+                    <div class="review-percentage_down"></div>
+                    <ul class="review-checks list-group sm-gap"></ul>
+                    <div class="review-comment"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+        <div class="fs-4">
+        </div>
+      </div>
+
+
+  </div>
+</div>
+
+    </div>
+    <div data-role="task4081" data-position="4" id="task-num-3">
+      <div class="panel panel-default task-card " id="task-4081">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      3. Technologies
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+      <div class="task_progress_score_bar" data-task-id="4081" data-correction-id="123472">
+        <div class="task_progress_bar" style="width: 100%;">
+          <div class="task_score_bar" style="width: 86.6667%;">
+          </div>
+        </div>
+        <div class="task_progress_score_text">
+          Score: <span class="task_score_value">86.67%</span> (<span class="task_progress_value">Checks completed: 100.00%</span>)
+        </div>
+      </div>
+
+    <!-- Task Body -->
+    <p>In a section named “Technologies”:</p>
+
+<ul>
+<li>List the libraries, languages, platforms, frameworks, hardware, books, resources that will be necessary to complete your project.</li>
+<li>For 2 of these technology choices, describe another option and what were the trade-offs between the chosen technology and the alternate. Explain what led to the final decision to use a particular technology.</li>
+</ul>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+  <div class="panel-footer">
+      <div class="align-items-center d-flex justify-content-between">
+        
+<div>
+    <button class="student_task_done btn btn-default btn-sm yes" data-task-id="4081">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-sm" data-task-id="4081" data-project-id="361" data-toggle="modal" data-target="#task-4081-users-done-modal">
+      Help
+    </button>
+    <div class="modal fade users-done-modal" id="task-4081-users-done-modal" data-task-id="4081" data-project-id="361">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "3. Technologies"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    
+
+      <button class="btn btn-default btn-sm" data-task-id="4081" data-toggle="modal" data-target="#task-qa-review-4081-modal">
+        QA Review
+      </button>
+      <div class="modal fade task_get_qa_review" id="task-qa-review-4081-modal" data-correction-id="123472" data-task-id="4081">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">3. Technologies</h4>
+            </div>
+            <div class="modal-body">
+                <div class="spinner gap">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+                <div class="review-container">
+                    <div class="review-corrector"></div>
+                    <div class="review-github well" style="display:none">
+                        <h5>Commit used:</h5>
+                        <ul>
+                            <li style="display:none"><strong>User:</strong> <code class="review-github-id"></code> <span class="review-github-name">---</span></li>
+                            <li style="display:none"><strong>URL:</strong> <a class="review-github-url" target="_blank">Click here</a></li>
+                            <li style="display:none"><strong>ID:</strong> <code class="review-github-commit_id">---</code></li>
+                            <li style="display:none"><strong>Author:</strong> <span class="review-github-committer_username">---</span></li>
+                            <li style="display:none"><strong>Subject:</strong> <em class="review-github-subject">---</em></li>
+                            <li style="display:none"><strong>Date:</strong> <span class="review-github-datetime">---</span></li>
+                        </ul>
+                    </div>
+                    <div class="review-percentage_down"></div>
+                    <ul class="review-checks list-group sm-gap"></ul>
+                    <div class="review-comment"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+        <div class="fs-4">
+        </div>
+      </div>
+
+
+  </div>
+</div>
+
+    </div>
+    <div data-role="task4082" data-position="5" id="task-num-4">
+      <div class="panel panel-default task-card " id="task-4082">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      4. Challenge statement
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+      <div class="task_progress_score_bar" data-task-id="4082" data-correction-id="123472">
+        <div class="task_progress_bar" style="width: 100%;">
+          <div class="task_score_bar" style="width: 97.5%;">
+          </div>
+        </div>
+        <div class="task_progress_score_text">
+          Score: <span class="task_score_value">97.50%</span> (<span class="task_progress_value">Checks completed: 100.00%</span>)
+        </div>
+      </div>
+
+    <!-- Task Body -->
+    <p>In a section named “Challenge”:</p>
+
+<ul>
+<li>Describe the problem the Portfolio Project is intended to solve.</li>
+<li>Explain what the Portfolio Project will <em>not</em> solve</li>
+<li>Explain who the Portfolio Project will help and/or who the users will be</li>
+<li>Is this project relevant or dependent on a specific locale?</li>
+</ul>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+  <div class="panel-footer">
+      <div class="align-items-center d-flex justify-content-between">
+        
+<div>
+    <button class="student_task_done btn btn-default btn-sm yes" data-task-id="4082">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-sm" data-task-id="4082" data-project-id="361" data-toggle="modal" data-target="#task-4082-users-done-modal">
+      Help
+    </button>
+    <div class="modal fade users-done-modal" id="task-4082-users-done-modal" data-task-id="4082" data-project-id="361">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "4. Challenge statement"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    
+
+      <button class="btn btn-default btn-sm" data-task-id="4082" data-toggle="modal" data-target="#task-qa-review-4082-modal">
+        QA Review
+      </button>
+      <div class="modal fade task_get_qa_review" id="task-qa-review-4082-modal" data-correction-id="123472" data-task-id="4082">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">4. Challenge statement</h4>
+            </div>
+            <div class="modal-body">
+                <div class="spinner gap">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+                <div class="review-container">
+                    <div class="review-corrector"></div>
+                    <div class="review-github well" style="display:none">
+                        <h5>Commit used:</h5>
+                        <ul>
+                            <li style="display:none"><strong>User:</strong> <code class="review-github-id"></code> <span class="review-github-name">---</span></li>
+                            <li style="display:none"><strong>URL:</strong> <a class="review-github-url" target="_blank">Click here</a></li>
+                            <li style="display:none"><strong>ID:</strong> <code class="review-github-commit_id">---</code></li>
+                            <li style="display:none"><strong>Author:</strong> <span class="review-github-committer_username">---</span></li>
+                            <li style="display:none"><strong>Subject:</strong> <em class="review-github-subject">---</em></li>
+                            <li style="display:none"><strong>Date:</strong> <span class="review-github-datetime">---</span></li>
+                        </ul>
+                    </div>
+                    <div class="review-percentage_down"></div>
+                    <ul class="review-checks list-group sm-gap"></ul>
+                    <div class="review-comment"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+        <div class="fs-4">
+        </div>
+      </div>
+
+
+  </div>
+</div>
+
+    </div>
+    <div data-role="task4083" data-position="6" id="task-num-5">
+      <div class="panel panel-default task-card " id="task-4083">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      5. Risks
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+      <div class="task_progress_score_bar" data-task-id="4083" data-correction-id="123472">
+        <div class="task_progress_bar" style="width: 100%;">
+          <div class="task_score_bar" style="width: 90%;">
+          </div>
+        </div>
+        <div class="task_progress_score_text">
+          Score: <span class="task_score_value">90.00%</span> (<span class="task_progress_value">Checks completed: 100.00%</span>)
+        </div>
+      </div>
+
+    <!-- Task Body -->
+    <p>In a section named “Risks”:</p>
+
+<ul>
+<li>Describe the technical risks, the potential impact, and what safeguards or alternatives you have in mind</li>
+<li>Describe non-technical risks, the potential impact, and what strategies are in place to prevent these negative outcomes</li>
+</ul>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+  <div class="panel-footer">
+      <div class="align-items-center d-flex justify-content-between">
+        
+<div>
+    <button class="student_task_done btn btn-default btn-sm yes" data-task-id="4083">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-sm" data-task-id="4083" data-project-id="361" data-toggle="modal" data-target="#task-4083-users-done-modal">
+      Help
+    </button>
+    <div class="modal fade users-done-modal" id="task-4083-users-done-modal" data-task-id="4083" data-project-id="361">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "5. Risks"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    
+
+      <button class="btn btn-default btn-sm" data-task-id="4083" data-toggle="modal" data-target="#task-qa-review-4083-modal">
+        QA Review
+      </button>
+      <div class="modal fade task_get_qa_review" id="task-qa-review-4083-modal" data-correction-id="123472" data-task-id="4083">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">5. Risks</h4>
+            </div>
+            <div class="modal-body">
+                <div class="spinner gap">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+                <div class="review-container">
+                    <div class="review-corrector"></div>
+                    <div class="review-github well" style="display:none">
+                        <h5>Commit used:</h5>
+                        <ul>
+                            <li style="display:none"><strong>User:</strong> <code class="review-github-id"></code> <span class="review-github-name">---</span></li>
+                            <li style="display:none"><strong>URL:</strong> <a class="review-github-url" target="_blank">Click here</a></li>
+                            <li style="display:none"><strong>ID:</strong> <code class="review-github-commit_id">---</code></li>
+                            <li style="display:none"><strong>Author:</strong> <span class="review-github-committer_username">---</span></li>
+                            <li style="display:none"><strong>Subject:</strong> <em class="review-github-subject">---</em></li>
+                            <li style="display:none"><strong>Date:</strong> <span class="review-github-datetime">---</span></li>
+                        </ul>
+                    </div>
+                    <div class="review-percentage_down"></div>
+                    <ul class="review-checks list-group sm-gap"></ul>
+                    <div class="review-comment"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+        <div class="fs-4">
+        </div>
+      </div>
+
+
+  </div>
+</div>
+
+    </div>
+    <div data-role="task4084" data-position="7" id="task-num-6">
+      <div class="panel panel-default task-card " id="task-4084">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      6. Infrastructure
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+      <div class="task_progress_score_bar" data-task-id="4084" data-correction-id="123472">
+        <div class="task_progress_bar" style="width: 75%;">
+          <div class="task_score_bar" style="width: 96.6667%;">
+          </div>
+        </div>
+        <div class="task_progress_score_text">
+          Score: <span class="task_score_value">72.50%</span> (<span class="task_progress_value">Checks completed: 75.00%</span>)
+        </div>
+      </div>
+
+    <!-- Task Body -->
+    <p>In a section called “Infrastructure”:</p>
+
+<ul>
+<li>Describe your process for branching and merging in your team’s repository (e.g. <a href="https://alx-intranet.hbtn.io/rltoken/bQTzmtjVW4bSNUbo_WUj4g" title="GitHub flow" target="_blank">GitHub flow</a>, <a href="https://alx-intranet.hbtn.io/rltoken/PH2jTmX2-3ye1iYY8Dbapw" title="Picking the right branch-merge strategy" target="_blank">Picking the right branch-merge strategy</a>)</li>
+<li>Describe your strategy for deployment</li>
+<li>Describe how you will populate your app with data</li>
+<li>Describe what tools, automation or process you will use for testing</li>
+</ul>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+  <div class="panel-footer">
+      <div class="align-items-center d-flex justify-content-between">
+        
+<div>
+    <button class="student_task_done btn btn-default btn-sm yes" data-task-id="4084">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-sm" data-task-id="4084" data-project-id="361" data-toggle="modal" data-target="#task-4084-users-done-modal">
+      Help
+    </button>
+    <div class="modal fade users-done-modal" id="task-4084-users-done-modal" data-task-id="4084" data-project-id="361">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "6. Infrastructure"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    
+
+      <button class="btn btn-default btn-sm" data-task-id="4084" data-toggle="modal" data-target="#task-qa-review-4084-modal">
+        QA Review
+      </button>
+      <div class="modal fade task_get_qa_review" id="task-qa-review-4084-modal" data-correction-id="123472" data-task-id="4084">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">6. Infrastructure</h4>
+            </div>
+            <div class="modal-body">
+                <div class="spinner gap">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+                <div class="review-container">
+                    <div class="review-corrector"></div>
+                    <div class="review-github well" style="display:none">
+                        <h5>Commit used:</h5>
+                        <ul>
+                            <li style="display:none"><strong>User:</strong> <code class="review-github-id"></code> <span class="review-github-name">---</span></li>
+                            <li style="display:none"><strong>URL:</strong> <a class="review-github-url" target="_blank">Click here</a></li>
+                            <li style="display:none"><strong>ID:</strong> <code class="review-github-commit_id">---</code></li>
+                            <li style="display:none"><strong>Author:</strong> <span class="review-github-committer_username">---</span></li>
+                            <li style="display:none"><strong>Subject:</strong> <em class="review-github-subject">---</em></li>
+                            <li style="display:none"><strong>Date:</strong> <span class="review-github-datetime">---</span></li>
+                        </ul>
+                    </div>
+                    <div class="review-percentage_down"></div>
+                    <ul class="review-checks list-group sm-gap"></ul>
+                    <div class="review-comment"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+        <div class="fs-4">
+        </div>
+      </div>
+
+
+  </div>
+</div>
+
+    </div>
+    <div data-role="task4085" data-position="8" id="task-num-7">
+      <div class="panel panel-default task-card " id="task-4085">
+  <span id="user_id" data-id="850"></span>
+
+  <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      7. Existing Solutions
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="850"></span>
+
+    <!-- Progress vs Score -->
+      <div class="task_progress_score_bar" data-task-id="4085" data-correction-id="123472">
+        <div class="task_progress_bar" style="width: 100%;">
+          <div class="task_score_bar" style="width: 90%;">
+          </div>
+        </div>
+        <div class="task_progress_score_text">
+          Score: <span class="task_score_value">90.00%</span> (<span class="task_progress_value">Checks completed: 100.00%</span>)
+        </div>
+      </div>
+
+    <!-- Task Body -->
+    <p>In a section called “Existing Solutions”:</p>
+
+<ul>
+<li>List any similar products or solutions that currently exist.</li>
+<li>For each item in the list, explain similarities and differences</li>
+</ul>
+
+<p>If you intend to reimplement a proven solution, then describe the various proven solutions and why you chose to reimplement based on a particular specification. </p>
+
+<p>As an example, lets say you will develop an image compression algorithm, and decide to go with <em>Transform coding</em>. Utilize this section to describe the different classes of image compression, and the various types of compression algorithms and the unique aspects of <em>Transform coding</em>.</p>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+  <div class="panel-footer">
+      <div class="align-items-center d-flex justify-content-between">
+        
+<div>
+    <button class="student_task_done btn btn-default btn-sm yes" data-task-id="4085">
+      <span class="no"><i aria-hidden="true" class="fa fa-square-o "></i></span>
+      <span class="yes"><i aria-hidden="true" class="fa fa-check-square-o "></i></span>
+      <span class="pending"><i aria-hidden="true" class="fa fa-spinner  fa-pulse"></i></span>
+      Done<span class="no pending">?</span><span class="yes">!</span>
+    </button>
+
+    <button class="users_done_for_task btn btn-default btn-sm" data-task-id="4085" data-project-id="361" data-toggle="modal" data-target="#task-4085-users-done-modal">
+      Help
+    </button>
+    <div class="modal fade users-done-modal" id="task-4085-users-done-modal" data-task-id="4085" data-project-id="361">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Students who are done with "7. Existing Solutions"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="list-group">
+            </div>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <div class="error"></div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    
+
+      <button class="btn btn-default btn-sm" data-task-id="4085" data-toggle="modal" data-target="#task-qa-review-4085-modal">
+        QA Review
+      </button>
+      <div class="modal fade task_get_qa_review" id="task-qa-review-4085-modal" data-correction-id="123472" data-task-id="4085">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">7. Existing Solutions</h4>
+            </div>
+            <div class="modal-body">
+                <div class="spinner gap">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+                <div class="review-container">
+                    <div class="review-corrector"></div>
+                    <div class="review-github well" style="display:none">
+                        <h5>Commit used:</h5>
+                        <ul>
+                            <li style="display:none"><strong>User:</strong> <code class="review-github-id"></code> <span class="review-github-name">---</span></li>
+                            <li style="display:none"><strong>URL:</strong> <a class="review-github-url" target="_blank">Click here</a></li>
+                            <li style="display:none"><strong>ID:</strong> <code class="review-github-commit_id">---</code></li>
+                            <li style="display:none"><strong>Author:</strong> <span class="review-github-committer_username">---</span></li>
+                            <li style="display:none"><strong>Subject:</strong> <em class="review-github-subject">---</em></li>
+                            <li style="display:none"><strong>Date:</strong> <span class="review-github-datetime">---</span></li>
+                        </ul>
+                    </div>
+                    <div class="review-percentage_down"></div>
+                    <ul class="review-checks list-group sm-gap"></ul>
+                    <div class="review-comment"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+        <div class="fs-4">
+        </div>
+      </div>
+
+
+  </div>
+</div>
+
+    </div>
+
+
+
+
+          <div data-react-class="projects/ProjectReadyForReview" data-react-props="{&quot;canReviewPeerDirectly&quot;:false,&quot;correctCorrectionURI&quot;:&quot;https://alx-intranet.hbtn.io/corrections/123472/correct&quot;,&quot;csrfToken&quot;:&quot;0qBCYOyMYJUe5pp4HZxfARXW1HbJP41dK0H/UKV/AEU3MpnoPINnSEaDlndgnBlbBF1yX5jR9Bssg0vtKqLH3Q==&quot;,&quot;firstReview&quot;:false,&quot;qaReviewsURI&quot;:&quot;/corrections/to_review&quot;,&quot;readyForReviewURI&quot;:&quot;https://alx-intranet.hbtn.io/corrections/123472/toggle_ready_for_review&quot;,&quot;toggled&quot;:true}" data-react-cache-id="projects/ProjectReadyForReview-0"><div class="row gap"><div class="col-md-12"><div class="panel panel-default"><div class="panel-heading"><h3 class="panel-title">Ready for manual review</h3></div><div class="panel-body"><p>Now that you are ready to be reviewed, share your link to your peers...</p><div class="input-group my-2"><span class="form-control user-select-all">https://alx-intranet.hbtn.io/corrections/123472/correct</span><span class="input-group-btn"><a class="btn btn-default"><span data-container="body" data-html="false" data-placement="auto top" data-toggle="tooltip" title="" data-original-title="Click to copy"><span role="button"><i aria-hidden="true" class="fa fa-clipboard fa-fw"></i></span></span></a></span></div><p><strong>... and <a href="https://alx-intranet.hbtn.io/corrections/to_review">review one of them</a> once you've been reviewed.</strong></p></div></div></div></div></div>
+
+
+
+  </div>
+</div>
+
+
+      </article>
+
+      <div class="copyright">Copyright © 2022 ALX, All rights reserved.</div>
+    </main>
+
+      <button class="btn btn-primary" id="search-button" data-search-active="false" data-toggle="modal" data-target="#search-modal">
+  <i aria-hidden="true" class="fa fa-search "></i>
+  <i aria-hidden="true" class="fa fa-window-minimize "></i>
+</button>
+
+      <div class="modal fade" id="search-modal" tabindex="-1" role="dialog" aria-labelledby="search-modal-label">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div id="search-bar-container">
+    <input id="search-bar" type="text" name="hbtn-search-bar" placeholder="✨Start search by typing in this field✨">
+</div>
+
+            </div>
+            <div class="modal-body">
+                <div id="modal-spinner" class="spinner gap">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+                <div id="search-results-container">
+</div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+      <div class="modal fade" id="markdownGuideModal" tabindex="-1" role="dialog" aria-labelledby="markdownGuideModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <h4 class="modal-title">Markdown Guide</h4>
+        </div>
+        <div class="modal-body">
+            <h4>Emphasis</h4>
+<pre>**<strong>bold</strong>**
+*<em>italics</em>*
+~~<strike>strikethrough</strike>~~</pre>
+<h4>Headers</h4>
+<pre># Big header
+## Medium header
+### Small header
+#### Tiny header</pre>
+<h4>Lists</h4>
+<pre>* Generic list item
+* Generic list item
+* Generic list item
+
+1. Numbered list item
+2. Numbered list item
+3. Numbered list item</pre>
+<h4>Links</h4>
+<pre>[Text to display](http://www.example.com)</pre>
+<h4>Quotes</h4>
+<pre>&gt; This is a quote.
+&gt; It can span multiple lines!</pre>
+<h4>Images</h4>
+<p>CSS style available: <code>width, height, opacity</code></p>
+<pre>![](http://www.example.com/image.jpg)
+![](http://www.example.com/image.jpg | width: 200px)
+![](http://www.example.com/image.jpg | height: 124px | width: 80px | opacity: 0.6)
+</pre>
+<h4>Tables</h4>
+<pre>| Column 1 | Column 2 | Column 3 |
+| -------- | -------- | -------- |
+| John     | Doe      | Male     |
+| Mary     | Smith    | Female   |
+
+<em>Or without aligning the columns...</em>
+
+| Column 1 | Column 2 | Column 3 |
+| -------- | -------- | -------- |
+| John | Doe | Male |
+| Mary | Smith | Female |
+</pre>
+<h4>Displaying code</h4>
+<pre>`var example = "hello!";`
+
+<em>Or spanning multiple lines...</em>
+
+```
+var example = "hello!";
+alert(example);
+```</pre>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create',
+            'UA-67152800-9',
+            'auto', {
+              userId: '850'
+            }
+          );
+
+        ga('send', 'pageview');
+
+        $(document).ready(function() {
+          ga(function(tracker) {
+            var clientId = tracker.get('clientId');
+            $('.ga-client-id').val(clientId);
+          });
+        });
+      </script>
+
+
+
+
+      
+
+
+  
+
+</body></html>
